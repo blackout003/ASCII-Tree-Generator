@@ -1,0 +1,54 @@
+{
+  "title": "Générateur d'Arbre ASCII",
+  "description": "Visualisez et créez la structure parfaite de votre projet. Glissez-déposez vos dossiers/fichiers et convertissez facilement en format ASCII pour votre documentation.",
+  "treeEditor": {
+    "title": "Éditeur d'Arbre",
+    "description": "Double-cliquez sur un nom pour le modifier. Utilisez les boutons pour ajouter des éléments.",
+    "newFolder": "Nouveau Dossier",
+    "newFile": "Nouveau Fichier",
+    "save": "Sauvegarder",
+    "load": "Charger",
+    "clearAll": "Effacer tout",
+    "addFolder": "Ajouter un dossier",
+    "addFile": "Ajouter un fichier",
+    "move": "Déplacer (glisser-déposer)",
+    "editName": "Modifier le nom",
+    "delete": "Supprimer",
+    "cannotAddFolderToFile": "Impossible d'ajouter un dossier dans un fichier",
+    "dropToRoot": "Déposer ici pour déplacer à la racine",
+    "dropInFolder": "Déposer ici pour ajouter au dossier \"{name}\""
+  },
+  "asciiPreview": {
+    "title": "Prévisualisation ASCII",
+    "description": "Aperçu de votre arbre en format ASCII",
+    "copy": "Copier",
+    "download": "Télécharger",
+    "placeholder": "Votre arbre ASCII apparaîtra ici..."
+  },
+  "dragDrop": {
+    "title": "Glisser-déposer des fichiers",
+    "description": "Glissez vos dossiers et fichiers ici pour les importer dans l'arbre",
+    "dropHere": "Glissez vos fichiers et dossiers ici",
+    "orClick": "ou cliquez pour sélectionner des fichiers",
+    "selectFiles": "Sélectionner des fichiers",
+    "selectFolder": "Sélectionner un dossier",
+    "importedItems": "Éléments importés :",
+    "items": "éléments"
+  },
+  "options": {
+    "title": "Options de Configuration",
+    "sortAlphabetically": "Trier alphabétiquement",
+    "showHidden": "Afficher les fichiers cachés",
+    "includeExtensions": "Inclure les extensions",
+    "maxDepth": "Profondeur max:"
+  },
+  "theme": {
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système",
+    "toggleTheme": "Basculer le thème"
+  },
+  "errors": {
+    "loadError": "Erreur lors du chargement du fichier. Vérifiez que c'est un fichier JSON valide."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "title": "Generador de Árboles ASCII",
+  "description": "Visualiza y crea la estructura perfecta para tu proyecto. Arrastra y suelta tus carpetas/archivos y convierte fácilmente a formato ASCII para tu documentación.",
+  "treeEditor": {
+    "title": "Editor de Árboles",
+    "description": "Haz doble clic en un nombre para modificarlo. Usa los botones para agregar elementos.",
+    "newFolder": "Nueva Carpeta",
+    "newFile": "Nuevo Archivo",
+    "save": "Guardar",
+    "load": "Cargar",
+    "clearAll": "Limpiar Todo",
+    "addFolder": "Agregar carpeta",
+    "addFile": "Agregar archivo",
+    "move": "Mover (arrastrar y soltar)",
+    "editName": "Editar nombre",
+    "delete": "Eliminar",
+    "cannotAddFolderToFile": "No se puede agregar una carpeta a un archivo",
+    "dropToRoot": "Suelta aquí para mover a la raíz",
+    "dropInFolder": "Suelta aquí para agregar a la carpeta \"{name}\""
+  },
+  "asciiPreview": {
+    "title": "Vista Previa ASCII",
+    "description": "Vista previa de tu árbol en formato ASCII",
+    "copy": "Copiar",
+    "download": "Descargar",
+    "placeholder": "Tu árbol ASCII aparecerá aquí..."
+  },
+  "dragDrop": {
+    "title": "Arrastrar y Soltar Archivos",
+    "description": "Arrastra tus carpetas y archivos aquí para importarlos al árbol",
+    "dropHere": "Arrastra tus archivos y carpetas aquí",
+    "orClick": "o haz clic para seleccionar archivos",
+    "selectFiles": "Seleccionar archivos",
+    "selectFolder": "Seleccionar carpeta",
+    "importedItems": "Elementos importados:",
+    "items": "elementos"
+  },
+  "options": {
+    "title": "Opciones de Configuración",
+    "sortAlphabetically": "Ordenar alfabéticamente",
+    "showHidden": "Mostrar archivos ocultos",
+    "includeExtensions": "Incluir extensiones",
+    "maxDepth": "Profundidad máx:"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema",
+    "toggleTheme": "Cambiar tema"
+  },
+  "errors": {
+    "loadError": "Error al cargar el archivo. Verifica que sea un archivo JSON válido."
+  }
+}

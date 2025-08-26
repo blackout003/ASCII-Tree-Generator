@@ -1,0 +1,54 @@
+{
+  "title": "ASCII-Baum Generator",
+  "description": "Visualisiere und erstelle die perfekte Struktur für dein Projekt. Ziehe deine Ordner/Dateien per Drag & Drop und konvertiere sie einfach in ASCII-Format für deine Dokumentation.",
+  "treeEditor": {
+    "title": "Baum-Editor",
+    "description": "Doppelklicke auf einen Namen, um ihn zu bearbeiten. Verwende die Schaltflächen, um Elemente hinzuzufügen.",
+    "newFolder": "Neuer Ordner",
+    "newFile": "Neue Datei",
+    "save": "Speichern",
+    "load": "Laden",
+    "clearAll": "Alles löschen",
+    "addFolder": "Ordner hinzufügen",
+    "addFile": "Datei hinzufügen",
+    "move": "Verschieben (Drag & Drop)",
+    "editName": "Namen bearbeiten",
+    "delete": "Löschen",
+    "cannotAddFolderToFile": "Ordner kann nicht zu Datei hinzugefügt werden",
+    "dropToRoot": "Hier ablegen, um zur Wurzel zu verschieben",
+    "dropInFolder": "Hier ablegen, um zum Ordner \"{name}\" hinzuzufügen"
+  },
+  "asciiPreview": {
+    "title": "ASCII-Vorschau",
+    "description": "Vorschau deines Baums im ASCII-Format",
+    "copy": "Kopieren",
+    "download": "Herunterladen",
+    "placeholder": "Dein ASCII-Baum wird hier erscheinen..."
+  },
+  "dragDrop": {
+    "title": "Dateien ziehen und ablegen",
+    "description": "Ziehe deine Ordner und Dateien hierher, um sie in den Baum zu importieren",
+    "dropHere": "Ziehe deine Dateien und Ordner hierher",
+    "orClick": "oder klicke, um Dateien auszuwählen",
+    "selectFiles": "Dateien auswählen",
+    "selectFolder": "Ordner auswählen",
+    "importedItems": "Importierte Elemente:",
+    "items": "Elemente"
+  },
+  "options": {
+    "title": "Konfigurationsoptionen",
+    "sortAlphabetically": "Alphabetisch sortieren",
+    "showHidden": "Versteckte Dateien anzeigen",
+    "includeExtensions": "Erweiterungen einschließen",
+    "maxDepth": "Max. Tiefe:"
+  },
+  "theme": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System",
+    "toggleTheme": "Theme wechseln"
+  },
+  "errors": {
+    "loadError": "Fehler beim Laden der Datei. Bitte überprüfe, dass es sich um eine gültige JSON-Datei handelt."
+  }
+}

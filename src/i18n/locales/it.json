@@ -1,0 +1,54 @@
+{
+  "title": "Generatore di Alberi ASCII",
+  "description": "Visualizza e crea la struttura perfetta per il tuo progetto. Trascina i tuoi cartelle/file e converti facilmente in formato ASCII per la tua documentazione.",
+  "treeEditor": {
+    "title": "Editor di Alberi",
+    "description": "Fai doppio clic su un nome per modificarlo. Usa i pulsanti per aggiungere elementi.",
+    "newFolder": "Nuova Cartella",
+    "newFile": "Nuovo File",
+    "save": "Salva",
+    "load": "Carica",
+    "clearAll": "Cancella tutto",
+    "addFolder": "Aggiungi cartella",
+    "addFile": "Aggiungi file",
+    "move": "Sposta (trascina e rilascia)",
+    "editName": "Modifica nome",
+    "delete": "Elimina",
+    "cannotAddFolderToFile": "Impossibile aggiungere una cartella a un file",
+    "dropToRoot": "Rilascia qui per spostare alla radice",
+    "dropInFolder": "Rilascia qui per aggiungere alla cartella \"{name}\""
+  },
+  "asciiPreview": {
+    "title": "Anteprima ASCII",
+    "description": "Anteprima del tuo albero in formato ASCII",
+    "copy": "Copia",
+    "download": "Scarica",
+    "placeholder": "Il tuo albero ASCII apparirà qui..."
+  },
+  "dragDrop": {
+    "title": "Trascina e Rilascia File",
+    "description": "Trascina le tue cartelle e file qui per importarli nell'albero",
+    "dropHere": "Trascina i tuoi file e cartelle qui",
+    "orClick": "o clicca per selezionare i file",
+    "selectFiles": "Seleziona file",
+    "selectFolder": "Seleziona cartella",
+    "importedItems": "Elementi importati:",
+    "items": "elementi"
+  },
+  "options": {
+    "title": "Opzioni di Configurazione",
+    "sortAlphabetically": "Ordina alfabeticamente",
+    "showHidden": "Mostra file nascosti",
+    "includeExtensions": "Includi estensioni",
+    "maxDepth": "Profondità max:"
+  },
+  "theme": {
+    "light": "Chiaro",
+    "dark": "Scuro",
+    "system": "Sistema",
+    "toggleTheme": "Cambia tema"
+  },
+  "errors": {
+    "loadError": "Errore nel caricamento del file. Verifica che sia un file JSON valido."
+  }
+}

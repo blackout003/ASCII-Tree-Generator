@@ -1,0 +1,54 @@
+{
+  "title": "ASCII Tree Generator",
+  "description": "Visualize and create the perfect structure for your project. Drag and drop your folders/files and easily convert to ASCII format for your documentation.",
+  "treeEditor": {
+    "title": "Tree Editor",
+    "description": "Double-click on a name to modify it. Use the buttons to add elements.",
+    "newFolder": "New Folder",
+    "newFile": "New File",
+    "save": "Save",
+    "load": "Load",
+    "clearAll": "Clear All",
+    "addFolder": "Add folder",
+    "addFile": "Add file",
+    "move": "Move (drag and drop)",
+    "editName": "Edit name",
+    "delete": "Delete",
+    "cannotAddFolderToFile": "Cannot add folder to file",
+    "dropToRoot": "Drop here to move to root",
+    "dropInFolder": "Drop here to add to folder \"{name}\""
+  },
+  "asciiPreview": {
+    "title": "ASCII Preview",
+    "description": "Preview of your tree in ASCII format",
+    "copy": "Copy",
+    "download": "Download",
+    "placeholder": "Your ASCII tree will appear here..."
+  },
+  "dragDrop": {
+    "title": "Drag and Drop Files",
+    "description": "Drag your folders and files here to import them into the tree",
+    "dropHere": "Drag your files and folders here",
+    "orClick": "or click to select files",
+    "selectFiles": "Select files",
+    "selectFolder": "Select folder",
+    "importedItems": "Imported items:",
+    "items": "items"
+  },
+  "options": {
+    "title": "Configuration Options",
+    "sortAlphabetically": "Sort alphabetically",
+    "showHidden": "Show hidden files",
+    "includeExtensions": "Include extensions",
+    "maxDepth": "Max depth:"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggleTheme": "Toggle theme"
+  },
+  "errors": {
+    "loadError": "Error loading file. Please check that it's a valid JSON file."
+  }
+}
