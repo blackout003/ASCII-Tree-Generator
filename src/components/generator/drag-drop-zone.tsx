@@ -195,7 +195,7 @@ export default function DragDropZone({ onFilesAdded }: DragDropZoneProps) {
           <input
             id="folder-input"
             type="file"
-            {...({ webkitdirectory: "" } as any)}
+            {...({ webkitdirectory: "" } as React.InputHTMLAttributes<HTMLInputElement>)}
             multiple
             onChange={handleFileInput}
             className="hidden"

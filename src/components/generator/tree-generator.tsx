@@ -5,8 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
+
 import { Folder, File, Plus, Copy, Download, Settings, ChevronDown, ChevronRight, Trash2, Move, Edit3, Save, Upload } from 'lucide-react';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { LanguageToggle } from '@/components/ui/language-toggle';
@@ -214,7 +213,7 @@ export default function TreeGenerator() {
         if (savedData.asciiConfig) {
           setAsciiConfig(savedData.asciiConfig);
         }
-      } catch (error) {
+      } catch {
         alert('Erreur lors du chargement du fichier. Vérifiez que c\'est un fichier JSON valide.');
       }
     };
@@ -323,7 +322,7 @@ export default function TreeGenerator() {
             e.dataTransfer.effectAllowed = 'move';
             e.dataTransfer.setData('text/plain', node.id);
           }}
-          onDragEnd={(e) => {
+          onDragEnd={() => {
             setTimeout(() => {
               setDraggedNode(null);
               setDragOverNode(null);
@@ -480,12 +479,12 @@ export default function TreeGenerator() {
               e.stopPropagation();
             }}
           >
-            Déposer ici pour ajouter au dossier "{node.name}"
+            Déposer ici pour ajouter au dossier &quot;{node.name}&quot;
           </div>
         )}
       </div>
     );
-  }, [editingNode, editingName, addNode, deleteNode, startEditing, saveEdit, cancelEdit, toggleExpansion]);
+  }, [editingNode, editingName, addNode, deleteNode, startEditing, saveEdit, cancelEdit, toggleExpansion, dragOverNode, draggedNode, moveNode]);
 
   const asciiOutput = generateASCII();
 

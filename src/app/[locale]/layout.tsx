@@ -4,7 +4,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +32,7 @@ export default async function LocaleLayout({
   let messages;
   try {
     messages = (await import(`@/i18n/locales/${locale}.json`)).default;
-  } catch (error) {
+  } catch {
     // Fallback to French messages if locale file doesn't exist
     messages = (await import('@/i18n/locales/fr.json')).default;
   }
