@@ -29,9 +29,8 @@ export function LanguageToggle() {
   const pathname = usePathname()
 
   const switchLanguage = (newLocale: Locale) => {
-    // Remove the current locale from the pathname
+    // Remove the current locale from the pathname and navigate to new locale
     const pathWithoutLocale = pathname.replace(`/${locale}`, '') || '/'
-    // Navigate to the new locale
     router.push(`/${newLocale}${pathWithoutLocale}`)
   }
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <script defer src="https://statistique.ganecloud.fr/script.js" data-website-id="e9526dfa-2a8c-47d6-be8c-7f67b581ef80"></script>
+          <Head>
+            {process.env.NEXT_PUBLIC_STATS_URL && process.env.NEXT_PUBLIC_STATS_WEBSITE_ID && (
+              <script 
+                defer 
+                src={process.env.NEXT_PUBLIC_STATS_URL} 
+                data-website-id={process.env.NEXT_PUBLIC_STATS_WEBSITE_ID}
+              />
+            )}
+          </Head>
         {children}
       </body>
     </html>

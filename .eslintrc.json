@@ -1,0 +1,17 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "warn",
+    "prefer-rest-params": "warn",
+    "no-var": "error"
+  },
+  "overrides": [
+    {
+      "files": ["src/lib/analytics.ts"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "prefer-rest-params": "off"
+      }
+    }
+  ]
+}

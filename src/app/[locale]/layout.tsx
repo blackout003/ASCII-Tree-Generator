@@ -4,6 +4,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { NextIntlClientProvider } from 'next-intl';
+import { SEO_CONFIG, getLocaleMetadata } from '@/lib/seo-config';
+import { Analytics, GoogleTagManagerNoScript } from '@/components/ui/analytics';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,10 +17,71 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Générateur d'Arbre ASCII",
-  description: "Visualisez et créez la structure parfaite de votre projet. Convertissez facilement en format ASCII pour votre documentation.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const localeMeta = getLocaleMetadata(locale);
+  
+  return {
+    title: localeMeta.title,
+    description: localeMeta.description,
+    keywords: SEO_CONFIG.keywords,
+    authors: [{ name: "ASCII Tree Generator Team" }],
+    creator: SEO_CONFIG.siteName,
+    publisher: SEO_CONFIG.siteName,
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    metadataBase: new URL(SEO_CONFIG.baseUrl),
+    alternates: {
+      canonical: '/',
+      languages: {
+        'fr': '/fr',
+        'en': '/en',
+        'es': '/es',
+        'de': '/de',
+        'it': '/it',
+      },
+    },
+    openGraph: {
+      title: localeMeta.title,
+      description: localeMeta.description,
+      url: SEO_CONFIG.baseUrl,
+      siteName: SEO_CONFIG.siteName,
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: localeMeta.title,
+        },
+      ],
+      locale: locale,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: localeMeta.title,
+      description: localeMeta.description,
+      images: ['/og-image.png'],
+      creator: SEO_CONFIG.social.twitter.handle,
+      site: SEO_CONFIG.social.twitter.site,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    verification: SEO_CONFIG.verification,
+  };
+}
 
 export default async function LocaleLayout({
   children,
@@ -52,6 +115,10 @@ export default async function LocaleLayout({
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
+        
+        {/* Analytics */}
+        <Analytics />
+        <GoogleTagManagerNoScript />
       </body>
     </html>
   );

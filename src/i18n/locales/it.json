@@ -48,6 +48,11 @@
     "system": "Sistema",
     "toggleTheme": "Cambia tema"
   },
+  "footer": {
+    "copyright": "© {year} EmilienG.fr. Tutti i diritti riservati.",
+    "legalNotice": "Avviso Legale",
+    "privacyPolicy": "Politica sulla Privacy"
+  },
   "errors": {
     "loadError": "Errore nel caricamento del file. Verifica che sia un file JSON valido."
   }

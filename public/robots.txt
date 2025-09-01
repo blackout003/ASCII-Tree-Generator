@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ascii-tree-generator.vercel.app/sitemap.xml
+
+# Crawl-delay pour éviter de surcharger le serveur
+Crawl-delay: 1
+
+# Bloquer les fichiers non nécessaires
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /*.json$
+
+# Permettre l'accès aux ressources importantes
+Allow: /favicon.ico
+Allow: /Logo.png
+Allow: /og-image.png
