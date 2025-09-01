@@ -47,7 +47,9 @@ export const SEO_CONFIG = {
   },
   
   verification: {
-    google: 'your-google-verification-code',
+    // Remplacez par votre vrai code de vérification Google Search Console
+    // Format : 'xxxxxxxxxx' (sans guillemets supplémentaires)
+    google: 'Us63uejMYf_eRurx-77CguTsgZPywmV4cgOlCB5ekyU',
     yandex: 'your-yandex-verification-code',
     yahoo: 'your-yahoo-verification-code',
     bing: 'your-bing-verification-code'
