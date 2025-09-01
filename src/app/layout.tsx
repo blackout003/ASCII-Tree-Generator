@@ -29,13 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
           <Head>
-            {process.env.NEXT_PUBLIC_STATS_URL && process.env.NEXT_PUBLIC_STATS_WEBSITE_ID && (
-              <script 
-                defer 
-                src={process.env.NEXT_PUBLIC_STATS_URL} 
-                data-website-id={process.env.NEXT_PUBLIC_STATS_WEBSITE_ID}
-              />
-            )}
+            <script defer src="https://statistique.ganecloud.fr/script.js" data-website-id="e9526dfa-2a8c-47d6-be8c-7f67b581ef80"></script>
           </Head>
         {children}
       </body>
