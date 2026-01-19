@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -12,9 +12,15 @@ import { LanguageToggle } from '@/components/ui/language-toggle';
 import { useTranslations } from 'next-intl';
 import { TreeNode, TreeOptions, ASCIITreeConfig } from '@/lib/types';
 import { generateASCIITree, sortTreeNodes, updateNodeName, toggleNodeExpansion } from '@/lib/tree-generator';
+import { validateSavedTreeData, validateNodeStructure } from '@/lib/validation';
 import DragDropZone from './drag-drop-zone';
 import { useToast } from '@/hooks/use-toast';
 
+/**
+ * Composant principal pour l'édition et la génération d'arbres ASCII
+ * Permet de créer, modifier, sauvegarder et charger des structures d'arbres de fichiers/dossiers
+ * @returns Le composant TreeGenerator avec toute l'interface d'édition
+ */
 export default function TreeGenerator() {
   const t = useTranslations();
   const { toast } = useToast();
@@ -69,6 +75,11 @@ export default function TreeGenerator() {
   const [draggedNode, setDraggedNode] = useState<string | null>(null);
   const [dragOverNode, setDragOverNode] = useState<string | null>(null);
 
+  /**
+   * Ajoute un nouveau nœud (fichier ou dossier) à l'arbre
+   * @param parentId - ID du parent où ajouter le nœud (null pour la racine)
+   * @param type - Type de nœud à créer ('file' ou 'folder')
+   */
   const addNode = useCallback((parentId: string | null, type: 'file' | 'folder') => {
     const newNode: TreeNode = {
       id: Date.now().toString(),
@@ -101,6 +112,10 @@ export default function TreeGenerator() {
     }
   }, []);
 
+  /**
+   * Supprime récursivement un nœud et tous ses enfants de l'arbre
+   * @param nodeId - ID du nœud à supprimer
+   */
   const deleteNode = useCallback((nodeId: string) => {
     setTreeData(prev => {
       const removeNode = (nodes: TreeNode[]): TreeNode[] => {
@@ -138,11 +153,24 @@ export default function TreeGenerator() {
     setTreeData(prev => toggleNodeExpansion(prev, nodeId));
   }, []);
 
-  const generateASCII = useCallback(() => {
-    const sortedData = options.sortAlphabetically ? sortTreeNodes(treeData) : treeData;
-    return generateASCIITree(sortedData, asciiConfig);
-  }, [treeData, options, asciiConfig]);
+  // Mémorisation du tri des données pour éviter de re-trier à chaque rendu
+  const sortedTreeData = useMemo(() => {
+    return options.sortAlphabetically ? sortTreeNodes(treeData) : treeData;
+  }, [treeData, options.sortAlphabetically]);
 
+  // Mémorisation de la génération ASCII pour éviter de régénérer à chaque rendu
+  const asciiOutput = useMemo(() => {
+    return generateASCIITree(sortedTreeData, asciiConfig);
+  }, [sortedTreeData, asciiConfig]);
+
+  const generateASCII = useCallback(() => {
+    return asciiOutput;
+  }, [asciiOutput]);
+
+  /**
+   * Copie la représentation ASCII de l'arbre dans le presse-papiers
+   * Affiche une notification de succès ou d'erreur
+   */
   const copyToClipboard = useCallback(async () => {
     const asciiTree = generateASCII();
     try {
@@ -160,6 +188,10 @@ export default function TreeGenerator() {
     }
   }, [generateASCII, toast, t]);
 
+  /**
+   * Télécharge la représentation ASCII de l'arbre sous forme de fichier texte
+   * Affiche une notification de succès ou d'erreur
+   */
   const downloadASCII = useCallback(() => {
     try {
       const asciiTree = generateASCII();
@@ -197,6 +229,10 @@ export default function TreeGenerator() {
     });
   }, [toast, t]);
 
+  /**
+   * Sauvegarde l'arbre actuel, ses options et sa configuration dans un fichier JSON
+   * Affiche une notification de succès ou d'erreur
+   */
   const saveTree = useCallback(() => {
     try {
       const treeDataToSave = {
@@ -231,6 +267,11 @@ export default function TreeGenerator() {
     }
   }, [treeData, options, asciiConfig, toast, t]);
 
+  /**
+   * Charge un arbre depuis un fichier JSON avec validation stricte (Zod)
+   * Valide la structure, les types et la cohérence des données
+   * @param event - Événement de changement d'input file
+   */
   const loadTree = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -243,27 +284,36 @@ export default function TreeGenerator() {
           throw new Error('Le fichier est vide');
         }
         
-        const savedData = JSON.parse(content);
+        const parsedData = JSON.parse(content);
         
-        // Validation basique de la structure
-        if (savedData && typeof savedData === 'object') {
-          if (savedData.treeData && Array.isArray(savedData.treeData)) {
-            setTreeData(savedData.treeData);
-          }
-          if (savedData.options && typeof savedData.options === 'object') {
-            setOptions(savedData.options);
-          }
-          if (savedData.asciiConfig && typeof savedData.asciiConfig === 'object') {
-            setAsciiConfig(savedData.asciiConfig);
-          }
-          
-          toast({
-            title: t('errors.loadSuccess'),
-            variant: 'default',
-          });
-        } else {
-          throw new Error('Format de fichier invalide');
+        // Validation stricte avec Zod
+        const validation = validateSavedTreeData(parsedData);
+        
+        if (!validation.success) {
+          throw new Error(validation.error);
         }
+        
+        const { data } = validation;
+        
+        // Validation supplémentaire de la structure (fichiers ne peuvent pas avoir d'enfants)
+        const isValidStructure = data.treeData.every(validateNodeStructure);
+        if (!isValidStructure) {
+          throw new Error('Structure invalide: un fichier ne peut pas avoir d\'enfants');
+        }
+        
+        // Mise à jour des états
+        setTreeData(data.treeData);
+        if (data.options) {
+          setOptions(data.options);
+        }
+        if (data.asciiConfig) {
+          setAsciiConfig(data.asciiConfig);
+        }
+        
+        toast({
+          title: t('errors.loadSuccess'),
+          variant: 'default',
+        });
       } catch (err) {
         toast({
           title: t('errors.loadError'),
@@ -577,8 +627,6 @@ export default function TreeGenerator() {
       </div>
     );
   }, [editingNode, editingName, addNode, deleteNode, startEditing, saveEdit, cancelEdit, toggleExpansion, dragOverNode, draggedNode, moveNode]);
-
-  const asciiOutput = generateASCII();
 
   return (
     <div className="container mx-auto p-6 max-w-7xl">

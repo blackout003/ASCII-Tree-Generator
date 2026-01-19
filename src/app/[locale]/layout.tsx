@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
@@ -7,6 +8,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { SEO_CONFIG, getLocaleMetadata } from '@/lib/seo-config';
 import { Analytics, GoogleTagManagerNoScript } from '@/components/ui/analytics';
 import { Toaster } from '@/components/ui/toaster';
+import { defaultLocale } from '@/i18n/locales';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -97,9 +99,15 @@ export default async function LocaleLayout({
   let messages;
   try {
     messages = (await import(`@/i18n/locales/${locale}.json`)).default;
-  } catch {
-    // Fallback to French messages if locale file doesn't exist
-    messages = (await import('@/i18n/locales/fr.json')).default;
+  } catch (importError) {
+    // Fallback au locale par défaut si le fichier de locale n'existe pas
+    try {
+      messages = (await import(`@/i18n/locales/${defaultLocale}.json`)).default;
+    } catch (fallbackError) {
+      // Si même le fallback échoue, on utilise un objet vide pour éviter de casser l'application
+      console.error('Impossible de charger les traductions:', importError);
+      messages = {};
+    }
   }
 
   return (
@@ -107,7 +115,12 @@ export default async function LocaleLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <script defer src="https://statistique.ganecloud.fr/script.js" data-website-id="e9526dfa-2a8c-47d6-be8c-7f67b581ef80"></script>
+        <Script
+          defer
+          src="https://statistique.ganecloud.fr/script.js"
+          data-website-id="e9526dfa-2a8c-47d6-be8c-7f67b581ef80"
+          strategy="afterInteractive"
+        />
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ThemeProvider
             attribute="class"

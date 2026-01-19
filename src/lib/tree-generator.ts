@@ -1,5 +1,17 @@
 import { TreeNode, ASCIITreeConfig } from './types';
 
+/**
+ * Génère une représentation ASCII d'un arbre de nœuds
+ * @param nodes - Tableau de nœuds racine à convertir en ASCII
+ * @param config - Configuration pour les caractères ASCII (préfixe, connecteurs, etc.)
+ * @returns Représentation ASCII de l'arbre sous forme de chaîne
+ * @example
+ * ```typescript
+ * const tree = [{ id: '1', name: 'root', type: 'folder', children: [...] }];
+ * const ascii = generateASCIITree(tree);
+ * // Retourne: "├── root\n    ├── child1\n    └── child2"
+ * ```
+ */
 export function generateASCIITree(
   nodes: TreeNode[],
   config: ASCIITreeConfig = {
@@ -14,6 +26,14 @@ export function generateASCIITree(
   ).join('\n');
 }
 
+/**
+ * Génère la représentation ASCII récursive d'un nœud et de ses enfants
+ * @param node - Le nœud à convertir
+ * @param prefix - Le préfixe à ajouter (pour l'indentation)
+ * @param isLast - Indique si c'est le dernier nœud au niveau actuel
+ * @param config - Configuration ASCII
+ * @returns Représentation ASCII du nœud et de ses enfants
+ */
 function generateNodeASCII(
   node: TreeNode,
   prefix: string,
@@ -35,6 +55,13 @@ function generateNodeASCII(
   return [currentLine, ...childrenLines].join('\n');
 }
 
+/**
+ * Trie récursivement les nœuds d'un arbre
+ * - Les dossiers sont placés avant les fichiers
+ * - Les éléments sont triés par ordre alphabétique à chaque niveau
+ * @param nodes - Tableau de nœuds à trier
+ * @returns Nouveau tableau de nœuds triés (l'original n'est pas modifié)
+ */
 export function sortTreeNodes(nodes: TreeNode[]): TreeNode[] {
   return nodes.sort((a, b) => {
     // Dossiers en premier
@@ -49,6 +76,11 @@ export function sortTreeNodes(nodes: TreeNode[]): TreeNode[] {
   }));
 }
 
+/**
+ * Aplatit un arbre en un tableau linéaire de tous les nœuds
+ * @param nodes - Tableau de nœuds racine
+ * @returns Tableau plat contenant tous les nœuds de l'arbre
+ */
 export function flattenTree(nodes: TreeNode[]): TreeNode[] {
   const result: TreeNode[] = [];
   
@@ -63,6 +95,12 @@ export function flattenTree(nodes: TreeNode[]): TreeNode[] {
   return result;
 }
 
+/**
+ * Recherche récursive d'un nœud par son ID dans un arbre
+ * @param nodes - Tableau de nœuds racine où chercher
+ * @param id - ID du nœud à trouver
+ * @returns Le nœud trouvé ou null si non trouvé
+ */
 export function findNodeById(nodes: TreeNode[], id: string): TreeNode | null {
   for (const node of nodes) {
     if (node.id === id) return node;
@@ -74,6 +112,13 @@ export function findNodeById(nodes: TreeNode[], id: string): TreeNode | null {
   return null;
 }
 
+/**
+ * Met à jour récursivement le nom d'un nœud dans un arbre
+ * @param nodes - Tableau de nœuds racine
+ * @param id - ID du nœud à mettre à jour
+ * @param newName - Nouveau nom à assigner
+ * @returns Nouveau tableau de nœuds avec le nom mis à jour
+ */
 export function updateNodeName(nodes: TreeNode[], id: string, newName: string): TreeNode[] {
   return nodes.map(node => {
     if (node.id === id) {
@@ -86,6 +131,12 @@ export function updateNodeName(nodes: TreeNode[], id: string, newName: string): 
   });
 }
 
+/**
+ * Bascule récursivement l'état d'expansion d'un nœud dans un arbre
+ * @param nodes - Tableau de nœuds racine
+ * @param id - ID du nœud dont l'expansion doit être basculée
+ * @returns Nouveau tableau de nœuds avec l'état d'expansion mis à jour
+ */
 export function toggleNodeExpansion(nodes: TreeNode[], id: string): TreeNode[] {
   return nodes.map(node => {
     if (node.id === id) {
