@@ -1,12 +1,8 @@
 'use client';
 
 import React, { useState, useCallback, useMemo } from 'react';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-
-import { Folder, File, Plus, Copy, Download, Settings, ChevronDown, ChevronRight, Trash2, Move, Edit3, Save, Upload } from 'lucide-react';
+import { Settings } from 'lucide-react';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { LanguageToggle } from '@/components/ui/language-toggle';
 import { useTranslations } from 'next-intl';
@@ -14,6 +10,10 @@ import { TreeNode, TreeOptions, ASCIITreeConfig } from '@/lib/types';
 import { generateASCIITree, sortTreeNodes, updateNodeName, toggleNodeExpansion } from '@/lib/tree-generator';
 import { validateSavedTreeData, validateNodeStructure } from '@/lib/validation';
 import DragDropZone from './drag-drop-zone';
+import { TreeView } from './tree-view';
+import { TreeControls } from './tree-controls';
+import { ASCIIPreview } from './ascii-preview';
+import { TreeOptionsPanel } from './tree-options-panel';
 import { useToast } from '@/hooks/use-toast';
 
 /**
@@ -337,6 +337,11 @@ export default function TreeGenerator() {
     event.target.value = '';
   }, [toast, t]);
 
+  /**
+   * Déplace un nœud dans l'arbre vers une nouvelle position parente
+   * @param nodeId - ID du nœud à déplacer
+   * @param newParentId - ID du nouveau parent (null pour la racine)
+   */
   const moveNode = useCallback((nodeId: string, newParentId: string | null) => {
     setTreeData(prev => {
       // Fonction helper pour trouver un nœud par son ID
@@ -435,198 +440,29 @@ export default function TreeGenerator() {
     });
   }, []);
 
-  const renderNode = useCallback((node: TreeNode, depth: number = 0) => {
-    const isEditing = editingNode === node.id;
-    const hasChildren = node.children && node.children.length > 0;
-    const canExpand = node.type === 'folder' && hasChildren;
-    const isDragging = draggedNode === node.id;
-    const isDragOver = dragOverNode === node.id;
+  // Handlers pour TreeView
+  const handleDragStart = useCallback((nodeId: string) => {
+    setDraggedNode(nodeId);
+  }, []);
 
-    return (
-      <div key={node.id} className="select-none">
-        <div 
-          className={`flex items-center gap-2 py-1 px-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ${
-            isEditing ? 'bg-blue-50 dark:bg-blue-900/20' : ''
-          } ${
-            isDragging ? 'opacity-50' : ''
-          } ${
-            isDragOver && node.type === 'folder' ? 'bg-green-100 dark:bg-green-900/20 border-2 border-green-500 ring-2 ring-green-300' : ''
-          } ${
-            isDragOver && node.type === 'file' ? 'bg-red-100 dark:bg-red-900/20 border-2 border-red-500' : ''
-          }`}
-          style={{ paddingLeft: `${depth * 20 + 8}px` }}
-          draggable
-          onDragStart={(e) => {
-            setDraggedNode(node.id);
-            e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text/plain', node.id);
-          }}
-          onDragEnd={() => {
-            setTimeout(() => {
-              setDraggedNode(null);
-              setDragOverNode(null);
-            }, 100);
-          }}
-          onDragOver={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            // Ne permettre le drag over que si la cible est un dossier
-            if (draggedNode && draggedNode !== node.id && node.type === 'folder') {
-              setDragOverNode(node.id);
-            }
-          }}
-          onDragLeave={(e) => {
-            e.preventDefault();
-            // Vérifier si on quitte vraiment l'élément
-            if (!e.currentTarget.contains(e.relatedTarget as Node)) {
-              setDragOverNode(null);
-            }
-          }}
-          onDrop={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            const droppedNodeId = e.dataTransfer.getData('text/plain');
-            
-            // Ne permettre le drop que si la cible est un dossier
-            if (droppedNodeId && droppedNodeId !== node.id && node.type === 'folder') {
-              moveNode(droppedNodeId, node.id);
-              setDraggedNode(null);
-              setDragOverNode(null);
-            }
-          }}
-        >
-          {canExpand && (
-            <button
-              onClick={() => toggleExpansion(node.id)}
-              className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded"
-            >
-              {node.isExpanded ? (
-                <ChevronDown className="w-4 h-4" />
-              ) : (
-                <ChevronRight className="w-4 h-4" />
-              )}
-            </button>
-          )}
-          
-          {node.type === 'folder' ? (
-            <Folder className="w-4 h-4 text-blue-500" />
-          ) : (
-            <File className="w-4 h-4 text-gray-500" />
-          )}
+  const handleDragEnd = useCallback(() => {
+    setDraggedNode(null);
+    setDragOverNode(null);
+  }, []);
 
-          {isEditing ? (
-            <div className="flex items-center gap-2 flex-1">
-              <Input
-                value={editingName}
-                onChange={(e) => setEditingName(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') saveEdit();
-                  if (e.key === 'Escape') cancelEdit();
-                }}
-                className="h-6 text-sm"
-                autoFocus
-              />
-              <Button size="sm" onClick={saveEdit} className="h-6 px-2">
-                ✓
-              </Button>
-              <Button size="sm" variant="outline" onClick={cancelEdit} className="h-6 px-2">
-                ✕
-              </Button>
-            </div>
-          ) : (
-            <div className="flex items-center gap-2 flex-1">
-              <span 
-                className="flex-1 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400"
-                onDoubleClick={() => startEditing(node)}
-              >
-                {node.name}
-              </span>
-              
-                                            <div className="flex items-center gap-1">
-                 <Button
-                   size="sm"
-                   variant="ghost"
-                   onClick={() => addNode(node.id, 'folder')}
-                   className={`h-6 w-6 p-0 ${node.type === 'file' ? 'opacity-50 cursor-not-allowed' : ''}`}
-                   title={node.type === 'file' ? 'Impossible d\'ajouter un dossier dans un fichier' : 'Ajouter un dossier'}
-                   disabled={node.type === 'file'}
-                 >
-                   <Folder className="w-3 h-3" />
-                 </Button>
-                 <Button
-                   size="sm"
-                   variant="ghost"
-                   onClick={() => addNode(node.id, 'file')}
-                   className={`h-6 w-6 p-0 ${node.type === 'file' ? 'opacity-50 cursor-not-allowed' : ''}`}
-                   title={node.type === 'file' ? t('treeEditor.cannotAddFileToFile') : t('treeEditor.addFile')}
-                   disabled={node.type === 'file'}
-                 >
-                   <File className="w-3 h-3" />
-                 </Button>
-                 <Button
-                   size="sm"
-                   variant="ghost"
-                   className="h-6 w-6 p-0 cursor-move"
-                   title="Déplacer (glisser-déposer)"
-                 >
-                   <Move className="w-3 h-3" />
-                 </Button>
-                 <Button
-                   size="sm"
-                   variant="ghost"
-                   onClick={() => startEditing(node)}
-                   className="h-6 w-6 p-0 text-blue-500 hover:text-blue-700"
-                   title="Modifier le nom"
-                 >
-                   <Edit3 className="w-3 h-3" />
-                 </Button>
-                 <Button
-                   size="sm"
-                   variant="ghost"
-                   onClick={() => deleteNode(node.id)}
-                   className="h-6 w-6 p-0 text-red-500 hover:text-red-700"
-                   title="Supprimer"
-                 >
-                   <Trash2 className="w-3 h-3" />
-                 </Button>
-               </div>
-            </div>
-          )}
-        </div>
+  const handleDragOver = useCallback((nodeId: string) => {
+    setDragOverNode(nodeId);
+  }, []);
 
-        {node.isExpanded && node.children && (
-          <div className="group">
-            {node.children.map(child => renderNode(child, depth + 1))}
-          </div>
-        )}
-        
-        {/* Zone de drop pour les dossiers */}
-        {node.type === 'folder' && isDragOver && (
-          <div 
-            className="border-2 border-dashed border-green-500 bg-green-50 dark:bg-green-900/20 rounded p-2 mt-1 text-center text-sm text-green-600 dark:text-green-400"
-            style={{ paddingLeft: `${(depth + 1) * 20 + 8}px` }}
-            onDrop={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              const droppedNodeId = e.dataTransfer.getData('text/plain');
-              
-              if (droppedNodeId && droppedNodeId !== node.id) {
-                moveNode(droppedNodeId, node.id);
-                setDraggedNode(null);
-                setDragOverNode(null);
-              }
-            }}
-            onDragOver={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-            }}
-          >
-            Déposer ici pour ajouter au dossier &quot;{node.name}&quot;
-          </div>
-        )}
-      </div>
-    );
-  }, [editingNode, editingName, addNode, deleteNode, startEditing, saveEdit, cancelEdit, toggleExpansion, dragOverNode, draggedNode, moveNode]);
+  const handleDragLeave = useCallback(() => {
+    setDragOverNode(null);
+  }, []);
+
+  const handleDrop = useCallback((nodeId: string, droppedNodeId: string) => {
+    moveNode(droppedNodeId, nodeId);
+    setDraggedNode(null);
+    setDragOverNode(null);
+  }, [moveNode]);
 
   return (
     <div className="container mx-auto p-6 max-w-7xl">
@@ -656,46 +492,14 @@ export default function TreeGenerator() {
               </CardDescription>
             </CardHeader>
           <CardContent>
-            <div className="mb-4 flex gap-2 flex-wrap">
-              <div className="flex gap-2">
-                <Button onClick={() => addNode(null, 'folder')} size="sm">
-                  <Plus className="w-4 h-4 mr-1" />
-                  {t('treeEditor.newFolder')}
-                </Button>
-                <Button onClick={() => addNode(null, 'file')} size="sm" variant="outline">
-                  <Plus className="w-4 h-4 mr-1" />
-                  {t('treeEditor.newFile')}
-                </Button>
-              </div>
-              
-              <div className="flex gap-2">
-                <Button onClick={saveTree} size="sm" variant="outline">
-                  <Save className="w-4 h-4 mr-1" />
-                  {t('treeEditor.save')}
-                </Button>
-                <Button 
-                  onClick={() => document.getElementById('load-tree-input')?.click()} 
-                  size="sm" 
-                  variant="outline"
-                >
-                  <Upload className="w-4 h-4 mr-1" />
-                  {t('treeEditor.load')}
-                </Button>
-              </div>
-              
-              <Button onClick={clearTree} size="sm" variant="destructive">
-                <Trash2 className="w-4 h-4 mr-1" />
-                {t('treeEditor.clearAll')}
-              </Button>
-              
-              <input
-                id="load-tree-input"
-                type="file"
-                accept=".json"
-                onChange={loadTree}
-                className="hidden"
-              />
-            </div>
+            <TreeControls
+              onAddFolder={() => addNode(null, 'folder')}
+              onAddFile={() => addNode(null, 'file')}
+              onSave={saveTree}
+              onLoad={() => document.getElementById('load-tree-input')?.click()}
+              onClear={clearTree}
+              onLoadFileChange={loadTree}
+            />
             
             <div 
               className="border rounded-lg p-4 min-h-[400px] max-h-[600px] overflow-y-auto"
@@ -708,128 +512,69 @@ export default function TreeGenerator() {
               }}
               onDragLeave={(e) => {
                 e.preventDefault();
-                // Vérifier si on quitte vraiment la zone
                 if (!e.currentTarget.contains(e.relatedTarget as Node)) {
                   setDragOverNode(null);
                 }
               }}
-                          onDrop={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              const droppedNodeId = e.dataTransfer.getData('text/plain');
-              
-              if (droppedNodeId) {
-                moveNode(droppedNodeId, null);
-                setDraggedNode(null);
-                setDragOverNode(null);
-              }
-            }}
+              onDrop={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const droppedNodeId = e.dataTransfer.getData('text/plain');
+                
+                if (droppedNodeId) {
+                  moveNode(droppedNodeId, null);
+                  setDraggedNode(null);
+                  setDragOverNode(null);
+                }
+              }}
             >
-              <div className="group">
-                {treeData.map(node => renderNode(node))}
-                {dragOverNode === 'root' && (
-                  <div className="border-2 border-dashed border-green-500 bg-green-50 dark:bg-green-900/20 rounded p-2 mt-2 text-center text-sm text-green-600 dark:text-green-400">
-                    {t('treeEditor.dropToRoot')}
-                  </div>
-                )}
-              </div>
+              <TreeView
+                treeData={treeData}
+                editingNode={editingNode}
+                editingName={editingName}
+                draggedNode={draggedNode}
+                dragOverNode={dragOverNode}
+                onEditName={setEditingName}
+                onStartEdit={startEditing}
+                onSaveEdit={saveEdit}
+                onCancelEdit={cancelEdit}
+                onToggleExpansion={toggleExpansion}
+                onAddNode={addNode}
+                onDeleteNode={deleteNode}
+                onMoveNode={moveNode}
+                onDragStart={handleDragStart}
+                onDragEnd={handleDragEnd}
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDrop}
+              />
+              {dragOverNode === 'root' && (
+                <div className="border-2 border-dashed border-green-500 bg-green-50 dark:bg-green-900/20 rounded p-2 mt-2 text-center text-sm text-green-600 dark:text-green-400">
+                  {t('treeEditor.dropToRoot')}
+                </div>
+              )}
             </div>
           </CardContent>
         </Card>
 
         {/* Zone de prévisualisation ASCII */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <File className="w-5 h-5" />
-              {t('asciiPreview.title')}
-            </CardTitle>
-            <CardDescription>
-              {t('asciiPreview.description')}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="mb-4 flex gap-2">
-              <Button onClick={copyToClipboard} size="sm">
-                <Copy className="w-4 h-4 mr-1" />
-                {t('asciiPreview.copy')}
-              </Button>
-              <Button onClick={downloadASCII} size="sm" variant="outline">
-                <Download className="w-4 h-4 mr-1" />
-                {t('asciiPreview.download')}
-              </Button>
-            </div>
-            
-            <Textarea
-              value={asciiOutput}
-              readOnly
-              className="font-mono text-sm min-h-[400px] resize-none"
-              placeholder={t('asciiPreview.placeholder')}
-            />
-          </CardContent>
-        </Card>
+        <ASCIIPreview
+          asciiOutput={asciiOutput}
+          onCopy={copyToClipboard}
+          onDownload={downloadASCII}
+        />
       </div>
 
       {/* Zone de drag & drop */}
-       <div className="mt-6">
-         <DragDropZone onFilesAdded={handleFilesAdded} />
-       </div>
+      <div className="mt-6">
+        <DragDropZone onFilesAdded={handleFilesAdded} />
+      </div>
 
-       {/* Options de configuration */}
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle>{t('options.title')}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                id="sortAlphabetically"
-                checked={options.sortAlphabetically}
-                onChange={(e) => setOptions(prev => ({ ...prev, sortAlphabetically: e.target.checked }))}
-                className="rounded"
-              />
-              <label htmlFor="sortAlphabetically">{t('options.sortAlphabetically')}</label>
-            </div>
-            
-            <div className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                id="showHidden"
-                checked={options.showHidden}
-                onChange={(e) => setOptions(prev => ({ ...prev, showHidden: e.target.checked }))}
-                className="rounded"
-              />
-              <label htmlFor="showHidden">{t('options.showHidden')}</label>
-            </div>
-            
-            <div className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                id="includeExtensions"
-                checked={options.includeExtensions}
-                onChange={(e) => setOptions(prev => ({ ...prev, includeExtensions: e.target.checked }))}
-                className="rounded"
-              />
-              <label htmlFor="includeExtensions">{t('options.includeExtensions')}</label>
-            </div>
-            
-            <div className="flex items-center space-x-2">
-              <label htmlFor="maxDepth">{t('options.maxDepth')}</label>
-              <Input
-                id="maxDepth"
-                type="number"
-                min="1"
-                max="20"
-                value={options.maxDepth}
-                onChange={(e) => setOptions(prev => ({ ...prev, maxDepth: parseInt(e.target.value) }))}
-                className="w-20"
-              />
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      {/* Options de configuration */}
+      <TreeOptionsPanel
+        options={options}
+        onOptionsChange={setOptions}
+      />
     </div>
   );
 }
