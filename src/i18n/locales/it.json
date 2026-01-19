@@ -15,6 +15,7 @@
     "editName": "Modifica nome",
     "delete": "Elimina",
     "cannotAddFolderToFile": "Impossibile aggiungere una cartella a un file",
+    "cannotAddFileToFile": "Impossibile aggiungere un file a un file",
     "dropToRoot": "Rilascia qui per spostare alla radice",
     "dropInFolder": "Rilascia qui per aggiungere alla cartella \"{name}\""
   },

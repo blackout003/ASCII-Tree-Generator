@@ -225,6 +225,29 @@ export default function TreeGenerator() {
 
   const moveNode = useCallback((nodeId: string, newParentId: string | null) => {
     setTreeData(prev => {
+      // Fonction helper pour trouver un nœud par son ID
+      const findNodeById = (nodes: TreeNode[], id: string): TreeNode | null => {
+        for (const node of nodes) {
+          if (node.id === id) {
+            return node;
+          }
+          if (node.children) {
+            const found = findNodeById(node.children, id);
+            if (found) return found;
+          }
+        }
+        return null;
+      };
+
+      // Vérifier si le nouveau parent est un dossier (pas un fichier)
+      if (newParentId !== null) {
+        const newParent = findNodeById(prev, newParentId);
+        if (!newParent || newParent.type !== 'folder') {
+          // Ne pas permettre de déplacer dans un fichier
+          return prev;
+        }
+      }
+
       // Vérifier si on essaie de déplacer un nœud dans ses propres enfants
       const isDescendant = (parentId: string, childId: string, nodes: TreeNode[]): boolean => {
         for (const node of nodes) {
@@ -313,7 +336,9 @@ export default function TreeGenerator() {
           } ${
             isDragging ? 'opacity-50' : ''
           } ${
-            isDragOver ? 'bg-green-100 dark:bg-green-900/20 border-2 border-green-500 ring-2 ring-green-300' : ''
+            isDragOver && node.type === 'folder' ? 'bg-green-100 dark:bg-green-900/20 border-2 border-green-500 ring-2 ring-green-300' : ''
+          } ${
+            isDragOver && node.type === 'file' ? 'bg-red-100 dark:bg-red-900/20 border-2 border-red-500' : ''
           }`}
           style={{ paddingLeft: `${depth * 20 + 8}px` }}
           draggable
@@ -331,7 +356,8 @@ export default function TreeGenerator() {
           onDragOver={(e) => {
             e.preventDefault();
             e.stopPropagation();
-            if (draggedNode && draggedNode !== node.id) {
+            // Ne permettre le drag over que si la cible est un dossier
+            if (draggedNode && draggedNode !== node.id && node.type === 'folder') {
               setDragOverNode(node.id);
             }
           }}
@@ -347,7 +373,8 @@ export default function TreeGenerator() {
             e.stopPropagation();
             const droppedNodeId = e.dataTransfer.getData('text/plain');
             
-            if (droppedNodeId && droppedNodeId !== node.id) {
+            // Ne permettre le drop que si la cible est un dossier
+            if (droppedNodeId && droppedNodeId !== node.id && node.type === 'folder') {
               moveNode(droppedNodeId, node.id);
               setDraggedNode(null);
               setDragOverNode(null);
@@ -416,8 +443,9 @@ export default function TreeGenerator() {
                    size="sm"
                    variant="ghost"
                    onClick={() => addNode(node.id, 'file')}
-                   className="h-6 w-6 p-0"
-                   title="Ajouter un fichier"
+                   className={`h-6 w-6 p-0 ${node.type === 'file' ? 'opacity-50 cursor-not-allowed' : ''}`}
+                   title={node.type === 'file' ? t('treeEditor.cannotAddFileToFile') : t('treeEditor.addFile')}
+                   disabled={node.type === 'file'}
                  >
                    <File className="w-3 h-3" />
                  </Button>

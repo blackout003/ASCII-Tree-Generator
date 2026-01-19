@@ -15,6 +15,7 @@
     "editName": "Modifier le nom",
     "delete": "Supprimer",
     "cannotAddFolderToFile": "Impossible d'ajouter un dossier dans un fichier",
+    "cannotAddFileToFile": "Impossible d'ajouter un fichier dans un fichier",
     "dropToRoot": "Déposer ici pour déplacer à la racine",
     "dropInFolder": "Déposer ici pour ajouter au dossier \"{name}\""
   },

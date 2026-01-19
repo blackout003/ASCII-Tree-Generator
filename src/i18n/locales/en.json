@@ -15,6 +15,7 @@
     "editName": "Edit name",
     "delete": "Delete",
     "cannotAddFolderToFile": "Cannot add folder to file",
+    "cannotAddFileToFile": "Cannot add file to file",
     "dropToRoot": "Drop here to move to root",
     "dropInFolder": "Drop here to add to folder \"{name}\""
   },

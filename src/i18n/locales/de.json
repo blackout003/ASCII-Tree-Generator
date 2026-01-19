@@ -15,6 +15,7 @@
     "editName": "Namen bearbeiten",
     "delete": "Löschen",
     "cannotAddFolderToFile": "Ordner kann nicht zu Datei hinzugefügt werden",
+    "cannotAddFileToFile": "Datei kann nicht zu Datei hinzugefügt werden",
     "dropToRoot": "Hier ablegen, um zur Wurzel zu verschieben",
     "dropInFolder": "Hier ablegen, um zum Ordner \"{name}\" hinzuzufügen"
   },
