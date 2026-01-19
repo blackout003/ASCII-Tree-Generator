@@ -3,9 +3,18 @@
 import React, { useState, useCallback } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { Upload, Folder, File, X } from 'lucide-react';
 import { TreeNode } from '@/lib/types';
 import { useTranslations } from 'next-intl';
+import { flattenTree } from '@/lib/tree-generator';
 
 interface DragDropZoneProps {
   onFilesAdded: (nodes: TreeNode[]) => void;
@@ -15,6 +24,8 @@ export default function DragDropZone({ onFilesAdded }: DragDropZoneProps) {
   const t = useTranslations();
   const [isDragOver, setIsDragOver] = useState(false);
   const [droppedItems, setDroppedItems] = useState<TreeNode[]>([]);
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false);
+  const [pendingNodes, setPendingNodes] = useState<TreeNode[]>([]);
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -83,10 +94,10 @@ export default function DragDropZone({ onFilesAdded }: DragDropZoneProps) {
     });
 
     if (newNodes.length > 0) {
-      setDroppedItems(newNodes);
-      onFilesAdded(newNodes);
+      setPendingNodes(newNodes);
+      setShowConfirmDialog(true);
     }
-  }, [onFilesAdded]);
+  }, []);
 
   const handleFileInput = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
@@ -134,13 +145,33 @@ export default function DragDropZone({ onFilesAdded }: DragDropZoneProps) {
     });
 
     if (newNodes.length > 0) {
-      setDroppedItems(newNodes);
-      onFilesAdded(newNodes);
+      setPendingNodes(newNodes);
+      setShowConfirmDialog(true);
     }
-  }, [onFilesAdded]);
+  }, []);
 
   const clearDroppedItems = useCallback(() => {
     setDroppedItems([]);
+  }, []);
+
+  /**
+   * Confirme et ajoute les fichiers/dossiers à l'arbre
+   */
+  const confirmAddFiles = useCallback(() => {
+    if (pendingNodes.length > 0) {
+      setDroppedItems(pendingNodes);
+      onFilesAdded(pendingNodes);
+      setShowConfirmDialog(false);
+      setPendingNodes([]);
+    }
+  }, [pendingNodes, onFilesAdded]);
+
+  /**
+   * Annule l'ajout des fichiers/dossiers
+   */
+  const cancelAddFiles = useCallback(() => {
+    setShowConfirmDialog(false);
+    setPendingNodes([]);
   }, []);
 
   return (
@@ -233,6 +264,52 @@ export default function DragDropZone({ onFilesAdded }: DragDropZoneProps) {
           </div>
         )}
       </CardContent>
+
+      {/* Modal de confirmation pour l'ajout de fichiers/dossiers */}
+      <Dialog open={showConfirmDialog} onOpenChange={setShowConfirmDialog}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t('dragDrop.confirmTitle')}</DialogTitle>
+            <DialogDescription>
+              {t('dragDrop.confirmDescription', { 
+                count: flattenTree(pendingNodes).length 
+              })}
+            </DialogDescription>
+          </DialogHeader>
+          {pendingNodes.length > 0 && (
+            <div className="max-h-[200px] overflow-y-auto space-y-1 py-2">
+              {pendingNodes.slice(0, 5).map((item, index) => (
+                <div key={index} className="flex items-center gap-2 text-sm">
+                  {item.type === 'folder' ? (
+                    <Folder className="w-4 h-4 text-blue-500" />
+                  ) : (
+                    <File className="w-4 h-4 text-gray-500" />
+                  )}
+                  <span>{item.name}</span>
+                </div>
+              ))}
+              {pendingNodes.length > 5 && (
+                <p className="text-sm text-muted-foreground">
+                  {t('dragDrop.andMore', { count: pendingNodes.length - 5 })}
+                </p>
+              )}
+            </div>
+          )}
+          <DialogFooter>
+            <Button
+              variant="outline"
+              onClick={cancelAddFiles}
+            >
+              {t('errors.cancel')}
+            </Button>
+            <Button
+              onClick={confirmAddFiles}
+            >
+              {t('errors.confirm')}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </Card>
   );
 }

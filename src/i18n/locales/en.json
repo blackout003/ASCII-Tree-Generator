@@ -34,7 +34,10 @@
     "selectFiles": "Select files",
     "selectFolder": "Select folder",
     "importedItems": "Imported items:",
-    "items": "items"
+    "items": "items",
+    "confirmTitle": "Confirm adding files",
+    "confirmDescription": "Do you want to add {count} item(s) to the tree?",
+    "andMore": "and {count} more..."
   },
   "options": {
     "title": "Configuration Options",
@@ -63,7 +66,13 @@
     "saveError": "Error saving the file.",
     "saveSuccess": "Tree saved successfully!",
     "loadSuccess": "Tree loaded successfully!",
-    "clearSuccess": "Tree cleared successfully!"
+    "clearSuccess": "Tree cleared successfully!",
+    "clearConfirmTitle": "Confirm deletion",
+    "clearConfirmDescription": "All data will be permanently deleted. This action is irreversible.",
+    "loadConfirmTitle": "Confirm loading",
+    "loadConfirmDescription": "Current data will be overwritten by the loaded file. This action is irreversible.",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   },
   "seoContent": {
     "title": "ASCII File Tree Generator",

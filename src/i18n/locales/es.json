@@ -34,7 +34,10 @@
     "selectFiles": "Seleccionar archivos",
     "selectFolder": "Seleccionar carpeta",
     "importedItems": "Elementos importados:",
-    "items": "elementos"
+    "items": "elementos",
+    "confirmTitle": "Confirmar adición de archivos",
+    "confirmDescription": "¿Quieres agregar {count} elemento(s) al árbol?",
+    "andMore": "y {count} más..."
   },
   "options": {
     "title": "Opciones de Configuración",
@@ -63,7 +66,13 @@
     "saveError": "Error al guardar el archivo.",
     "saveSuccess": "¡Árbol guardado con éxito!",
     "loadSuccess": "¡Árbol cargado con éxito!",
-    "clearSuccess": "¡Árbol borrado con éxito!"
+    "clearSuccess": "¡Árbol borrado con éxito!",
+    "clearConfirmTitle": "Confirmar eliminación",
+    "clearConfirmDescription": "Todos los datos serán eliminados permanentemente. Esta acción es irreversible.",
+    "loadConfirmTitle": "Confirmar carga",
+    "loadConfirmDescription": "Los datos actuales serán sobrescritos por el archivo cargado. Esta acción es irreversible.",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar"
   },
   "seoContent": {
     "title": "Generador de Árbol de Archivos ASCII",

@@ -34,7 +34,10 @@
     "selectFiles": "Dateien auswählen",
     "selectFolder": "Ordner auswählen",
     "importedItems": "Importierte Elemente:",
-    "items": "Elemente"
+    "items": "Elemente",
+    "confirmTitle": "Dateien hinzufügen bestätigen",
+    "confirmDescription": "Möchtest du {count} Element(e) zum Baum hinzufügen?",
+    "andMore": "und {count} weitere..."
   },
   "options": {
     "title": "Konfigurationsoptionen",
@@ -63,7 +66,13 @@
     "saveError": "Fehler beim Speichern der Datei.",
     "saveSuccess": "Baum erfolgreich gespeichert!",
     "loadSuccess": "Baum erfolgreich geladen!",
-    "clearSuccess": "Baum erfolgreich gelöscht!"
+    "clearSuccess": "Baum erfolgreich gelöscht!",
+    "clearConfirmTitle": "Löschung bestätigen",
+    "clearConfirmDescription": "Alle Daten werden dauerhaft gelöscht. Diese Aktion ist irreversibel.",
+    "loadConfirmTitle": "Laden bestätigen",
+    "loadConfirmDescription": "Die aktuellen Daten werden durch die geladene Datei überschrieben. Diese Aktion ist irreversibel.",
+    "confirm": "Bestätigen",
+    "cancel": "Abbrechen"
   },
   "seoContent": {
     "title": "ASCII-Dateibaum-Generator",

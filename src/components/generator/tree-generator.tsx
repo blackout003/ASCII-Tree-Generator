@@ -2,6 +2,15 @@
 
 import React, { useState, useCallback, useMemo } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { Settings } from 'lucide-react';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { LanguageToggle } from '@/components/ui/language-toggle';
@@ -74,6 +83,11 @@ export default function TreeGenerator() {
   const [editingName, setEditingName] = useState('');
   const [draggedNode, setDraggedNode] = useState<string | null>(null);
   const [dragOverNode, setDragOverNode] = useState<string | null>(null);
+  
+  // États pour les modals de confirmation
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
+  const [showLoadConfirm, setShowLoadConfirm] = useState(false);
+  const [pendingFile, setPendingFile] = useState<File | null>(null);
 
   /**
    * Ajoute un nouveau nœud (fichier ou dossier) à l'arbre
@@ -221,8 +235,19 @@ export default function TreeGenerator() {
     setTreeData(prev => [...prev, ...newNodes]);
   }, []);
 
+  /**
+   * Ouvre le modal de confirmation pour effacer tout l'arbre
+   */
   const clearTree = useCallback(() => {
+    setShowClearConfirm(true);
+  }, []);
+
+  /**
+   * Confirme et exécute l'effacement de l'arbre
+   */
+  const confirmClearTree = useCallback(() => {
     setTreeData([]);
+    setShowClearConfirm(false);
     toast({
       title: t('errors.clearSuccess'),
       variant: 'default',
@@ -268,14 +293,10 @@ export default function TreeGenerator() {
   }, [treeData, options, asciiConfig, toast, t]);
 
   /**
-   * Charge un arbre depuis un fichier JSON avec validation stricte (Zod)
-   * Valide la structure, les types et la cohérence des données
-   * @param event - Événement de changement d'input file
+   * Charge réellement un fichier JSON dans l'arbre
+   * @param file - Le fichier à charger
    */
-  const loadTree = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-
+  const performLoadTree = useCallback((file: File) => {
     const reader = new FileReader();
     reader.onload = (e) => {
       try {
@@ -332,10 +353,34 @@ export default function TreeGenerator() {
     };
     
     reader.readAsText(file);
-    
+  }, [toast, t]);
+
+  /**
+   * Ouvre le modal de confirmation pour charger un fichier JSON
+   * @param event - Événement de changement d'input file
+   */
+  const loadTree = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
     // Réinitialiser l'input pour permettre de charger le même fichier
     event.target.value = '';
-  }, [toast, t]);
+
+    // Stocker le fichier et ouvrir le modal de confirmation
+    setPendingFile(file);
+    setShowLoadConfirm(true);
+  }, []);
+
+  /**
+   * Confirme et exécute le chargement du fichier
+   */
+  const confirmLoadTree = useCallback(() => {
+    if (pendingFile) {
+      performLoadTree(pendingFile);
+      setPendingFile(null);
+      setShowLoadConfirm(false);
+    }
+  }, [pendingFile, performLoadTree]);
 
   /**
    * Déplace un nœud dans l'arbre vers une nouvelle position parente
@@ -575,6 +620,61 @@ export default function TreeGenerator() {
         options={options}
         onOptionsChange={setOptions}
       />
+
+      {/* Modal de confirmation pour effacer tout */}
+      <Dialog open={showClearConfirm} onOpenChange={setShowClearConfirm}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t('errors.clearConfirmTitle')}</DialogTitle>
+            <DialogDescription>
+              {t('errors.clearConfirmDescription')}
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button
+              variant="outline"
+              onClick={() => setShowClearConfirm(false)}
+            >
+              {t('errors.cancel')}
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={confirmClearTree}
+            >
+              {t('errors.confirm')}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Modal de confirmation pour charger un fichier */}
+      <Dialog open={showLoadConfirm} onOpenChange={setShowLoadConfirm}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t('errors.loadConfirmTitle')}</DialogTitle>
+            <DialogDescription>
+              {t('errors.loadConfirmDescription')}
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <Button
+              variant="outline"
+              onClick={() => {
+                setShowLoadConfirm(false);
+                setPendingFile(null);
+              }}
+            >
+              {t('errors.cancel')}
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={confirmLoadTree}
+            >
+              {t('errors.confirm')}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

@@ -34,7 +34,10 @@
     "selectFiles": "Sélectionner des fichiers",
     "selectFolder": "Sélectionner un dossier",
     "importedItems": "Éléments importés :",
-    "items": "éléments"
+    "items": "éléments",
+    "confirmTitle": "Confirmer l'ajout de fichiers",
+    "confirmDescription": "Voulez-vous ajouter {count} élément(s) à l'arbre ?",
+    "andMore": "et {count} autre(s)..."
   },
   "options": {
     "title": "Options de Configuration",
@@ -63,7 +66,13 @@
     "saveError": "Erreur lors de la sauvegarde du fichier.",
     "saveSuccess": "Arbre sauvegardé avec succès !",
     "loadSuccess": "Arbre chargé avec succès !",
-    "clearSuccess": "Arbre effacé avec succès !"
+    "clearSuccess": "Arbre effacé avec succès !",
+    "clearConfirmTitle": "Confirmer l'effacement",
+    "clearConfirmDescription": "Toutes les données seront définitivement supprimées. Cette action est irréversible.",
+    "loadConfirmTitle": "Confirmer le chargement",
+    "loadConfirmDescription": "Les données actuelles seront écrasées par le fichier chargé. Cette action est irréversible.",
+    "confirm": "Confirmer",
+    "cancel": "Annuler"
   },
   "seoContent": {
     "title": "Générateur d'Arborescence de Fichiers ASCII",
