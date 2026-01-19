@@ -9,7 +9,7 @@ export const TreeNodeSchema: z.ZodType<TreeNode> = z.lazy(() =>
     id: z.string().min(1, 'ID requis'),
     name: z.string().min(1, 'Nom requis'),
     type: z.enum(['file', 'folder'], {
-      errorMap: () => ({ message: 'Type doit être "file" ou "folder"' }),
+      message: 'Type doit être "file" ou "folder"',
     }),
     children: z
       .array(TreeNodeSchema)
@@ -69,7 +69,7 @@ export function validateTreeData(data: unknown):
     return { success: true, data: parsed };
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const messages = error.errors.map((e) => `${e.path.join('.')}: ${e.message}`).join(', ');
+      const messages = error.issues.map((e) => `${e.path.join('.')}: ${e.message}`).join(', ');
       return { success: false, error: `Erreur de validation: ${messages}` };
     }
     return { success: false, error: error instanceof Error ? error.message : 'Erreur de validation inconnue' };
@@ -89,7 +89,7 @@ export function validateSavedTreeData(data: unknown):
     return { success: true, data: parsed };
   } catch (error) {
     if (error instanceof z.ZodError) {
-      const messages = error.errors.map((e) => `${e.path.join('.')}: ${e.message}`).join(', ');
+      const messages = error.issues.map((e) => `${e.path.join('.')}: ${e.message}`).join(', ');
       return { success: false, error: `Erreur de validation: ${messages}` };
     }
     return { success: false, error: error instanceof Error ? error.message : 'Erreur de validation inconnue' };
