@@ -87,15 +87,15 @@ export default function DonneesPersonnelles() {
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>
-                <span>Fournir le service de génération d'arbres ASCII</span>
+                <span>Fournir le service de génération d&apos;arbres ASCII</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>
-                <span>Améliorer l'expérience utilisateur</span>
+                <span>Améliorer l&apos;expérience utilisateur</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>
-                <span>Analyser l'utilisation du site (anonymisé)</span>
+                <span>Analyser l&apos;utilisation du site (anonymisé)</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>
@@ -111,7 +111,7 @@ export default function DonneesPersonnelles() {
           </CardHeader>
           <CardContent>
             <p>
-              Le traitement de vos données est fondé sur l'intérêt légitime d'EmilienG.fr 
+              Le traitement de vos données est fondé sur l&apos;intérêt légitime d&apos;EmilienG.fr 
               à fournir et améliorer ses services, ainsi que sur votre consentement 
               pour les cookies non essentiels.
             </p>
@@ -164,7 +164,7 @@ export default function DonneesPersonnelles() {
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>
-                <span><strong>Droit d'accès :</strong> Connaître les données vous concernant</span>
+                <span><strong>Droit d&apos;accès :</strong> Connaître les données vous concernant</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>
@@ -172,11 +172,11 @@ export default function DonneesPersonnelles() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>
-                <span><strong>Droit d'effacement :</strong> Supprimer vos données</span>
+                <span><strong>Droit d&apos;effacement :</strong> Supprimer vos données</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>
-                <span><strong>Droit d'opposition :</strong> Vous opposer au traitement</span>
+                <span><strong>Droit d&apos;opposition :</strong> Vous opposer au traitement</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary">•</span>

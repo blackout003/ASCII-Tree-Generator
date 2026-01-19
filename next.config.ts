@@ -120,11 +120,6 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
-  
-  // Configuration ESLint
-  eslint: {
-    ignoreDuringBuilds: true, // Temporairement désactivé pour les analytics
-  },
 };
 
 export default withNextIntl(nextConfig);

@@ -68,7 +68,7 @@ export default function MentionsLegales() {
           </CardHeader>
           <CardContent>
             <p>
-              L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. 
+              L&apos;ensemble de ce site relève de la législation française et internationale sur le droit d&apos;auteur et la propriété intellectuelle. 
               Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.
             </p>
           </CardContent>
@@ -80,8 +80,8 @@ export default function MentionsLegales() {
           </CardHeader>
           <CardContent>
             <p>
-              Les liens hypertextes mis en place dans le cadre du présent site web en direction d'autres ressources présentes sur le réseau Internet 
-              ne sauraient engager la responsabilité d'EmilienG.fr.
+              Les liens hypertextes mis en place dans le cadre du présent site web en direction d&apos;autres ressources présentes sur le réseau Internet 
+              ne sauraient engager la responsabilité d&apos;EmilienG.fr.
             </p>
           </CardContent>
         </Card>
@@ -95,7 +95,7 @@ export default function MentionsLegales() {
               Les informations contenues sur ce site sont aussi précises que possible et le site est périodiquement remis à jour, 
               mais peut toutefois contenir des inexactitudes, des omissions ou des lacunes. 
               Si vous constatez une lacune, erreur ou ce qui parait être un dysfonctionnement, 
-              merci de bien vouloir le signaler par email à l'adresse contact@emilieng.fr.
+              merci de bien vouloir le signaler par email à l&apos;adresse contact@emilieng.fr.
             </p>
           </CardContent>
         </Card>
@@ -106,7 +106,7 @@ export default function MentionsLegales() {
           </CardHeader>
           <CardContent>
             <p>
-              Tout litige en relation avec l'utilisation du site emilieng.fr est soumis au droit français. 
+              Tout litige en relation avec l&apos;utilisation du site emilieng.fr est soumis au droit français. 
               Hormis les cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents.
             </p>
           </CardContent>
