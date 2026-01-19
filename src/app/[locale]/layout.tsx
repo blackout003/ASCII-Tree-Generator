@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import { NextIntlClientProvider } from 'next-intl';
 import { SEO_CONFIG, getLocaleMetadata } from '@/lib/seo-config';
 import { Analytics, GoogleTagManagerNoScript } from '@/components/ui/analytics';
+import { Toaster } from '@/components/ui/toaster';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -119,6 +120,9 @@ export default async function LocaleLayout({
         {/* Analytics */}
         <Analytics />
         <GoogleTagManagerNoScript />
+        
+        {/* Toast notifications */}
+        <Toaster />
       </body>
     </html>
   );

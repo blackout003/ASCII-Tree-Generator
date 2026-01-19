@@ -13,9 +13,11 @@ import { useTranslations } from 'next-intl';
 import { TreeNode, TreeOptions, ASCIITreeConfig } from '@/lib/types';
 import { generateASCIITree, sortTreeNodes, updateNodeName, toggleNodeExpansion } from '@/lib/tree-generator';
 import DragDropZone from './drag-drop-zone';
+import { useToast } from '@/hooks/use-toast';
 
 export default function TreeGenerator() {
   const t = useTranslations();
+  const { toast } = useToast();
   const [treeData, setTreeData] = useState<TreeNode[]>([
     {
       id: '1',
@@ -145,24 +147,43 @@ export default function TreeGenerator() {
     const asciiTree = generateASCII();
     try {
       await navigator.clipboard.writeText(asciiTree);
-      // Vous pourriez ajouter une notification de succès ici
+      toast({
+        title: t('errors.copySuccess'),
+        variant: 'default',
+      });
     } catch (err) {
-      console.error('Erreur lors de la copie:', err);
+      toast({
+        title: t('errors.copyError'),
+        description: err instanceof Error ? err.message : String(err),
+        variant: 'destructive',
+      });
     }
-  }, [generateASCII]);
+  }, [generateASCII, toast, t]);
 
   const downloadASCII = useCallback(() => {
-    const asciiTree = generateASCII();
-    const blob = new Blob([asciiTree], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'arbre-ascii.txt';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }, [generateASCII]);
+    try {
+      const asciiTree = generateASCII();
+      const blob = new Blob([asciiTree], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'arbre-ascii.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      toast({
+        title: t('errors.downloadSuccess'),
+        variant: 'default',
+      });
+    } catch (err) {
+      toast({
+        title: t('errors.downloadError'),
+        description: err instanceof Error ? err.message : String(err),
+        variant: 'destructive',
+      });
+    }
+  }, [generateASCII, toast, t]);
 
   const handleFilesAdded = useCallback((newNodes: TreeNode[]) => {
     setTreeData(prev => [...prev, ...newNodes]);
@@ -170,29 +191,45 @@ export default function TreeGenerator() {
 
   const clearTree = useCallback(() => {
     setTreeData([]);
-  }, []);
+    toast({
+      title: t('errors.clearSuccess'),
+      variant: 'default',
+    });
+  }, [toast, t]);
 
   const saveTree = useCallback(() => {
-    const treeDataToSave = {
-      treeData,
-      options,
-      asciiConfig,
-      timestamp: new Date().toISOString(),
-      version: '1.0'
-    };
-    
-    const blob = new Blob([JSON.stringify(treeDataToSave, null, 2)], { 
-      type: 'application/json' 
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `arbre-ascii-${new Date().toISOString().split('T')[0]}.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }, [treeData, options, asciiConfig]);
+    try {
+      const treeDataToSave = {
+        treeData,
+        options,
+        asciiConfig,
+        timestamp: new Date().toISOString(),
+        version: '1.0'
+      };
+      
+      const blob = new Blob([JSON.stringify(treeDataToSave, null, 2)], { 
+        type: 'application/json' 
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `arbre-ascii-${new Date().toISOString().split('T')[0]}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      toast({
+        title: t('errors.saveSuccess'),
+        variant: 'default',
+      });
+    } catch (err) {
+      toast({
+        title: t('errors.saveError'),
+        description: err instanceof Error ? err.message : String(err),
+        variant: 'destructive',
+      });
+    }
+  }, [treeData, options, asciiConfig, toast, t]);
 
   const loadTree = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -202,26 +239,53 @@ export default function TreeGenerator() {
     reader.onload = (e) => {
       try {
         const content = e.target?.result as string;
+        if (!content || content.trim().length === 0) {
+          throw new Error('Le fichier est vide');
+        }
+        
         const savedData = JSON.parse(content);
         
-        if (savedData.treeData) {
-          setTreeData(savedData.treeData);
+        // Validation basique de la structure
+        if (savedData && typeof savedData === 'object') {
+          if (savedData.treeData && Array.isArray(savedData.treeData)) {
+            setTreeData(savedData.treeData);
+          }
+          if (savedData.options && typeof savedData.options === 'object') {
+            setOptions(savedData.options);
+          }
+          if (savedData.asciiConfig && typeof savedData.asciiConfig === 'object') {
+            setAsciiConfig(savedData.asciiConfig);
+          }
+          
+          toast({
+            title: t('errors.loadSuccess'),
+            variant: 'default',
+          });
+        } else {
+          throw new Error('Format de fichier invalide');
         }
-        if (savedData.options) {
-          setOptions(savedData.options);
-        }
-        if (savedData.asciiConfig) {
-          setAsciiConfig(savedData.asciiConfig);
-        }
-      } catch {
-        alert('Erreur lors du chargement du fichier. Vérifiez que c\'est un fichier JSON valide.');
+      } catch (err) {
+        toast({
+          title: t('errors.loadError'),
+          description: err instanceof Error ? err.message : String(err),
+          variant: 'destructive',
+        });
       }
     };
+    
+    reader.onerror = () => {
+      toast({
+        title: t('errors.loadError'),
+        description: 'Erreur lors de la lecture du fichier',
+        variant: 'destructive',
+      });
+    };
+    
     reader.readAsText(file);
     
     // Réinitialiser l'input pour permettre de charger le même fichier
     event.target.value = '';
-  }, []);
+  }, [toast, t]);
 
   const moveNode = useCallback((nodeId: string, newParentId: string | null) => {
     setTreeData(prev => {

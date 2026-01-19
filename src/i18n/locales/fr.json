@@ -55,6 +55,14 @@
     "privacyPolicy": "Données personnelles"
   },
   "errors": {
-    "loadError": "Erreur lors du chargement du fichier. Vérifiez que c'est un fichier JSON valide."
+    "loadError": "Erreur lors du chargement du fichier. Vérifiez que c'est un fichier JSON valide.",
+    "copyError": "Erreur lors de la copie dans le presse-papiers.",
+    "copySuccess": "Copié dans le presse-papiers avec succès !",
+    "downloadError": "Erreur lors du téléchargement du fichier.",
+    "downloadSuccess": "Téléchargement démarré avec succès !",
+    "saveError": "Erreur lors de la sauvegarde du fichier.",
+    "saveSuccess": "Arbre sauvegardé avec succès !",
+    "loadSuccess": "Arbre chargé avec succès !",
+    "clearSuccess": "Arbre effacé avec succès !"
   }
 }

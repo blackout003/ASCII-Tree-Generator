@@ -55,6 +55,14 @@
     "privacyPolicy": "Politica sulla Privacy"
   },
   "errors": {
-    "loadError": "Errore nel caricamento del file. Verifica che sia un file JSON valido."
+    "loadError": "Errore nel caricamento del file. Verifica che sia un file JSON valido.",
+    "copyError": "Errore nella copia negli appunti.",
+    "copySuccess": "Copiato negli appunti con successo!",
+    "downloadError": "Errore nel download del file.",
+    "downloadSuccess": "Download avviato con successo!",
+    "saveError": "Errore nel salvataggio del file.",
+    "saveSuccess": "Albero salvato con successo!",
+    "loadSuccess": "Albero caricato con successo!",
+    "clearSuccess": "Albero cancellato con successo!"
   }
 }

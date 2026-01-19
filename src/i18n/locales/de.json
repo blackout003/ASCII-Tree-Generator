@@ -55,6 +55,14 @@
     "privacyPolicy": "Datenschutz"
   },
   "errors": {
-    "loadError": "Fehler beim Laden der Datei. Bitte überprüfe, dass es sich um eine gültige JSON-Datei handelt."
+    "loadError": "Fehler beim Laden der Datei. Bitte überprüfe, dass es sich um eine gültige JSON-Datei handelt.",
+    "copyError": "Fehler beim Kopieren in die Zwischenablage.",
+    "copySuccess": "Erfolgreich in die Zwischenablage kopiert!",
+    "downloadError": "Fehler beim Herunterladen der Datei.",
+    "downloadSuccess": "Download erfolgreich gestartet!",
+    "saveError": "Fehler beim Speichern der Datei.",
+    "saveSuccess": "Baum erfolgreich gespeichert!",
+    "loadSuccess": "Baum erfolgreich geladen!",
+    "clearSuccess": "Baum erfolgreich gelöscht!"
   }
 }

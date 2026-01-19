@@ -10,10 +10,6 @@ export function FooterInternational() {
   const locale = useLocale();
   const t = useTranslations('footer');
 
-  // Debug temporaire
-  console.log('Footer locale:', locale);
-  console.log('Footer copyright:', t('copyright', { year: currentYear }));
-
   return (
     <footer className="w-full border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 py-6">
@@ -26,13 +22,13 @@ export function FooterInternational() {
           </div>
           <div className="flex items-center gap-4">
             <Link
-              href="/fr/mentions-legales"
+              href={`/${locale}/mentions-legales`}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {t('legalNotice')}
             </Link>
             <Link
-              href="/fr/donnees-personnelles"
+              href={`/${locale}/donnees-personnelles`}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {t('privacyPolicy')}
