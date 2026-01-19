@@ -5,19 +5,19 @@ export const SEO_CONFIG = {
   supportedLocales: ['fr', 'en', 'es', 'de', 'it'],
   
   titles: {
-    fr: "Générateur d'Arbre ASCII - Créez des structures de projet visuelles",
-    en: "ASCII Tree Generator - Create visual project structures",
-    es: "Generador de Árbol ASCII - Crea estructuras de proyecto visuales",
-    de: "ASCII-Baum-Generator - Erstelle visuelle Projektstrukturen",
-    it: "Generatore di Albero ASCII - Crea strutture di progetto visive"
+    fr: "Générateur d'Arbre ASCII pour README & Documentation | Gratuit & En ligne",
+    en: "ASCII Tree Generator for README & Documentation | Free & Online",
+    es: "Generador de Árbol ASCII para README y Documentación | Gratis y Online",
+    de: "ASCII-Baum-Generator für README & Dokumentation | Kostenlos & Online",
+    it: "Generatore di Albero ASCII per README e Documentazione | Gratuito e Online"
   },
   
   descriptions: {
-    fr: "Générateur d'arbre ASCII gratuit et intuitif. Visualisez et créez la structure parfaite de votre projet. Convertissez facilement en format ASCII pour votre documentation, README et diagrammes.",
-    en: "Free and intuitive ASCII tree generator. Visualize and create the perfect structure for your project. Easily convert to ASCII format for your documentation, README and diagrams.",
-    es: "Generador de árbol ASCII gratuito e intuitivo. Visualiza y crea la estructura perfecta para tu proyecto. Convierte fácilmente a formato ASCII para tu documentación, README y diagramas.",
-    de: "Kostenloser und intuitiver ASCII-Baum-Generator. Visualisieren und erstellen Sie die perfekte Struktur für Ihr Projekt. Einfach in ASCII-Format für Ihre Dokumentation, README und Diagramme konvertieren.",
-    it: "Generatore di albero ASCII gratuito e intuitivo. Visualizza e crea la struttura perfetta per il tuo progetto. Converti facilmente in formato ASCII per la tua documentazione, README e diagrammi."
+    fr: "Créez et visualisez facilement l'arborescence de vos projets au format texte (ASCII). Idéal pour vos fichiers README.md et documentations techniques. Export simple, gratuit et sans installation.",
+    en: "Easily create and visualize your project structure in text format (ASCII). Perfect for your README.md files and technical documentation. Simple export, free and no installation required.",
+    es: "Crea y visualiza fácilmente la estructura de tus proyectos en formato texto (ASCII). Ideal para tus archivos README.md y documentación técnica. Exportación simple, gratuita y sin instalación.",
+    de: "Erstellen und visualisieren Sie mühelos Ihre Projektstruktur im Textformat (ASCII). Ideal für Ihre README.md-Dateien und technische Dokumentation. Einfacher Export, kostenlos und ohne Installation.",
+    it: "Crea e visualizza facilmente la struttura dei tuoi progetti in formato testo (ASCII). Ideale per i tuoi file README.md e documentazione tecnica. Esportazione semplice, gratuita e senza installazione."
   },
   
   keywords: [
@@ -33,7 +33,12 @@ export const SEO_CONFIG = {
     "folder structure",
     "développeur",
     "outil gratuit",
-    "visualisation projet"
+    "visualisation projet",
+    "arborescence projet texte",
+    "structure dossier readme",
+    "générer tree command windows linux en ligne",
+    "faire arbre fichiers github",
+    "visualiser structure dossier markdown"
   ],
   
   social: {

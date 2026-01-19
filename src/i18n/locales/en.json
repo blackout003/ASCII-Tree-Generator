@@ -64,5 +64,46 @@
     "saveSuccess": "Tree saved successfully!",
     "loadSuccess": "Tree loaded successfully!",
     "clearSuccess": "Tree cleared successfully!"
+  },
+  "seoContent": {
+    "title": "ASCII File Tree Generator",
+    "intro": "The ASCII tree generator is a free online tool that allows you to easily create visual representations of your project structure. Perfect for documenting your projects, creating diagrams for your README.md files, and sharing your code organization with your team.",
+    "whyUse": {
+      "title": "Why use an ASCII tree for your documentation?",
+      "para1": "Whether you're working on an open source project, documenting a web application, or presenting a professional project's architecture, an ASCII file tree offers several advantages:",
+      "benefit1": "Clear documentation: Visualize your entire project structure in just a few lines of text",
+      "benefit2": "Universal compatibility: Simple text format that displays correctly on GitHub, GitLab, Bitbucket and all text editors",
+      "benefit3": "Easy integration: Copy-paste directly into your README.md files without additional formatting",
+      "benefit4": "Version control friendly: Structure changes are easy to track in your Git commits"
+    },
+    "howToUse": {
+      "title": "How to generate a tree for your README?",
+      "para1": "Our ASCII tree generator simplifies creating file structures for your projects. Here's how to use it:",
+      "step1": "Drag and drop your folders and files directly into the interface or use the file selector",
+      "step2": "Organize your tree structure by adding, modifying or deleting elements as needed",
+      "step3": "Configure options: alphabetical sorting, maximum depth, hidden file display",
+      "step4": "Copy the generated ASCII result and paste it into your README.md file or documentation",
+      "para2": "The tool automatically generates a file tree in ASCII format compatible with Markdown, making it ideal for your GitHub projects, technical documentation and code structure presentations."
+    },
+    "useCases": {
+      "title": "Structure examples and use cases",
+      "para1": "The ASCII tree generator is particularly useful for:",
+      "useCase1": "Visualizing the folder structure of a web project (React, Next.js, Vue.js...)",
+      "useCase2": "Documenting the organization of a Python project with its modules and packages",
+      "useCase3": "Creating tree diagrams for Node.js projects and their file structure",
+      "useCase4": "Presenting project architecture in a professional README.md file",
+      "para2": "Whether you need to visualize a Windows project structure with the tree command, or want to create a tree for a Linux project, our online tool works on all operating systems without installation."
+    },
+    "features": {
+      "title": "Generator features",
+      "para1": "Our ASCII tree generator offers many features to meet all your documentation needs:",
+      "feature1": "Intuitive drag & drop interface to quickly import your files and folders",
+      "feature2": "Interactive editing: add, modify or delete elements with a few clicks",
+      "feature3": "Simple export: copy the result or download it as a text file",
+      "feature4": "Advanced options: customize depth, sorting and display according to your preferences",
+      "feature5": "Real-time preview of your ASCII tree structure",
+      "feature6": "Multilingual support for international use",
+      "para2": "All these tools are available for free, without registration and directly in your web browser."
+    }
   }
 }

@@ -64,5 +64,46 @@
     "saveSuccess": "¡Árbol guardado con éxito!",
     "loadSuccess": "¡Árbol cargado con éxito!",
     "clearSuccess": "¡Árbol borrado con éxito!"
+  },
+  "seoContent": {
+    "title": "Generador de Árbol de Archivos ASCII",
+    "intro": "El generador de árbol ASCII es una herramienta gratuita y en línea que te permite crear fácilmente representaciones visuales de la estructura de tus proyectos. Perfecto para documentar tus proyectos, crear diagramas para tus archivos README.md y compartir la organización de tu código con tu equipo.",
+    "whyUse": {
+      "title": "¿Por qué usar un árbol ASCII para tu documentación?",
+      "para1": "Ya sea que trabajes en un proyecto open source, documentes una aplicación web o presentes la arquitectura de un proyecto profesional, un árbol de archivos ASCII ofrece varias ventajas:",
+      "benefit1": "Documentación clara: Visualiza la estructura completa de tu proyecto en pocas líneas de texto",
+      "benefit2": "Compatibilidad universal: Formato de texto simple que se muestra correctamente en GitHub, GitLab, Bitbucket y todos los editores de texto",
+      "benefit3": "Facilidad de integración: Copia y pega directamente en tus archivos README.md sin formato adicional",
+      "benefit4": "Amigable con el control de versiones: Los cambios de estructura son fáciles de rastrear en tus commits de Git"
+    },
+    "howToUse": {
+      "title": "¿Cómo generar un árbol para tu README?",
+      "para1": "Nuestro generador de árbol ASCII simplifica la creación de estructuras de archivos para tus proyectos. Así es como usarlo:",
+      "step1": "Arrastra y suelta tus carpetas y archivos directamente en la interfaz o usa el selector de archivos",
+      "step2": "Organiza tu estructura de árbol agregando, modificando o eliminando elementos según tus necesidades",
+      "step3": "Configura las opciones: ordenamiento alfabético, profundidad máxima, visualización de archivos ocultos",
+      "step4": "Copia el resultado ASCII generado y pégalo en tu archivo README.md o documentación",
+      "para2": "La herramienta genera automáticamente una estructura de archivos en formato ASCII compatible con Markdown, lo que la hace ideal para tus proyectos de GitHub, documentación técnica y presentaciones de estructura de código."
+    },
+    "useCases": {
+      "title": "Ejemplos de estructuras y casos de uso",
+      "para1": "El generador de árbol ASCII es particularmente útil para:",
+      "useCase1": "Visualizar la estructura de carpetas de un proyecto web (React, Next.js, Vue.js...)",
+      "useCase2": "Documentar la organización de un proyecto Python con sus módulos y paquetes",
+      "useCase3": "Crear diagramas de árbol para proyectos Node.js y su estructura de archivos",
+      "useCase4": "Presentar la arquitectura de un proyecto en un archivo README.md profesional",
+      "para2": "Ya sea que necesites visualizar la estructura de un proyecto Windows con el comando tree, o quieras crear un árbol para un proyecto Linux, nuestra herramienta en línea funciona en todos los sistemas operativos sin instalación."
+    },
+    "features": {
+      "title": "Características del generador",
+      "para1": "Nuestro generador de árbol ASCII ofrece muchas características para satisfacer todas tus necesidades de documentación:",
+      "feature1": "Interfaz intuitiva de arrastrar y soltar para importar rápidamente tus archivos y carpetas",
+      "feature2": "Edición interactiva: agrega, modifica o elimina elementos con unos pocos clics",
+      "feature3": "Exportación simple: copia el resultado o descárgalo como archivo de texto",
+      "feature4": "Opciones avanzadas: personaliza la profundidad, ordenamiento y visualización según tus preferencias",
+      "feature5": "Vista previa en tiempo real de tu estructura de árbol ASCII",
+      "feature6": "Soporte multilingüe para uso internacional",
+      "para2": "Todas estas herramientas están disponibles de forma gratuita, sin registro y directamente en tu navegador web."
+    }
   }
 }

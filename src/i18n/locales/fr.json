@@ -64,5 +64,46 @@
     "saveSuccess": "Arbre sauvegardé avec succès !",
     "loadSuccess": "Arbre chargé avec succès !",
     "clearSuccess": "Arbre effacé avec succès !"
+  },
+  "seoContent": {
+    "title": "Générateur d'Arborescence de Fichiers ASCII",
+    "intro": "Le générateur d'arbre ASCII est un outil gratuit et en ligne qui vous permet de créer facilement des représentations visuelles de la structure de vos projets. Parfait pour documenter vos projets, créer des diagrammes pour vos fichiers README.md et partager l'organisation de votre code avec votre équipe.",
+    "whyUse": {
+      "title": "Pourquoi utiliser un arbre ASCII pour votre documentation ?",
+      "para1": "Que vous travailliez sur un projet open source, que vous documentiez une application web ou que vous présentiez l'architecture d'un projet professionnel, un arbre de fichiers ASCII offre plusieurs avantages :",
+      "benefit1": "Documentation claire : Visualisez la structure complète de votre projet en quelques lignes de texte",
+      "benefit2": "Compatibilité universelle : Format texte simple qui s'affiche correctement sur GitHub, GitLab, Bitbucket et tous les éditeurs de texte",
+      "benefit3": "Facilité d'intégration : Copiez-collez directement dans vos fichiers README.md sans formatage supplémentaire",
+      "benefit4": "Versionning friendly : Les changements de structure sont faciles à suivre dans vos commits Git"
+    },
+    "howToUse": {
+      "title": "Comment générer un arbre pour votre README ?",
+      "para1": "Notre générateur d'arbre ASCII simplifie la création de structures de fichiers pour vos projets. Voici comment l'utiliser :",
+      "step1": "Glissez-déposez vos dossiers et fichiers directement dans l'interface ou utilisez le sélecteur de fichiers",
+      "step2": "Organisez votre arborescence en ajoutant, modifiant ou supprimant des éléments selon vos besoins",
+      "step3": "Configurez les options : tri alphabétique, profondeur maximale, affichage des fichiers cachés",
+      "step4": "Copiez le résultat ASCII généré et collez-le dans votre fichier README.md ou votre documentation",
+      "para2": "L'outil génère automatiquement une arborescence de fichiers au format ASCII compatible avec Markdown, ce qui la rend idéale pour vos projets GitHub, vos documentations techniques et vos présentations de structure de code."
+    },
+    "useCases": {
+      "title": "Exemples de structures et cas d'usage",
+      "para1": "Le générateur d'arbre ASCII est particulièrement utile pour :",
+      "useCase1": "Visualiser la structure de dossiers d'un projet web (React, Next.js, Vue.js...)",
+      "useCase2": "Documenter l'organisation d'un projet Python avec ses modules et packages",
+      "useCase3": "Créer des diagrammes d'arborescence pour des projets Node.js et leur structure de fichiers",
+      "useCase4": "Présenter l'architecture d'un projet dans un fichier README.md professionnel",
+      "para2": "Que vous ayez besoin de visualiser la structure d'un projet Windows avec la commande tree, ou que vous souhaitiez créer une arborescence pour un projet Linux, notre outil en ligne fonctionne sur tous les systèmes d'exploitation sans installation."
+    },
+    "features": {
+      "title": "Fonctionnalités du générateur",
+      "para1": "Notre générateur d'arbre ASCII offre de nombreuses fonctionnalités pour répondre à tous vos besoins de documentation :",
+      "feature1": "Interface drag & drop intuitive pour importer rapidement vos fichiers et dossiers",
+      "feature2": "Édition interactive : ajoutez, modifiez ou supprimez des éléments en quelques clics",
+      "feature3": "Export simple : copiez le résultat ou téléchargez-le en fichier texte",
+      "feature4": "Options avancées : personnalisez la profondeur, le tri et l'affichage selon vos préférences",
+      "feature5": "Prévisualisation en temps réel de votre arborescence ASCII",
+      "feature6": "Support multilingue pour une utilisation à l'international",
+      "para2": "Tous ces outils sont disponibles gratuitement, sans inscription et directement dans votre navigateur web."
+    }
   }
 }

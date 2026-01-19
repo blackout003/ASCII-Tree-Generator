@@ -36,13 +36,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     metadataBase: new URL(SEO_CONFIG.baseUrl),
     alternates: {
-      canonical: '/',
+      canonical: `/${locale}`,
       languages: {
         'fr': '/fr',
         'en': '/en',
         'es': '/es',
         'de': '/de',
         'it': '/it',
+        'x-default': '/en',
       },
     },
     openGraph: {

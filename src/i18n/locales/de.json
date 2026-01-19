@@ -64,5 +64,46 @@
     "saveSuccess": "Baum erfolgreich gespeichert!",
     "loadSuccess": "Baum erfolgreich geladen!",
     "clearSuccess": "Baum erfolgreich gelöscht!"
+  },
+  "seoContent": {
+    "title": "ASCII-Dateibaum-Generator",
+    "intro": "Der ASCII-Baum-Generator ist ein kostenloses Online-Tool, mit dem Sie einfach visuelle Darstellungen Ihrer Projektstruktur erstellen können. Perfekt zum Dokumentieren Ihrer Projekte, Erstellen von Diagrammen für Ihre README.md-Dateien und Teilen Ihrer Code-Organisation mit Ihrem Team.",
+    "whyUse": {
+      "title": "Warum einen ASCII-Baum für Ihre Dokumentation verwenden?",
+      "para1": "Ob Sie an einem Open-Source-Projekt arbeiten, eine Webanwendung dokumentieren oder die Architektur eines professionellen Projekts präsentieren, ein ASCII-Dateibaum bietet mehrere Vorteile:",
+      "benefit1": "Klare Dokumentation: Visualisieren Sie Ihre gesamte Projektstruktur in nur wenigen Textzeilen",
+      "benefit2": "Universelle Kompatibilität: Einfaches Textformat, das korrekt auf GitHub, GitLab, Bitbucket und allen Texteditoren angezeigt wird",
+      "benefit3": "Einfache Integration: Kopieren und fügen Sie direkt in Ihre README.md-Dateien ein, ohne zusätzliche Formatierung",
+      "benefit4": "Versionskontrolle-freundlich: Strukturänderungen sind leicht in Ihren Git-Commits nachzuverfolgen"
+    },
+    "howToUse": {
+      "title": "Wie generiere ich einen Baum für Ihr README?",
+      "para1": "Unser ASCII-Baum-Generator vereinfacht die Erstellung von Dateistrukturen für Ihre Projekte. So verwenden Sie es:",
+      "step1": "Ziehen Sie Ihre Ordner und Dateien direkt in die Benutzeroberfläche oder verwenden Sie den Dateiselektor",
+      "step2": "Organisieren Sie Ihre Baumstruktur, indem Sie Elemente nach Bedarf hinzufügen, ändern oder löschen",
+      "step3": "Konfigurieren Sie Optionen: alphabetische Sortierung, maximale Tiefe, Anzeige versteckter Dateien",
+      "step4": "Kopieren Sie das generierte ASCII-Ergebnis und fügen Sie es in Ihre README.md-Datei oder Dokumentation ein",
+      "para2": "Das Tool generiert automatisch eine Dateistruktur im ASCII-Format, das mit Markdown kompatibel ist und es ideal für Ihre GitHub-Projekte, technische Dokumentation und Code-Struktur-Präsentationen macht."
+    },
+    "useCases": {
+      "title": "Strukturbeispiele und Anwendungsfälle",
+      "para1": "Der ASCII-Baum-Generator ist besonders nützlich für:",
+      "useCase1": "Visualisieren der Ordnerstruktur eines Webprojekts (React, Next.js, Vue.js...)",
+      "useCase2": "Dokumentieren der Organisation eines Python-Projekts mit seinen Modulen und Paketen",
+      "useCase3": "Erstellen von Baumdiagrammen für Node.js-Projekte und ihre Dateistruktur",
+      "useCase4": "Präsentieren der Projektarchitektur in einer professionellen README.md-Datei",
+      "para2": "Ob Sie die Struktur eines Windows-Projekts mit dem tree-Befehl visualisieren müssen oder einen Baum für ein Linux-Projekt erstellen möchten, unser Online-Tool funktioniert auf allen Betriebssystemen ohne Installation."
+    },
+    "features": {
+      "title": "Generator-Funktionen",
+      "para1": "Unser ASCII-Baum-Generator bietet viele Funktionen, um alle Ihre Dokumentationsbedürfnisse zu erfüllen:",
+      "feature1": "Intuitive Drag & Drop-Oberfläche zum schnellen Importieren Ihrer Dateien und Ordner",
+      "feature2": "Interaktive Bearbeitung: Hinzufügen, Ändern oder Löschen von Elementen mit wenigen Klicks",
+      "feature3": "Einfacher Export: Kopieren Sie das Ergebnis oder laden Sie es als Textdatei herunter",
+      "feature4": "Erweiterte Optionen: Passen Sie Tiefe, Sortierung und Anzeige nach Ihren Wünschen an",
+      "feature5": "Echtzeit-Vorschau Ihrer ASCII-Baumstruktur",
+      "feature6": "Mehrsprachige Unterstützung für internationale Nutzung",
+      "para2": "Alle diese Tools sind kostenlos, ohne Registrierung und direkt in Ihrem Webbrowser verfügbar."
+    }
   }
 }
