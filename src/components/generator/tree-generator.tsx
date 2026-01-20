@@ -532,19 +532,6 @@ export default function TreeGenerator() {
         </div>
       </div>
 
-      {/* Bouton des options au-dessus des deux sections */}
-      <div className="flex justify-end mb-4">
-        <Button
-          onClick={() => setOptionsSheetOpen(true)}
-          variant="outline"
-          size="sm"
-          className="gap-2"
-        >
-          <Sliders className="w-4 h-4" />
-          Configuration Options
-        </Button>
-      </div>
-
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Zone d'édition de l'arbre */}
         <Card>
@@ -628,6 +615,7 @@ export default function TreeGenerator() {
           asciiOutput={asciiOutput}
           onCopy={copyToClipboard}
           onDownload={downloadASCII}
+          onOpenOptions={() => setOptionsSheetOpen(true)}
         />
       </div>
 
