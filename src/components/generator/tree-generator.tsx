@@ -11,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { Settings } from 'lucide-react';
+import { Settings, Sliders } from 'lucide-react';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { LanguageToggle } from '@/components/ui/language-toggle';
 import { useTranslations } from 'next-intl';
@@ -69,7 +69,8 @@ export default function TreeGenerator() {
     showHidden: false,
     maxDepth: 10,
     sortAlphabetically: true,
-    includeExtensions: true
+    includeExtensions: true,
+    showFolderSlash: true
   });
 
   const [asciiConfig, setAsciiConfig] = useState<ASCIITreeConfig>({
@@ -88,6 +89,7 @@ export default function TreeGenerator() {
   const [showClearConfirm, setShowClearConfirm] = useState(false);
   const [showLoadConfirm, setShowLoadConfirm] = useState(false);
   const [pendingFile, setPendingFile] = useState<File | null>(null);
+  const [optionsSheetOpen, setOptionsSheetOpen] = useState(false);
 
   /**
    * Ajoute un nouveau nœud (fichier ou dossier) à l'arbre
@@ -174,8 +176,11 @@ export default function TreeGenerator() {
 
   // Mémorisation de la génération ASCII pour éviter de régénérer à chaque rendu
   const asciiOutput = useMemo(() => {
-    return generateASCIITree(sortedTreeData, asciiConfig);
-  }, [sortedTreeData, asciiConfig]);
+    return generateASCIITree(sortedTreeData, {
+      ...asciiConfig,
+      showFolderSlash: options.showFolderSlash
+    });
+  }, [sortedTreeData, asciiConfig, options.showFolderSlash]);
 
   const generateASCII = useCallback(() => {
     return asciiOutput;
@@ -325,7 +330,10 @@ export default function TreeGenerator() {
         // Mise à jour des états
         setTreeData(data.treeData);
         if (data.options) {
-          setOptions(data.options);
+          setOptions({
+            ...data.options,
+            showFolderSlash: data.options.showFolderSlash ?? false
+          });
         }
         if (data.asciiConfig) {
           setAsciiConfig(data.asciiConfig);
@@ -524,6 +532,19 @@ export default function TreeGenerator() {
         </div>
       </div>
 
+      {/* Bouton des options au-dessus des deux sections */}
+      <div className="flex justify-end mb-4">
+        <Button
+          onClick={() => setOptionsSheetOpen(true)}
+          variant="outline"
+          size="sm"
+          className="gap-2"
+        >
+          <Sliders className="w-4 h-4" />
+          Configuration Options
+        </Button>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Zone d'édition de l'arbre */}
         <Card>
@@ -619,6 +640,8 @@ export default function TreeGenerator() {
       <TreeOptionsPanel
         options={options}
         onOptionsChange={setOptions}
+        open={optionsSheetOpen}
+        onOpenChange={setOptionsSheetOpen}
       />
 
       {/* Modal de confirmation pour effacer tout */}

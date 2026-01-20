@@ -11,6 +11,7 @@ export interface TreeOptions {
   maxDepth: number;
   sortAlphabetically: boolean;
   includeExtensions: boolean;
+  showFolderSlash: boolean;
 }
 
 export interface ASCIITreeConfig {
@@ -18,4 +19,5 @@ export interface ASCIITreeConfig {
   connector: string;
   lastConnector: string;
   indent: string;
+  showFolderSlash?: boolean;
 }

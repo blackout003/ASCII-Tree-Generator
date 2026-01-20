@@ -44,7 +44,8 @@
     "sortAlphabetically": "Ordina alfabeticamente",
     "showHidden": "Mostra file nascosti",
     "includeExtensions": "Includi estensioni",
-    "maxDepth": "Profondità max:"
+    "maxDepth": "Profondità max:",
+    "showFolderSlash": "Mostra \\ alla fine delle cartelle"
   },
   "theme": {
     "light": "Chiaro",

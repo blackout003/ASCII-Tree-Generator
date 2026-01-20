@@ -41,7 +41,11 @@ function generateNodeASCII(
   config: ASCIITreeConfig
 ): string {
   const connector = isLast ? config.lastConnector : config.prefix;
-  const currentLine = prefix + connector + node.name;
+  // Ajouter un \ à la fin des noms de dossiers si l'option est activée
+  const nodeName = node.type === 'folder' && config.showFolderSlash 
+    ? node.name + '\\' 
+    : node.name;
+  const currentLine = prefix + connector + nodeName;
   
   if (!node.children || node.children.length === 0) {
     return currentLine;

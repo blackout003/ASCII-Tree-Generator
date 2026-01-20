@@ -44,7 +44,8 @@
     "sortAlphabetically": "Alphabetisch sortieren",
     "showHidden": "Versteckte Dateien anzeigen",
     "includeExtensions": "Erweiterungen einschließen",
-    "maxDepth": "Max. Tiefe:"
+    "maxDepth": "Max. Tiefe:",
+    "showFolderSlash": "\\ am Ende von Ordnern anzeigen"
   },
   "theme": {
     "light": "Hell",

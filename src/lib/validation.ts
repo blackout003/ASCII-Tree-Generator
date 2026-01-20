@@ -33,6 +33,7 @@ export const TreeOptionsSchema = z.object({
   maxDepth: z.number().int().min(1).max(50),
   sortAlphabetically: z.boolean(),
   includeExtensions: z.boolean(),
+  showFolderSlash: z.boolean().optional().default(false),
 });
 
 /**
@@ -43,6 +44,7 @@ export const ASCIITreeConfigSchema = z.object({
   connector: z.string(),
   lastConnector: z.string(),
   indent: z.string(),
+  showFolderSlash: z.boolean().optional(),
 });
 
 /**

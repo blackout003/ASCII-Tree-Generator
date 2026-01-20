@@ -44,7 +44,8 @@
     "sortAlphabetically": "Sort alphabetically",
     "showHidden": "Show hidden files",
     "includeExtensions": "Include extensions",
-    "maxDepth": "Max depth:"
+    "maxDepth": "Max depth:",
+    "showFolderSlash": "Show \\ at end of folders"
   },
   "theme": {
     "light": "Light",

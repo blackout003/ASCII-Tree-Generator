@@ -1,22 +1,34 @@
 'use client';
 
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+} from '@/components/ui/sheet';
 import { Input } from '@/components/ui/input';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
 import { TreeOptions } from '@/lib/types';
 import { useTranslations } from 'next-intl';
 
 interface TreeOptionsPanelProps {
   options: TreeOptions;
   onOptionsChange: (options: TreeOptions) => void;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
 /**
- * Composant pour les options de configuration de l'arbre
+ * Composant pour les options de configuration de l'arbre dans un Sheet
  */
 export function TreeOptionsPanel({
   options,
   onOptionsChange,
+  open,
+  onOpenChange,
 }: TreeOptionsPanelProps) {
   const t = useTranslations();
 
@@ -28,59 +40,73 @@ export function TreeOptionsPanel({
   };
 
   return (
-    <Card className="mt-6">
-      <CardHeader>
-        <CardTitle>{t('options.title')}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="flex items-center space-x-2">
-            <input
-              type="checkbox"
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle>Configuration Options</SheetTitle>
+          <SheetDescription>
+            Configuration Options
+          </SheetDescription>
+        </SheetHeader>
+        <div className="mt-6 space-y-6">
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="sortAlphabetically">{t('options.sortAlphabetically')}</Label>
+            </div>
+            <Switch
               id="sortAlphabetically"
               checked={options.sortAlphabetically}
-              onChange={(e) => handleOptionChange('sortAlphabetically', e.target.checked)}
-              className="rounded"
+              onCheckedChange={(checked) => handleOptionChange('sortAlphabetically', checked)}
             />
-            <label htmlFor="sortAlphabetically">{t('options.sortAlphabetically')}</label>
           </div>
           
-          <div className="flex items-center space-x-2">
-            <input
-              type="checkbox"
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="showHidden">{t('options.showHidden')}</Label>
+            </div>
+            <Switch
               id="showHidden"
               checked={options.showHidden}
-              onChange={(e) => handleOptionChange('showHidden', e.target.checked)}
-              className="rounded"
+              onCheckedChange={(checked) => handleOptionChange('showHidden', checked)}
             />
-            <label htmlFor="showHidden">{t('options.showHidden')}</label>
           </div>
           
-          <div className="flex items-center space-x-2">
-            <input
-              type="checkbox"
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="includeExtensions">{t('options.includeExtensions')}</Label>
+            </div>
+            <Switch
               id="includeExtensions"
               checked={options.includeExtensions}
-              onChange={(e) => handleOptionChange('includeExtensions', e.target.checked)}
-              className="rounded"
+              onCheckedChange={(checked) => handleOptionChange('includeExtensions', checked)}
             />
-            <label htmlFor="includeExtensions">{t('options.includeExtensions')}</label>
           </div>
           
-          <div className="flex items-center space-x-2">
-            <label htmlFor="maxDepth">{t('options.maxDepth')}</label>
+          <div className="flex items-center justify-between">
+            <div className="space-y-0.5">
+              <Label htmlFor="showFolderSlash">{t('options.showFolderSlash')}</Label>
+            </div>
+            <Switch
+              id="showFolderSlash"
+              checked={options.showFolderSlash}
+              onCheckedChange={(checked) => handleOptionChange('showFolderSlash', checked)}
+            />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="maxDepth">{t('options.maxDepth')}</Label>
             <Input
               id="maxDepth"
               type="number"
               min="1"
               max="20"
               value={options.maxDepth}
-              onChange={(e) => handleOptionChange('maxDepth', parseInt(e.target.value))}
-              className="w-20"
+              onChange={(e) => handleOptionChange('maxDepth', parseInt(e.target.value) || 1)}
+              className="w-full"
             />
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </SheetContent>
+    </Sheet>
   );
 }
