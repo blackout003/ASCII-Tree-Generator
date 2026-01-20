@@ -29,11 +29,33 @@ export const TreeNodeSchema: z.ZodType<TreeNode> = z.lazy(() =>
  * Schéma de validation pour les options de l'arbre
  */
 export const TreeOptionsSchema = z.object({
+  // Options existantes
   showHidden: z.boolean(),
   maxDepth: z.number().int().min(1).max(50),
   sortAlphabetically: z.boolean(),
   includeExtensions: z.boolean(),
-  showFolderSlash: z.boolean().optional().default(false),
+  showFolderSlash: z.boolean(),
+  
+  // Formatage ASCII
+  connectorStyle: z.enum(['unicode', 'ascii']).optional().default('unicode'),
+  indentSize: z.number().int().min(1).max(8).optional().default(4),
+  useTabs: z.boolean().optional().default(false),
+  rootPrefix: z.string().optional().default(''),
+  showRootPrefix: z.boolean().optional().default(true),
+  
+  // Tri
+  sortOrder: z.enum(['alphabetical', 'type']).optional().default('alphabetical'),
+  sortDirection: z.enum(['asc', 'desc']).optional().default('asc'),
+  
+  // Structure
+  compressEmptyFolders: z.boolean().optional().default(false),
+  showOnlyFiles: z.boolean().optional().default(false),
+  showOnlyFolders: z.boolean().optional().default(false),
+  showFullPath: z.boolean().optional().default(false),
+  
+  // Visuel
+  showLineNumbers: z.boolean().optional().default(false),
+  showSeparators: z.boolean().optional().default(false),
 });
 
 /**

@@ -16,8 +16,9 @@ import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { LanguageToggle } from '@/components/ui/language-toggle';
 import { useTranslations } from 'next-intl';
 import { TreeNode, TreeOptions, ASCIITreeConfig } from '@/lib/types';
-import { generateASCIITree, sortTreeNodes, updateNodeName, toggleNodeExpansion } from '@/lib/tree-generator';
+import { generateASCIITree, sortTreeNodes, updateNodeName, toggleNodeExpansion, compressEmptyFolders, showOnlyFiles, showOnlyFolders } from '@/lib/tree-generator';
 import { validateSavedTreeData, validateNodeStructure } from '@/lib/validation';
+import { defaultTreeOptions } from '@/lib/default-options';
 import DragDropZone from './drag-drop-zone';
 import { TreeView } from './tree-view';
 import { TreeControls } from './tree-controls';
@@ -65,13 +66,7 @@ export default function TreeGenerator() {
     }
   ]);
 
-  const [options, setOptions] = useState<TreeOptions>({
-    showHidden: false,
-    maxDepth: 10,
-    sortAlphabetically: true,
-    includeExtensions: true,
-    showFolderSlash: true
-  });
+  const [options, setOptions] = useState<TreeOptions>(defaultTreeOptions);
 
   const [asciiConfig, setAsciiConfig] = useState<ASCIITreeConfig>({
     prefix: '├── ',
@@ -169,18 +164,91 @@ export default function TreeGenerator() {
     setTreeData(prev => toggleNodeExpansion(prev, nodeId));
   }, []);
 
-  // Mémorisation du tri des données pour éviter de re-trier à chaque rendu
-  const sortedTreeData = useMemo(() => {
-    return options.sortAlphabetically ? sortTreeNodes(treeData) : treeData;
-  }, [treeData, options.sortAlphabetically]);
+  // Mémorisation du tri et du filtrage des données
+  const processedTreeData = useMemo(() => {
+    let processed = [...treeData];
+    
+    // Compresser les dossiers vides si demandé
+    if (options.compressEmptyFolders) {
+      processed = compressEmptyFolders(processed);
+    }
+    
+    // Afficher uniquement les fichiers si demandé (AVANT le tri)
+    if (options.showOnlyFiles) {
+      processed = showOnlyFiles(processed);
+      // Si on affiche uniquement les fichiers, on retourne directement (pas besoin de trier)
+      return processed;
+    }
+    
+    // Afficher uniquement les dossiers si demandé
+    if (options.showOnlyFolders) {
+      processed = showOnlyFolders(processed);
+    }
+    
+    // Trier selon les options (seulement si on n'affiche pas uniquement les fichiers)
+    if (options.sortAlphabetically || options.sortOrder !== 'alphabetical' || options.sortDirection !== 'asc') {
+      processed = sortTreeNodes(processed, options.sortOrder, options.sortDirection);
+    }
+    
+    return processed;
+  }, [treeData, options.sortAlphabetically, options.sortOrder, options.sortDirection, options.compressEmptyFolders, options.showOnlyFiles, options.showOnlyFolders]);
 
   // Mémorisation de la génération ASCII pour éviter de régénérer à chaque rendu
   const asciiOutput = useMemo(() => {
-    return generateASCIITree(sortedTreeData, {
+    let output = generateASCIITree(processedTreeData, {
       ...asciiConfig,
-      showFolderSlash: options.showFolderSlash
+      showFolderSlash: options.showFolderSlash,
+      connectorStyle: options.connectorStyle,
+      indentSize: options.indentSize,
+      useTabs: options.useTabs,
+      rootPrefix: options.rootPrefix,
+      showRootPrefix: options.showRootPrefix,
+      showFullPath: options.showFullPath,
+      maxDepth: options.maxDepth,
+      includeExtensions: options.includeExtensions,
+      showHidden: options.showHidden,
     });
-  }, [sortedTreeData, asciiConfig, options.showFolderSlash]);
+    
+    // Ajouter la numérotation des lignes si demandé
+    if (options.showLineNumbers) {
+      const lines = output.split('\n');
+      const maxLineNumberLength = String(lines.length).length;
+      output = lines
+        .map((line, index) => {
+          const lineNumber = String(index + 1).padStart(maxLineNumberLength, ' ');
+          return `${lineNumber} | ${line}`;
+        })
+        .join('\n');
+    }
+    
+    // Ajouter les séparateurs si demandé
+    if (options.showSeparators) {
+      const lines = output.split('\n');
+      if (lines.length > 0) {
+        // Utiliser un caractère compatible ASCII et Unicode
+        const separator = options.connectorStyle === 'ascii' ? '-'.repeat(50) : '─'.repeat(50);
+        const separatedLines: string[] = [];
+        let lineCount = 0;
+        lines.forEach((line, index) => {
+          // Ne compter que les lignes non vides
+          if (line.trim() !== '') {
+            lineCount++;
+            separatedLines.push(line);
+            // Ajouter un séparateur tous les 10 lignes non vides (sauf après la dernière ligne)
+            if (lineCount % 10 === 0 && index < lines.length - 1) {
+              separatedLines.push(separator);
+            }
+          } else {
+            // Garder les lignes vides telles quelles
+            separatedLines.push(line);
+          }
+        });
+        output = separatedLines.join('\n');
+      }
+    }
+    
+    return output;
+  }, [processedTreeData, asciiConfig, options.showFolderSlash, options.connectorStyle, options.indentSize, options.useTabs, options.rootPrefix, options.showRootPrefix, options.showFullPath, options.maxDepth, options.includeExtensions, options.showHidden, options.showLineNumbers, options.showSeparators]);
 
   const generateASCII = useCallback(() => {
     return asciiOutput;
@@ -331,8 +399,10 @@ export default function TreeGenerator() {
         setTreeData(data.treeData);
         if (data.options) {
           setOptions({
+            ...defaultTreeOptions,
             ...data.options,
-            showFolderSlash: data.options.showFolderSlash ?? false
+            // Assurer que toutes les nouvelles options ont des valeurs par défaut
+            showFolderSlash: data.options.showFolderSlash ?? defaultTreeOptions.showFolderSlash,
           });
         }
         if (data.asciiConfig) {
