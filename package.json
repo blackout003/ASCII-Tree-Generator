@@ -32,6 +32,9 @@
     "tailwindcss-animate": "^1.0.7",
     "zod": "^4.3.5"
   },
+  "overrides": {
+    "postcss": "^8.5.10"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
     "@tailwindcss/postcss": "^4.1.18",
