@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://ascii-tree-generator.emilieng.fr'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://asciitree.fr'
   
   const locales = ['fr', 'en', 'es', 'de', 'it']
   

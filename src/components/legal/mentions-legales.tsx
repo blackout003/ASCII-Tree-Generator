@@ -41,10 +41,10 @@ export default function MentionsLegales() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p>
-              <strong>Nom :</strong> EmilienG.fr<br />
+              <strong>Nom :</strong> Emilien GÂNE<br />
               <strong>Adresse :</strong> Cergy, France<br />
-              <strong>Email :</strong> contact@emilieng.fr<br />
-              <strong>Directeur de publication :</strong> Emilien G.
+              <strong>Email :</strong> contact@egweb.fr<br />
+              <strong>Directeur de publication :</strong> Emilien GÂNE
             </p>
           </CardContent>
         </Card>
@@ -81,7 +81,7 @@ export default function MentionsLegales() {
           <CardContent>
             <p>
               Les liens hypertextes mis en place dans le cadre du présent site web en direction d&apos;autres ressources présentes sur le réseau Internet 
-              ne sauraient engager la responsabilité d&apos;EmilienG.fr.
+              ne sauraient engager la responsabilité d&apos;asciitree.fr.
             </p>
           </CardContent>
         </Card>
@@ -95,7 +95,7 @@ export default function MentionsLegales() {
               Les informations contenues sur ce site sont aussi précises que possible et le site est périodiquement remis à jour, 
               mais peut toutefois contenir des inexactitudes, des omissions ou des lacunes. 
               Si vous constatez une lacune, erreur ou ce qui parait être un dysfonctionnement, 
-              merci de bien vouloir le signaler par email à l&apos;adresse contact@emilieng.fr.
+              merci de bien vouloir le signaler par email à l&apos;adresse contact@asciitree.fr.
             </p>
           </CardContent>
         </Card>
@@ -106,7 +106,7 @@ export default function MentionsLegales() {
           </CardHeader>
           <CardContent>
             <p>
-              Tout litige en relation avec l&apos;utilisation du site emilieng.fr est soumis au droit français. 
+              Tout litige en relation avec l&apos;utilisation du site asciitree.fr est soumis au droit français.
               Hormis les cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents.
             </p>
           </CardContent>

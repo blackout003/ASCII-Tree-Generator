@@ -6,7 +6,7 @@ export function generateWebsiteStructuredData() {
     "@type": "WebApplication",
     "name": "ASCII Tree Generator",
     "description": "Générateur d'arbre ASCII gratuit et intuitif pour créer des structures de projet visuelles",
-    "url": "https://ascii-tree-generator.emilieng.fr",
+    "url": "https://asciitree.fr",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -35,7 +35,7 @@ export function generateWebsiteStructuredData() {
       "Thème sombre/clair",
       "Prévisualisation en temps réel"
     ],
-    "screenshot": "https://ascii-tree-generator.emilieng.fr/og-image.png",
+    "screenshot": "https://asciitree.fr/og-image.png",
     "softwareVersion": "1.0.0",
     "datePublished": "2024-01-01",
     "dateModified": new Date().toISOString().split('T')[0]
@@ -51,13 +51,13 @@ export function generateBreadcrumbStructuredData() {
         "@type": "ListItem",
         "position": 1,
         "name": "Accueil",
-        "item": "https://ascii-tree-generator.emilieng.fr/"
+        "item": "https://asciitree.fr/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Générateur d'Arbre ASCII",
-        "item": "https://ascii-tree-generator.emilieng.fr/fr"
+        "item": "https://asciitree.fr/fr"
       }
     ]
   };

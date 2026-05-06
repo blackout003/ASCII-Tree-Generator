@@ -41,8 +41,8 @@ export default function DonneesPersonnelles() {
           </CardHeader>
           <CardContent>
             <p>
-              <strong>Nom :</strong> EmilienG.fr<br />
-              <strong>Email :</strong> contact@emilieng.fr<br />
+              <strong>Nom :</strong> asciitree.fr<br />
+              <strong>Email :</strong> contact@asciitree.fr<br />
               <strong>Adresse :</strong> Cergy, France
             </p>
           </CardContent>
@@ -111,7 +111,7 @@ export default function DonneesPersonnelles() {
           </CardHeader>
           <CardContent>
             <p>
-              Le traitement de vos données est fondé sur l&apos;intérêt légitime d&apos;EmilienG.fr 
+              Le traitement de vos données est fondé sur l&apos;intérêt légitime d&apos;asciitree.fr
               à fournir et améliorer ses services, ainsi que sur votre consentement 
               pour les cookies non essentiels.
             </p>
@@ -193,7 +193,7 @@ export default function DonneesPersonnelles() {
           <CardContent>
             <p>
               Pour exercer vos droits ou pour toute question concernant le traitement de vos données, 
-              contactez-nous à : <a href="mailto:contact@emilieng.fr" className="text-primary hover:underline">contact@emilieng.fr</a>
+              contactez-nous à : <a href="mailto:contact@asciitree.fr" className="text-primary hover:underline">contact@asciitree.fr</a>
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
               Vous avez également le droit de déposer une plainte auprès de la CNIL si vous estimez 

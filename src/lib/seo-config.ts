@@ -1,6 +1,6 @@
 export const SEO_CONFIG = {
   siteName: 'ASCII Tree Generator',
-  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://ascii-tree-generator.emilieng.fr',
+  baseUrl: process.env.NEXT_PUBLIC_BASE_URL || 'https://asciitree.fr',
   defaultLocale: 'fr',
   supportedLocales: ['fr', 'en', 'es', 'de', 'it'],
   

@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://ascii-tree-generator.vercel.app/sitemap.xml
+Sitemap: https://asciitree.fr/sitemap.xml
 
 # Crawl-delay pour éviter de surcharger le serveur
 Crawl-delay: 1

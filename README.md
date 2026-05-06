@@ -5,6 +5,10 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)](https://www.typescriptlang.org)
+[![GitHub Issues](https://img.shields.io/github/issues/blackout003/ASCII-Tree-Generator)](https://github.com/blackout003/ASCII-Tree-Generator/issues)
+[![GitHub Feature Requests](https://img.shields.io/github/issues/blackout003/ASCII-Tree-Generator/enhancement?label=feature%20requests&color=purple)](https://github.com/blackout003/ASCII-Tree-Generator/issues?q=label%3Aenhancement)
+
+**Live:** [asciitree.fr](https://asciitree.fr) · [Report a bug](https://github.com/blackout003/ASCII-Tree-Generator/issues/new?template=bug_report.md) · [Request a feature](https://github.com/blackout003/ASCII-Tree-Generator/issues/new?template=feature_request.md)
 
 ---
 
@@ -47,7 +51,7 @@
 ### Installation
 
 ```bash
-git clone https://github.com/<your-org>/ascii-tree-generator.git
+git clone https://github.com/blackout003/ASCII-Tree-Generator.git
 cd ascii-tree-generator
 npm install
 ```
@@ -80,7 +84,7 @@ npm run lint
 All variables are optional. The app works without any of them in development.
 
 ```env
-# Override the base URL (defaults to https://ascii-tree-generator.emilieng.fr)
+# Override the base URL (defaults to https://asciitree.fr)
 NEXT_PUBLIC_BASE_URL=https://your-domain.com
 
 # Google Analytics 4 (production only)

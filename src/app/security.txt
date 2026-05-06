@@ -1,5 +1,5 @@
-Contact: mailto:security@ascii-tree-generator.com
-Expires: 2025-12-31T23:59:59.000Z
+Contact: mailto:contact@egweb.fr
+Expires: 2026-12-31T23:59:59.000Z
 Preferred-Languages: fr, en
-Canonical: https://ascii-tree-generator.emilieng.fr//.well-known/security.txt
-Policy: https://ascii-tree-generator.emilieng.fr/security-policy
+Canonical: https://asciitree.fr/.well-known/security.txt
+Policy: https://asciitree.fr/security-policy
