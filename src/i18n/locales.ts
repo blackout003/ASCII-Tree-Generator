@@ -1,4 +1,4 @@
-export const locales = ['fr', 'en', 'it', 'es', 'de'] as const;
+export const locales = ['fr', 'en', 'it', 'es', 'de', 'pt', 'ru', 'ja'] as const;
 export type Locale = typeof locales[number];
 
 export const defaultLocale: Locale = 'fr';
@@ -8,5 +8,8 @@ export const localeNames: Record<Locale, string> = {
   en: 'English',
   it: 'Italiano',
   es: 'Español',
-  de: 'Deutsch'
+  de: 'Deutsch',
+  pt: 'Português',
+  ru: 'Русский',
+  ja: '日本語'
 };

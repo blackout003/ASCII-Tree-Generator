@@ -116,12 +116,6 @@ export default async function LocaleLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Script
-          defer
-          src="https://statistique.ganecloud.fr/script.js"
-          data-website-id="e9526dfa-2a8c-47d6-be8c-7f67b581ef80"
-          strategy="afterInteractive"
-        />
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ThemeProvider
             attribute="class"
@@ -132,15 +126,20 @@ export default async function LocaleLayout({
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
-        
+
         {/* Analytics */}
         <Analytics />
         <GoogleTagManagerNoScript />
         <SpeedInsights />
-        
+
         {/* Toast notifications */}
         <Toaster />
       </body>
+      <Script
+        src="https://statistique.ganecloud.fr/script.js"
+        data-website-id="e9526dfa-2a8c-47d6-be8c-7f67b581ef80"
+        strategy="afterInteractive"
+      />
     </html>
   );
 }

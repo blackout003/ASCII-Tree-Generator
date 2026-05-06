@@ -1,0 +1,119 @@
+{
+  "title": "Gerador de Árvore ASCII",
+  "description": "Visualize e crie a estrutura perfeita para o seu projeto. Arraste e solte suas pastas/arquivos e converta facilmente para o formato ASCII para sua documentação.",
+  "treeEditor": {
+    "title": "Editor de Árvore",
+    "description": "Clique duas vezes em um nome para modificá-lo. Use os botões para adicionar elementos.",
+    "newFolder": "Nova Pasta",
+    "newFile": "Novo Arquivo",
+    "save": "Salvar",
+    "load": "Carregar",
+    "clearAll": "Limpar Tudo",
+    "addFolder": "Adicionar pasta",
+    "addFile": "Adicionar arquivo",
+    "move": "Mover (arrastar e soltar)",
+    "editName": "Editar nome",
+    "delete": "Excluir",
+    "cannotAddFolderToFile": "Não é possível adicionar uma pasta a um arquivo",
+    "cannotAddFileToFile": "Não é possível adicionar um arquivo a um arquivo",
+    "dropToRoot": "Solte aqui para mover para a raiz",
+    "dropInFolder": "Solte aqui para adicionar à pasta \"{name}\""
+  },
+  "asciiPreview": {
+    "title": "Pré-visualização ASCII",
+    "description": "Pré-visualização da sua árvore em formato ASCII",
+    "copy": "Copiar",
+    "download": "Baixar",
+    "placeholder": "Sua árvore ASCII aparecerá aqui..."
+  },
+  "dragDrop": {
+    "title": "Arrastar e Soltar Arquivos",
+    "description": "Arraste suas pastas e arquivos aqui para importá-los na árvore",
+    "dropHere": "Arraste seus arquivos e pastas aqui",
+    "orClick": "ou clique para selecionar arquivos",
+    "selectFiles": "Selecionar arquivos",
+    "selectFolder": "Selecionar pasta",
+    "importedItems": "Itens importados:",
+    "items": "itens",
+    "confirmTitle": "Confirmar adição de arquivos",
+    "confirmDescription": "Deseja adicionar {count} item(ns) à árvore?",
+    "andMore": "e mais {count}..."
+  },
+  "options": {
+    "title": "Opções de Configuração",
+    "sortAlphabetically": "Ordenar alfabeticamente",
+    "showHidden": "Mostrar arquivos ocultos",
+    "includeExtensions": "Incluir extensões",
+    "maxDepth": "Profundidade máxima:",
+    "showFolderSlash": "Mostrar \\ no final das pastas"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema",
+    "toggleTheme": "Alternar tema"
+  },
+  "footer": {
+    "copyright": "© {year} asciitree.fr. Todos os direitos reservados.",
+    "legalNotice": "Aviso Legal",
+    "privacyPolicy": "Política de Privacidade"
+  },
+  "errors": {
+    "loadError": "Erro ao carregar o arquivo. Verifique se é um arquivo JSON válido.",
+    "copyError": "Erro ao copiar para a área de transferência.",
+    "copySuccess": "Copiado para a área de transferência com sucesso!",
+    "downloadError": "Erro ao baixar o arquivo.",
+    "downloadSuccess": "Download iniciado com sucesso!",
+    "saveError": "Erro ao salvar o arquivo.",
+    "saveSuccess": "Árvore salva com sucesso!",
+    "loadSuccess": "Árvore carregada com sucesso!",
+    "clearSuccess": "Árvore limpa com sucesso!",
+    "clearConfirmTitle": "Confirmar exclusão",
+    "clearConfirmDescription": "Todos os dados serão excluídos permanentemente. Esta ação é irreversível.",
+    "loadConfirmTitle": "Confirmar carregamento",
+    "loadConfirmDescription": "Os dados atuais serão substituídos pelo arquivo carregado. Esta ação é irreversível.",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar"
+  },
+  "seoContent": {
+    "title": "Gerador de Árvore de Arquivos ASCII",
+    "intro": "O gerador de árvore ASCII é uma ferramenta online gratuita que permite criar facilmente representações visuais da estrutura do seu projeto. Perfeito para documentar seus projetos, criar diagramas para seus arquivos README.md e compartilhar a organização do seu código com sua equipe.",
+    "whyUse": {
+      "title": "Por que usar uma árvore ASCII para sua documentação?",
+      "para1": "Seja você trabalhando em um projeto de código aberto, documentando uma aplicação web ou apresentando a arquitetura de um projeto profissional, uma árvore de arquivos ASCII oferece várias vantagens:",
+      "benefit1": "Documentação clara: Visualize toda a estrutura do seu projeto em apenas algumas linhas de texto",
+      "benefit2": "Compatibilidade universal: Formato de texto simples que é exibido corretamente no GitHub, GitLab, Bitbucket e em todos os editores de texto",
+      "benefit3": "Fácil integração: Copie e cole diretamente nos seus arquivos README.md sem formatação adicional",
+      "benefit4": "Compatível com controle de versão: Alterações na estrutura são fáceis de rastrear nos seus commits Git"
+    },
+    "howToUse": {
+      "title": "Como gerar uma árvore para o seu README?",
+      "para1": "Nosso gerador de árvore ASCII simplifica a criação de estruturas de arquivos para seus projetos. Veja como usá-lo:",
+      "step1": "Arraste e solte suas pastas e arquivos diretamente na interface ou use o seletor de arquivos",
+      "step2": "Organize sua estrutura de árvore adicionando, modificando ou excluindo elementos conforme necessário",
+      "step3": "Configure as opções: ordenação alfabética, profundidade máxima, exibição de arquivos ocultos",
+      "step4": "Copie o resultado ASCII gerado e cole-o no seu arquivo README.md ou documentação",
+      "para2": "A ferramenta gera automaticamente uma árvore de arquivos em formato ASCII compatível com Markdown, tornando-a ideal para seus projetos GitHub, documentação técnica e apresentações de estrutura de código."
+    },
+    "useCases": {
+      "title": "Exemplos de estrutura e casos de uso",
+      "para1": "O gerador de árvore ASCII é particularmente útil para:",
+      "useCase1": "Visualizar a estrutura de pastas de um projeto web (React, Next.js, Vue.js...)",
+      "useCase2": "Documentar a organização de um projeto Python com seus módulos e pacotes",
+      "useCase3": "Criar diagramas de árvore para projetos Node.js e sua estrutura de arquivos",
+      "useCase4": "Apresentar a arquitetura do projeto em um arquivo README.md profissional",
+      "para2": "Seja você precisando visualizar uma estrutura de projeto Windows com o comando tree, ou querendo criar uma árvore para um projeto Linux, nossa ferramenta online funciona em todos os sistemas operacionais sem instalação."
+    },
+    "features": {
+      "title": "Recursos do gerador",
+      "para1": "Nosso gerador de árvore ASCII oferece muitos recursos para atender a todas as suas necessidades de documentação:",
+      "feature1": "Interface intuitiva de arrastar e soltar para importar rapidamente seus arquivos e pastas",
+      "feature2": "Edição interativa: adicione, modifique ou exclua elementos com alguns cliques",
+      "feature3": "Exportação simples: copie o resultado ou baixe-o como arquivo de texto",
+      "feature4": "Opções avançadas: personalize profundidade, classificação e exibição de acordo com suas preferências",
+      "feature5": "Pré-visualização em tempo real da sua estrutura de árvore ASCII",
+      "feature6": "Suporte multilíngue para uso internacional",
+      "para2": "Todas essas ferramentas estão disponíveis gratuitamente, sem registro e diretamente no seu navegador web."
+    }
+  }
+}

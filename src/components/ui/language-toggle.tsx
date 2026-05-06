@@ -21,6 +21,9 @@ const localeFlags: Record<Locale, string> = {
   it: "🇮🇹",
   es: "🇪🇸",
   de: "🇩🇪",
+  pt: "🇧🇷",
+  ru: "🇷🇺",
+  ja: "🇯🇵",
 }
 
 export function LanguageToggle() {
