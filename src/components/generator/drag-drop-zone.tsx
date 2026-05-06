@@ -20,6 +20,53 @@ interface DragDropZoneProps {
   onFilesAdded: (nodes: TreeNode[]) => void;
 }
 
+function buildTreeFromFiles(files: File[]): TreeNode[] {
+  const newNodes: TreeNode[] = [];
+
+  files.forEach((file) => {
+    const path = file.webkitRelativePath || file.name;
+    const pathParts = path.split('/');
+
+    let currentLevel = newNodes;
+    pathParts.forEach((part, partIndex) => {
+      const isLastPart = partIndex === pathParts.length - 1;
+      const isFile = isLastPart && !file.webkitRelativePath;
+
+      const existingNode = currentLevel.find(node => node.name === part);
+
+      if (existingNode) {
+        if (isFile) {
+          if (existingNode.type === 'folder') {
+            existingNode.children = existingNode.children || [];
+            existingNode.children.push({
+              id: crypto.randomUUID(),
+              name: part,
+              type: 'file'
+            });
+          }
+        } else {
+          currentLevel = existingNode.children || [];
+        }
+      } else {
+        const newNode: TreeNode = {
+          id: crypto.randomUUID(),
+          name: part,
+          type: isFile ? 'file' : 'folder',
+          isExpanded: true,
+          children: isFile ? undefined : []
+        };
+
+        currentLevel.push(newNode);
+        if (!isFile) {
+          currentLevel = newNode.children!;
+        }
+      }
+    });
+  });
+
+  return newNodes;
+}
+
 export default function DragDropZone({ onFilesAdded }: DragDropZoneProps) {
   const t = useTranslations();
   const [isDragOver, setIsDragOver] = useState(false);
@@ -41,57 +88,12 @@ export default function DragDropZone({ onFilesAdded }: DragDropZoneProps) {
     e.preventDefault();
     setIsDragOver(false);
 
-    const items = Array.from(e.dataTransfer.items);
-    const newNodes: TreeNode[] = [];
+    const files = Array.from(e.dataTransfer.items)
+      .filter(item => item.kind === 'file')
+      .map(item => item.getAsFile())
+      .filter((f): f is File => f !== null);
 
-    items.forEach((item, index) => {
-      if (item.kind === 'file') {
-        const file = item.getAsFile();
-        if (file) {
-          const path = file.webkitRelativePath || file.name;
-          const pathParts = path.split('/');
-          
-          // Créer la structure de dossiers
-          let currentLevel = newNodes;
-          pathParts.forEach((part, partIndex) => {
-            const isLastPart = partIndex === pathParts.length - 1;
-            const isFile = isLastPart && !file.webkitRelativePath;
-            
-            const existingNode = currentLevel.find(node => node.name === part);
-            
-            if (existingNode) {
-              if (isFile) {
-                // Si c'est un fichier et qu'on a déjà un dossier avec ce nom, on ajoute le fichier dedans
-                if (existingNode.type === 'folder') {
-                  existingNode.children = existingNode.children || [];
-                  existingNode.children.push({
-                    id: `${Date.now()}-${index}-${partIndex}`,
-                    name: part,
-                    type: 'file'
-                  });
-                }
-              } else {
-                // Continuer dans le dossier existant
-                currentLevel = existingNode.children || [];
-              }
-            } else {
-              const newNode: TreeNode = {
-                id: `${Date.now()}-${index}-${partIndex}`,
-                name: part,
-                type: isFile ? 'file' : 'folder',
-                isExpanded: true,
-                children: isFile ? undefined : []
-              };
-              
-              currentLevel.push(newNode);
-              if (!isFile) {
-                currentLevel = newNode.children!;
-              }
-            }
-          });
-        }
-      }
-    });
+    const newNodes = buildTreeFromFiles(files);
 
     if (newNodes.length > 0) {
       setPendingNodes(newNodes);
@@ -101,48 +103,7 @@ export default function DragDropZone({ onFilesAdded }: DragDropZoneProps) {
 
   const handleFileInput = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
-    const newNodes: TreeNode[] = [];
-
-    files.forEach((file, index) => {
-      const path = file.webkitRelativePath || file.name;
-      const pathParts = path.split('/');
-      
-      let currentLevel = newNodes;
-      pathParts.forEach((part, partIndex) => {
-        const isLastPart = partIndex === pathParts.length - 1;
-        const isFile = isLastPart && !file.webkitRelativePath;
-        
-        const existingNode = currentLevel.find(node => node.name === part);
-        
-        if (existingNode) {
-          if (isFile) {
-            if (existingNode.type === 'folder') {
-              existingNode.children = existingNode.children || [];
-              existingNode.children.push({
-                id: `${Date.now()}-${index}-${partIndex}`,
-                name: part,
-                type: 'file'
-              });
-            }
-          } else {
-            currentLevel = existingNode.children || [];
-          }
-        } else {
-          const newNode: TreeNode = {
-            id: `${Date.now()}-${index}-${partIndex}`,
-            name: part,
-            type: isFile ? 'file' : 'folder',
-            isExpanded: true,
-            children: isFile ? undefined : []
-          };
-          
-          currentLevel.push(newNode);
-          if (!isFile) {
-            currentLevel = newNode.children!;
-          }
-        }
-      });
-    });
+    const newNodes = buildTreeFromFiles(files);
 
     if (newNodes.length > 0) {
       setPendingNodes(newNodes);
@@ -188,8 +149,8 @@ export default function DragDropZone({ onFilesAdded }: DragDropZoneProps) {
       <CardContent>
         <div
           className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
-            isDragOver 
-              ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' 
+            isDragOver
+              ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
               : 'border-gray-300 dark:border-gray-600'
           }`}
           onDragOver={handleDragOver}
@@ -203,19 +164,19 @@ export default function DragDropZone({ onFilesAdded }: DragDropZoneProps) {
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             {t('dragDrop.orClick')}
           </p>
-          
+
           <div className="flex gap-2 justify-center">
             <Button onClick={() => document.getElementById('file-input')?.click()}>
               {t('dragDrop.selectFiles')}
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               onClick={() => document.getElementById('folder-input')?.click()}
             >
               {t('dragDrop.selectFolder')}
             </Button>
           </div>
-          
+
           <input
             id="file-input"
             type="file"
@@ -271,8 +232,8 @@ export default function DragDropZone({ onFilesAdded }: DragDropZoneProps) {
           <DialogHeader>
             <DialogTitle>{t('dragDrop.confirmTitle')}</DialogTitle>
             <DialogDescription>
-              {t('dragDrop.confirmDescription', { 
-                count: flattenTree(pendingNodes).length 
+              {t('dragDrop.confirmDescription', {
+                count: flattenTree(pendingNodes).length
               })}
             </DialogDescription>
           </DialogHeader>

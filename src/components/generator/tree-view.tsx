@@ -160,7 +160,8 @@ export function TreeView({
                   variant="ghost"
                   onClick={() => onAddNode(node.id, 'folder')}
                   className={`h-6 w-6 p-0 ${node.type === 'file' ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  title={node.type === 'file' ? 'Impossible d\'ajouter un dossier dans un fichier' : 'Ajouter un dossier'}
+                  title={node.type === 'file' ? t('treeEditor.cannotAddFolderToFile') : t('treeEditor.addFolder')}
+                  aria-label={node.type === 'file' ? t('treeEditor.cannotAddFolderToFile') : t('treeEditor.addFolder')}
                   disabled={node.type === 'file'}
                 >
                   <Folder className="w-3 h-3" />
@@ -171,6 +172,7 @@ export function TreeView({
                   onClick={() => onAddNode(node.id, 'file')}
                   className={`h-6 w-6 p-0 ${node.type === 'file' ? 'opacity-50 cursor-not-allowed' : ''}`}
                   title={node.type === 'file' ? t('treeEditor.cannotAddFileToFile') : t('treeEditor.addFile')}
+                  aria-label={node.type === 'file' ? t('treeEditor.cannotAddFileToFile') : t('treeEditor.addFile')}
                   disabled={node.type === 'file'}
                 >
                   <File className="w-3 h-3" />
@@ -179,7 +181,8 @@ export function TreeView({
                   size="sm"
                   variant="ghost"
                   className="h-6 w-6 p-0 cursor-move"
-                  title="Déplacer (glisser-déposer)"
+                  title={t('treeEditor.move')}
+                  aria-label={t('treeEditor.move')}
                 >
                   <Move className="w-3 h-3" />
                 </Button>
@@ -188,7 +191,8 @@ export function TreeView({
                   variant="ghost"
                   onClick={() => onStartEdit(node)}
                   className="h-6 w-6 p-0 text-blue-500 hover:text-blue-700"
-                  title="Modifier le nom"
+                  title={t('treeEditor.editName')}
+                  aria-label={t('treeEditor.editName')}
                 >
                   <Edit3 className="w-3 h-3" />
                 </Button>
@@ -197,7 +201,8 @@ export function TreeView({
                   variant="ghost"
                   onClick={() => onDeleteNode(node.id)}
                   className="h-6 w-6 p-0 text-red-500 hover:text-red-700"
-                  title="Supprimer"
+                  title={t('treeEditor.delete')}
+                  aria-label={t('treeEditor.delete')}
                 >
                   <Trash2 className="w-3 h-3" />
                 </Button>

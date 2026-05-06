@@ -16,7 +16,7 @@ import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { LanguageToggle } from '@/components/ui/language-toggle';
 import { useTranslations } from 'next-intl';
 import { TreeNode, TreeOptions, ASCIITreeConfig } from '@/lib/types';
-import { generateASCIITree, sortTreeNodes, updateNodeName, toggleNodeExpansion, compressEmptyFolders, showOnlyFiles, showOnlyFolders } from '@/lib/tree-generator';
+import { generateASCIITree, sortTreeNodes, updateNodeName, toggleNodeExpansion, compressEmptyFolders, showOnlyFiles, showOnlyFolders, findNodeById } from '@/lib/tree-generator';
 import { validateSavedTreeData, validateNodeStructure } from '@/lib/validation';
 import { defaultTreeOptions } from '@/lib/default-options';
 import DragDropZone from './drag-drop-zone';
@@ -93,7 +93,7 @@ export default function TreeGenerator() {
    */
   const addNode = useCallback((parentId: string | null, type: 'file' | 'folder') => {
     const newNode: TreeNode = {
-      id: Date.now().toString(),
+      id: crypto.randomUUID(),
       name: type === 'folder' ? 'nouveau-dossier' : 'nouveau-fichier',
       type,
       isExpanded: type === 'folder',
@@ -130,13 +130,13 @@ export default function TreeGenerator() {
   const deleteNode = useCallback((nodeId: string) => {
     setTreeData(prev => {
       const removeNode = (nodes: TreeNode[]): TreeNode[] => {
-        return nodes.filter(node => {
-          if (node.id === nodeId) return false;
-          if (node.children) {
-            node.children = removeNode(node.children);
-          }
-          return true;
-        });
+        return nodes
+          .filter(node => node.id !== nodeId)
+          .map(node =>
+            node.children
+              ? { ...node, children: removeNode(node.children) }
+              : node
+          );
       };
       return removeNode(prev);
     });
@@ -250,18 +250,13 @@ export default function TreeGenerator() {
     return output;
   }, [processedTreeData, asciiConfig, options.showFolderSlash, options.connectorStyle, options.indentSize, options.useTabs, options.rootPrefix, options.showRootPrefix, options.showFullPath, options.maxDepth, options.includeExtensions, options.showHidden, options.showLineNumbers, options.showSeparators]);
 
-  const generateASCII = useCallback(() => {
-    return asciiOutput;
-  }, [asciiOutput]);
-
   /**
    * Copie la représentation ASCII de l'arbre dans le presse-papiers
    * Affiche une notification de succès ou d'erreur
    */
   const copyToClipboard = useCallback(async () => {
-    const asciiTree = generateASCII();
     try {
-      await navigator.clipboard.writeText(asciiTree);
+      await navigator.clipboard.writeText(asciiOutput);
       toast({
         title: t('errors.copySuccess'),
         variant: 'default',
@@ -273,7 +268,7 @@ export default function TreeGenerator() {
         variant: 'destructive',
       });
     }
-  }, [generateASCII, toast, t]);
+  }, [asciiOutput, toast, t]);
 
   /**
    * Télécharge la représentation ASCII de l'arbre sous forme de fichier texte
@@ -281,8 +276,7 @@ export default function TreeGenerator() {
    */
   const downloadASCII = useCallback(() => {
     try {
-      const asciiTree = generateASCII();
-      const blob = new Blob([asciiTree], { type: 'text/plain' });
+      const blob = new Blob([asciiOutput], { type: 'text/plain' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
@@ -302,7 +296,7 @@ export default function TreeGenerator() {
         variant: 'destructive',
       });
     }
-  }, [generateASCII, toast, t]);
+  }, [asciiOutput, toast, t]);
 
   const handleFilesAdded = useCallback((newNodes: TreeNode[]) => {
     setTreeData(prev => [...prev, ...newNodes]);
@@ -370,6 +364,15 @@ export default function TreeGenerator() {
    * @param file - Le fichier à charger
    */
   const performLoadTree = useCallback((file: File) => {
+    const MAX_JSON_SIZE = 5 * 1024 * 1024; // 5 MB
+    if (file.size > MAX_JSON_SIZE) {
+      toast({
+        title: t('errors.loadError'),
+        variant: 'destructive',
+      });
+      return;
+    }
+
     const reader = new FileReader();
     reader.onload = (e) => {
       try {
@@ -467,20 +470,6 @@ export default function TreeGenerator() {
    */
   const moveNode = useCallback((nodeId: string, newParentId: string | null) => {
     setTreeData(prev => {
-      // Fonction helper pour trouver un nœud par son ID
-      const findNodeById = (nodes: TreeNode[], id: string): TreeNode | null => {
-        for (const node of nodes) {
-          if (node.id === id) {
-            return node;
-          }
-          if (node.children) {
-            const found = findNodeById(node.children, id);
-            if (found) return found;
-          }
-        }
-        return null;
-      };
-
       // Vérifier si le nouveau parent est un dossier (pas un fichier)
       if (newParentId !== null) {
         const newParent = findNodeById(prev, newParentId);

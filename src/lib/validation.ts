@@ -11,16 +11,7 @@ export const TreeNodeSchema: z.ZodType<TreeNode> = z.lazy(() =>
     type: z.enum(['file', 'folder'], {
       message: 'Type doit être "file" ou "folder"',
     }),
-    children: z
-      .array(TreeNodeSchema)
-      .optional()
-      .refine(
-        (children) => {
-          // Un fichier ne peut pas avoir d'enfants
-          return true;
-        },
-        { message: 'Un fichier ne peut pas avoir d\'enfants' }
-      ),
+    children: z.array(TreeNodeSchema).optional(),
     isExpanded: z.boolean().optional(),
   })
 );

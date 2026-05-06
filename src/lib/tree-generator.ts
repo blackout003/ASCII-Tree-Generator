@@ -212,7 +212,7 @@ export function sortTreeNodes(
 ): TreeNode[] {
   const direction = sortDirection === 'desc' ? -1 : 1;
   
-  return nodes.sort((a, b) => {
+  return [...nodes].sort((a, b) => {
     let comparison = 0;
     
     if (sortOrder === 'type') {

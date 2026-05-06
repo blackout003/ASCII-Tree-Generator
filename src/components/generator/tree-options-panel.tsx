@@ -58,9 +58,9 @@ export function TreeOptionsPanel({
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent className="overflow-y-auto">
         <SheetHeader>
-          <SheetTitle>Configuration Options</SheetTitle>
+          <SheetTitle>{t('options.title')}</SheetTitle>
           <SheetDescription>
-            Configuration Options
+            {t('options.title')}
           </SheetDescription>
         </SheetHeader>
         <div className="mt-6 space-y-6 pb-6">

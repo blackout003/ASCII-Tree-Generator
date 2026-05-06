@@ -49,7 +49,7 @@ export function ASCIIPreview({
           {onOpenOptions && (
             <Button onClick={onOpenOptions} size="sm" variant="outline" className="gap-2">
               <Sliders className="w-4 h-4" />
-              Configuration Options
+              {t('options.title')}
             </Button>
           )}
         </div>
