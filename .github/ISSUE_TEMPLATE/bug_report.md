@@ -1,38 +1,30 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
+name: 🐛 Rapport de bug
+about: Signaler un problème ou un comportement anormal du projet.
+title: '[BUG] '
+labels: 'bug'
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**📝 Description du bug**
+Une description claire et concise du problème rencontré (Que s'est-il passé ?).
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**🔄 Étapes pour reproduire le problème**
+Comment pouvons-nous reproduire ce bug de notre côté ?
+1. Aller sur '...'
+2. Cliquer sur '....'
+3. Voir l'erreur
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**🎯 Comportement attendu**
+Une description claire et concise de ce qui aurait dû se passer normalement.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**💻 Environnement / Contexte**
+- Système d'exploitation: [ex: Windows 11, macOS, Linux]
+- Navigateur ou Version de l'application: [ex: Chrome 120, Node v18]
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**📸 Captures d'écran**
+Si applicable, ajoutez des captures d'écran pour aider à expliquer le problème.
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+**➕ Informations complémentaires**
+Ajoutez tout autre contexte ou message d'erreur complet ici.
