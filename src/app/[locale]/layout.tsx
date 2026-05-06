@@ -9,6 +9,7 @@ import { SEO_CONFIG, getLocaleMetadata } from '@/lib/seo-config';
 import { Analytics, GoogleTagManagerNoScript } from '@/components/ui/analytics';
 import { Toaster } from '@/components/ui/toaster';
 import { defaultLocale } from '@/i18n/locales';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -135,6 +136,7 @@ export default async function LocaleLayout({
         {/* Analytics */}
         <Analytics />
         <GoogleTagManagerNoScript />
+        <SpeedInsights />
         
         {/* Toast notifications */}
         <Toaster />
