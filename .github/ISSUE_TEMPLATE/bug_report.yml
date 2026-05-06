@@ -1,0 +1,44 @@
+name: 🐛 Rapport de bug
+description: Signaler un problème ou un comportement anormal du projet.
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre le temps de signaler ce bug ! Plus vous nous donnerez de détails, plus il sera facile à corriger.
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Description du bug
+      description: Une description claire et concise du problème rencontré.
+      placeholder: Que s'est-il passé ?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🔄 Étapes pour reproduire le problème
+      description: Comment pouvons-nous reproduire ce bug de notre côté ?
+      placeholder: |
+        1. Aller sur...
+        2. Cliquer sur...
+        3. Voir l'erreur...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 🎯 Comportement attendu
+      description: Qu'est-ce qui aurait dû se passer normalement ?
+      placeholder: Décrivez le comportement correct.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: 💻 Environnement / Contexte
+      description: Version du logiciel, système d'exploitation, navigateur, etc.
+      placeholder: ex: Windows 11, Node.js v18.0, Chrome v120
+    validations:
+      required: false
