@@ -1,46 +1,42 @@
-'use client';
-
-import { useEffect } from 'react';
-import { 
-  initGoogleAnalytics, 
-  initGoogleTagManager, 
-  initHotjar, 
-  initMatomo,
-  ANALYTICS_CONFIG 
-} from '@/lib/analytics';
+import Script from 'next/script';
+import { ANALYTICS_CONFIG } from '@/lib/analytics';
 
 export function Analytics() {
-  useEffect(() => {
-    // Initialiser tous les analytics
-    if (ANALYTICS_CONFIG.googleAnalytics.enabled) {
-      initGoogleAnalytics();
-    }
-    
-    if (ANALYTICS_CONFIG.googleTagManager.enabled) {
-      initGoogleTagManager();
-    }
-    
-    if (ANALYTICS_CONFIG.hotjar.enabled) {
-      initHotjar();
-    }
-    
-    if (ANALYTICS_CONFIG.matomo.enabled) {
-      initMatomo();
-    }
-  }, []);
+  const gaId = ANALYTICS_CONFIG.googleAnalytics.measurementId;
+  const gtmId = ANALYTICS_CONFIG.googleTagManager.containerId;
+  const gaEnabled = ANALYTICS_CONFIG.googleAnalytics.enabled && !gaId.includes('XXXXXXXXXX');
+  const gtmEnabled = ANALYTICS_CONFIG.googleTagManager.enabled && !gtmId.includes('XXXXXXX');
 
-  return null;
+  return (
+    <>
+      {gaEnabled && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            strategy="afterInteractive"
+          />
+          <Script id="ga-init" strategy="afterInteractive">
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${gaId}');`}
+          </Script>
+        </>
+      )}
+      {gtmEnabled && (
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${gtmId}');`}
+        </Script>
+      )}
+    </>
+  );
 }
 
 export function GoogleTagManagerNoScript() {
-  if (!ANALYTICS_CONFIG.googleTagManager.enabled) {
-    return null;
-  }
+  const gtmId = ANALYTICS_CONFIG.googleTagManager.containerId;
+  if (!ANALYTICS_CONFIG.googleTagManager.enabled || gtmId.includes('XXXXXXX')) return null;
 
   return (
     <noscript>
       <iframe
-        src={`https://www.googletagmanager.com/ns.html?id=${ANALYTICS_CONFIG.googleTagManager.containerId}`}
+        src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
         height="0"
         width="0"
         style={{ display: 'none', visibility: 'hidden' }}

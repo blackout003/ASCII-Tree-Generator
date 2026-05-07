@@ -24,6 +24,10 @@ const nextConfig: NextConfig = {
         source: '/(.*)',
         headers: [
           {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+          },
+          {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
           },
@@ -93,7 +97,7 @@ const nextConfig: NextConfig = {
   
   // Optimisations de build
   experimental: {
-    optimizeCss: false, // Désactivé temporairement
+    optimizeCss: true,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
   

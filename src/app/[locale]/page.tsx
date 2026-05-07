@@ -3,6 +3,11 @@ import { FooterInternational } from '@/components/ui/footer-international';
 import { StructuredData } from '@/components/ui/structured-data-server';
 import { generateWebsiteStructuredData, generateBreadcrumbStructuredData } from '@/lib/structured-data-server';
 import { SeoContentSection } from '@/components/home/seo-content-section';
+import { locales } from '@/i18n/locales';
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export default function Home() {
   return (
