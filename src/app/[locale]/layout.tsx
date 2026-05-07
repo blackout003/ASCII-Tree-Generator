@@ -135,11 +135,13 @@ export default async function LocaleLayout({
         {/* Toast notifications */}
         <Toaster />
       </body>
-      <Script
-        src="https://statistique.ganecloud.fr/script.js"
-        data-website-id="e9526dfa-2a8c-47d6-be8c-7f67b581ef80"
-        strategy="afterInteractive"
-      />
+      {process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL && process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+        <Script
+          src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+          strategy="afterInteractive"
+        />
+      )}
     </html>
   );
 }

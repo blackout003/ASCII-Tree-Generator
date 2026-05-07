@@ -100,6 +100,10 @@ NEXT_PUBLIC_HOTJAR_SNIPPET_VERSION=6
 # Matomo — privacy-focused analytics alternative (production only)
 NEXT_PUBLIC_MATOMO_URL=https://your-matomo.com
 NEXT_PUBLIC_MATOMO_SITE_ID=1
+
+#UMAMI
+NEXT_PUBLIC_UMAMI_SCRIPT_URL=https://your-umami-instance.com/script.js
+NEXT_PUBLIC_UMAMI_WEBSITE_ID=your-website-id
 ```
 
 Create a `.env.local` file at the root and add any variables you need.
