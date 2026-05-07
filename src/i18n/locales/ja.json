@@ -56,7 +56,12 @@
   "footer": {
     "copyright": "© {year} asciitree.fr. All rights reserved.",
     "legalNotice": "法的情報",
-    "privacyPolicy": "プライバシーポリシー"
+    "privacyPolicy": "プライバシーポリシー",
+    "tagline": "READMEやドキュメント用のASCIIツリー構造を生成します。",
+    "support": "プロジェクトを支援",
+    "links": "リンク",
+    "sourceCode": "ソースコード",
+    "madeWith": "♥ を込めて制作"
   },
   "errors": {
     "loadError": "ファイルの読み込みエラーです。有効なJSONファイルであることを確認してください。",

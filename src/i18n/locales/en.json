@@ -56,7 +56,12 @@
   "footer": {
     "copyright": "© {year} asciitree.fr. All rights reserved.",
     "legalNotice": "Legal Notice",
-    "privacyPolicy": "Privacy Policy"
+    "privacyPolicy": "Privacy Policy",
+    "tagline": "Generate ASCII tree structures for your READMEs and documentation.",
+    "support": "Support the project",
+    "links": "Links",
+    "sourceCode": "Source code",
+    "madeWith": "Made with ♥ by"
   },
   "errors": {
     "loadError": "Error loading file. Please check that it's a valid JSON file.",

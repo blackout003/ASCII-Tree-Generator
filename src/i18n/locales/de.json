@@ -56,7 +56,12 @@
   "footer": {
     "copyright": "© {year} asciitree.fr. Alle Rechte vorbehalten.",
     "legalNotice": "Impressum",
-    "privacyPolicy": "Datenschutz"
+    "privacyPolicy": "Datenschutz",
+    "tagline": "Erstelle ASCII-Baumstrukturen für READMEs und Dokumentationen.",
+    "support": "Projekt unterstützen",
+    "links": "Links",
+    "sourceCode": "Quellcode",
+    "madeWith": "Gemacht mit ♥ von"
   },
   "errors": {
     "loadError": "Fehler beim Laden der Datei. Bitte überprüfe, dass es sich um eine gültige JSON-Datei handelt.",
