@@ -173,6 +173,15 @@ Key points:
 
 ---
 
+## Support
+
+If you find this project useful, you can support its development:
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-blackout003-FFDD00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/blackout003)
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-blackout003-ea4aaa?style=flat&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/blackout003)
+
+---
+
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](./LICENSE).

@@ -16,7 +16,7 @@ export function FooterInternational() {
       <div className="container mx-auto px-4 pt-10 pb-6">
 
         {/* Main grid */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 mb-10">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 mb-10">
 
           {/* Brand */}
           <div className="flex flex-col gap-3">
@@ -76,39 +76,6 @@ export function FooterInternational() {
                 {t('sourceCode')}
               </a>
             </nav>
-          </div>
-
-          {/* Support */}
-          <div className="flex flex-col gap-3">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              {t('support')}
-            </h3>
-            <div className="flex flex-col gap-3">
-              <a
-                href="https://www.buymeacoffee.com/blackout003"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block w-fit transition-opacity hover:opacity-85"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
-                  alt="Buy Me a Coffee"
-                  style={{ height: '40px', width: 'auto' }}
-                />
-              </a>
-              <a
-                href="https://github.com/sponsors/blackout003"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 w-fit px-4 py-2 rounded-full text-sm font-medium border border-[#ea4aaa]/60 text-[#ea4aaa] hover:bg-[#ea4aaa] hover:text-white hover:border-[#ea4aaa] transition-all duration-200"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4">
-                  <path d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.565 20.565 0 008 13.393a20.561 20.561 0 003.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5z" />
-                </svg>
-                Sponsor on GitHub
-              </a>
-            </div>
           </div>
 
         </div>
