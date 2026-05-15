@@ -119,5 +119,12 @@
       "feature6": "Supporto multilingue per uso internazionale",
       "para2": "Tutti questi strumenti sono disponibili gratuitamente, senza registrazione e direttamente nel tuo browser web."
     }
+  },
+  "nav": {
+    "home": "Home",
+    "tools": "Strumenti",
+    "asciiTree": "Albero ASCII",
+    "comingSoon": "Prossimamente",
+    "openTool": "Apri strumento"
   }
 }

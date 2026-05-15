@@ -1,13 +1,6 @@
 'use client';
 
 import React from 'react';
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet';
 import { Input } from '@/components/ui/input';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
@@ -25,18 +18,14 @@ import { useTranslations } from 'next-intl';
 interface TreeOptionsPanelProps {
   options: TreeOptions;
   onOptionsChange: (options: TreeOptions) => void;
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
 }
 
 /**
- * Composant pour les options de configuration de l'arbre dans un Sheet
+ * Composant pour les options de configuration de l'arbre
  */
 export function TreeOptionsPanel({
   options,
   onOptionsChange,
-  open,
-  onOpenChange,
 }: TreeOptionsPanelProps) {
   const t = useTranslations();
 
@@ -55,15 +44,9 @@ export function TreeOptionsPanel({
   };
 
   return (
-    <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent className="overflow-y-auto">
-        <SheetHeader>
-          <SheetTitle>{t('options.title')}</SheetTitle>
-          <SheetDescription>
-            {t('options.title')}
-          </SheetDescription>
-        </SheetHeader>
-        <div className="mt-6 space-y-6 pb-6">
+    <div className="p-4">
+      <h2 className="font-semibold text-sm mb-4">{t('options.title')}</h2>
+      <div className="space-y-6 pb-6">
           {/* Options de base */}
           <div className="space-y-4">
             <h3 className="font-semibold text-sm">Options de base</h3>
@@ -316,8 +299,7 @@ export function TreeOptionsPanel({
             </div>
           </div>
 
-        </div>
-      </SheetContent>
-    </Sheet>
+      </div>
+    </div>
   );
 }
