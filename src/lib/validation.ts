@@ -125,3 +125,48 @@ export function validateNodeStructure(node: TreeNode): boolean {
   }
   return true;
 }
+
+// ── Table schemas ────────────────────────────────────────────────────────────
+
+const TableCellSchema = z.object({
+  content: z.string(),
+});
+
+const TableRowSchema = z.object({
+  id: z.string().min(1),
+  cells: z.array(TableCellSchema),
+});
+
+const TableDataSchemaZ = z.object({
+  columns: z.array(z.string()),
+  rows: z.array(TableRowSchema),
+});
+
+const TableOptionsSchemaZ = z.object({
+  borderStyle: z.enum(['unicode', 'ascii', 'markdown', 'simple']),
+  hasHeader: z.boolean(),
+  alignment: z.enum(['left', 'center', 'right']),
+  padding: z.number().int().min(0).max(10),
+});
+
+export const SavedTableDataSchema = z.object({
+  tableData: TableDataSchemaZ,
+  options: TableOptionsSchemaZ.optional(),
+  timestamp: z.string().optional(),
+  version: z.string().optional(),
+});
+
+export function validateSavedTableData(data: unknown):
+  | { success: true; data: z.infer<typeof SavedTableDataSchema> }
+  | { success: false; error: string } {
+  try {
+    const parsed = SavedTableDataSchema.parse(data);
+    return { success: true, data: parsed };
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      const messages = error.issues.map((e) => `${e.path.join('.')}: ${e.message}`).join(', ');
+      return { success: false, error: `Erreur de validation: ${messages}` };
+    }
+    return { success: false, error: error instanceof Error ? error.message : 'Erreur de validation inconnue' };
+  }
+}

@@ -124,7 +124,56 @@
     "home": "Главная",
     "tools": "Инструменты",
     "asciiTree": "ASCII-дерево",
+    "asciiTable": "ASCII-таблица",
     "comingSoon": "Скоро",
     "openTool": "Открыть инструмент"
+  },
+  "tableGenerator": {
+    "editor": {
+      "title": "Редактор таблицы",
+      "addRow": "Добавить строку",
+      "addColumn": "Добавить столбец",
+      "deleteRow": "Удалить строку",
+      "deleteColumn": "Удалить столбец",
+      "columnPlaceholder": "Столбец",
+      "save": "Сохранить",
+      "load": "Загрузить",
+      "clearAll": "Очистить всё"
+    },
+    "preview": {
+      "title": "Предпросмотр ASCII",
+      "copy": "Копировать",
+      "download": "Скачать",
+      "placeholder": "Ваша ASCII-таблица появится здесь..."
+    },
+    "options": {
+      "title": "Параметры конфигурации",
+      "styleSection": "Стиль",
+      "displaySection": "Отображение",
+      "borderStyle": "Стиль рамки",
+      "alignment": "Выравнивание",
+      "alignLeft": "Влево",
+      "alignCenter": "По центру",
+      "alignRight": "Вправо",
+      "padding": "Отступ ячейки",
+      "hasHeader": "Показать заголовок",
+      "styleSimple": "Простой (тире)"
+    },
+    "errors": {
+      "saveSuccess": "Таблица успешно сохранена!",
+      "saveError": "Ошибка при сохранении.",
+      "loadSuccess": "Таблица успешно загружена!",
+      "loadError": "Ошибка при загрузке. Проверьте файл JSON.",
+      "loadConfirmTitle": "Подтвердить загрузку",
+      "loadConfirmDescription": "Текущие данные будут заменены. Это действие необратимо.",
+      "clearConfirmTitle": "Подтвердить очистку",
+      "clearConfirmDescription": "Все данные будут удалены. Это действие необратимо.",
+      "confirm": "Подтвердить",
+      "cancel": "Отмена",
+      "clearSuccess": "Таблица успешно сброшена!"
+    },
+    "copySuccess": "Таблица скопирована в буфер обмена!",
+    "copyError": "Ошибка при копировании.",
+    "downloadError": "Ошибка при загрузке."
   }
 }

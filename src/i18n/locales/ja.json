@@ -124,7 +124,56 @@
     "home": "ホーム",
     "tools": "ツール",
     "asciiTree": "ASCIIツリー",
+    "asciiTable": "ASCIIテーブル",
     "comingSoon": "近日公開",
     "openTool": "ツールを開く"
+  },
+  "tableGenerator": {
+    "editor": {
+      "title": "テーブルエディター",
+      "addRow": "行を追加",
+      "addColumn": "列を追加",
+      "deleteRow": "行を削除",
+      "deleteColumn": "列を削除",
+      "columnPlaceholder": "列",
+      "save": "保存",
+      "load": "読込",
+      "clearAll": "すべて削除"
+    },
+    "preview": {
+      "title": "ASCIIプレビュー",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "placeholder": "ASCIIテーブルがここに表示されます..."
+    },
+    "options": {
+      "title": "設定オプション",
+      "styleSection": "スタイル",
+      "displaySection": "表示",
+      "borderStyle": "ボーダースタイル",
+      "alignment": "配置",
+      "alignLeft": "左",
+      "alignCenter": "中央",
+      "alignRight": "右",
+      "padding": "セルパディング",
+      "hasHeader": "ヘッダーを表示",
+      "styleSimple": "シンプル（ダッシュ）"
+    },
+    "errors": {
+      "saveSuccess": "テーブルを保存しました！",
+      "saveError": "保存中にエラーが発生しました。",
+      "loadSuccess": "テーブルを読み込みました！",
+      "loadError": "読み込みエラー。有効なJSONファイルか確認してください。",
+      "loadConfirmTitle": "読み込みの確認",
+      "loadConfirmDescription": "現在のデータは上書きされます。この操作は元に戻せません。",
+      "clearConfirmTitle": "削除の確認",
+      "clearConfirmDescription": "すべてのデータが削除されます。この操作は元に戻せません。",
+      "confirm": "確認",
+      "cancel": "キャンセル",
+      "clearSuccess": "テーブルをリセットしました！"
+    },
+    "copySuccess": "テーブルをクリップボードにコピーしました！",
+    "copyError": "コピーに失敗しました。",
+    "downloadError": "ダウンロードに失敗しました。"
   }
 }

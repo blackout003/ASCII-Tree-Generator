@@ -124,7 +124,56 @@
     "home": "Accueil",
     "tools": "Outils",
     "asciiTree": "Arbre ASCII",
+    "asciiTable": "Tableau ASCII",
     "comingSoon": "Bientôt",
     "openTool": "Ouvrir l'outil"
+  },
+  "tableGenerator": {
+    "editor": {
+      "title": "Éditeur de tableau",
+      "addRow": "Ajouter une ligne",
+      "addColumn": "Ajouter une colonne",
+      "deleteRow": "Supprimer la ligne",
+      "deleteColumn": "Supprimer la colonne",
+      "columnPlaceholder": "Colonne",
+      "save": "Sauvegarder",
+      "load": "Charger",
+      "clearAll": "Effacer tout"
+    },
+    "preview": {
+      "title": "Prévisualisation ASCII",
+      "copy": "Copier",
+      "download": "Télécharger",
+      "placeholder": "Votre tableau ASCII apparaîtra ici..."
+    },
+    "options": {
+      "title": "Options de configuration",
+      "styleSection": "Style",
+      "displaySection": "Affichage",
+      "borderStyle": "Style de bordure",
+      "alignment": "Alignement",
+      "alignLeft": "Gauche",
+      "alignCenter": "Centre",
+      "alignRight": "Droite",
+      "padding": "Espacement interne",
+      "hasHeader": "Afficher l'en-tête",
+      "styleSimple": "Simple (tirets)"
+    },
+    "errors": {
+      "saveSuccess": "Tableau sauvegardé avec succès !",
+      "saveError": "Erreur lors de la sauvegarde.",
+      "loadSuccess": "Tableau chargé avec succès !",
+      "loadError": "Erreur lors du chargement. Vérifiez que c'est un fichier JSON valide.",
+      "loadConfirmTitle": "Confirmer le chargement",
+      "loadConfirmDescription": "Les données actuelles seront écrasées. Cette action est irréversible.",
+      "clearConfirmTitle": "Confirmer l'effacement",
+      "clearConfirmDescription": "Toutes les données seront supprimées. Cette action est irréversible.",
+      "confirm": "Confirmer",
+      "cancel": "Annuler",
+      "clearSuccess": "Tableau réinitialisé avec succès !"
+    },
+    "copySuccess": "Tableau copié dans le presse-papiers !",
+    "copyError": "Erreur lors de la copie.",
+    "downloadError": "Erreur lors du téléchargement."
   }
 }

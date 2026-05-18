@@ -124,7 +124,56 @@
     "home": "Home",
     "tools": "Tools",
     "asciiTree": "ASCII Tree",
+    "asciiTable": "ASCII Table",
     "comingSoon": "Coming Soon",
     "openTool": "Open tool"
+  },
+  "tableGenerator": {
+    "editor": {
+      "title": "Table Editor",
+      "addRow": "Add row",
+      "addColumn": "Add column",
+      "deleteRow": "Delete row",
+      "deleteColumn": "Delete column",
+      "columnPlaceholder": "Column",
+      "save": "Save",
+      "load": "Load",
+      "clearAll": "Clear All"
+    },
+    "preview": {
+      "title": "ASCII Preview",
+      "copy": "Copy",
+      "download": "Download",
+      "placeholder": "Your ASCII table will appear here..."
+    },
+    "options": {
+      "title": "Configuration Options",
+      "styleSection": "Style",
+      "displaySection": "Display",
+      "borderStyle": "Border style",
+      "alignment": "Alignment",
+      "alignLeft": "Left",
+      "alignCenter": "Center",
+      "alignRight": "Right",
+      "padding": "Cell padding",
+      "hasHeader": "Show header",
+      "styleSimple": "Simple (dashes)"
+    },
+    "errors": {
+      "saveSuccess": "Table saved successfully!",
+      "saveError": "Failed to save.",
+      "loadSuccess": "Table loaded successfully!",
+      "loadError": "Failed to load. Please check that it is a valid JSON file.",
+      "loadConfirmTitle": "Confirm loading",
+      "loadConfirmDescription": "Current data will be overwritten. This action cannot be undone.",
+      "clearConfirmTitle": "Confirm clear",
+      "clearConfirmDescription": "All data will be deleted. This action cannot be undone.",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "clearSuccess": "Table reset successfully!"
+    },
+    "copySuccess": "Table copied to clipboard!",
+    "copyError": "Failed to copy.",
+    "downloadError": "Failed to download."
   }
 }

@@ -124,7 +124,56 @@
     "home": "Startseite",
     "tools": "Werkzeuge",
     "asciiTree": "ASCII-Baum",
+    "asciiTable": "ASCII-Tabelle",
     "comingSoon": "Demnächst",
     "openTool": "Werkzeug öffnen"
+  },
+  "tableGenerator": {
+    "editor": {
+      "title": "Tabellen-Editor",
+      "addRow": "Zeile hinzufügen",
+      "addColumn": "Spalte hinzufügen",
+      "deleteRow": "Zeile löschen",
+      "deleteColumn": "Spalte löschen",
+      "columnPlaceholder": "Spalte",
+      "save": "Speichern",
+      "load": "Laden",
+      "clearAll": "Alles löschen"
+    },
+    "preview": {
+      "title": "ASCII-Vorschau",
+      "copy": "Kopieren",
+      "download": "Herunterladen",
+      "placeholder": "Ihre ASCII-Tabelle wird hier angezeigt..."
+    },
+    "options": {
+      "title": "Konfigurationsoptionen",
+      "styleSection": "Stil",
+      "displaySection": "Anzeige",
+      "borderStyle": "Rahmenstil",
+      "alignment": "Ausrichtung",
+      "alignLeft": "Links",
+      "alignCenter": "Mitte",
+      "alignRight": "Rechts",
+      "padding": "Zellenabstand",
+      "hasHeader": "Kopfzeile anzeigen",
+      "styleSimple": "Einfach (Striche)"
+    },
+    "errors": {
+      "saveSuccess": "Tabelle erfolgreich gespeichert!",
+      "saveError": "Fehler beim Speichern.",
+      "loadSuccess": "Tabelle erfolgreich geladen!",
+      "loadError": "Fehler beim Laden. Bitte prüfen Sie die JSON-Datei.",
+      "loadConfirmTitle": "Laden bestätigen",
+      "loadConfirmDescription": "Aktuelle Daten werden überschrieben. Diese Aktion kann nicht rückgängig gemacht werden.",
+      "clearConfirmTitle": "Löschen bestätigen",
+      "clearConfirmDescription": "Alle Daten werden gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.",
+      "confirm": "Bestätigen",
+      "cancel": "Abbrechen",
+      "clearSuccess": "Tabelle erfolgreich zurückgesetzt!"
+    },
+    "copySuccess": "Tabelle in die Zwischenablage kopiert!",
+    "copyError": "Fehler beim Kopieren.",
+    "downloadError": "Fehler beim Herunterladen."
   }
 }

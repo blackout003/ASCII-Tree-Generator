@@ -1,4 +1,4 @@
-import { FolderTree } from 'lucide-react';
+import { FolderTree, Table } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Tool {
@@ -15,5 +15,11 @@ export const TOOLS: Tool[] = [
     href: '/tools/ascii-tree',
     icon: FolderTree,
     nameKey: 'asciiTree',
+  },
+  {
+    id: 'ascii-table',
+    href: '/tools/ascii-table',
+    icon: Table,
+    nameKey: 'asciiTable',
   },
 ];

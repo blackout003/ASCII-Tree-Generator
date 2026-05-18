@@ -124,7 +124,56 @@
     "home": "Home",
     "tools": "Strumenti",
     "asciiTree": "Albero ASCII",
+    "asciiTable": "Tabella ASCII",
     "comingSoon": "Prossimamente",
     "openTool": "Apri strumento"
+  },
+  "tableGenerator": {
+    "editor": {
+      "title": "Editor di tabella",
+      "addRow": "Aggiungi riga",
+      "addColumn": "Aggiungi colonna",
+      "deleteRow": "Elimina riga",
+      "deleteColumn": "Elimina colonna",
+      "columnPlaceholder": "Colonna",
+      "save": "Salva",
+      "load": "Carica",
+      "clearAll": "Cancella tutto"
+    },
+    "preview": {
+      "title": "Anteprima ASCII",
+      "copy": "Copia",
+      "download": "Scarica",
+      "placeholder": "La tua tabella ASCII apparirà qui..."
+    },
+    "options": {
+      "title": "Opzioni di configurazione",
+      "styleSection": "Stile",
+      "displaySection": "Visualizzazione",
+      "borderStyle": "Stile bordo",
+      "alignment": "Allineamento",
+      "alignLeft": "Sinistra",
+      "alignCenter": "Centro",
+      "alignRight": "Destra",
+      "padding": "Spaziatura cella",
+      "hasHeader": "Mostra intestazione",
+      "styleSimple": "Semplice (trattini)"
+    },
+    "errors": {
+      "saveSuccess": "Tabella salvata con successo!",
+      "saveError": "Errore durante il salvataggio.",
+      "loadSuccess": "Tabella caricata con successo!",
+      "loadError": "Errore durante il caricamento. Verificare che sia un file JSON valido.",
+      "loadConfirmTitle": "Conferma caricamento",
+      "loadConfirmDescription": "I dati attuali verranno sovrascritti. Questa azione è irreversibile.",
+      "clearConfirmTitle": "Conferma cancellazione",
+      "clearConfirmDescription": "Tutti i dati verranno eliminati. Questa azione è irreversibile.",
+      "confirm": "Conferma",
+      "cancel": "Annulla",
+      "clearSuccess": "Tabella reimpostata con successo!"
+    },
+    "copySuccess": "Tabella copiata negli appunti!",
+    "copyError": "Errore durante la copia.",
+    "downloadError": "Errore durante il download."
   }
 }

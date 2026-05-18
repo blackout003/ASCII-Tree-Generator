@@ -124,7 +124,56 @@
     "home": "Inicio",
     "tools": "Herramientas",
     "asciiTree": "Árbol ASCII",
+    "asciiTable": "Tabla ASCII",
     "comingSoon": "Próximamente",
     "openTool": "Abrir herramienta"
+  },
+  "tableGenerator": {
+    "editor": {
+      "title": "Editor de tabla",
+      "addRow": "Agregar fila",
+      "addColumn": "Agregar columna",
+      "deleteRow": "Eliminar fila",
+      "deleteColumn": "Eliminar columna",
+      "columnPlaceholder": "Columna",
+      "save": "Guardar",
+      "load": "Cargar",
+      "clearAll": "Borrar todo"
+    },
+    "preview": {
+      "title": "Vista previa ASCII",
+      "copy": "Copiar",
+      "download": "Descargar",
+      "placeholder": "Tu tabla ASCII aparecerá aquí..."
+    },
+    "options": {
+      "title": "Opciones de configuración",
+      "styleSection": "Estilo",
+      "displaySection": "Visualización",
+      "borderStyle": "Estilo de borde",
+      "alignment": "Alineación",
+      "alignLeft": "Izquierda",
+      "alignCenter": "Centro",
+      "alignRight": "Derecha",
+      "padding": "Relleno de celda",
+      "hasHeader": "Mostrar encabezado",
+      "styleSimple": "Simple (guiones)"
+    },
+    "errors": {
+      "saveSuccess": "¡Tabla guardada con éxito!",
+      "saveError": "Error al guardar.",
+      "loadSuccess": "¡Tabla cargada con éxito!",
+      "loadError": "Error al cargar. Verifique que sea un archivo JSON válido.",
+      "loadConfirmTitle": "Confirmar carga",
+      "loadConfirmDescription": "Los datos actuales serán reemplazados. Esta acción es irreversible.",
+      "clearConfirmTitle": "Confirmar borrado",
+      "clearConfirmDescription": "Todos los datos serán eliminados. Esta acción es irreversible.",
+      "confirm": "Confirmar",
+      "cancel": "Cancelar",
+      "clearSuccess": "¡Tabla reiniciada con éxito!"
+    },
+    "copySuccess": "¡Tabla copiada al portapapeles!",
+    "copyError": "Error al copiar.",
+    "downloadError": "Error al descargar."
   }
 }
