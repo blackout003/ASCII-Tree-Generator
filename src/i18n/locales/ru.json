@@ -125,6 +125,7 @@
     "tools": "Инструменты",
     "asciiTree": "ASCII-дерево",
     "asciiTable": "ASCII-таблица",
+    "sparkline": "ASCII-графики",
     "comingSoon": "Скоро",
     "openTool": "Открыть инструмент"
   },
@@ -175,5 +176,41 @@
     "copySuccess": "Таблица скопирована в буфер обмена!",
     "copyError": "Ошибка при копировании.",
     "downloadError": "Ошибка при загрузке."
+  },
+  "sparklineGenerator": {
+    "input": {
+      "title": "Данные",
+      "placeholder": "Введите числа, разделённые запятыми или пробелами...\nПример: 1, 3, 5, 2, 8, 4",
+      "valuesFound": "Найдено значений: {count}",
+      "parseError": "Недопустимое значение: \"{value}\"",
+      "clear": "Очистить",
+      "exampleLabel": "Пример:",
+      "example": "1, 3, 5, 2, 8, 4"
+    },
+    "preview": {
+      "title": "Предпросмотр",
+      "copy": "Копировать",
+      "download": "Скачать",
+      "placeholder": "Ваш ASCII-график появится здесь..."
+    },
+    "options": {
+      "title": "Настройки",
+      "chartType": "Тип диаграммы",
+      "typeSpark": "Спарклайн (строка)",
+      "typeBar": "Вертикальные столбцы",
+      "barHeight": "Высота (строки)",
+      "showValues": "Показывать значения",
+      "barSpacing": "Отступ между столбцами",
+      "fillChar": "Символ заполнения",
+      "fillBlock": "█ Полный блок",
+      "fillShade": "▓ Затенённый",
+      "fillHash": "# Решётка",
+      "fillPipe": "| Вертикальная черта"
+    },
+    "errors": {
+      "copySuccess": "График скопирован в буфер обмена!",
+      "copyError": "Ошибка при копировании.",
+      "downloadError": "Ошибка при скачивании."
+    }
   }
 }

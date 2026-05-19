@@ -125,6 +125,7 @@
     "tools": "ツール",
     "asciiTree": "ASCIIツリー",
     "asciiTable": "ASCIIテーブル",
+    "sparkline": "ASCIIグラフ",
     "comingSoon": "近日公開",
     "openTool": "ツールを開く"
   },
@@ -175,5 +176,41 @@
     "copySuccess": "テーブルをクリップボードにコピーしました！",
     "copyError": "コピーに失敗しました。",
     "downloadError": "ダウンロードに失敗しました。"
+  },
+  "sparklineGenerator": {
+    "input": {
+      "title": "データ",
+      "placeholder": "カンマまたはスペースで区切って数値を入力...\n例: 1, 3, 5, 2, 8, 4",
+      "valuesFound": "{count} 個の値が見つかりました",
+      "parseError": "無効な値: \"{value}\"",
+      "clear": "クリア",
+      "exampleLabel": "例：",
+      "example": "1, 3, 5, 2, 8, 4"
+    },
+    "preview": {
+      "title": "プレビュー",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "placeholder": "ASCIIグラフがここに表示されます..."
+    },
+    "options": {
+      "title": "オプション",
+      "chartType": "グラフの種類",
+      "typeSpark": "スパークライン（1行）",
+      "typeBar": "棒グラフ（縦）",
+      "barHeight": "高さ（行数）",
+      "showValues": "値を表示",
+      "barSpacing": "棒の間隔",
+      "fillChar": "塗りつぶし文字",
+      "fillBlock": "█ 全ブロック",
+      "fillShade": "▓ シェード",
+      "fillHash": "# ハッシュ",
+      "fillPipe": "| パイプ"
+    },
+    "errors": {
+      "copySuccess": "グラフをクリップボードにコピーしました！",
+      "copyError": "コピーに失敗しました。",
+      "downloadError": "ダウンロードに失敗しました。"
+    }
   }
 }

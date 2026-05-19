@@ -125,6 +125,7 @@
     "tools": "Werkzeuge",
     "asciiTree": "ASCII-Baum",
     "asciiTable": "ASCII-Tabelle",
+    "sparkline": "ASCII-Diagramme",
     "comingSoon": "Demnächst",
     "openTool": "Werkzeug öffnen"
   },
@@ -175,5 +176,41 @@
     "copySuccess": "Tabelle in die Zwischenablage kopiert!",
     "copyError": "Fehler beim Kopieren.",
     "downloadError": "Fehler beim Herunterladen."
+  },
+  "sparklineGenerator": {
+    "input": {
+      "title": "Daten",
+      "placeholder": "Zahlen durch Komma oder Leerzeichen getrennt eingeben...\nBsp: 1, 3, 5, 2, 8, 4",
+      "valuesFound": "{count} Wert(e) gefunden",
+      "parseError": "Ungültiger Wert: \"{value}\"",
+      "clear": "Löschen",
+      "exampleLabel": "Beispiel:",
+      "example": "1, 3, 5, 2, 8, 4"
+    },
+    "preview": {
+      "title": "Vorschau",
+      "copy": "Kopieren",
+      "download": "Herunterladen",
+      "placeholder": "Ihr ASCII-Diagramm erscheint hier..."
+    },
+    "options": {
+      "title": "Optionen",
+      "chartType": "Diagrammtyp",
+      "typeSpark": "Sparkline (Zeile)",
+      "typeBar": "Vertikale Balken",
+      "barHeight": "Höhe (Zeilen)",
+      "showValues": "Werte anzeigen",
+      "barSpacing": "Balkenabstand",
+      "fillChar": "Füllzeichen",
+      "fillBlock": "█ Voller Block",
+      "fillShade": "▓ Schattiert",
+      "fillHash": "# Raute",
+      "fillPipe": "| Senkrechter Strich"
+    },
+    "errors": {
+      "copySuccess": "Diagramm in die Zwischenablage kopiert!",
+      "copyError": "Fehler beim Kopieren.",
+      "downloadError": "Fehler beim Herunterladen."
+    }
   }
 }

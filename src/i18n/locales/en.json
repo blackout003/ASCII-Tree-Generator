@@ -125,6 +125,7 @@
     "tools": "Tools",
     "asciiTree": "ASCII Tree",
     "asciiTable": "ASCII Table",
+    "sparkline": "ASCII Charts",
     "comingSoon": "Coming Soon",
     "openTool": "Open tool"
   },
@@ -175,5 +176,41 @@
     "copySuccess": "Table copied to clipboard!",
     "copyError": "Failed to copy.",
     "downloadError": "Failed to download."
+  },
+  "sparklineGenerator": {
+    "input": {
+      "title": "Data",
+      "placeholder": "Enter numbers separated by commas or spaces...\nEx: 1, 3, 5, 2, 8, 4",
+      "valuesFound": "{count} value(s) found",
+      "parseError": "Invalid value: \"{value}\"",
+      "clear": "Clear",
+      "exampleLabel": "Example:",
+      "example": "1, 3, 5, 2, 8, 4"
+    },
+    "preview": {
+      "title": "Preview",
+      "copy": "Copy",
+      "download": "Download",
+      "placeholder": "Your ASCII chart will appear here..."
+    },
+    "options": {
+      "title": "Options",
+      "chartType": "Chart type",
+      "typeSpark": "Sparkline (inline)",
+      "typeBar": "Vertical bars",
+      "barHeight": "Height (rows)",
+      "showValues": "Show values",
+      "barSpacing": "Bar spacing",
+      "fillChar": "Fill character",
+      "fillBlock": "█ Full block",
+      "fillShade": "▓ Shade",
+      "fillHash": "# Hash",
+      "fillPipe": "| Pipe"
+    },
+    "errors": {
+      "copySuccess": "Chart copied to clipboard!",
+      "copyError": "Failed to copy.",
+      "downloadError": "Failed to download."
+    }
   }
 }

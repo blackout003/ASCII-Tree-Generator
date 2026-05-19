@@ -1,4 +1,4 @@
-import { FolderTree, Table } from 'lucide-react';
+import { FolderTree, Table, BarChart2 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Tool {
@@ -21,5 +21,11 @@ export const TOOLS: Tool[] = [
     href: '/tools/ascii-table',
     icon: Table,
     nameKey: 'asciiTable',
+  },
+  {
+    id: 'sparkline',
+    href: '/tools/sparkline',
+    icon: BarChart2,
+    nameKey: 'sparkline',
   },
 ];

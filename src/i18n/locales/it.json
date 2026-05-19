@@ -125,6 +125,7 @@
     "tools": "Strumenti",
     "asciiTree": "Albero ASCII",
     "asciiTable": "Tabella ASCII",
+    "sparkline": "Grafici ASCII",
     "comingSoon": "Prossimamente",
     "openTool": "Apri strumento"
   },
@@ -175,5 +176,41 @@
     "copySuccess": "Tabella copiata negli appunti!",
     "copyError": "Errore durante la copia.",
     "downloadError": "Errore durante il download."
+  },
+  "sparklineGenerator": {
+    "input": {
+      "title": "Dati",
+      "placeholder": "Inserisci numeri separati da virgole o spazi...\nEs: 1, 3, 5, 2, 8, 4",
+      "valuesFound": "{count} valore/i trovato/i",
+      "parseError": "Valore non valido: \"{value}\"",
+      "clear": "Cancella",
+      "exampleLabel": "Esempio:",
+      "example": "1, 3, 5, 2, 8, 4"
+    },
+    "preview": {
+      "title": "Anteprima",
+      "copy": "Copia",
+      "download": "Scarica",
+      "placeholder": "Il tuo grafico ASCII apparirà qui..."
+    },
+    "options": {
+      "title": "Opzioni",
+      "chartType": "Tipo di grafico",
+      "typeSpark": "Sparkline (riga)",
+      "typeBar": "Barre verticali",
+      "barHeight": "Altezza (righe)",
+      "showValues": "Mostra valori",
+      "barSpacing": "Spaziatura barre",
+      "fillChar": "Carattere di riempimento",
+      "fillBlock": "█ Blocco pieno",
+      "fillShade": "▓ Ombreggiato",
+      "fillHash": "# Cancelletto",
+      "fillPipe": "| Barra verticale"
+    },
+    "errors": {
+      "copySuccess": "Grafico copiato negli appunti!",
+      "copyError": "Errore durante la copia.",
+      "downloadError": "Errore durante il download."
+    }
   }
 }

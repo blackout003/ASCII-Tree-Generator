@@ -125,6 +125,7 @@
     "tools": "Outils",
     "asciiTree": "Arbre ASCII",
     "asciiTable": "Tableau ASCII",
+    "sparkline": "Graphiques ASCII",
     "comingSoon": "Bientôt",
     "openTool": "Ouvrir l'outil"
   },
@@ -175,5 +176,41 @@
     "copySuccess": "Tableau copié dans le presse-papiers !",
     "copyError": "Erreur lors de la copie.",
     "downloadError": "Erreur lors du téléchargement."
+  },
+  "sparklineGenerator": {
+    "input": {
+      "title": "Données",
+      "placeholder": "Entrez des nombres séparés par des virgules ou des espaces...\nEx : 1, 3, 5, 2, 8, 4",
+      "valuesFound": "{count} valeur(s) trouvée(s)",
+      "parseError": "Valeur invalide : \"{value}\"",
+      "clear": "Effacer",
+      "exampleLabel": "Exemple :",
+      "example": "1, 3, 5, 2, 8, 4"
+    },
+    "preview": {
+      "title": "Prévisualisation",
+      "copy": "Copier",
+      "download": "Télécharger",
+      "placeholder": "Votre graphique ASCII apparaîtra ici..."
+    },
+    "options": {
+      "title": "Options",
+      "chartType": "Type de graphique",
+      "typeSpark": "Sparkline (ligne)",
+      "typeBar": "Barres verticales",
+      "barHeight": "Hauteur (lignes)",
+      "showValues": "Afficher les valeurs",
+      "barSpacing": "Espacement des barres",
+      "fillChar": "Caractère de remplissage",
+      "fillBlock": "█ Bloc plein",
+      "fillShade": "▓ Ombré",
+      "fillHash": "# Dièse",
+      "fillPipe": "| Barre verticale"
+    },
+    "errors": {
+      "copySuccess": "Graphique copié dans le presse-papiers !",
+      "copyError": "Erreur lors de la copie.",
+      "downloadError": "Erreur lors du téléchargement."
+    }
   }
 }

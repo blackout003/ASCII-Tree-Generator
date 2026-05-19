@@ -125,6 +125,7 @@
     "tools": "Herramientas",
     "asciiTree": "Árbol ASCII",
     "asciiTable": "Tabla ASCII",
+    "sparkline": "Gráficos ASCII",
     "comingSoon": "Próximamente",
     "openTool": "Abrir herramienta"
   },
@@ -175,5 +176,41 @@
     "copySuccess": "¡Tabla copiada al portapapeles!",
     "copyError": "Error al copiar.",
     "downloadError": "Error al descargar."
+  },
+  "sparklineGenerator": {
+    "input": {
+      "title": "Datos",
+      "placeholder": "Introduce números separados por comas o espacios...\nEj: 1, 3, 5, 2, 8, 4",
+      "valuesFound": "{count} valor(es) encontrado(s)",
+      "parseError": "Valor no válido: \"{value}\"",
+      "clear": "Borrar",
+      "exampleLabel": "Ejemplo:",
+      "example": "1, 3, 5, 2, 8, 4"
+    },
+    "preview": {
+      "title": "Vista previa",
+      "copy": "Copiar",
+      "download": "Descargar",
+      "placeholder": "Tu gráfico ASCII aparecerá aquí..."
+    },
+    "options": {
+      "title": "Opciones",
+      "chartType": "Tipo de gráfico",
+      "typeSpark": "Sparkline (línea)",
+      "typeBar": "Barras verticales",
+      "barHeight": "Altura (filas)",
+      "showValues": "Mostrar valores",
+      "barSpacing": "Espaciado de barras",
+      "fillChar": "Carácter de relleno",
+      "fillBlock": "█ Bloque lleno",
+      "fillShade": "▓ Sombreado",
+      "fillHash": "# Almohadilla",
+      "fillPipe": "| Barra vertical"
+    },
+    "errors": {
+      "copySuccess": "¡Gráfico copiado al portapapeles!",
+      "copyError": "Error al copiar.",
+      "downloadError": "Error al descargar."
+    }
   }
 }
