@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false, // Supprime le header X-Powered-By
   compress: true, // Compression gzip
   generateEtags: true, // Génération d'ETags pour le cache
+
+  // Autorise l'accès aux ressources de dev (HMR) depuis le réseau local
+  allowedDevOrigins: ['192.168.1.9'],
   
   // Configuration des images
   images: {

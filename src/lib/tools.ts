@@ -1,4 +1,4 @@
-import { FolderTree, Table, BarChart2 } from 'lucide-react';
+import { FolderTree, Table, BarChart2, Type } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Tool {
@@ -27,5 +27,11 @@ export const TOOLS: Tool[] = [
     href: '/tools/sparkline',
     icon: BarChart2,
     nameKey: 'sparkline',
+  },
+  {
+    id: 'banner',
+    href: '/tools/banner',
+    icon: Type,
+    nameKey: 'banner',
   },
 ];

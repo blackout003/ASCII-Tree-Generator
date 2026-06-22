@@ -126,6 +126,7 @@
     "asciiTree": "ASCII Tree",
     "asciiTable": "ASCII Table",
     "sparkline": "ASCII Charts",
+    "banner": "Text Banners",
     "comingSoon": "Coming Soon",
     "openTool": "Open tool"
   },
@@ -176,6 +177,47 @@
     "copySuccess": "Table copied to clipboard!",
     "copyError": "Failed to copy.",
     "downloadError": "Failed to download."
+  },
+  "bannerGenerator": {
+    "input": {
+      "title": "Text to convert",
+      "label": "Your text",
+      "placeholder": "E.g.: Hello",
+      "hint": "Letters, digits and basic punctuation. Maximum 30 characters.",
+      "clear": "Clear"
+    },
+    "preview": {
+      "title": "ASCII Preview",
+      "copy": "Copy",
+      "download": "Download",
+      "placeholder": "Your ASCII banner will appear here..."
+    },
+    "options": {
+      "title": "Options",
+      "styleSection": "Font",
+      "layoutSection": "Layout",
+      "font": "ASCII Font",
+      "fontStandard": "Standard (classic)",
+      "fontBig": "Big (large)",
+      "fontSmall": "Small (compact)",
+      "fontMini": "Mini (tiny)",
+      "fontSlant": "Slant (italic)",
+      "fontLean": "Lean (thin)",
+      "fontBlock": "Block (# blocks)",
+      "fontDigital": "Digital (LCD)",
+      "fontDoom": "Doom (box drawing)",
+      "fontShadow": "Shadow (round o)",
+      "align": "Alignment",
+      "alignLeft": "Left",
+      "alignCenter": "Center",
+      "alignRight": "Right",
+      "spacing": "Letter spacing"
+    },
+    "errors": {
+      "copySuccess": "Banner copied to clipboard!",
+      "copyError": "Failed to copy.",
+      "downloadError": "Failed to download."
+    }
   },
   "sparklineGenerator": {
     "input": {

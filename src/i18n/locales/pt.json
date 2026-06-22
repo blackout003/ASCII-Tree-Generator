@@ -126,6 +126,7 @@
     "asciiTree": "Árvore ASCII",
     "asciiTable": "Tabela ASCII",
     "sparkline": "Gráficos ASCII",
+    "banner": "Banners de Texto",
     "comingSoon": "Em breve",
     "openTool": "Abrir ferramenta"
   },
@@ -176,6 +177,47 @@
     "copySuccess": "Tabela copiada para a área de transferência!",
     "copyError": "Erro ao copiar.",
     "downloadError": "Erro ao baixar."
+  },
+  "bannerGenerator": {
+    "input": {
+      "title": "Texto a converter",
+      "label": "Seu texto",
+      "placeholder": "Ex.: Hello",
+      "hint": "Letras, dígitos e pontuação básica. Máximo 30 caracteres.",
+      "clear": "Limpar"
+    },
+    "preview": {
+      "title": "Pré-visualização ASCII",
+      "copy": "Copiar",
+      "download": "Baixar",
+      "placeholder": "Seu banner ASCII aparecerá aqui..."
+    },
+    "options": {
+      "title": "Opções",
+      "styleSection": "Fonte",
+      "layoutSection": "Layout",
+      "font": "Fonte ASCII",
+      "fontStandard": "Standard (clássica)",
+      "fontBig": "Big (grande)",
+      "fontSmall": "Small (compacta)",
+      "fontMini": "Mini (minúscula)",
+      "fontSlant": "Slant (inclinada)",
+      "fontLean": "Lean (fina)",
+      "fontBlock": "Block (blocos #)",
+      "fontDigital": "Digital (LCD)",
+      "fontDoom": "Doom (molduras)",
+      "fontShadow": "Shadow (redonda o)",
+      "align": "Alinhamento",
+      "alignLeft": "Esquerda",
+      "alignCenter": "Centro",
+      "alignRight": "Direita",
+      "spacing": "Espaçamento entre letras"
+    },
+    "errors": {
+      "copySuccess": "Banner copiado para a área de transferência!",
+      "copyError": "Erro ao copiar.",
+      "downloadError": "Erro ao baixar."
+    }
   },
   "sparklineGenerator": {
     "input": {

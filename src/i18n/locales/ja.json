@@ -126,6 +126,7 @@
     "asciiTree": "ASCIIツリー",
     "asciiTable": "ASCIIテーブル",
     "sparkline": "ASCIIグラフ",
+    "banner": "テキストバナー",
     "comingSoon": "近日公開",
     "openTool": "ツールを開く"
   },
@@ -176,6 +177,47 @@
     "copySuccess": "テーブルをクリップボードにコピーしました！",
     "copyError": "コピーに失敗しました。",
     "downloadError": "ダウンロードに失敗しました。"
+  },
+  "bannerGenerator": {
+    "input": {
+      "title": "変換するテキスト",
+      "label": "テキスト",
+      "placeholder": "例: Hello",
+      "hint": "文字、数字、基本的な句読点。最大30文字。",
+      "clear": "クリア"
+    },
+    "preview": {
+      "title": "ASCIIプレビュー",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "placeholder": "ASCIIバナーがここに表示されます..."
+    },
+    "options": {
+      "title": "オプション",
+      "styleSection": "フォント",
+      "layoutSection": "レイアウト",
+      "font": "ASCIIフォント",
+      "fontStandard": "Standard（クラシック）",
+      "fontBig": "Big（大型）",
+      "fontSmall": "Small（コンパクト）",
+      "fontMini": "Mini（超小型）",
+      "fontSlant": "Slant（斜体）",
+      "fontLean": "Lean（細字）",
+      "fontBlock": "Block（#ブロック）",
+      "fontDigital": "Digital（LCD）",
+      "fontDoom": "Doom（枠線）",
+      "fontShadow": "Shadow（丸み o）",
+      "align": "揃え",
+      "alignLeft": "左揃え",
+      "alignCenter": "中央揃え",
+      "alignRight": "右揃え",
+      "spacing": "文字間隔"
+    },
+    "errors": {
+      "copySuccess": "バナーをクリップボードにコピーしました！",
+      "copyError": "コピーに失敗しました。",
+      "downloadError": "ダウンロードに失敗しました。"
+    }
   },
   "sparklineGenerator": {
     "input": {

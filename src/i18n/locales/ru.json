@@ -126,6 +126,7 @@
     "asciiTree": "ASCII-дерево",
     "asciiTable": "ASCII-таблица",
     "sparkline": "ASCII-графики",
+    "banner": "Текстовые баннеры",
     "comingSoon": "Скоро",
     "openTool": "Открыть инструмент"
   },
@@ -176,6 +177,47 @@
     "copySuccess": "Таблица скопирована в буфер обмена!",
     "copyError": "Ошибка при копировании.",
     "downloadError": "Ошибка при загрузке."
+  },
+  "bannerGenerator": {
+    "input": {
+      "title": "Текст для преобразования",
+      "label": "Ваш текст",
+      "placeholder": "Напр.: Hello",
+      "hint": "Буквы, цифры и базовые знаки препинания. Максимум 30 символов.",
+      "clear": "Очистить"
+    },
+    "preview": {
+      "title": "Предпросмотр ASCII",
+      "copy": "Копировать",
+      "download": "Скачать",
+      "placeholder": "Ваш ASCII-баннер появится здесь..."
+    },
+    "options": {
+      "title": "Параметры",
+      "styleSection": "Шрифт",
+      "layoutSection": "Компоновка",
+      "font": "ASCII шрифт",
+      "fontStandard": "Standard (классический)",
+      "fontBig": "Big (крупный)",
+      "fontSmall": "Small (компактный)",
+      "fontMini": "Mini (крошечный)",
+      "fontSlant": "Slant (наклонный)",
+      "fontLean": "Lean (тонкий)",
+      "fontBlock": "Block (блоки #)",
+      "fontDigital": "Digital (LCD)",
+      "fontDoom": "Doom (рамки)",
+      "fontShadow": "Shadow (круглый o)",
+      "align": "Выравнивание",
+      "alignLeft": "По левому краю",
+      "alignCenter": "По центру",
+      "alignRight": "По правому краю",
+      "spacing": "Расстояние между буквами"
+    },
+    "errors": {
+      "copySuccess": "Баннер скопирован в буфер обмена!",
+      "copyError": "Ошибка при копировании.",
+      "downloadError": "Ошибка при скачивании."
+    }
   },
   "sparklineGenerator": {
     "input": {

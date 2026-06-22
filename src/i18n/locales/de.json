@@ -126,6 +126,7 @@
     "asciiTree": "ASCII-Baum",
     "asciiTable": "ASCII-Tabelle",
     "sparkline": "ASCII-Diagramme",
+    "banner": "Textbanner",
     "comingSoon": "Demnächst",
     "openTool": "Werkzeug öffnen"
   },
@@ -176,6 +177,47 @@
     "copySuccess": "Tabelle in die Zwischenablage kopiert!",
     "copyError": "Fehler beim Kopieren.",
     "downloadError": "Fehler beim Herunterladen."
+  },
+  "bannerGenerator": {
+    "input": {
+      "title": "Text umwandeln",
+      "label": "Ihr Text",
+      "placeholder": "z. B.: Hello",
+      "hint": "Buchstaben, Ziffern und einfache Satzzeichen. Maximal 30 Zeichen.",
+      "clear": "Löschen"
+    },
+    "preview": {
+      "title": "ASCII-Vorschau",
+      "copy": "Kopieren",
+      "download": "Herunterladen",
+      "placeholder": "Ihr ASCII-Banner erscheint hier..."
+    },
+    "options": {
+      "title": "Optionen",
+      "styleSection": "Schriftart",
+      "layoutSection": "Layout",
+      "font": "ASCII-Schriftart",
+      "fontStandard": "Standard (klassisch)",
+      "fontBig": "Big (groß)",
+      "fontSmall": "Klein (kompakt)",
+      "fontMini": "Mini (winzig)",
+      "fontSlant": "Schräg (kursiv)",
+      "fontLean": "Lean (schlank)",
+      "fontBlock": "Block (# Blöcke)",
+      "fontDigital": "Digital (LCD)",
+      "fontDoom": "Doom (Rahmen)",
+      "fontShadow": "Schatten (rund o)",
+      "align": "Ausrichtung",
+      "alignLeft": "Links",
+      "alignCenter": "Mitte",
+      "alignRight": "Rechts",
+      "spacing": "Buchstabenabstand"
+    },
+    "errors": {
+      "copySuccess": "Banner in die Zwischenablage kopiert!",
+      "copyError": "Fehler beim Kopieren.",
+      "downloadError": "Fehler beim Herunterladen."
+    }
   },
   "sparklineGenerator": {
     "input": {
