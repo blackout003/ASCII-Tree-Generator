@@ -368,6 +368,14 @@
       "animals": {
         "title": "Animali",
         "desc": "Qualche bestiola fatta di caratteri ASCII."
+      },
+      "love": {
+        "title": "Amore",
+        "desc": "Cuori e baci per i tuoi messaggi più dolci."
+      },
+      "actions": {
+        "title": "Azioni",
+        "desc": "Kaomoji in piena azione: salutare, ballare, combattere."
       }
     },
     "labels": {
@@ -395,7 +403,36 @@
       "cat": "Gatto",
       "bear": "Orso",
       "fish": "Pesce",
-      "bunny": "Coniglio"
+      "bunny": "Coniglio",
+      "cute": "Carino",
+      "sunglasses": "Occhiali da sole",
+      "angry": "Arrabbiato",
+      "embarrassed": "Imbarazzato",
+      "happyTears": "Lacrime di gioia",
+      "laughHard": "Sganasciarsi",
+      "rage": "Rabbia",
+      "sob": "Singhiozzo",
+      "smirk": "Sorrisetto",
+      "shock": "Shock",
+      "delight": "Gioia",
+      "suspicious": "Sospettoso",
+      "flex": "Mostrare i muscoli",
+      "confused": "Confuso",
+      "cat2": "Micio",
+      "dog": "Cane",
+      "mouse": "Topo",
+      "squid": "Calamaro",
+      "inLove": "Innamorato",
+      "kissHeart": "Bacio con cuore",
+      "blowKiss": "Bacio soffiato",
+      "hearts": "Cuori",
+      "hugLove": "Grande abbraccio",
+      "armsUp": "Braccia in alto",
+      "wave": "Ciao",
+      "run": "Correre",
+      "dance": "Ballare",
+      "tableBack": "Rimetti il tavolo",
+      "fight": "Pronto a combattere"
     }
   }
 }

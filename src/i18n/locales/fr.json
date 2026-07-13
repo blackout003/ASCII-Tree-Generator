@@ -368,6 +368,14 @@
       "animals": {
         "title": "Animaux",
         "desc": "Quelques petites bêtes en caractères ASCII."
+      },
+      "love": {
+        "title": "Amour",
+        "desc": "Cœurs et bisous pour vos messages tendres."
+      },
+      "actions": {
+        "title": "Actions",
+        "desc": "Des kaomoji en pleine action : saluer, danser, se battre."
       }
     },
     "labels": {
@@ -395,7 +403,36 @@
       "cat": "Chat",
       "bear": "Ours",
       "fish": "Poisson",
-      "bunny": "Lapin"
+      "bunny": "Lapin",
+      "cute": "Mignon",
+      "sunglasses": "Lunettes de soleil",
+      "angry": "Fâché",
+      "embarrassed": "Gêné",
+      "happyTears": "Larmes de joie",
+      "laughHard": "Mort de rire",
+      "rage": "Rage",
+      "sob": "Sanglots",
+      "smirk": "Sourire en coin",
+      "shock": "Choc",
+      "delight": "Ravissement",
+      "suspicious": "Méfiant",
+      "flex": "Muscles",
+      "confused": "Perplexe",
+      "cat2": "Minet",
+      "dog": "Chien",
+      "mouse": "Souris",
+      "squid": "Calmar",
+      "inLove": "Amoureux",
+      "kissHeart": "Bisou cœur",
+      "blowKiss": "Envoie un bisou",
+      "hearts": "Cœurs",
+      "hugLove": "Gros câlin",
+      "armsUp": "Bras levés",
+      "wave": "Coucou",
+      "run": "Courir",
+      "dance": "Danser",
+      "tableBack": "Range la table",
+      "fight": "Prêt à se battre"
     }
   }
 }

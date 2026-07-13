@@ -368,6 +368,14 @@
       "animals": {
         "title": "Tiere",
         "desc": "Ein paar Tierchen aus ASCII-Zeichen."
+      },
+      "love": {
+        "title": "Liebe",
+        "desc": "Herzen und Küsse für deine liebevollen Nachrichten."
+      },
+      "actions": {
+        "title": "Aktionen",
+        "desc": "Kaomoji mitten in Aktion: winken, tanzen, kämpfen."
       }
     },
     "labels": {
@@ -395,7 +403,36 @@
       "cat": "Katze",
       "bear": "Bär",
       "fish": "Fisch",
-      "bunny": "Hase"
+      "bunny": "Hase",
+      "cute": "Niedlich",
+      "sunglasses": "Sonnenbrille",
+      "angry": "Wütend",
+      "embarrassed": "Verlegen",
+      "happyTears": "Freudentränen",
+      "laughHard": "Totlachen",
+      "rage": "Wut",
+      "sob": "Schluchzen",
+      "smirk": "Grinsen",
+      "shock": "Schock",
+      "delight": "Entzücken",
+      "suspicious": "Misstrauisch",
+      "flex": "Muskeln zeigen",
+      "confused": "Verwirrt",
+      "cat2": "Kätzchen",
+      "dog": "Hund",
+      "mouse": "Maus",
+      "squid": "Tintenfisch",
+      "inLove": "Verliebt",
+      "kissHeart": "Kuss mit Herz",
+      "blowKiss": "Kuss zuwerfen",
+      "hearts": "Herzen",
+      "hugLove": "Große Umarmung",
+      "armsUp": "Arme hoch",
+      "wave": "Winken",
+      "run": "Rennen",
+      "dance": "Tanzen",
+      "tableBack": "Tisch zurück",
+      "fight": "Kampfbereit"
     }
   }
 }

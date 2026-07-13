@@ -368,6 +368,14 @@
       "animals": {
         "title": "Animals",
         "desc": "A few little critters made of ASCII characters."
+      },
+      "love": {
+        "title": "Love",
+        "desc": "Hearts and kisses for your sweeter messages."
+      },
+      "actions": {
+        "title": "Actions",
+        "desc": "Kaomoji caught mid-action: waving, dancing, fighting."
       }
     },
     "labels": {
@@ -395,7 +403,36 @@
       "cat": "Cat",
       "bear": "Bear",
       "fish": "Fish",
-      "bunny": "Bunny"
+      "bunny": "Bunny",
+      "cute": "Cute",
+      "sunglasses": "Sunglasses",
+      "angry": "Angry",
+      "embarrassed": "Embarrassed",
+      "happyTears": "Happy tears",
+      "laughHard": "Cracking up",
+      "rage": "Rage",
+      "sob": "Sobbing",
+      "smirk": "Smirk",
+      "shock": "Shock",
+      "delight": "Delight",
+      "suspicious": "Suspicious",
+      "flex": "Flexing",
+      "confused": "Confused",
+      "cat2": "Kitty",
+      "dog": "Dog",
+      "mouse": "Mouse",
+      "squid": "Squid",
+      "inLove": "In love",
+      "kissHeart": "Kiss",
+      "blowKiss": "Blowing a kiss",
+      "hearts": "Hearts",
+      "hugLove": "Big hug",
+      "armsUp": "Arms up",
+      "wave": "Wave",
+      "run": "Running",
+      "dance": "Dancing",
+      "tableBack": "Table back",
+      "fight": "Ready to fight"
     }
   }
 }

@@ -368,6 +368,14 @@
       "animals": {
         "title": "Animales",
         "desc": "Algunos animalitos hechos de caracteres ASCII."
+      },
+      "love": {
+        "title": "Amor",
+        "desc": "Corazones y besos para tus mensajes más tiernos."
+      },
+      "actions": {
+        "title": "Acciones",
+        "desc": "Kaomoji en plena acción: saludar, bailar, pelear."
       }
     },
     "labels": {
@@ -395,7 +403,36 @@
       "cat": "Gato",
       "bear": "Oso",
       "fish": "Pez",
-      "bunny": "Conejo"
+      "bunny": "Conejo",
+      "cute": "Mono",
+      "sunglasses": "Gafas de sol",
+      "angry": "Enfadado",
+      "embarrassed": "Avergonzado",
+      "happyTears": "Lágrimas de alegría",
+      "laughHard": "Muerto de risa",
+      "rage": "Rabia",
+      "sob": "Sollozo",
+      "smirk": "Sonrisita",
+      "shock": "Conmoción",
+      "delight": "Deleite",
+      "suspicious": "Sospechoso",
+      "flex": "Presumiendo músculos",
+      "confused": "Confundido",
+      "cat2": "Gatito",
+      "dog": "Perro",
+      "mouse": "Ratón",
+      "squid": "Calamar",
+      "inLove": "Enamorado",
+      "kissHeart": "Beso con corazón",
+      "blowKiss": "Lanza un beso",
+      "hearts": "Corazones",
+      "hugLove": "Gran abrazo",
+      "armsUp": "Brazos arriba",
+      "wave": "Saludo",
+      "run": "Corriendo",
+      "dance": "Bailando",
+      "tableBack": "Mesa en su sitio",
+      "fight": "Listo para pelear"
     }
   }
 }

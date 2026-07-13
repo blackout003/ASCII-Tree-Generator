@@ -368,6 +368,14 @@
       "animals": {
         "title": "Animais",
         "desc": "Uns bichinhos feitos de caracteres ASCII."
+      },
+      "love": {
+        "title": "Amor",
+        "desc": "Corações e beijos para as tuas mensagens mais ternas."
+      },
+      "actions": {
+        "title": "Ações",
+        "desc": "Kaomoji em plena ação: acenar, dançar, lutar."
       }
     },
     "labels": {
@@ -395,7 +403,36 @@
       "cat": "Gato",
       "bear": "Urso",
       "fish": "Peixe",
-      "bunny": "Coelho"
+      "bunny": "Coelho",
+      "cute": "Fofo",
+      "sunglasses": "Óculos de sol",
+      "angry": "Zangado",
+      "embarrassed": "Envergonhado",
+      "happyTears": "Lágrimas de alegria",
+      "laughHard": "A rir muito",
+      "rage": "Fúria",
+      "sob": "Soluço",
+      "smirk": "Sorriso maroto",
+      "shock": "Choque",
+      "delight": "Deleite",
+      "suspicious": "Desconfiado",
+      "flex": "Mostrar músculos",
+      "confused": "Confuso",
+      "cat2": "Gatinho",
+      "dog": "Cão",
+      "mouse": "Rato",
+      "squid": "Lula",
+      "inLove": "Apaixonado",
+      "kissHeart": "Beijo com coração",
+      "blowKiss": "Manda um beijo",
+      "hearts": "Corações",
+      "hugLove": "Grande abraço",
+      "armsUp": "Braços no ar",
+      "wave": "Aceno",
+      "run": "A correr",
+      "dance": "A dançar",
+      "tableBack": "Repõe a mesa",
+      "fight": "Pronto a lutar"
     }
   }
 }

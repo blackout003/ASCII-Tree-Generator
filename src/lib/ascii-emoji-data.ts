@@ -1,4 +1,4 @@
-import { Smile, Cat, Sparkles } from 'lucide-react';
+import { Smile, Cat, Sparkles, Heart, Hand } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 /**
@@ -36,6 +36,12 @@ export const ASCII_EMOJI_CATEGORIES: AsciiEmojiCategory[] = [
       { value: '</3', labelKey: 'brokenHeart' },
       { value: ':*', labelKey: 'kiss' },
       { value: ':|', labelKey: 'neutral' },
+      { value: ':3', labelKey: 'cute' },
+      { value: 'B)', labelKey: 'sunglasses' },
+      { value: '>:(', labelKey: 'angry' },
+      { value: ':$', labelKey: 'embarrassed' },
+      { value: ":')", labelKey: 'happyTears' },
+      { value: 'xD', labelKey: 'laughHard' },
     ],
   },
   {
@@ -51,6 +57,14 @@ export const ASCII_EMOJI_CATEGORIES: AsciiEmojiCategory[] = [
       { value: '＼(^o^)／', labelKey: 'cheer' },
       { value: '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧', labelKey: 'sparkle' },
       { value: '(T_T)', labelKey: 'cry2' },
+      { value: '(ノ°益°)ノ', labelKey: 'rage' },
+      { value: '(╥﹏╥)', labelKey: 'sob' },
+      { value: '(¬‿¬)', labelKey: 'smirk' },
+      { value: '\\(°o°)/', labelKey: 'shock' },
+      { value: '(*^▽^*)', labelKey: 'delight' },
+      { value: '(¬_¬)', labelKey: 'suspicious' },
+      { value: 'ᕦ(ò_óˇ)ᕤ', labelKey: 'flex' },
+      { value: '(・_・?)', labelKey: 'confused' },
     ],
   },
   {
@@ -61,6 +75,33 @@ export const ASCII_EMOJI_CATEGORIES: AsciiEmojiCategory[] = [
       { value: 'ʕ•ᴥ•ʔ', labelKey: 'bear' },
       { value: '<°)))><', labelKey: 'fish' },
       { value: '(\\_/)', labelKey: 'bunny' },
+      { value: '=^.^=', labelKey: 'cat2' },
+      { value: 'U・ᴥ・U', labelKey: 'dog' },
+      { value: '<:3 )~~', labelKey: 'mouse' },
+      { value: '<コ:彡', labelKey: 'squid' },
+    ],
+  },
+  {
+    id: 'love',
+    icon: Heart,
+    emojis: [
+      { value: '(♥‿♥)', labelKey: 'inLove' },
+      { value: '( ˘ ³˘)♥', labelKey: 'kissHeart' },
+      { value: '(づ￣ ³￣)づ', labelKey: 'blowKiss' },
+      { value: '♡ ♥', labelKey: 'hearts' },
+      { value: '(つ≧▽≦)つ', labelKey: 'hugLove' },
+    ],
+  },
+  {
+    id: 'actions',
+    icon: Hand,
+    emojis: [
+      { value: '\\o/', labelKey: 'armsUp' },
+      { value: '( ﾟ▽ﾟ)/', labelKey: 'wave' },
+      { value: 'ᕕ( ᐛ )ᕗ', labelKey: 'run' },
+      { value: '♪┏(・o･)┛♪', labelKey: 'dance' },
+      { value: '┬─┬ノ( º _ ºノ)', labelKey: 'tableBack' },
+      { value: "(ง'̀-'́)ง", labelKey: 'fight' },
     ],
   },
 ];

@@ -368,6 +368,14 @@
       "animals": {
         "title": "どうぶつ",
         "desc": "ASCII文字でできた小さな動物たち。"
+      },
+      "love": {
+        "title": "ラブ",
+        "desc": "やさしいメッセージ向けのハートとキス。"
+      },
+      "actions": {
+        "title": "アクション",
+        "desc": "動きのある顔文字：手を振る、踊る、戦う。"
       }
     },
     "labels": {
@@ -395,7 +403,36 @@
       "cat": "ねこ",
       "bear": "くま",
       "fish": "さかな",
-      "bunny": "うさぎ"
+      "bunny": "うさぎ",
+      "cute": "かわいい",
+      "sunglasses": "サングラス",
+      "angry": "怒り",
+      "embarrassed": "照れ",
+      "happyTears": "感涙",
+      "laughHard": "大笑い",
+      "rage": "激怒",
+      "sob": "すすり泣き",
+      "smirk": "ニヤリ",
+      "shock": "びっくり",
+      "delight": "大喜び",
+      "suspicious": "疑い",
+      "flex": "筋肉自慢",
+      "confused": "困惑",
+      "cat2": "こねこ",
+      "dog": "いぬ",
+      "mouse": "ねずみ",
+      "squid": "イカ",
+      "inLove": "恋",
+      "kissHeart": "投げキッス",
+      "blowKiss": "投げキス",
+      "hearts": "ハート",
+      "hugLove": "ぎゅー",
+      "armsUp": "万歳",
+      "wave": "お手振り",
+      "run": "ダッシュ",
+      "dance": "ダンス",
+      "tableBack": "ちゃぶ台戻し",
+      "fight": "やる気"
     }
   }
 }
