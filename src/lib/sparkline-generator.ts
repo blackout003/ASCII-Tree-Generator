@@ -49,7 +49,11 @@ export function generateBarChart(values: number[], options: SparklineOptions): s
   const max = Math.max(...values);
   const range = max - min || 1;
 
-  const barHeights = values.map((v) => Math.round(((v - min) / range) * height));
+  // Hauteur minimale de 1 pour toute valeur : la valeur minimale (et les séries
+  // constantes, où range est forcé à 1) reste visible au lieu de disparaître.
+  const barHeights = values.map((v) =>
+    Math.max(1, Math.round(((v - min) / range) * height))
+  );
   const colWidth = showValues
     ? Math.max(1, ...values.map((v) => String(v).length))
     : 1;

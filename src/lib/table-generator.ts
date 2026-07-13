@@ -26,7 +26,10 @@ export function generateASCIITable(data: TableData, options: TableOptions): stri
 
   if (columns.length === 0) return '';
 
-  const colCount = columns.length;
+  // Contenu d'une ligne indexé par colonne (et non par row.cells) : garantit un
+  // tableau rectangulaire même si les données chargées sont "ragged".
+  const rowContent = (row: TableData['rows'][number]): string[] =>
+    columns.map((_, i) => row.cells[i]?.content ?? '');
 
   // Calcul largeur maximale par colonne
   const colWidths: number[] = columns.map((col, i) => {
@@ -54,7 +57,7 @@ export function generateASCIITable(data: TableData, options: TableOptions): stri
       if (rows.length > 0) lines.push(mid);
     }
     rows.forEach((row, ri) => {
-      lines.push(buildRow(row.cells.map((c, i) => c.content ?? '')));
+      lines.push(buildRow(rowContent(row)));
       if (ri < rows.length - 1) lines.push(mid);
     });
     lines.push(bot);
@@ -71,17 +74,20 @@ export function generateASCIITable(data: TableData, options: TableOptions): stri
       lines.push(sep);
     }
     rows.forEach(row => {
-      lines.push(buildRow(row.cells.map(c => c.content ?? '')));
+      lines.push(buildRow(rowContent(row)));
     });
     lines.push(sep);
 
   } else if (borderStyle === 'markdown') {
+    // Échappe les caractères qui casseraient la structure du tableau Markdown.
+    const escapeMd = (s: string) => s.replace(/\|/g, '\\|').replace(/\n/g, ' ');
     const buildRow = (cells: string[]) =>
-      '|' + cells.map((c, i) => padCell(c, colWidths[i], alignment, padding)).join('|') + '|';
+      '|' + cells.map((c, i) => padCell(escapeMd(c), colWidths[i], alignment, padding)).join('|') + '|';
 
     const buildSep = () => {
       return '|' + colWidths.map(w => {
-        const inner = '-'.repeat(w);
+        // Markdown impose au moins un tiret ; on garantit une largeur minimale.
+        const inner = '-'.repeat(Math.max(alignment === 'center' ? 2 : 1, w));
         if (alignment === 'center') return ':' + inner.slice(1, -1) + ':';
         if (alignment === 'right') return inner.slice(0, -1) + ':';
         return inner;
@@ -96,7 +102,7 @@ export function generateASCIITable(data: TableData, options: TableOptions): stri
       lines.push(buildRow(columns.map(() => '')));
       lines.push(buildSep());
     }
-    rows.forEach(row => lines.push(buildRow(row.cells.map(c => c.content ?? ''))));
+    rows.forEach(row => lines.push(buildRow(rowContent(row))));
 
   } else {
     // simple
@@ -109,7 +115,7 @@ export function generateASCIITable(data: TableData, options: TableOptions): stri
       lines.push(buildRow(columns, simpleWidths));
       lines.push(buildRow(simpleWidths.map(w => '-'.repeat(w)), simpleWidths));
     }
-    rows.forEach(row => lines.push(buildRow(row.cells.map(c => c.content ?? ''), simpleWidths)));
+    rows.forEach(row => lines.push(buildRow(rowContent(row), simpleWidths)));
   }
 
   return lines.join('\n');
