@@ -1,6 +1,6 @@
-# ASCII Tree Generator
+# ASCII Tools
 
-> A free, open-source web tool to create and visualize folder structures in ASCII format — perfect for README files and technical documentation.
+> A free, open-source web toolkit to create ASCII file trees, tables, charts and text banners — perfect for README files, technical documentation and the terminal.
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org)
@@ -12,14 +12,28 @@
 
 ---
 
+## Tools
+
+A suite of ASCII generators that run entirely in your browser — no signup, no install, output ready to copy and paste anywhere.
+
+- **ASCII Tree** — build file/folder hierarchies with a drag-and-drop editor and a real-time preview
+- **ASCII Table** — turn tabular data into clean text tables
+- **ASCII Charts** — visualize number series as compact mini-charts (sparklines)
+- **Text Banners** — convert text into large stylized ASCII banners
+
+Plus reference resources:
+
+- **Markdown Guide** — a handy cheat sheet for Markdown syntax
+- **ASCII Emojis** — a browsable catalog of ASCII/kaomoji emoticons
+
 ## Features
 
-- **Drag-and-drop editor** — build your file/folder hierarchy visually
-- **Real-time ASCII preview** — see the output update as you type
-- **Two connector styles** — Unicode (`├──`, `└──`) or plain ASCII (`+--`, `\--`)
+- **Real-time preview** — see the output update as you type
+- **Drag-and-drop tree editor** — build your file/folder hierarchy visually
+- **Two connector styles** — Unicode (`├──`, `└──`) or plain ASCII (`|--`, `\--`)
 - **Customizable output** — indentation, depth limit, sorting, folder slash
 - **Copy & export** — copy to clipboard or download as `.txt`
-- **5 languages** — French, English, Spanish, German, Italian
+- **8 languages** — French, English, Italian, Spanish, German, Portuguese, Russian, Japanese
 - **Dark / Light theme**
 - **PWA-ready** — installable on desktop and mobile
 - **Privacy-first** — no account required, analytics are production-only and opt-in
@@ -115,47 +129,64 @@ Create a `.env.local` file at the root and add any variables you need.
 ```
 src/
 ├── app/
-│   ├── [locale]/             # Localized routes (fr | en | es | de | it)
-│   │   ├── page.tsx          # Main app page
+│   ├── [locale]/             # Localized routes (fr | en | it | es | de | pt | ru | ja)
+│   │   ├── page.tsx          # Landing page
+│   │   ├── tools/            # One route per tool
+│   │   │   ├── ascii-tree/
+│   │   │   ├── ascii-table/
+│   │   │   ├── sparkline/
+│   │   │   ├── banner/
+│   │   │   ├── markdown-guide/
+│   │   │   └── ascii-emoji/
 │   │   ├── mentions-legales/ # Legal notices
 │   │   └── donnees-personnelles/ # Privacy policy
 │   ├── manifest.ts           # PWA manifest
 │   └── sitemap.ts            # Dynamic sitemap
 │
 ├── components/
-│   ├── generator/            # Core editor components
+│   ├── generator/            # ASCII tree editor components
 │   │   ├── tree-generator.tsx
 │   │   ├── tree-view.tsx
 │   │   ├── ascii-preview.tsx
 │   │   ├── tree-options-panel.tsx
 │   │   ├── tree-controls.tsx
 │   │   └── drag-drop-zone.tsx
+│   ├── table-generator/      # ASCII table tool
+│   ├── sparkline-generator/  # ASCII charts tool
+│   ├── banner-generator/     # Text banners tool
+│   ├── markdown-guide/       # Markdown reference
+│   ├── ascii-emoji/          # ASCII emoji catalog
+│   ├── tools-nav/            # Shared layout, sidebar & header
 │   └── ui/                   # shadcn/ui + custom components
 │
 ├── lib/
 │   ├── tree-generator.ts     # Core ASCII generation algorithm
+│   ├── tools.ts              # Tool & resource registry (nav)
 │   ├── types.ts              # Shared TypeScript interfaces
 │   ├── validation.ts         # Zod schemas
 │   └── default-options.ts    # Default tree config
 │
 └── i18n/
     ├── locales.ts            # Supported locales
-    └── locales/              # Translation files (en, fr, es, de, it)
+    └── locales/              # Translation files (fr, en, it, es, de, pt, ru, ja)
 ```
 
 ---
 
 ## Internationalization
 
-The app supports 5 locales with URL-based routing:
+The app supports 8 locales with URL-based routing:
 
 | Locale | Language | URL |
 |---|---|---|
 | `fr` | Français (default) | `/fr/` |
 | `en` | English | `/en/` |
+| `it` | Italiano | `/it/` |
 | `es` | Español | `/es/` |
 | `de` | Deutsch | `/de/` |
-| `it` | Italiano | `/it/` |
+| `pt` | Português | `/pt/` |
+| `ru` | Русский | `/ru/` |
+| `ja` | 日本語 | `/ja/` |
 
 To add a new language, create a translation file in `src/i18n/locales/` and register the locale in `src/i18n/locales.ts`.
 

@@ -2,10 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
-import { Home, Globe, Sun, Moon, Monitor, MoreHorizontal } from 'lucide-react';
+import { Home, Globe, Sun, Moon, Monitor, MoreHorizontal, PencilRuler } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import {
   Sidebar,
@@ -64,8 +63,8 @@ export function ToolsSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link href={`/${locale}`}>
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg overflow-hidden">
-                  <Image src="/Logo.png" alt="ASCII Tools logo" width={32} height={32} className="size-8 object-contain" />
+                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground overflow-hidden">
+                  <PencilRuler className="size-5" />
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none group-data-[collapsible=icon]:hidden">
                   <span className="font-semibold">ASCII Tools</span>
