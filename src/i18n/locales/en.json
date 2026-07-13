@@ -80,44 +80,44 @@
     "cancel": "Cancel"
   },
   "seoContent": {
-    "title": "ASCII File Tree Generator",
-    "intro": "The ASCII tree generator is a free online tool that allows you to easily create visual representations of your project structure. Perfect for documenting your projects, creating diagrams for your README.md files, and sharing your code organization with your team.",
+    "title": "Free online ASCII toolkit",
+    "intro": "ASCII Tools brings together four online generators to turn your ideas into copy-paste-ready ASCII art: file trees, tables, mini-charts (sparklines) and text banners. Everything runs right in your browser, with no signup or install, and the output fits anywhere: READMEs, technical docs, code comments, the terminal or messages.",
     "whyUse": {
-      "title": "Why use an ASCII tree for your documentation?",
-      "para1": "Whether you're working on an open source project, documenting a web application, or presenting a professional project's architecture, an ASCII file tree offers several advantages:",
-      "benefit1": "Clear documentation: Visualize your entire project structure in just a few lines of text",
-      "benefit2": "Universal compatibility: Simple text format that displays correctly on GitHub, GitLab, Bitbucket and all text editors",
-      "benefit3": "Easy integration: Copy-paste directly into your README.md files without additional formatting",
-      "benefit4": "Version control friendly: Structure changes are easy to track in your Git commits"
+      "title": "Why use ASCII tools?",
+      "para1": "ASCII text is universal: it looks the same everywhere, without relying on images or complex formatting. Whether you're documenting a project, preparing a README or illustrating a terminal, these tools offer several benefits:",
+      "benefit1": "Universal compatibility: renders correctly on GitHub, GitLab, in the terminal and in every text editor",
+      "benefit2": "Instant integration: paste the result into Markdown, code or an email with no extra formatting",
+      "benefit3": "Version-friendly: changes stay readable and easy to track in your Git commits",
+      "benefit4": "Lightweight and fast: plain text, no heavy images or external dependencies"
     },
     "howToUse": {
-      "title": "How to generate a tree for your README?",
-      "para1": "Our ASCII tree generator simplifies creating file structures for your projects. Here's how to use it:",
-      "step1": "Drag and drop your folders and files directly into the interface or use the file selector",
-      "step2": "Organize your tree structure by adding, modifying or deleting elements as needed",
-      "step3": "Configure options: alphabetical sorting, maximum depth, hidden file display",
-      "step4": "Copy the generated ASCII result and paste it into your README.md file or documentation",
-      "para2": "The tool automatically generates a file tree in ASCII format compatible with Markdown, making it ideal for your GitHub projects, technical documentation and code structure presentations."
+      "title": "How does it work?",
+      "para1": "Every tool follows the same simple flow, from picking the tool to the final copy-paste:",
+      "step1": "Pick the right tool: file tree, table, ASCII chart or text banner",
+      "step2": "Enter your data: file structure, table values, number series or text to style",
+      "step3": "Customize the output with the options: style, sorting, alignment, character format",
+      "step4": "Copy the generated ASCII and paste it into your README, documentation or terminal",
+      "para2": "Everything is computed in real time in your browser: no data is sent to a server, and the output refreshes instantly with every change."
     },
     "useCases": {
-      "title": "Structure examples and use cases",
-      "para1": "The ASCII tree generator is particularly useful for:",
-      "useCase1": "Visualizing the folder structure of a web project (React, Next.js, Vue.js...)",
-      "useCase2": "Documenting the organization of a Python project with its modules and packages",
-      "useCase3": "Creating tree diagrams for Node.js projects and their file structure",
-      "useCase4": "Presenting project architecture in a professional README.md file",
-      "para2": "Whether you need to visualize a Windows project structure with the tree command, or want to create a tree for a Linux project, our online tool works on all operating systems without installation."
+      "title": "Use cases",
+      "para1": "ASCII tools are handy in many everyday situations for developers and technical writers:",
+      "useCase1": "Document a web project's structure (React, Next.js, Vue.js…) with a clear file tree",
+      "useCase2": "Present comparative data in an aligned ASCII table, right inside a README",
+      "useCase3": "Summarize trends (sales, traffic, performance) with compact sparklines in your reports",
+      "useCase4": "Create stylized text banners for script headers, logs or terminal welcome messages",
+      "para2": "Whether you're on Windows, macOS or Linux, these online tools work on every operating system, with no installation required."
     },
     "features": {
-      "title": "Generator features",
-      "para1": "Our ASCII tree generator offers many features to meet all your documentation needs:",
-      "feature1": "Intuitive drag & drop interface to quickly import your files and folders",
-      "feature2": "Interactive editing: add, modify or delete elements with a few clicks",
-      "feature3": "Simple export: copy the result or download it as a text file",
-      "feature4": "Advanced options: customize depth, sorting and display according to your preferences",
-      "feature5": "Real-time preview of your ASCII tree structure",
-      "feature6": "Multilingual support for international use",
-      "para2": "All these tools are available for free, without registration and directly in your web browser."
+      "title": "The available tools",
+      "para1": "ASCII Tools gathers four complementary generators, all free and signup-free:",
+      "feature1": "ASCII Tree: build file and folder trees by drag & drop, perfect for your READMEs",
+      "feature2": "ASCII Table: turn your data into aligned tables, ready to paste into code or Markdown",
+      "feature3": "ASCII Charts: visualize number series as compact mini-charts (sparklines)",
+      "feature4": "Text Banners: convert text into large stylized ASCII banners",
+      "feature5": "Real-time preview and one-click export (copy or download)",
+      "feature6": "Multilingual interface available in 8 languages, with light and dark mode",
+      "para2": "All of these tools are available for free, without signup and directly in your web browser."
     }
   },
   "nav": {
@@ -253,6 +253,26 @@
       "copySuccess": "Chart copied to clipboard!",
       "copyError": "Failed to copy.",
       "downloadError": "Failed to download."
+    }
+  },
+  "home": {
+    "heroBadge": "4 free ASCII tools, no signup",
+    "heroTitle": "The all-in-one ASCII toolkit",
+    "heroSubtitle": "Generate file trees, tables, charts and banners in ASCII text. Right in your browser, ready to copy and paste anywhere.",
+    "open": "Open tool",
+    "tools": {
+      "asciiTree": {
+        "desc": "Build clear file and folder trees for your READMEs, docs and projects."
+      },
+      "asciiTable": {
+        "desc": "Turn your data into aligned ASCII tables, ready to paste into code or Markdown."
+      },
+      "sparkline": {
+        "desc": "Visualize number series as compact ASCII mini-charts for your reports."
+      },
+      "banner": {
+        "desc": "Turn text into large stylized ASCII banners for your headers and terminals."
+      }
     }
   }
 }

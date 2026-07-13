@@ -3,6 +3,7 @@ import { FooterInternational } from '@/components/ui/footer-international';
 import { StructuredData } from '@/components/ui/structured-data-server';
 import { generateWebsiteStructuredData, generateBreadcrumbStructuredData } from '@/lib/structured-data-server';
 import { SeoContentSection } from '@/components/home/seo-content-section';
+import { ToolsShowcase } from '@/components/home/tools-showcase';
 import { locales } from '@/i18n/locales';
 import { getTranslations } from 'next-intl/server';
 import { AppLayout } from '@/components/tools-nav/app-layout';
@@ -18,7 +19,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   return (
     <AppLayout>
       <div className="flex flex-1 flex-col overflow-y-auto">
-        <main className="flex-1" role="main" aria-label="Générateur d'arbre ASCII">
+        <main className="flex-1" role="main" aria-label="Boîte à outils ASCII">
+          <ToolsShowcase />
           <SeoContentSection />
         </main>
 

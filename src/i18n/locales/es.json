@@ -80,44 +80,44 @@
     "cancel": "Cancelar"
   },
   "seoContent": {
-    "title": "Generador de Árbol de Archivos ASCII",
-    "intro": "El generador de árbol ASCII es una herramienta gratuita y en línea que te permite crear fácilmente representaciones visuales de la estructura de tus proyectos. Perfecto para documentar tus proyectos, crear diagramas para tus archivos README.md y compartir la organización de tu código con tu equipo.",
+    "title": "Kit de herramientas ASCII gratis en línea",
+    "intro": "ASCII Tools reúne cuatro generadores en línea para convertir tus ideas en arte ASCII listo para copiar y pegar: árboles de archivos, tablas, minigráficos (sparklines) y banners de texto. Todo funciona directamente en tu navegador, sin registro ni instalación, y el resultado encaja en cualquier sitio: README, documentación técnica, comentarios de código, terminal o mensajes.",
     "whyUse": {
-      "title": "¿Por qué usar un árbol ASCII para tu documentación?",
-      "para1": "Ya sea que trabajes en un proyecto open source, documentes una aplicación web o presentes la arquitectura de un proyecto profesional, un árbol de archivos ASCII ofrece varias ventajas:",
-      "benefit1": "Documentación clara: Visualiza la estructura completa de tu proyecto en pocas líneas de texto",
-      "benefit2": "Compatibilidad universal: Formato de texto simple que se muestra correctamente en GitHub, GitLab, Bitbucket y todos los editores de texto",
-      "benefit3": "Facilidad de integración: Copia y pega directamente en tus archivos README.md sin formato adicional",
-      "benefit4": "Amigable con el control de versiones: Los cambios de estructura son fáciles de rastrear en tus commits de Git"
+      "title": "¿Por qué usar herramientas ASCII?",
+      "para1": "El texto ASCII es universal: se ve igual en todas partes, sin depender de imágenes ni de formatos complejos. Ya sea que documentes un proyecto, prepares un README o ilustres una terminal, estas herramientas ofrecen varias ventajas:",
+      "benefit1": "Compatibilidad universal: se muestra correctamente en GitHub, GitLab, en la terminal y en cualquier editor de texto",
+      "benefit2": "Integración inmediata: pega el resultado en Markdown, código o un correo sin formato adicional",
+      "benefit3": "Compatible con control de versiones: los cambios siguen siendo legibles y fáciles de seguir en tus commits de Git",
+      "benefit4": "Ligero y rápido: texto plano, sin imágenes pesadas ni dependencias externas"
     },
     "howToUse": {
-      "title": "¿Cómo generar un árbol para tu README?",
-      "para1": "Nuestro generador de árbol ASCII simplifica la creación de estructuras de archivos para tus proyectos. Así es como usarlo:",
-      "step1": "Arrastra y suelta tus carpetas y archivos directamente en la interfaz o usa el selector de archivos",
-      "step2": "Organiza tu estructura de árbol agregando, modificando o eliminando elementos según tus necesidades",
-      "step3": "Configura las opciones: ordenamiento alfabético, profundidad máxima, visualización de archivos ocultos",
-      "step4": "Copia el resultado ASCII generado y pégalo en tu archivo README.md o documentación",
-      "para2": "La herramienta genera automáticamente una estructura de archivos en formato ASCII compatible con Markdown, lo que la hace ideal para tus proyectos de GitHub, documentación técnica y presentaciones de estructura de código."
+      "title": "¿Cómo funciona?",
+      "para1": "Cada herramienta sigue el mismo flujo sencillo, desde elegir la herramienta hasta el copiar y pegar final:",
+      "step1": "Elige la herramienta adecuada: árbol de archivos, tabla, gráfico ASCII o banner de texto",
+      "step2": "Introduce tus datos: estructura de archivos, valores de la tabla, series de números o texto a estilizar",
+      "step3": "Personaliza el resultado con las opciones: estilo, orden, alineación, formato de caracteres",
+      "step4": "Copia el ASCII generado y pégalo en tu README, documentación o terminal",
+      "para2": "Todo se calcula en tiempo real en tu navegador: no se envía ningún dato a un servidor y el resultado se actualiza al instante con cada cambio."
     },
     "useCases": {
-      "title": "Ejemplos de estructuras y casos de uso",
-      "para1": "El generador de árbol ASCII es particularmente útil para:",
-      "useCase1": "Visualizar la estructura de carpetas de un proyecto web (React, Next.js, Vue.js...)",
-      "useCase2": "Documentar la organización de un proyecto Python con sus módulos y paquetes",
-      "useCase3": "Crear diagramas de árbol para proyectos Node.js y su estructura de archivos",
-      "useCase4": "Presentar la arquitectura de un proyecto en un archivo README.md profesional",
-      "para2": "Ya sea que necesites visualizar la estructura de un proyecto Windows con el comando tree, o quieras crear un árbol para un proyecto Linux, nuestra herramienta en línea funciona en todos los sistemas operativos sin instalación."
+      "title": "Casos de uso",
+      "para1": "Las herramientas ASCII son útiles en muchas situaciones cotidianas de desarrolladores y redactores técnicos:",
+      "useCase1": "Documentar la estructura de un proyecto web (React, Next.js, Vue.js…) con un árbol de archivos claro",
+      "useCase2": "Presentar datos comparativos en una tabla ASCII alineada, directamente en un README",
+      "useCase3": "Resumir tendencias (ventas, tráfico, rendimiento) con sparklines compactas en tus informes",
+      "useCase4": "Crear banners de texto estilizados para encabezados de scripts, logs o mensajes de bienvenida en la terminal",
+      "para2": "Ya uses Windows, macOS o Linux, estas herramientas en línea funcionan en todos los sistemas operativos, sin ninguna instalación."
     },
     "features": {
-      "title": "Características del generador",
-      "para1": "Nuestro generador de árbol ASCII ofrece muchas características para satisfacer todas tus necesidades de documentación:",
-      "feature1": "Interfaz intuitiva de arrastrar y soltar para importar rápidamente tus archivos y carpetas",
-      "feature2": "Edición interactiva: agrega, modifica o elimina elementos con unos pocos clics",
-      "feature3": "Exportación simple: copia el resultado o descárgalo como archivo de texto",
-      "feature4": "Opciones avanzadas: personaliza la profundidad, ordenamiento y visualización según tus preferencias",
-      "feature5": "Vista previa en tiempo real de tu estructura de árbol ASCII",
-      "feature6": "Soporte multilingüe para uso internacional",
-      "para2": "Todas estas herramientas están disponibles de forma gratuita, sin registro y directamente en tu navegador web."
+      "title": "Las herramientas disponibles",
+      "para1": "ASCII Tools reúne cuatro generadores complementarios, todos gratis y sin registro:",
+      "feature1": "Árbol ASCII: crea árboles de archivos y carpetas por arrastrar y soltar, ideales para tus README",
+      "feature2": "Tabla ASCII: convierte tus datos en tablas alineadas, listas para pegar en código o Markdown",
+      "feature3": "Gráficos ASCII: visualiza series de números como minigráficos (sparklines) compactos",
+      "feature4": "Banners de texto: convierte texto en grandes banners ASCII estilizados",
+      "feature5": "Vista previa en tiempo real y exportación con un clic (copiar o descargar)",
+      "feature6": "Interfaz multilingüe disponible en 8 idiomas, con modo claro y oscuro",
+      "para2": "Todas estas herramientas están disponibles gratis, sin registro y directamente en tu navegador web."
     }
   },
   "nav": {
@@ -253,6 +253,26 @@
       "copySuccess": "¡Gráfico copiado al portapapeles!",
       "copyError": "Error al copiar.",
       "downloadError": "Error al descargar."
+    }
+  },
+  "home": {
+    "heroBadge": "4 herramientas ASCII gratis, sin registro",
+    "heroTitle": "El kit de herramientas ASCII todo en uno",
+    "heroSubtitle": "Genera árboles de archivos, tablas, gráficos y banners en texto ASCII. Directamente en tu navegador, listo para copiar y pegar.",
+    "open": "Abrir herramienta",
+    "tools": {
+      "asciiTree": {
+        "desc": "Crea árboles de archivos y carpetas claros para tus README, documentación y proyectos."
+      },
+      "asciiTable": {
+        "desc": "Convierte tus datos en tablas ASCII alineadas, listas para pegar en código o Markdown."
+      },
+      "sparkline": {
+        "desc": "Visualiza series de números como minigráficos ASCII compactos para tus informes."
+      },
+      "banner": {
+        "desc": "Convierte texto en grandes banners ASCII estilizados para tus encabezados y terminales."
+      }
     }
   }
 }

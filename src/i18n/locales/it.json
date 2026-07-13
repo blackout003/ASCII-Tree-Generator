@@ -80,43 +80,43 @@
     "cancel": "Annulla"
   },
   "seoContent": {
-    "title": "Generatore di Albero di File ASCII",
-    "intro": "Il generatore di albero ASCII è uno strumento gratuito e online che ti permette di creare facilmente rappresentazioni visive della struttura dei tuoi progetti. Perfetto per documentare i tuoi progetti, creare diagrammi per i tuoi file README.md e condividere l'organizzazione del tuo codice con il tuo team.",
+    "title": "Kit di strumenti ASCII gratuiti online",
+    "intro": "ASCII Tools riunisce quattro generatori online per trasformare le tue idee in arte ASCII pronta da copiare e incollare: alberi di file, tabelle, mini-grafici (sparkline) e banner di testo. Tutto funziona direttamente nel browser, senza registrazione né installazione, e il risultato si integra ovunque: README, documentazione tecnica, commenti nel codice, terminale o messaggi.",
     "whyUse": {
-      "title": "Perché usare un albero ASCII per la tua documentazione?",
-      "para1": "Che tu stia lavorando su un progetto open source, documentando un'applicazione web o presentando l'architettura di un progetto professionale, un albero di file ASCII offre diversi vantaggi:",
-      "benefit1": "Documentazione chiara: Visualizza l'intera struttura del tuo progetto in poche righe di testo",
-      "benefit2": "Compatibilità universale: Formato testo semplice che viene visualizzato correttamente su GitHub, GitLab, Bitbucket e tutti gli editor di testo",
-      "benefit3": "Facilità di integrazione: Copia e incolla direttamente nei tuoi file README.md senza formattazione aggiuntiva",
-      "benefit4": "Amichevole per il controllo versione: Le modifiche alla struttura sono facili da tracciare nei tuoi commit Git"
+      "title": "Perché usare gli strumenti ASCII?",
+      "para1": "Il testo ASCII è universale: appare uguale ovunque, senza dipendere da immagini o formattazioni complesse. Che tu stia documentando un progetto, preparando un README o illustrando un terminale, questi strumenti offrono diversi vantaggi:",
+      "benefit1": "Compatibilità universale: si visualizza correttamente su GitHub, GitLab, nel terminale e in ogni editor di testo",
+      "benefit2": "Integrazione immediata: incolla il risultato in Markdown, codice o un'email senza formattazione aggiuntiva",
+      "benefit3": "Compatibile con il versionamento: le modifiche restano leggibili e facili da seguire nei tuoi commit Git",
+      "benefit4": "Leggero e veloce: solo testo, senza immagini pesanti né dipendenze esterne"
     },
     "howToUse": {
-      "title": "Come generare un albero per il tuo README?",
-      "para1": "Il nostro generatore di albero ASCII semplifica la creazione di strutture di file per i tuoi progetti. Ecco come usarlo:",
-      "step1": "Trascina e rilascia le tue cartelle e file direttamente nell'interfaccia o usa il selettore di file",
-      "step2": "Organizza la struttura dell'albero aggiungendo, modificando o eliminando elementi secondo necessità",
-      "step3": "Configura le opzioni: ordinamento alfabetico, profondità massima, visualizzazione file nascosti",
-      "step4": "Copia il risultato ASCII generato e incollalo nel tuo file README.md o documentazione",
-      "para2": "Lo strumento genera automaticamente una struttura di file in formato ASCII compatibile con Markdown, rendendolo ideale per i tuoi progetti GitHub, documentazione tecnica e presentazioni di struttura del codice."
+      "title": "Come funziona?",
+      "para1": "Ogni strumento segue lo stesso flusso semplice, dalla scelta dello strumento al copia-incolla finale:",
+      "step1": "Scegli lo strumento adatto: albero di file, tabella, grafico ASCII o banner di testo",
+      "step2": "Inserisci i tuoi dati: struttura dei file, valori della tabella, serie di numeri o testo da stilizzare",
+      "step3": "Personalizza il risultato con le opzioni: stile, ordinamento, allineamento, formato dei caratteri",
+      "step4": "Copia l'ASCII generato e incollalo nel tuo README, nella documentazione o nel terminale",
+      "para2": "Tutto viene calcolato in tempo reale nel tuo browser: nessun dato viene inviato a un server e il risultato si aggiorna all'istante a ogni modifica."
     },
     "useCases": {
-      "title": "Esempi di strutture e casi d'uso",
-      "para1": "Il generatore di albero ASCII è particolarmente utile per:",
-      "useCase1": "Visualizzare la struttura delle cartelle di un progetto web (React, Next.js, Vue.js...)",
-      "useCase2": "Documentare l'organizzazione di un progetto Python con i suoi moduli e pacchetti",
-      "useCase3": "Creare diagrammi ad albero per progetti Node.js e la loro struttura di file",
-      "useCase4": "Presentare l'architettura di un progetto in un file README.md professionale",
-      "para2": "Che tu abbia bisogno di visualizzare la struttura di un progetto Windows con il comando tree, o voglia creare un albero per un progetto Linux, il nostro strumento online funziona su tutti i sistemi operativi senza installazione."
+      "title": "Casi d'uso",
+      "para1": "Gli strumenti ASCII sono utili in molte situazioni quotidiane per sviluppatori e redattori tecnici:",
+      "useCase1": "Documentare la struttura di un progetto web (React, Next.js, Vue.js…) con un albero di file chiaro",
+      "useCase2": "Presentare dati comparativi in una tabella ASCII allineata, direttamente in un README",
+      "useCase3": "Riassumere tendenze (vendite, traffico, prestazioni) con sparkline compatte nei tuoi report",
+      "useCase4": "Creare banner di testo stilizzati per intestazioni di script, log o messaggi di benvenuto nel terminale",
+      "para2": "Che tu usi Windows, macOS o Linux, questi strumenti online funzionano su ogni sistema operativo, senza alcuna installazione."
     },
     "features": {
-      "title": "Funzionalità del generatore",
-      "para1": "Il nostro generatore di albero ASCII offre molte funzionalità per soddisfare tutte le tue esigenze di documentazione:",
-      "feature1": "Interfaccia drag & drop intuitiva per importare rapidamente i tuoi file e cartelle",
-      "feature2": "Modifica interattiva: aggiungi, modifica o elimina elementi con pochi clic",
-      "feature3": "Esportazione semplice: copia il risultato o scaricalo come file di testo",
-      "feature4": "Opzioni avanzate: personalizza profondità, ordinamento e visualizzazione secondo le tue preferenze",
-      "feature5": "Anteprima in tempo reale della tua struttura ad albero ASCII",
-      "feature6": "Supporto multilingue per uso internazionale",
+      "title": "Gli strumenti disponibili",
+      "para1": "ASCII Tools riunisce quattro generatori complementari, tutti gratuiti e senza registrazione:",
+      "feature1": "Albero ASCII: crea alberi di file e cartelle con il trascinamento, ideali per i tuoi README",
+      "feature2": "Tabella ASCII: trasforma i tuoi dati in tabelle allineate, pronte da incollare in codice o Markdown",
+      "feature3": "Grafici ASCII: visualizza serie di numeri come mini-grafici (sparkline) compatti",
+      "feature4": "Banner di testo: converti il testo in grandi banner ASCII stilizzati",
+      "feature5": "Anteprima in tempo reale ed esportazione con un clic (copia o download)",
+      "feature6": "Interfaccia multilingue disponibile in 8 lingue, con modalità chiara e scura",
       "para2": "Tutti questi strumenti sono disponibili gratuitamente, senza registrazione e direttamente nel tuo browser web."
     }
   },
@@ -253,6 +253,26 @@
       "copySuccess": "Grafico copiato negli appunti!",
       "copyError": "Errore durante la copia.",
       "downloadError": "Errore durante il download."
+    }
+  },
+  "home": {
+    "heroBadge": "4 strumenti ASCII gratuiti, senza registrazione",
+    "heroTitle": "Il toolkit ASCII tutto in uno",
+    "heroSubtitle": "Genera alberi di file, tabelle, grafici e banner in testo ASCII. Direttamente nel browser, pronti da copiare e incollare.",
+    "open": "Apri strumento",
+    "tools": {
+      "asciiTree": {
+        "desc": "Crea alberi di file e cartelle chiari per README, documentazione e progetti."
+      },
+      "asciiTable": {
+        "desc": "Trasforma i tuoi dati in tabelle ASCII allineate, pronte da incollare in codice o Markdown."
+      },
+      "sparkline": {
+        "desc": "Visualizza serie di numeri come mini-grafici ASCII compatti per i tuoi report."
+      },
+      "banner": {
+        "desc": "Trasforma il testo in grandi banner ASCII stilizzati per intestazioni e terminali."
+      }
     }
   }
 }

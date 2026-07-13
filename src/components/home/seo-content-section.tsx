@@ -10,9 +10,9 @@ export function SeoContentSection() {
     <section className="container mx-auto p-6 max-w-7xl mt-12 space-y-8">
       <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 border-0">
         <CardContent className="p-8 space-y-6">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {t('title')}
-          </h1>
+          </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             {t('intro')}
           </p>
