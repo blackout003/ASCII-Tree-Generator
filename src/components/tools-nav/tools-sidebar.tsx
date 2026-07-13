@@ -67,7 +67,7 @@ export function ToolsSidebar() {
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg overflow-hidden">
                   <Image src="/Logo.png" alt="ASCII Tools logo" width={32} height={32} className="size-8 object-contain" />
                 </div>
-                <div className="flex flex-col gap-0.5 leading-none">
+                <div className="flex flex-col gap-0.5 leading-none group-data-[collapsible=icon]:hidden">
                   <span className="font-semibold">ASCII Tools</span>
                   <span className="text-xs text-muted-foreground">asciitree.fr</span>
                 </div>
