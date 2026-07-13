@@ -24,6 +24,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Badge } from '@/components/ui/badge';
+import { ChangelogDialog } from '@/components/tools-nav/changelog-dialog';
 import { TOOLS, RESOURCES } from '@/lib/tools';
 import { locales, localeNames, type Locale } from '@/i18n/locales';
 
@@ -205,6 +206,10 @@ export function ToolsSidebar() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+          </SidebarMenuItem>
+
+          <SidebarMenuItem>
+            <ChangelogDialog />
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>

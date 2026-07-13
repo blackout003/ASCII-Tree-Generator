@@ -66,3 +66,21 @@ All prefixed `NEXT_PUBLIC_`. See `.env.example` for the full list. Analytics pro
 ### Legal pages
 
 `/mentions-legales` and `/donnees-personnelles` are French-only static pages under `src/components/legal/`. They are not internationalized.
+
+### Changelog & versioning
+
+The app version is shown in the sidebar footer (`ChangelogDialog` in [src/components/tools-nav/changelog-dialog.tsx](src/components/tools-nav/changelog-dialog.tsx)); clicking it opens a dialog listing past releases. The project follows semantic versioning.
+
+There are **two sources that must be kept in sync manually** (Next.js does not import raw `.md` by default):
+
+| File | Role |
+|------|------|
+| [CHANGELOG.md](CHANGELOG.md) | Human-readable repo changelog (*Keep a Changelog* format), source of truth |
+| [src/lib/changelog.ts](src/lib/changelog.ts) | `APP_VERSION` + structured `CHANGELOG` array rendered by the dialog |
+
+When releasing a new version:
+1. Add an entry at the top of `CHANGELOG.md`.
+2. Mirror it as a new `ChangelogEntry` at the top of the `CHANGELOG` array in `changelog.ts`, and bump `APP_VERSION`.
+3. Bump `"version"` in [package.json](package.json).
+
+The changelog UI is **French-only** (not routed through next-intl) to avoid bloating the 8 locale files.
