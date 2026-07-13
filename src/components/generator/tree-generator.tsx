@@ -255,6 +255,7 @@ export default function TreeGenerator() {
     setContent(
       <TreeOptionsPanel options={options} onOptionsChange={setOptions} />
     );
+    return () => setContent(null);
   }, [options, setOptions, setContent]);
 
   /**
