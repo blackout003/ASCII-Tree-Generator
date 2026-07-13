@@ -130,7 +130,8 @@
     "banner": "Textbanner",
     "comingSoon": "Demnächst",
     "openTool": "Werkzeug öffnen",
-    "markdownGuide": "Markdown-Leitfaden"
+    "markdownGuide": "Markdown-Leitfaden",
+    "resources": "Ressourcen"
   },
   "tableGenerator": {
     "editor": {
@@ -258,7 +259,7 @@
     }
   },
   "home": {
-    "heroBadge": "5 kostenlose ASCII-Tools, ohne Anmeldung",
+    "heroBadge": "4 kostenlose ASCII-Tools, ohne Anmeldung",
     "heroTitle": "Das All-in-One-ASCII-Toolkit",
     "heroSubtitle": "Erstelle Dateibäume, Tabellen, Diagramme und Banner als ASCII-Text. Direkt im Browser, bereit zum Kopieren und Einfügen.",
     "open": "Tool öffnen",

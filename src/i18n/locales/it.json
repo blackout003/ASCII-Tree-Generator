@@ -130,7 +130,8 @@
     "banner": "Banner di Testo",
     "comingSoon": "Prossimamente",
     "openTool": "Apri strumento",
-    "markdownGuide": "Guida Markdown"
+    "markdownGuide": "Guida Markdown",
+    "resources": "Risorse"
   },
   "tableGenerator": {
     "editor": {
@@ -258,7 +259,7 @@
     }
   },
   "home": {
-    "heroBadge": "5 strumenti ASCII gratuiti, senza registrazione",
+    "heroBadge": "4 strumenti ASCII gratuiti, senza registrazione",
     "heroTitle": "Il toolkit ASCII tutto in uno",
     "heroSubtitle": "Genera alberi di file, tabelle, grafici e banner in testo ASCII. Direttamente nel browser, pronti da copiare e incollare.",
     "open": "Apri strumento",

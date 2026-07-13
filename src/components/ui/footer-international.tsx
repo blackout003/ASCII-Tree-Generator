@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { Scale, ShieldCheck, Github } from 'lucide-react';
 import { Separator } from './separator';
-import { TOOLS } from '@/lib/tools';
+import { TOOLS, RESOURCES } from '@/lib/tools';
 
 export function FooterInternational() {
   const currentYear = new Date().getFullYear();
@@ -18,7 +18,7 @@ export function FooterInternational() {
       <div className="container mx-auto px-4 pt-12 pb-6">
 
         {/* Main grid */}
-        <div className="grid grid-cols-2 gap-10 lg:grid-cols-4 mb-10">
+        <div className="grid grid-cols-2 gap-10 lg:grid-cols-5 mb-10">
 
           {/* Brand */}
           <div className="col-span-2 flex flex-col gap-3 lg:col-span-2">
@@ -62,6 +62,28 @@ export function FooterInternational() {
                   >
                     <Icon className="w-3.5 h-3.5" />
                     {tNav(tool.nameKey as Parameters<typeof tNav>[0])}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+
+          {/* Resources */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              {tNav('resources')}
+            </h3>
+            <nav className="flex flex-col gap-2">
+              {RESOURCES.map((resource) => {
+                const Icon = resource.icon;
+                return (
+                  <Link
+                    key={resource.id}
+                    href={`/${locale}${resource.href}`}
+                    className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors w-fit"
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                    {tNav(resource.nameKey as Parameters<typeof tNav>[0])}
                   </Link>
                 );
               })}

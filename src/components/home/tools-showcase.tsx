@@ -68,6 +68,10 @@ CPU     ▃▃▅▂▇▆▄▅`,
 ██║  ██║██║
 ╚═╝  ╚═╝╚═╝`,
   },
+];
+
+// Reference guides — listed apart from the generators above.
+const SHOWCASE_RESOURCES: ShowcaseTool[] = [
   {
     id: 'markdown-guide',
     href: '/tools/markdown-guide',
@@ -82,9 +86,43 @@ CPU     ▃▃▅▂▇▆▄▅`,
   },
 ];
 
-export function ToolsShowcase() {
+function ShowcaseCard({ tool, index }: { tool: ShowcaseTool; index: number }) {
   const t = useTranslations();
   const locale = useLocale();
+
+  return (
+    <Link
+      href={`/${locale}${tool.href}`}
+      style={{ animationDelay: `${index * 70}ms` }}
+      className="group animate-rise-in flex flex-col bg-background p-6 outline-none transition-colors hover:bg-muted/40 focus-visible:bg-muted/40 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
+    >
+      {/* header row: mono tag + open affordance */}
+      <div className="flex items-center justify-between">
+        <span className="font-mono text-[11px] font-medium tracking-[0.15em] px-1.5 py-0.5 border border-border text-muted-foreground transition-colors group-hover:border-foreground group-hover:bg-foreground group-hover:text-background">
+          {tool.tag}
+        </span>
+        <span className="font-mono text-xs text-muted-foreground opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0">
+          {t('home.open')} →
+        </span>
+      </div>
+
+      <h2 className="mt-4 font-mono text-lg font-semibold text-foreground">
+        {t(`nav.${tool.nameKey}` as never)}
+      </h2>
+
+      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+        {t(tool.descKey as never)}
+      </p>
+
+      <pre className="mt-5 border border-border bg-muted/40 p-4 text-xs leading-relaxed text-foreground/75 font-mono overflow-x-auto whitespace-pre transition-colors group-hover:border-foreground/20">
+        {tool.preview}
+      </pre>
+    </Link>
+  );
+}
+
+export function ToolsShowcase() {
+  const t = useTranslations();
 
   return (
     <section className="container mx-auto px-6 max-w-5xl">
@@ -121,35 +159,20 @@ export function ToolsShowcase() {
       {/* Tools — a monospace index grid ruled with hairlines, like a TUI */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border border border-border">
         {SHOWCASE_TOOLS.map((tool, i) => (
-          <Link
-            key={tool.id}
-            href={`/${locale}${tool.href}`}
-            style={{ animationDelay: `${i * 70}ms` }}
-            className="group animate-rise-in flex flex-col bg-background p-6 outline-none transition-colors hover:bg-muted/40 focus-visible:bg-muted/40 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
-          >
-            {/* header row: mono tag + open affordance */}
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-[11px] font-medium tracking-[0.15em] px-1.5 py-0.5 border border-border text-muted-foreground transition-colors group-hover:border-foreground group-hover:bg-foreground group-hover:text-background">
-                {tool.tag}
-              </span>
-              <span className="font-mono text-xs text-muted-foreground opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0">
-                {t('home.open')} →
-              </span>
-            </div>
-
-            <h2 className="mt-4 font-mono text-lg font-semibold text-foreground">
-              {t(`nav.${tool.nameKey}` as never)}
-            </h2>
-
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              {t(tool.descKey as never)}
-            </p>
-
-            <pre className="mt-5 border border-border bg-muted/40 p-4 text-xs leading-relaxed text-foreground/75 font-mono overflow-x-auto whitespace-pre transition-colors group-hover:border-foreground/20">
-              {tool.preview}
-            </pre>
-          </Link>
+          <ShowcaseCard key={tool.id} tool={tool} index={i} />
         ))}
+      </div>
+
+      {/* Resources — reference guides, kept apart from the generators */}
+      <div className="mt-16 pb-4">
+        <p className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.25em] text-muted-foreground mb-4">
+          {t('nav.resources')}
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border border border-border">
+          {SHOWCASE_RESOURCES.map((resource, i) => (
+            <ShowcaseCard key={resource.id} tool={resource} index={i} />
+          ))}
+        </div>
       </div>
     </section>
   );

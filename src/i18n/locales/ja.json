@@ -130,7 +130,8 @@
     "banner": "テキストバナー",
     "comingSoon": "近日公開",
     "openTool": "ツールを開く",
-    "markdownGuide": "Markdown ガイド"
+    "markdownGuide": "Markdown ガイド",
+    "resources": "リソース"
   },
   "tableGenerator": {
     "editor": {
@@ -258,7 +259,7 @@
     }
   },
   "home": {
-    "heroBadge": "登録不要、5つの無料ASCIIツール",
+    "heroBadge": "登録不要、4つの無料ASCIIツール",
     "heroTitle": "オールインワンのASCIIツールキット",
     "heroSubtitle": "ファイルツリー、表、グラフ、バナーをASCIIテキストで生成。ブラウザ上で完結し、どこにでもコピー＆ペーストできます。",
     "open": "ツールを開く",

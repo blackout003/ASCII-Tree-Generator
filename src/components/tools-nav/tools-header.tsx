@@ -5,13 +5,15 @@ import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { Separator } from '@/components/ui/separator';
-import { TOOLS } from '@/lib/tools';
+import { TOOLS, RESOURCES } from '@/lib/tools';
 
 export function ToolsHeader() {
   const t = useTranslations('nav');
   const pathname = usePathname();
 
-  const currentTool = TOOLS.find((tool) => pathname.includes(tool.href));
+  const currentTool = [...TOOLS, ...RESOURCES].find((tool) =>
+    pathname.includes(tool.href)
+  );
   const isToolsSection = pathname.includes('/tools');
   const toolName = currentTool
     ? t(currentTool.nameKey as Parameters<typeof t>[0])

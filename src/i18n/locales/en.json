@@ -130,7 +130,8 @@
     "banner": "Text Banners",
     "comingSoon": "Coming Soon",
     "openTool": "Open tool",
-    "markdownGuide": "Markdown Guide"
+    "markdownGuide": "Markdown Guide",
+    "resources": "Resources"
   },
   "tableGenerator": {
     "editor": {
@@ -258,7 +259,7 @@
     }
   },
   "home": {
-    "heroBadge": "5 free ASCII tools, no signup",
+    "heroBadge": "4 free ASCII tools, no signup",
     "heroTitle": "The all-in-one ASCII toolkit",
     "heroSubtitle": "Generate file trees, tables, charts and banners in ASCII text. Right in your browser, ready to copy and paste anywhere.",
     "open": "Open tool",

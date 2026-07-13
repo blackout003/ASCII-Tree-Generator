@@ -34,6 +34,13 @@ export const TOOLS: Tool[] = [
     icon: Type,
     nameKey: 'banner',
   },
+];
+
+/**
+ * Resources are reference/guide pages — not ASCII generators. They live in their
+ * own navigation section, separate from {@link TOOLS}.
+ */
+export const RESOURCES: Tool[] = [
   {
     id: 'markdown-guide',
     href: '/tools/markdown-guide',

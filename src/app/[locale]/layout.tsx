@@ -8,6 +8,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { SEO_CONFIG, getLocaleMetadata } from '@/lib/seo-config';
 import { Analytics, GoogleTagManagerNoScript } from '@/components/ui/analytics';
 import { Toaster } from '@/components/ui/toaster';
+import { StructuredData } from '@/components/ui/structured-data-server';
+import { generateWebsiteStructuredData, generateBreadcrumbStructuredData } from '@/lib/structured-data-server';
 import { locales, defaultLocale } from '@/i18n/locales';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -130,6 +132,11 @@ export default async function LocaleLayout({
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
+
+        {/* Structured data (JSON-LD) — rendered outside the client provider tree
+            so the <script> tags are server-only and never re-rendered on the client. */}
+        <StructuredData data={generateWebsiteStructuredData()} />
+        <StructuredData data={generateBreadcrumbStructuredData()} />
 
         {/* Analytics */}
         <Analytics />

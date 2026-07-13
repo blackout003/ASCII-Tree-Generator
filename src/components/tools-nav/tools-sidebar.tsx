@@ -25,7 +25,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Badge } from '@/components/ui/badge';
-import { TOOLS } from '@/lib/tools';
+import { TOOLS, RESOURCES } from '@/lib/tools';
 import { locales, localeNames, type Locale } from '@/i18n/locales';
 
 const localeFlags: Record<Locale, string> = {
@@ -121,6 +121,32 @@ export function ToolsSidebar() {
                         <span>{t(tool.nameKey as Parameters<typeof t>[0])}</span>
                       </Link>
                     )}
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              );
+            })}
+          </SidebarMenu>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel>{t('resources')}</SidebarGroupLabel>
+          <SidebarMenu>
+            {RESOURCES.map((resource) => {
+              const Icon = resource.icon;
+              const href = `/${locale}${resource.href}`;
+              const isActive = pathname.includes(resource.href);
+
+              return (
+                <SidebarMenuItem key={resource.id}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={isActive}
+                    tooltip={t(resource.nameKey as Parameters<typeof t>[0])}
+                  >
+                    <Link href={href} className="flex items-center gap-2 w-full">
+                      <Icon className="size-4" />
+                      <span>{t(resource.nameKey as Parameters<typeof t>[0])}</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               );

@@ -1,7 +1,4 @@
-import Link from 'next/link';
 import { FooterInternational } from '@/components/ui/footer-international';
-import { StructuredData } from '@/components/ui/structured-data-server';
-import { generateWebsiteStructuredData, generateBreadcrumbStructuredData } from '@/lib/structured-data-server';
 import { SeoContentSection } from '@/components/home/seo-content-section';
 import { ToolsShowcase } from '@/components/home/tools-showcase';
 import { locales } from '@/i18n/locales';
@@ -26,9 +23,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
         <FooterInternational />
       </div>
-
-      <StructuredData data={generateWebsiteStructuredData()} />
-      <StructuredData data={generateBreadcrumbStructuredData()} />
     </AppLayout>
   );
 }
