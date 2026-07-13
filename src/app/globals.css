@@ -71,3 +71,12 @@
     color: hsl(var(--foreground));
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blink,
+  .animate-rise-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

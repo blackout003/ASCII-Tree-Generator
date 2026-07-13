@@ -2,28 +2,31 @@
 
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
-import { FolderTree, Table, BarChart2, Type, ArrowRight, Sparkles } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
-import { Card } from '@/components/ui/card';
 
 interface ShowcaseTool {
   id: string;
   href: string;
-  icon: LucideIcon;
+  tag: string;
   nameKey: string;
   descKey: string;
   preview: string;
-  accent: string;
 }
+
+// "ASCII" rendered as block-letters — the banner tool's own output, used as the masthead.
+const MASTHEAD = ` █████╗ ███████╗ ██████╗██╗██╗
+██╔══██╗██╔════╝██╔════╝██║██║
+███████║███████╗██║     ██║██║
+██╔══██║╚════██║██║     ██║██║
+██║  ██║███████║╚██████╗██║██║
+╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝╚═╝`;
 
 const SHOWCASE_TOOLS: ShowcaseTool[] = [
   {
     id: 'ascii-tree',
     href: '/tools/ascii-tree',
-    icon: FolderTree,
-    nameKey: 'nav.asciiTree',
+    tag: 'TREE',
+    nameKey: 'asciiTree',
     descKey: 'home.tools.asciiTree.desc',
-    accent: 'text-blue-500',
     preview: `project/
 ├── src/
 │   ├── index.ts
@@ -33,23 +36,21 @@ const SHOWCASE_TOOLS: ShowcaseTool[] = [
   {
     id: 'ascii-table',
     href: '/tools/ascii-table',
-    icon: Table,
-    nameKey: 'nav.asciiTable',
+    tag: 'TABLE',
+    nameKey: 'asciiTable',
     descKey: 'home.tools.asciiTable.desc',
-    accent: 'text-emerald-500',
-    preview: `┌──────┬───────┐
-│ Nom  │ Score │
-├──────┼───────┤
-│ Alice│  95   │
-└──────┴───────┘`,
+    preview: `┌───────┬───────┐
+│ Nom   │ Score │
+├───────┼───────┤
+│ Alice │  95   │
+└───────┴───────┘`,
   },
   {
     id: 'sparkline',
     href: '/tools/sparkline',
-    icon: BarChart2,
-    nameKey: 'nav.sparkline',
+    tag: 'CHART',
+    nameKey: 'sparkline',
     descKey: 'home.tools.sparkline.desc',
-    accent: 'text-amber-500',
     preview: `Ventes  ▁▂▃▅▇▆▄▂
 Trafic  ▂▄▆█▇▅▃▁
 CPU     ▃▃▅▂▇▆▄▅`,
@@ -57,14 +58,15 @@ CPU     ▃▃▅▂▇▆▄▅`,
   {
     id: 'banner',
     href: '/tools/banner',
-    icon: Type,
-    nameKey: 'nav.banner',
+    tag: 'BANNER',
+    nameKey: 'banner',
     descKey: 'home.tools.banner.desc',
-    accent: 'text-purple-500',
-    preview: ` _   _ ___
-| | | |_ _|
-| |_| || |
- \\___/|___|`,
+    preview: `██╗  ██╗██╗
+██║  ██║██║
+███████║██║
+██╔══██║██║
+██║  ██║██║
+╚═╝  ╚═╝╚═╝`,
   },
 ];
 
@@ -73,55 +75,69 @@ export function ToolsShowcase() {
   const locale = useLocale();
 
   return (
-    <section className="container mx-auto px-6 max-w-7xl">
-      {/* Hero */}
-      <div className="pt-16 pb-12 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-4 py-1.5 text-sm text-muted-foreground mb-6">
-          <Sparkles className="size-3.5 text-blue-500" />
-          <span>{t('home.heroBadge')}</span>
-        </div>
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-5">
-          {t('home.heroTitle')}
+    <section className="container mx-auto px-6 max-w-5xl">
+      {/* Hero — the masthead is the banner tool's own output */}
+      <div className="pt-16 pb-14 sm:pt-20">
+        <p className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.25em] text-muted-foreground">
+          {t('home.heroBadge')}
+        </p>
+
+        <h1 className="mt-6">
+          <span className="sr-only">{t('home.heroTitle')}</span>
+          <span className="flex flex-wrap items-end gap-x-5 gap-y-3">
+            <pre
+              aria-hidden="true"
+              className="font-mono text-foreground leading-none text-[10px] sm:text-sm md:text-base overflow-x-auto"
+            >
+              {MASTHEAD}
+            </pre>
+            <span
+              aria-hidden="true"
+              className="flex items-center gap-2 font-mono text-2xl sm:text-3xl font-bold tracking-[0.35em] text-foreground pb-0.5"
+            >
+              TOOLS
+              <span className="animate-blink inline-block h-6 w-[0.5em] translate-y-0.5 bg-foreground" />
+            </span>
+          </span>
         </h1>
-        <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
+
+        <p className="mt-7 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
           {t('home.heroSubtitle')}
         </p>
       </div>
 
-      {/* Tools grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pb-4">
-        {SHOWCASE_TOOLS.map((tool) => {
-          const Icon = tool.icon;
-          return (
-            <Link key={tool.id} href={`/${locale}${tool.href}`} className="group block">
-              <Card className="h-full overflow-hidden border-border transition-all duration-200 hover:border-foreground/20 hover:shadow-lg">
-                <div className="flex flex-col h-full p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className={`flex size-10 items-center justify-center rounded-lg bg-muted ${tool.accent}`}>
-                      <Icon className="size-5" />
-                    </span>
-                    <h2 className="text-xl font-semibold text-foreground">
-                      {t(tool.nameKey as never)}
-                    </h2>
-                  </div>
+      {/* Tools — a monospace index grid ruled with hairlines, like a TUI */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border border border-border">
+        {SHOWCASE_TOOLS.map((tool, i) => (
+          <Link
+            key={tool.id}
+            href={`/${locale}${tool.href}`}
+            style={{ animationDelay: `${i * 70}ms` }}
+            className="group animate-rise-in flex flex-col bg-background p-6 outline-none transition-colors hover:bg-muted/40 focus-visible:bg-muted/40 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
+          >
+            {/* header row: mono tag + open affordance */}
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-[11px] font-medium tracking-[0.15em] px-1.5 py-0.5 border border-border text-muted-foreground transition-colors group-hover:border-foreground group-hover:bg-foreground group-hover:text-background">
+                {tool.tag}
+              </span>
+              <span className="font-mono text-xs text-muted-foreground opacity-0 -translate-x-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0">
+                {t('home.open')} →
+              </span>
+            </div>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                    {t(tool.descKey as never)}
-                  </p>
+            <h2 className="mt-4 font-mono text-lg font-semibold text-foreground">
+              {t(`nav.${tool.nameKey}` as never)}
+            </h2>
 
-                  <pre className="mt-auto rounded-md bg-muted/60 p-4 text-xs leading-relaxed text-foreground/80 font-mono overflow-x-auto whitespace-pre">
-                    {tool.preview}
-                  </pre>
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+              {t(tool.descKey as never)}
+            </p>
 
-                  <div className={`mt-5 inline-flex items-center gap-1.5 text-sm font-medium ${tool.accent}`}>
-                    <span>{t('home.open')}</span>
-                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </div>
-                </div>
-              </Card>
-            </Link>
-          );
-        })}
+            <pre className="mt-5 border border-border bg-muted/40 p-4 text-xs leading-relaxed text-foreground/75 font-mono overflow-x-auto whitespace-pre transition-colors group-hover:border-foreground/20">
+              {tool.preview}
+            </pre>
+          </Link>
+        ))}
       </div>
     </section>
   );
