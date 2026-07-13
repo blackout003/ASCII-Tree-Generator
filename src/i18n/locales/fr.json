@@ -57,10 +57,11 @@
     "copyright": "© {year} asciitree.fr. Tous droits réservés.",
     "legalNotice": "Mentions légales",
     "privacyPolicy": "Données personnelles",
-    "tagline": "Générez des arborescences ASCII pour vos READMEs et documentations.",
+    "tagline": "La boîte à outils ASCII gratuite : arbres de fichiers, tableaux, graphiques et bannières, directement dans votre navigateur.",
     "links": "Liens",
     "sourceCode": "Code source",
-    "madeWith": "Fait avec ♥ par"
+    "madeWith": "Fait avec ♥ par",
+    "tools": "Outils"
   },
   "errors": {
     "loadError": "Erreur lors du chargement du fichier. Vérifiez que c'est un fichier JSON valide.",

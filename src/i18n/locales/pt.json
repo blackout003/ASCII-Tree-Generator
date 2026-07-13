@@ -57,10 +57,11 @@
     "copyright": "© {year} asciitree.fr. Todos os direitos reservados.",
     "legalNotice": "Aviso Legal",
     "privacyPolicy": "Política de Privacidade",
-    "tagline": "Gere estruturas de árvore ASCII para seus READMEs e documentação.",
+    "tagline": "O kit ASCII gratuito: árvores de arquivos, tabelas, gráficos e banners, direto no navegador.",
     "links": "Links",
     "sourceCode": "Código fonte",
-    "madeWith": "Feito com ♥ por"
+    "madeWith": "Feito com ♥ por",
+    "tools": "Ferramentas"
   },
   "errors": {
     "loadError": "Erro ao carregar o arquivo. Verifique se é um arquivo JSON válido.",

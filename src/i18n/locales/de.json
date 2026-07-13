@@ -57,10 +57,11 @@
     "copyright": "© {year} asciitree.fr. Alle Rechte vorbehalten.",
     "legalNotice": "Impressum",
     "privacyPolicy": "Datenschutz",
-    "tagline": "Erstelle ASCII-Baumstrukturen für READMEs und Dokumentationen.",
+    "tagline": "Das kostenlose ASCII-Toolkit: Dateibäume, Tabellen, Diagramme und Banner, direkt im Browser.",
     "links": "Links",
     "sourceCode": "Quellcode",
-    "madeWith": "Gemacht mit ♥ von"
+    "madeWith": "Gemacht mit ♥ von",
+    "tools": "Tools"
   },
   "errors": {
     "loadError": "Fehler beim Laden der Datei. Bitte überprüfe, dass es sich um eine gültige JSON-Datei handelt.",
