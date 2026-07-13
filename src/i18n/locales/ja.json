@@ -131,7 +131,8 @@
     "comingSoon": "近日公開",
     "openTool": "ツールを開く",
     "markdownGuide": "Markdown ガイド",
-    "resources": "リソース"
+    "resources": "リソース",
+    "asciiEmoji": "ASCII絵文字"
   },
   "tableGenerator": {
     "editor": {
@@ -278,6 +279,9 @@
       },
       "markdownGuide": {
         "desc": "Markdown の全構文を、ソースと表示結果を並べて解説します。"
+      },
+      "asciiEmoji": {
+        "desc": "コピペできるASCII顔文字とkaomojiのコレクション。"
       }
     }
   },
@@ -341,6 +345,57 @@
         "title": "拡張 Markdown",
         "desc": "脚注・絵文字・埋め込み HTML（エンジンによる）。"
       }
+    }
+  },
+  "asciiEmoji": {
+    "badge": "早見表",
+    "title": "ASCII絵文字",
+    "subtitle": "コピペできる顔文字とkaomojiのコレクション。定番の :) から日本の顔文字まで。絵文字をクリックするとコピーできます。",
+    "tocTitle": "目次",
+    "copy": "コピー",
+    "copied": "コピー完了",
+    "copyError": "コピーできませんでした",
+    "flavorNote": "これらの絵文字は文字で作られており、等幅フォントで最もきれいに表示されます。一部のkaomojiはフォントによって見え方が変わるUnicode文字を使用しています。",
+    "categories": {
+      "classics": {
+        "title": "定番",
+        "desc": "昔ながらの顔文字。頭を左に傾けると読めます。"
+      },
+      "kaomoji": {
+        "title": "顔文字",
+        "desc": "日本風の顔文字。そのまま読めます。"
+      },
+      "animals": {
+        "title": "どうぶつ",
+        "desc": "ASCII文字でできた小さな動物たち。"
+      }
+    },
+    "labels": {
+      "happy": "うれしい",
+      "laugh": "笑い",
+      "wink": "ウィンク",
+      "sad": "悲しい",
+      "cry": "泣く",
+      "tongue": "あっかんべー",
+      "unsure": "微妙",
+      "surprised": "驚き",
+      "heart": "ハート",
+      "brokenHeart": "失恋",
+      "kiss": "キス",
+      "neutral": "真顔",
+      "shrug": "やれやれ",
+      "tableFlip": "ちゃぶ台返し",
+      "lenny": "レニー",
+      "cool": "キメ顔",
+      "disapproval": "不満",
+      "hug": "ハグ",
+      "cheer": "バンザイ",
+      "sparkle": "キラキラ",
+      "cry2": "号泣",
+      "cat": "ねこ",
+      "bear": "くま",
+      "fish": "さかな",
+      "bunny": "うさぎ"
     }
   }
 }

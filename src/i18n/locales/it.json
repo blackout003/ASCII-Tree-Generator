@@ -131,7 +131,8 @@
     "comingSoon": "Prossimamente",
     "openTool": "Apri strumento",
     "markdownGuide": "Guida Markdown",
-    "resources": "Risorse"
+    "resources": "Risorse",
+    "asciiEmoji": "Emoji ASCII"
   },
   "tableGenerator": {
     "editor": {
@@ -278,6 +279,9 @@
       },
       "markdownGuide": {
         "desc": "Tutta la sintassi Markdown spiegata con sorgente e risultato affiancati."
+      },
+      "asciiEmoji": {
+        "desc": "Una raccolta di emoticon e kaomoji ASCII da copiare e incollare con un clic."
       }
     }
   },
@@ -341,6 +345,57 @@
         "title": "Markdown esteso",
         "desc": "Note a piè di pagina, emoji e HTML incorporato (a seconda del motore)."
       }
+    }
+  },
+  "asciiEmoji": {
+    "badge": "PROMEMORIA",
+    "title": "Emoji ASCII",
+    "subtitle": "Una raccolta di emoticon e kaomoji da copiare e incollare — dal classico :) alle faccine giapponesi. Clicca su un emoji per copiarlo.",
+    "tocTitle": "Indice",
+    "copy": "Copia",
+    "copied": "Copiato",
+    "copyError": "Impossibile copiare",
+    "flavorNote": "Questi emoji sono fatti di caratteri di testo: rendono al meglio in un font monospazio. Alcuni kaomoji usano caratteri Unicode che possono variare da un font all'altro.",
+    "categories": {
+      "classics": {
+        "title": "Classici",
+        "desc": "Le emoticon di sempre, si leggono inclinando la testa a sinistra."
+      },
+      "kaomoji": {
+        "title": "Kaomoji",
+        "desc": "Le faccine in stile giapponese, che si leggono dritte."
+      },
+      "animals": {
+        "title": "Animali",
+        "desc": "Qualche bestiola fatta di caratteri ASCII."
+      }
+    },
+    "labels": {
+      "happy": "Felice",
+      "laugh": "Ridere",
+      "wink": "Occhiolino",
+      "sad": "Triste",
+      "cry": "Piangere",
+      "tongue": "Linguaccia",
+      "unsure": "Incerto",
+      "surprised": "Sorpreso",
+      "heart": "Cuore",
+      "brokenHeart": "Cuore spezzato",
+      "kiss": "Bacio",
+      "neutral": "Neutro",
+      "shrug": "Spallucce",
+      "tableFlip": "Ribalta il tavolo",
+      "lenny": "Lenny",
+      "cool": "Figo",
+      "disapproval": "Disapprovazione",
+      "hug": "Abbraccio",
+      "cheer": "Evviva",
+      "sparkle": "Scintillio",
+      "cry2": "In lacrime",
+      "cat": "Gatto",
+      "bear": "Orso",
+      "fish": "Pesce",
+      "bunny": "Coniglio"
     }
   }
 }

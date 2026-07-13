@@ -84,6 +84,17 @@ const SHOWCASE_RESOURCES: ShowcaseTool[] = [
 > citation
 \`code\``,
   },
+  {
+    id: 'ascii-emoji',
+    href: '/tools/ascii-emoji',
+    tag: 'EMOJI',
+    nameKey: 'asciiEmoji',
+    descKey: 'home.tools.asciiEmoji.desc',
+    preview: `:)  :D  ;)  <3
+¯\\_(ツ)_/¯
+( ͡° ͜ʖ ͡°)
+ʕ•ᴥ•ʔ`,
+  },
 ];
 
 function ShowcaseCard({ tool, index }: { tool: ShowcaseTool; index: number }) {

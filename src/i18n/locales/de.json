@@ -131,7 +131,8 @@
     "comingSoon": "Demnächst",
     "openTool": "Werkzeug öffnen",
     "markdownGuide": "Markdown-Leitfaden",
-    "resources": "Ressourcen"
+    "resources": "Ressourcen",
+    "asciiEmoji": "ASCII-Emojis"
   },
   "tableGenerator": {
     "editor": {
@@ -278,6 +279,9 @@
       },
       "markdownGuide": {
         "desc": "Die gesamte Markdown-Syntax erklärt – Quelltext und Ergebnis nebeneinander."
+      },
+      "asciiEmoji": {
+        "desc": "Eine Sammlung von ASCII-Emoticons und Kaomoji zum Kopieren mit einem Klick."
       }
     }
   },
@@ -341,6 +345,57 @@
         "title": "Erweitertes Markdown",
         "desc": "Fußnoten, Emoji und eingebettetes HTML (je nach Engine)."
       }
+    }
+  },
+  "asciiEmoji": {
+    "badge": "SPICKZETTEL",
+    "title": "ASCII-Emojis",
+    "subtitle": "Eine Sammlung von Emoticons und Kaomoji zum Kopieren — vom klassischen :) bis zu japanischen Gesichtern. Klicke ein Emoji an, um es zu kopieren.",
+    "tocTitle": "Inhalt",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "copyError": "Kopieren nicht möglich",
+    "flavorNote": "Diese Emojis bestehen aus Textzeichen: Am besten sehen sie in einer Monospace-Schrift aus. Manche Kaomoji nutzen Unicode-Zeichen, die je nach Schrift unterschiedlich aussehen können.",
+    "categories": {
+      "classics": {
+        "title": "Klassiker",
+        "desc": "Die zeitlosen Emoticons — neige den Kopf nach links, um sie zu lesen."
+      },
+      "kaomoji": {
+        "title": "Kaomoji",
+        "desc": "Gesichter im japanischen Stil, die man aufrecht liest."
+      },
+      "animals": {
+        "title": "Tiere",
+        "desc": "Ein paar Tierchen aus ASCII-Zeichen."
+      }
+    },
+    "labels": {
+      "happy": "Fröhlich",
+      "laugh": "Lachen",
+      "wink": "Zwinkern",
+      "sad": "Traurig",
+      "cry": "Weinen",
+      "tongue": "Zunge raus",
+      "unsure": "Unsicher",
+      "surprised": "Überrascht",
+      "heart": "Herz",
+      "brokenHeart": "Gebrochenes Herz",
+      "kiss": "Kuss",
+      "neutral": "Neutral",
+      "shrug": "Schulterzucken",
+      "tableFlip": "Tisch umwerfen",
+      "lenny": "Lenny",
+      "cool": "Cool",
+      "disapproval": "Missbilligung",
+      "hug": "Umarmung",
+      "cheer": "Jubel",
+      "sparkle": "Funkeln",
+      "cry2": "In Tränen",
+      "cat": "Katze",
+      "bear": "Bär",
+      "fish": "Fisch",
+      "bunny": "Hase"
     }
   }
 }

@@ -131,7 +131,8 @@
     "comingSoon": "Em breve",
     "openTool": "Abrir ferramenta",
     "markdownGuide": "Guia Markdown",
-    "resources": "Recursos"
+    "resources": "Recursos",
+    "asciiEmoji": "Emojis ASCII"
   },
   "tableGenerator": {
     "editor": {
@@ -278,6 +279,9 @@
       },
       "markdownGuide": {
         "desc": "Toda a sintaxe Markdown explicada com o código e o resultado lado a lado."
+      },
+      "asciiEmoji": {
+        "desc": "Uma coleção de emoticons e kaomoji ASCII para copiar e colar num clique."
       }
     }
   },
@@ -341,6 +345,57 @@
         "title": "Markdown estendido",
         "desc": "Notas de rodapé, emoji e HTML incorporado (conforme o motor)."
       }
+    }
+  },
+  "asciiEmoji": {
+    "badge": "GUIA RÁPIDO",
+    "title": "Emojis ASCII",
+    "subtitle": "Uma coleção de emoticons e kaomoji para copiar e colar — do clássico :) às carinhas japonesas. Clica num emoji para o copiar.",
+    "tocTitle": "Índice",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "copyError": "Não foi possível copiar",
+    "flavorNote": "Estes emojis são feitos de caracteres de texto: ficam melhor num tipo de letra monoespaçado. Alguns kaomoji usam caracteres Unicode que podem variar de tipo para tipo.",
+    "categories": {
+      "classics": {
+        "title": "Clássicos",
+        "desc": "Os emoticons de sempre, lêem-se inclinando a cabeça para a esquerda."
+      },
+      "kaomoji": {
+        "title": "Kaomoji",
+        "desc": "As carinhas ao estilo japonês, que se lêem ao direito."
+      },
+      "animals": {
+        "title": "Animais",
+        "desc": "Uns bichinhos feitos de caracteres ASCII."
+      }
+    },
+    "labels": {
+      "happy": "Feliz",
+      "laugh": "A rir",
+      "wink": "Piscadela",
+      "sad": "Triste",
+      "cry": "A chorar",
+      "tongue": "Língua de fora",
+      "unsure": "Inseguro",
+      "surprised": "Surpreso",
+      "heart": "Coração",
+      "brokenHeart": "Coração partido",
+      "kiss": "Beijo",
+      "neutral": "Neutro",
+      "shrug": "Dar de ombros",
+      "tableFlip": "Vira a mesa",
+      "lenny": "Lenny",
+      "cool": "Estiloso",
+      "disapproval": "Desaprovação",
+      "hug": "Abraço",
+      "cheer": "Viva",
+      "sparkle": "Brilho",
+      "cry2": "Em lágrimas",
+      "cat": "Gato",
+      "bear": "Urso",
+      "fish": "Peixe",
+      "bunny": "Coelho"
     }
   }
 }

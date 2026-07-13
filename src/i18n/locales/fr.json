@@ -131,7 +131,8 @@
     "comingSoon": "Bientôt",
     "openTool": "Ouvrir l'outil",
     "markdownGuide": "Guide Markdown",
-    "resources": "Ressources"
+    "resources": "Ressources",
+    "asciiEmoji": "Émojis ASCII"
   },
   "tableGenerator": {
     "editor": {
@@ -278,6 +279,9 @@
       },
       "markdownGuide": {
         "desc": "Toute la syntaxe Markdown expliquée avec la source et le rendu côte à côte."
+      },
+      "asciiEmoji": {
+        "desc": "Une collection d'émoticônes et de kaomoji ASCII à copier-coller en un clic."
       }
     }
   },
@@ -341,6 +345,57 @@
         "title": "Markdown étendu",
         "desc": "Notes de bas de page, émoji et HTML intégré (selon le moteur)."
       }
+    }
+  },
+  "asciiEmoji": {
+    "badge": "AIDE-MÉMOIRE",
+    "title": "Émojis ASCII",
+    "subtitle": "Une collection d'émoticônes et de kaomoji à copier-coller — des grands classiques comme :) aux visages japonais. Cliquez sur un émoji pour le copier.",
+    "tocTitle": "Sommaire",
+    "copy": "Copier",
+    "copied": "Copié",
+    "copyError": "Impossible de copier",
+    "flavorNote": "Ces émojis sont faits de caractères texte : ils s'affichent le mieux dans une police à chasse fixe. Certains kaomoji utilisent des caractères Unicode qui peuvent varier selon la police.",
+    "categories": {
+      "classics": {
+        "title": "Classiques",
+        "desc": "Les émoticônes de toujours, à lire en penchant la tête vers la gauche."
+      },
+      "kaomoji": {
+        "title": "Kaomoji",
+        "desc": "Les visages japonais, qui se lisent à l'endroit."
+      },
+      "animals": {
+        "title": "Animaux",
+        "desc": "Quelques petites bêtes en caractères ASCII."
+      }
+    },
+    "labels": {
+      "happy": "Content",
+      "laugh": "Rire",
+      "wink": "Clin d'œil",
+      "sad": "Triste",
+      "cry": "Pleurer",
+      "tongue": "Tire la langue",
+      "unsure": "Sceptique",
+      "surprised": "Surpris",
+      "heart": "Cœur",
+      "brokenHeart": "Cœur brisé",
+      "kiss": "Bisou",
+      "neutral": "Neutre",
+      "shrug": "Tant pis",
+      "tableFlip": "Renverse la table",
+      "lenny": "Lenny",
+      "cool": "Classe",
+      "disapproval": "Désapprobation",
+      "hug": "Câlin",
+      "cheer": "Youpi",
+      "sparkle": "Étincelles",
+      "cry2": "En larmes",
+      "cat": "Chat",
+      "bear": "Ours",
+      "fish": "Poisson",
+      "bunny": "Lapin"
     }
   }
 }

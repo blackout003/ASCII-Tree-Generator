@@ -1,4 +1,4 @@
-import { FolderTree, Table, BarChart2, Type, BookMarked } from 'lucide-react';
+import { FolderTree, Table, BarChart2, Type, BookMarked, Smile } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Tool {
@@ -46,5 +46,11 @@ export const RESOURCES: Tool[] = [
     href: '/tools/markdown-guide',
     icon: BookMarked,
     nameKey: 'markdownGuide',
+  },
+  {
+    id: 'ascii-emoji',
+    href: '/tools/ascii-emoji',
+    icon: Smile,
+    nameKey: 'asciiEmoji',
   },
 ];

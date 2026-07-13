@@ -131,7 +131,8 @@
     "comingSoon": "Coming Soon",
     "openTool": "Open tool",
     "markdownGuide": "Markdown Guide",
-    "resources": "Resources"
+    "resources": "Resources",
+    "asciiEmoji": "ASCII Emojis"
   },
   "tableGenerator": {
     "editor": {
@@ -278,6 +279,9 @@
       },
       "markdownGuide": {
         "desc": "The whole Markdown syntax explained with source and rendered result side by side."
+      },
+      "asciiEmoji": {
+        "desc": "A collection of copy-paste ASCII emoticons and kaomoji, one click away."
       }
     }
   },
@@ -341,6 +345,57 @@
         "title": "Extended Markdown",
         "desc": "Footnotes, emoji and inline HTML (depending on the engine)."
       }
+    }
+  },
+  "asciiEmoji": {
+    "badge": "CHEAT SHEET",
+    "title": "ASCII Emojis",
+    "subtitle": "A collection of emoticons and kaomoji to copy and paste — from the classic :) to Japanese faces. Click an emoji to copy it.",
+    "tocTitle": "Contents",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyError": "Couldn't copy",
+    "flavorNote": "These emojis are made of text characters: they look best in a monospace font. Some kaomoji use Unicode characters that may vary from one font to another.",
+    "categories": {
+      "classics": {
+        "title": "Classics",
+        "desc": "The timeless emoticons — tilt your head to the left to read them."
+      },
+      "kaomoji": {
+        "title": "Kaomoji",
+        "desc": "Japanese-style faces you read upright."
+      },
+      "animals": {
+        "title": "Animals",
+        "desc": "A few little critters made of ASCII characters."
+      }
+    },
+    "labels": {
+      "happy": "Happy",
+      "laugh": "Laughing",
+      "wink": "Wink",
+      "sad": "Sad",
+      "cry": "Crying",
+      "tongue": "Tongue out",
+      "unsure": "Unsure",
+      "surprised": "Surprised",
+      "heart": "Heart",
+      "brokenHeart": "Broken heart",
+      "kiss": "Kiss",
+      "neutral": "Neutral",
+      "shrug": "Shrug",
+      "tableFlip": "Table flip",
+      "lenny": "Lenny",
+      "cool": "Cool",
+      "disapproval": "Disapproval",
+      "hug": "Hug",
+      "cheer": "Cheer",
+      "sparkle": "Sparkle",
+      "cry2": "In tears",
+      "cat": "Cat",
+      "bear": "Bear",
+      "fish": "Fish",
+      "bunny": "Bunny"
     }
   }
 }
