@@ -129,7 +129,8 @@
     "sparkline": "ASCIIグラフ",
     "banner": "テキストバナー",
     "comingSoon": "近日公開",
-    "openTool": "ツールを開く"
+    "openTool": "ツールを開く",
+    "markdownGuide": "Markdown ガイド"
   },
   "tableGenerator": {
     "editor": {
@@ -257,7 +258,7 @@
     }
   },
   "home": {
-    "heroBadge": "登録不要、4つの無料ASCIIツール",
+    "heroBadge": "登録不要、5つの無料ASCIIツール",
     "heroTitle": "オールインワンのASCIIツールキット",
     "heroSubtitle": "ファイルツリー、表、グラフ、バナーをASCIIテキストで生成。ブラウザ上で完結し、どこにでもコピー＆ペーストできます。",
     "open": "ツールを開く",
@@ -273,6 +274,71 @@
       },
       "banner": {
         "desc": "テキストを大きな装飾ASCIIバナーに変換。ヘッダーやターミナルに。"
+      },
+      "markdownGuide": {
+        "desc": "Markdown の全構文を、ソースと表示結果を並べて解説します。"
+      }
+    }
+  },
+  "markdownGuide": {
+    "badge": "チートシート",
+    "title": "Markdown ガイド",
+    "subtitle": "Markdown を書くために必要なすべて。各構文を、左にソース、右に表示結果を並べて紹介します。",
+    "tocTitle": "目次",
+    "markdown": "Markdown",
+    "result": "結果",
+    "copy": "コピー",
+    "copied": "コピー済み",
+    "copyError": "コピーできませんでした",
+    "flavorNote": "Markdown は標準仕様ですが、一部の要素（表、チェックボックス、脚注、絵文字）は使用するレンダリングエンジンに依存します。",
+    "categories": {
+      "headings": {
+        "title": "見出し",
+        "desc": "# 記号を使った、大きいものから小さいものまで 6 段階の見出し。"
+      },
+      "paragraphs": {
+        "title": "段落",
+        "desc": "空行で段落を区切り、必要に応じて改行を強制します。"
+      },
+      "emphasis": {
+        "title": "強調",
+        "desc": "テキストを太字・斜体・打ち消し線にします。"
+      },
+      "blockquotes": {
+        "title": "引用",
+        "desc": "1 行または複数行の引用と、引用の入れ子。"
+      },
+      "lists": {
+        "title": "リスト",
+        "desc": "箇条書き・番号付き・入れ子・タスクリスト。"
+      },
+      "code": {
+        "title": "コード",
+        "desc": "インラインコード、コードブロック、言語ごとのシンタックスハイライト。"
+      },
+      "links": {
+        "title": "リンク",
+        "desc": "通常のリンク、タイトル付き、自動リンク、参照リンク。"
+      },
+      "images": {
+        "title": "画像",
+        "desc": "代替テキスト・タイトル・クリック可能なリンク付きで画像を挿入します。"
+      },
+      "tables": {
+        "title": "表",
+        "desc": "表を作成し、列を左・中央・右に揃えます。"
+      },
+      "rules": {
+        "title": "水平線",
+        "desc": "水平線でセクションを区切ります。"
+      },
+      "escaping": {
+        "title": "エスケープ",
+        "desc": "特殊文字を解釈させず、そのまま表示します。"
+      },
+      "extended": {
+        "title": "拡張 Markdown",
+        "desc": "脚注・絵文字・埋め込み HTML（エンジンによる）。"
       }
     }
   }

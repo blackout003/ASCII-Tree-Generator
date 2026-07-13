@@ -129,7 +129,8 @@
     "sparkline": "Graphiques ASCII",
     "banner": "Bannières Texte",
     "comingSoon": "Bientôt",
-    "openTool": "Ouvrir l'outil"
+    "openTool": "Ouvrir l'outil",
+    "markdownGuide": "Guide Markdown"
   },
   "tableGenerator": {
     "editor": {
@@ -257,7 +258,7 @@
     }
   },
   "home": {
-    "heroBadge": "4 outils ASCII gratuits, sans inscription",
+    "heroBadge": "5 outils ASCII gratuits, sans inscription",
     "heroTitle": "La boîte à outils ASCII tout-en-un",
     "heroSubtitle": "Générez des arbres de fichiers, des tableaux, des graphiques et des bannières en texte ASCII. Directement dans votre navigateur, à copier-coller partout.",
     "open": "Ouvrir l’outil",
@@ -273,6 +274,71 @@
       },
       "banner": {
         "desc": "Transformez du texte en grandes bannières ASCII stylisées pour vos en-têtes et terminaux."
+      },
+      "markdownGuide": {
+        "desc": "Toute la syntaxe Markdown expliquée avec la source et le rendu côte à côte."
+      }
+    }
+  },
+  "markdownGuide": {
+    "badge": "AIDE-MÉMOIRE",
+    "title": "Guide Markdown",
+    "subtitle": "Tout ce qu'il faut savoir pour écrire en Markdown : chaque élément de syntaxe est présenté avec sa source à gauche et son rendu à droite.",
+    "tocTitle": "Sommaire",
+    "markdown": "Markdown",
+    "result": "Résultat",
+    "copy": "Copier",
+    "copied": "Copié",
+    "copyError": "Impossible de copier",
+    "flavorNote": "Le Markdown est un standard, mais certains éléments (tableaux, cases à cocher, notes de bas de page, émoji) dépendent du moteur de rendu utilisé.",
+    "categories": {
+      "headings": {
+        "title": "Titres",
+        "desc": "Six niveaux de titres, du plus grand au plus petit, avec le caractère #."
+      },
+      "paragraphs": {
+        "title": "Paragraphes",
+        "desc": "Séparez les paragraphes par une ligne vide et forcez un saut de ligne au besoin."
+      },
+      "emphasis": {
+        "title": "Emphase",
+        "desc": "Mettez du texte en gras, en italique ou barré."
+      },
+      "blockquotes": {
+        "title": "Citations",
+        "desc": "Citez du texte, sur une ou plusieurs lignes, et imbriquez les citations."
+      },
+      "lists": {
+        "title": "Listes",
+        "desc": "Listes à puces, numérotées, imbriquées et listes de tâches."
+      },
+      "code": {
+        "title": "Code",
+        "desc": "Code en ligne, blocs de code et coloration syntaxique par langage."
+      },
+      "links": {
+        "title": "Liens",
+        "desc": "Liens simples, avec infobulle, automatiques ou par référence."
+      },
+      "images": {
+        "title": "Images",
+        "desc": "Insérez des images, avec texte alternatif, titre ou lien cliquable."
+      },
+      "tables": {
+        "title": "Tableaux",
+        "desc": "Créez des tableaux et alignez les colonnes à gauche, au centre ou à droite."
+      },
+      "rules": {
+        "title": "Lignes horizontales",
+        "desc": "Séparez des sections avec une ligne horizontale."
+      },
+      "escaping": {
+        "title": "Échappement",
+        "desc": "Affichez des caractères spéciaux sans qu'ils soient interprétés."
+      },
+      "extended": {
+        "title": "Markdown étendu",
+        "desc": "Notes de bas de page, émoji et HTML intégré (selon le moteur)."
       }
     }
   }

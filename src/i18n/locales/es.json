@@ -129,7 +129,8 @@
     "sparkline": "Gráficos ASCII",
     "banner": "Banners de Texto",
     "comingSoon": "Próximamente",
-    "openTool": "Abrir herramienta"
+    "openTool": "Abrir herramienta",
+    "markdownGuide": "Guía Markdown"
   },
   "tableGenerator": {
     "editor": {
@@ -257,7 +258,7 @@
     }
   },
   "home": {
-    "heroBadge": "4 herramientas ASCII gratis, sin registro",
+    "heroBadge": "5 herramientas ASCII gratis, sin registro",
     "heroTitle": "El kit de herramientas ASCII todo en uno",
     "heroSubtitle": "Genera árboles de archivos, tablas, gráficos y banners en texto ASCII. Directamente en tu navegador, listo para copiar y pegar.",
     "open": "Abrir herramienta",
@@ -273,6 +274,71 @@
       },
       "banner": {
         "desc": "Convierte texto en grandes banners ASCII estilizados para tus encabezados y terminales."
+      },
+      "markdownGuide": {
+        "desc": "Toda la sintaxis Markdown explicada con el código y el resultado lado a lado."
+      }
+    }
+  },
+  "markdownGuide": {
+    "badge": "CHULETA",
+    "title": "Guía Markdown",
+    "subtitle": "Todo lo necesario para escribir en Markdown: cada elemento de sintaxis se muestra con su código a la izquierda y su resultado a la derecha.",
+    "tocTitle": "Índice",
+    "markdown": "Markdown",
+    "result": "Resultado",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "copyError": "No se pudo copiar",
+    "flavorNote": "Markdown es un estándar, pero algunos elementos (tablas, casillas, notas al pie, emoji) dependen del motor de renderizado que uses.",
+    "categories": {
+      "headings": {
+        "title": "Títulos",
+        "desc": "Seis niveles de título, del más grande al más pequeño, con el carácter #."
+      },
+      "paragraphs": {
+        "title": "Párrafos",
+        "desc": "Separa los párrafos con una línea en blanco y fuerza un salto de línea cuando lo necesites."
+      },
+      "emphasis": {
+        "title": "Énfasis",
+        "desc": "Pon el texto en negrita, cursiva o tachado."
+      },
+      "blockquotes": {
+        "title": "Citas",
+        "desc": "Cita texto en una o varias líneas y anida las citas entre sí."
+      },
+      "lists": {
+        "title": "Listas",
+        "desc": "Listas con viñetas, numeradas, anidadas y de tareas."
+      },
+      "code": {
+        "title": "Código",
+        "desc": "Código en línea, bloques de código y resaltado de sintaxis por lenguaje."
+      },
+      "links": {
+        "title": "Enlaces",
+        "desc": "Enlaces simples, con título, automáticos o por referencia."
+      },
+      "images": {
+        "title": "Imágenes",
+        "desc": "Inserta imágenes con texto alternativo, título o un enlace clicable."
+      },
+      "tables": {
+        "title": "Tablas",
+        "desc": "Crea tablas y alinea las columnas a la izquierda, al centro o a la derecha."
+      },
+      "rules": {
+        "title": "Líneas horizontales",
+        "desc": "Separa secciones con una línea horizontal."
+      },
+      "escaping": {
+        "title": "Escape",
+        "desc": "Muestra caracteres especiales de forma literal en vez de interpretarlos."
+      },
+      "extended": {
+        "title": "Markdown extendido",
+        "desc": "Notas al pie, emoji y HTML incrustado (según el motor)."
       }
     }
   }

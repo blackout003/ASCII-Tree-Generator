@@ -129,7 +129,8 @@
     "sparkline": "ASCII-Diagramme",
     "banner": "Textbanner",
     "comingSoon": "Demnächst",
-    "openTool": "Werkzeug öffnen"
+    "openTool": "Werkzeug öffnen",
+    "markdownGuide": "Markdown-Leitfaden"
   },
   "tableGenerator": {
     "editor": {
@@ -257,7 +258,7 @@
     }
   },
   "home": {
-    "heroBadge": "4 kostenlose ASCII-Tools, ohne Anmeldung",
+    "heroBadge": "5 kostenlose ASCII-Tools, ohne Anmeldung",
     "heroTitle": "Das All-in-One-ASCII-Toolkit",
     "heroSubtitle": "Erstelle Dateibäume, Tabellen, Diagramme und Banner als ASCII-Text. Direkt im Browser, bereit zum Kopieren und Einfügen.",
     "open": "Tool öffnen",
@@ -273,6 +274,71 @@
       },
       "banner": {
         "desc": "Verwandle Text in große, stilisierte ASCII-Banner für Header und Terminals."
+      },
+      "markdownGuide": {
+        "desc": "Die gesamte Markdown-Syntax erklärt – Quelltext und Ergebnis nebeneinander."
+      }
+    }
+  },
+  "markdownGuide": {
+    "badge": "SPICKZETTEL",
+    "title": "Markdown-Leitfaden",
+    "subtitle": "Alles, was du zum Schreiben in Markdown brauchst: Jedes Syntaxelement wird links im Quelltext und rechts im Ergebnis gezeigt.",
+    "tocTitle": "Inhalt",
+    "markdown": "Markdown",
+    "result": "Ergebnis",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "copyError": "Kopieren fehlgeschlagen",
+    "flavorNote": "Markdown ist ein Standard, aber einige Elemente (Tabellen, Kontrollkästchen, Fußnoten, Emoji) hängen von der verwendeten Render-Engine ab.",
+    "categories": {
+      "headings": {
+        "title": "Überschriften",
+        "desc": "Sechs Überschriftenebenen, von groß bis klein, mit dem Zeichen #."
+      },
+      "paragraphs": {
+        "title": "Absätze",
+        "desc": "Trenne Absätze mit einer Leerzeile und erzwinge bei Bedarf einen Zeilenumbruch."
+      },
+      "emphasis": {
+        "title": "Hervorhebung",
+        "desc": "Setze Text fett, kursiv oder durchgestrichen."
+      },
+      "blockquotes": {
+        "title": "Zitate",
+        "desc": "Zitiere Text über eine oder mehrere Zeilen und verschachtele Zitate."
+      },
+      "lists": {
+        "title": "Listen",
+        "desc": "Aufzählungen, nummerierte, verschachtelte und Aufgabenlisten."
+      },
+      "code": {
+        "title": "Code",
+        "desc": "Inline-Code, Codeblöcke und Syntaxhervorhebung nach Sprache."
+      },
+      "links": {
+        "title": "Links",
+        "desc": "Einfache Links, Links mit Titel, Autolinks oder Referenzlinks."
+      },
+      "images": {
+        "title": "Bilder",
+        "desc": "Füge Bilder mit Alternativtext, Titel oder anklickbarem Link ein."
+      },
+      "tables": {
+        "title": "Tabellen",
+        "desc": "Erstelle Tabellen und richte Spalten links, zentriert oder rechts aus."
+      },
+      "rules": {
+        "title": "Trennlinien",
+        "desc": "Trenne Abschnitte mit einer horizontalen Linie."
+      },
+      "escaping": {
+        "title": "Maskierung",
+        "desc": "Zeige Sonderzeichen wörtlich an, statt sie interpretieren zu lassen."
+      },
+      "extended": {
+        "title": "Erweitertes Markdown",
+        "desc": "Fußnoten, Emoji und eingebettetes HTML (je nach Engine)."
       }
     }
   }

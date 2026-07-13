@@ -1,4 +1,4 @@
-import { FolderTree, Table, BarChart2, Type } from 'lucide-react';
+import { FolderTree, Table, BarChart2, Type, BookMarked } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Tool {
@@ -33,5 +33,11 @@ export const TOOLS: Tool[] = [
     href: '/tools/banner',
     icon: Type,
     nameKey: 'banner',
+  },
+  {
+    id: 'markdown-guide',
+    href: '/tools/markdown-guide',
+    icon: BookMarked,
+    nameKey: 'markdownGuide',
   },
 ];

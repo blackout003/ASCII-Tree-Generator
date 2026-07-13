@@ -129,7 +129,8 @@
     "sparkline": "ASCII Charts",
     "banner": "Text Banners",
     "comingSoon": "Coming Soon",
-    "openTool": "Open tool"
+    "openTool": "Open tool",
+    "markdownGuide": "Markdown Guide"
   },
   "tableGenerator": {
     "editor": {
@@ -257,7 +258,7 @@
     }
   },
   "home": {
-    "heroBadge": "4 free ASCII tools, no signup",
+    "heroBadge": "5 free ASCII tools, no signup",
     "heroTitle": "The all-in-one ASCII toolkit",
     "heroSubtitle": "Generate file trees, tables, charts and banners in ASCII text. Right in your browser, ready to copy and paste anywhere.",
     "open": "Open tool",
@@ -273,6 +274,71 @@
       },
       "banner": {
         "desc": "Turn text into large stylized ASCII banners for your headers and terminals."
+      },
+      "markdownGuide": {
+        "desc": "The whole Markdown syntax explained with source and rendered result side by side."
+      }
+    }
+  },
+  "markdownGuide": {
+    "badge": "CHEAT SHEET",
+    "title": "Markdown Guide",
+    "subtitle": "Everything you need to write Markdown: each piece of syntax is shown with its source on the left and its rendered result on the right.",
+    "tocTitle": "Contents",
+    "markdown": "Markdown",
+    "result": "Result",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyError": "Could not copy",
+    "flavorNote": "Markdown is a standard, but some elements (tables, checkboxes, footnotes, emoji) depend on the rendering engine you use.",
+    "categories": {
+      "headings": {
+        "title": "Headings",
+        "desc": "Six heading levels, from largest to smallest, using the # character."
+      },
+      "paragraphs": {
+        "title": "Paragraphs",
+        "desc": "Separate paragraphs with a blank line and force a line break when needed."
+      },
+      "emphasis": {
+        "title": "Emphasis",
+        "desc": "Make text bold, italic or strikethrough."
+      },
+      "blockquotes": {
+        "title": "Blockquotes",
+        "desc": "Quote text over one or more lines, and nest quotes inside each other."
+      },
+      "lists": {
+        "title": "Lists",
+        "desc": "Bulleted, numbered, nested and task lists."
+      },
+      "code": {
+        "title": "Code",
+        "desc": "Inline code, code blocks and language syntax highlighting."
+      },
+      "links": {
+        "title": "Links",
+        "desc": "Plain links, links with a title, autolinks or reference links."
+      },
+      "images": {
+        "title": "Images",
+        "desc": "Insert images with alt text, a title or a clickable link."
+      },
+      "tables": {
+        "title": "Tables",
+        "desc": "Build tables and align columns left, center or right."
+      },
+      "rules": {
+        "title": "Horizontal rules",
+        "desc": "Separate sections with a horizontal line."
+      },
+      "escaping": {
+        "title": "Escaping",
+        "desc": "Show special characters literally instead of having them interpreted."
+      },
+      "extended": {
+        "title": "Extended Markdown",
+        "desc": "Footnotes, emoji and inline HTML (depending on the engine)."
       }
     }
   }

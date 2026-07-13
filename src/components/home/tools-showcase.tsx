@@ -68,6 +68,18 @@ CPU     ▃▃▅▂▇▆▄▅`,
 ██║  ██║██║
 ╚═╝  ╚═╝╚═╝`,
   },
+  {
+    id: 'markdown-guide',
+    href: '/tools/markdown-guide',
+    tag: 'GUIDE',
+    nameKey: 'markdownGuide',
+    descKey: 'home.tools.markdownGuide.desc',
+    preview: `# Titre
+**gras**  *italique*
+- liste
+> citation
+\`code\``,
+  },
 ];
 
 export function ToolsShowcase() {
