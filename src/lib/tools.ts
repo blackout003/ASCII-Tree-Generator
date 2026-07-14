@@ -1,4 +1,4 @@
-import { FolderTree, Table, BarChart2, Type, BookMarked, Smile } from 'lucide-react';
+import { FolderTree, Table, BarChart2, Type, BookMarked, Smile, FileText } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Tool {
@@ -41,6 +41,12 @@ export const TOOLS: Tool[] = [
  * own navigation section, separate from {@link TOOLS}.
  */
 export const RESOURCES: Tool[] = [
+  {
+    id: 'readme-file-tree-guide',
+    href: '/guides/file-tree-for-github-readme',
+    icon: FileText,
+    nameKey: 'readmeGuide',
+  },
   {
     id: 'markdown-guide',
     href: '/tools/markdown-guide',

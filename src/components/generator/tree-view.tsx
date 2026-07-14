@@ -44,7 +44,6 @@ export function TreeView({
   onToggleExpansion,
   onAddNode,
   onDeleteNode,
-  onMoveNode,
   onDragStart,
   onDragEnd,
   onDragOver,
@@ -241,7 +240,7 @@ export function TreeView({
         )}
       </div>
     );
-  }, [editingNode, editingName, draggedNode, dragOverNode, onEditName, onStartEdit, onSaveEdit, onCancelEdit, onToggleExpansion, onAddNode, onDeleteNode, onMoveNode, onDragStart, onDragEnd, onDragOver, onDragLeave, onDrop, t]);
+  }, [editingNode, editingName, draggedNode, dragOverNode, onEditName, onStartEdit, onSaveEdit, onCancelEdit, onToggleExpansion, onAddNode, onDeleteNode, onDragStart, onDragEnd, onDragOver, onDragLeave, onDrop, t]);
 
   return (
     <div className="group">

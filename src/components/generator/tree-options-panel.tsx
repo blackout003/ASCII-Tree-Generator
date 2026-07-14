@@ -125,7 +125,7 @@ export function TreeOptionsPanel({
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="indentSize">Taille d'indentation</Label>
+                <Label htmlFor="indentSize">Taille d&apos;indentation</Label>
                 <Input
                   id="indentSize"
                   type="number"

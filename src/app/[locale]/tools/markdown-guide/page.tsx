@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { buildToolMetadata } from '@/lib/seo-config';
+import { ToolSeoSection } from '@/components/tools/tool-seo-section';
 import { MarkdownGuide } from '@/components/markdown-guide/markdown-guide';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -7,6 +8,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return buildToolMetadata('markdown-guide', locale);
 }
 
-export default function MarkdownGuidePage() {
-  return <MarkdownGuide />;
+export default async function MarkdownGuidePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return (
+    <>
+      <MarkdownGuide />
+      <ToolSeoSection tool="markdown-guide" locale={locale} />
+    </>
+  );
 }

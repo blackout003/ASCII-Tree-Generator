@@ -13,6 +13,7 @@ const localizedRoutes: { path: string; priority: number }[] = [
   { path: '/tools/sparkline', priority: 0.8 },
   { path: '/tools/ascii-emoji', priority: 0.8 },
   { path: '/tools/markdown-guide', priority: 0.8 },
+  { path: '/guides/file-tree-for-github-readme', priority: 0.7 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
