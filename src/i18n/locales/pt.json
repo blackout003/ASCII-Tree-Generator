@@ -490,5 +490,12 @@
     "branch": "~/paginas/nao-encontrada",
     "home": "Voltar ao início",
     "tools": "Explorar as ferramentas"
+  },
+  "cookieConsent": {
+    "title": "Respeitamos a sua privacidade",
+    "description": "Utilizamos ferramentas de análise para melhorar o site. Nenhum rastreamento é ativado sem o seu consentimento.",
+    "accept": "Aceitar",
+    "refuse": "Recusar",
+    "learnMore": "Saber mais"
   }
 }

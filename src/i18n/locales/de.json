@@ -490,5 +490,12 @@
     "branch": "~/seiten/nicht-gefunden",
     "home": "Zur Startseite",
     "tools": "Werkzeuge entdecken"
+  },
+  "cookieConsent": {
+    "title": "Wir schützen deine Privatsphäre",
+    "description": "Wir verwenden Analyse-Tools, um die Website zu verbessern. Ohne deine Zustimmung wird kein Tracking aktiviert.",
+    "accept": "Akzeptieren",
+    "refuse": "Ablehnen",
+    "learnMore": "Mehr erfahren"
   }
 }

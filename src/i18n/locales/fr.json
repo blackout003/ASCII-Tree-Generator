@@ -490,5 +490,12 @@
     "branch": "~/pages/introuvable",
     "home": "Retour à l’accueil",
     "tools": "Explorer les outils"
+  },
+  "cookieConsent": {
+    "title": "Respect de votre vie privée",
+    "description": "Nous utilisons des outils de mesure d'audience pour améliorer le site. Aucun suivi n'est activé sans votre accord.",
+    "accept": "Accepter",
+    "refuse": "Refuser",
+    "learnMore": "En savoir plus"
   }
 }

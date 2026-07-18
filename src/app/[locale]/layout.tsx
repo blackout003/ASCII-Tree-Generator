@@ -1,13 +1,13 @@
 import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { NextIntlClientProvider } from 'next-intl';
 import { SEO_CONFIG, getLocaleMetadata } from '@/lib/seo-config';
-import { Analytics, GoogleTagManagerNoScript } from '@/components/ui/analytics';
+import { AnalyticsScripts } from '@/components/ui/analytics-scripts';
+import { AnalyticsConsentBanner } from '@/components/ui/analytics-consent-banner';
 import { Toaster } from '@/components/ui/toaster';
 import { StructuredData } from '@/components/ui/structured-data-server';
 import { generateWebsiteStructuredData, generateBreadcrumbStructuredData } from '@/lib/structured-data-server';
@@ -142,6 +142,9 @@ export default async function LocaleLayout({
           >
             {children}
           </ThemeProvider>
+
+          {/* Bannière de consentement (opt-in) — nécessite les traductions */}
+          <AnalyticsConsentBanner />
         </NextIntlClientProvider>
 
         {/* Structured data (JSON-LD) — rendered outside the client provider tree
@@ -149,21 +152,13 @@ export default async function LocaleLayout({
         <StructuredData data={generateWebsiteStructuredData()} />
         <StructuredData data={generateBreadcrumbStructuredData()} />
 
-        {/* Analytics */}
-        <Analytics />
-        <GoogleTagManagerNoScript />
+        {/* Analytics — chargés uniquement si l'utilisateur n'a pas refusé la collecte */}
+        <AnalyticsScripts />
         <SpeedInsights />
 
         {/* Toast notifications */}
         <Toaster />
       </body>
-      {process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL && process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
-        <Script
-          src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL}
-          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-          strategy="afterInteractive"
-        />
-      )}
     </html>
   );
 }

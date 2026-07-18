@@ -490,5 +490,12 @@
     "branch": "~/pages/not-found",
     "home": "Back to home",
     "tools": "Explore the tools"
+  },
+  "cookieConsent": {
+    "title": "We value your privacy",
+    "description": "We use analytics tools to improve the site. No tracking is enabled without your consent.",
+    "accept": "Accept",
+    "refuse": "Decline",
+    "learnMore": "Learn more"
   }
 }

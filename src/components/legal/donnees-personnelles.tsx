@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from '@/components/icons';
 import { useRouter } from 'next/navigation';
+import { AnalyticsOptOut } from '@/components/legal/analytics-opt-out';
 
 export default function DonneesPersonnelles() {
   const router = useRouter();
@@ -35,6 +36,8 @@ export default function DonneesPersonnelles() {
       </div>
 
       <div className="space-y-6">
+        <AnalyticsOptOut />
+
         <Card>
           <CardHeader>
             <CardTitle>Responsable du traitement</CardTitle>

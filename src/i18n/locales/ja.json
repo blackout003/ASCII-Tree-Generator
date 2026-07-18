@@ -490,5 +490,12 @@
     "branch": "~/pages/not-found",
     "home": "ホームに戻る",
     "tools": "ツールを見る"
+  },
+  "cookieConsent": {
+    "title": "プライバシーの尊重",
+    "description": "サイト改善のためにアクセス解析ツールを使用しています。あなたの同意なしに追跡が有効になることはありません。",
+    "accept": "同意する",
+    "refuse": "拒否する",
+    "learnMore": "詳細を見る"
   }
 }
