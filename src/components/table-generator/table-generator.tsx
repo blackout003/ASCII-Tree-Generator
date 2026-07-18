@@ -221,7 +221,9 @@ export function TableGenerator() {
       const a = document.createElement('a');
       a.href = url;
       a.download = 'tableau-ascii.txt';
+      document.body.appendChild(a);
       a.click();
+      document.body.removeChild(a);
       URL.revokeObjectURL(url);
     } catch {
       toast({ description: t('downloadError'), variant: 'destructive' });
