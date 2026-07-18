@@ -1,4 +1,4 @@
-import { FolderTree, Table, BarChart2, Type, BookMarked, Smile, FileText } from '@/components/icons';
+import { FolderTree, Table, BarChart2, Type, BookMarked, Smile, FileText, Edit3 } from '@/components/icons';
 import type { LucideIcon } from '@/components/icons';
 
 export interface Tool {
@@ -33,6 +33,12 @@ export const TOOLS: Tool[] = [
     href: '/tools/banner',
     icon: Type,
     nameKey: 'banner',
+  },
+  {
+    id: 'markdown-editor',
+    href: '/tools/markdown-editor',
+    icon: Edit3,
+    nameKey: 'markdownEditor',
   },
 ];
 

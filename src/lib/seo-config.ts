@@ -179,6 +179,28 @@ export const TOOLS_SEO = {
       ja: "チャットやコード、SNS向けのASCII絵文字・顔文字（日本語のテキスト顔文字）を探してコピー。ワンクリックコピー、数百種類。無料オンライン。",
     },
   },
+  'markdown-editor': {
+    titles: {
+      fr: "Éditeur Markdown en ligne — Aperçu Live & Export | Gratuit",
+      en: "Online Markdown Editor — Live Preview & Export | Free",
+      es: "Editor Markdown en línea — Vista Previa en Vivo y Exportación | Gratis",
+      de: "Online-Markdown-Editor — Live-Vorschau & Export | Kostenlos",
+      it: "Editor Markdown online — Anteprima Live ed Esportazione | Gratis",
+      pt: "Editor Markdown online — Pré-visualização ao Vivo e Exportação | Grátis",
+      ru: "Онлайн-редактор Markdown — предпросмотр в реальном времени и экспорт | Бесплатно",
+      ja: "オンラインMarkdownエディタ — ライブプレビュー＆エクスポート｜無料",
+    },
+    descriptions: {
+      fr: "Écrivez du Markdown avec aperçu live, barre de formatage et coloration du code. Copiez le Markdown ou le HTML, téléchargez en .md. Gratuit, dans le navigateur.",
+      en: "Write Markdown with live preview, a formatting toolbar and code syntax highlighting. Copy the Markdown or HTML, download as .md. Free and browser-based.",
+      es: "Escribe Markdown con vista previa en vivo, barra de formato y resaltado de código. Copia el Markdown o el HTML, descarga en .md. Gratis, en el navegador.",
+      de: "Schreiben Sie Markdown mit Live-Vorschau, Formatierungsleiste und Code-Syntaxhervorhebung. Markdown oder HTML kopieren, als .md herunterladen. Kostenlos, im Browser.",
+      it: "Scrivi Markdown con anteprima live, barra di formattazione e evidenziazione del codice. Copia il Markdown o l'HTML, scarica in .md. Gratis, nel browser.",
+      pt: "Escreva Markdown com pré-visualização ao vivo, barra de formatação e destaque de código. Copie o Markdown ou HTML, baixe em .md. Grátis, no navegador.",
+      ru: "Пишите Markdown с предпросмотром в реальном времени, панелью форматирования и подсветкой кода. Копируйте Markdown или HTML, скачивайте в .md. Бесплатно, в браузере.",
+      ja: "ライブプレビュー、書式ツールバー、コードのシンタックスハイライト付きでMarkdownを執筆。MarkdownやHTMLをコピー、.mdでダウンロード。ブラウザで無料。",
+    },
+  },
   'markdown-guide': {
     titles: {
       fr: "Guide Markdown & Antisèche — Syntaxe avec Exemples | Gratuit",

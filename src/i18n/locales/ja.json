@@ -133,7 +133,8 @@
     "markdownGuide": "Markdown ガイド",
     "readmeGuide": "READMEガイド",
     "resources": "リソース",
-    "asciiEmoji": "ASCII絵文字"
+    "asciiEmoji": "ASCII絵文字",
+    "markdownEditor": "Markdownエディタ"
   },
   "tableGenerator": {
     "editor": {
@@ -283,6 +284,9 @@
       },
       "asciiEmoji": {
         "desc": "コピペできるASCII顔文字とkaomojiのコレクション。"
+      },
+      "markdownEditor": {
+        "desc": "ライブプレビュー、書式ツールバー、コードハイライト付きでMarkdownを執筆 — ワンクリックでコピーまたはダウンロード。"
       }
     }
   },
@@ -434,6 +438,49 @@
       "dance": "ダンス",
       "tableBack": "ちゃぶ台戻し",
       "fight": "やる気"
+    }
+  },
+  "markdownEditor": {
+    "editor": {
+      "title": "エディタ",
+      "placeholder": "ここにMarkdownを入力...",
+      "clear": "クリア"
+    },
+    "preview": {
+      "title": "プレビュー",
+      "copyMarkdown": "MDをコピー",
+      "copyHtml": "HTMLをコピー",
+      "download": "ダウンロード",
+      "placeholder": "レンダリングされたMarkdownがここに表示されます..."
+    },
+    "toolbar": {
+      "bold": "太字",
+      "italic": "斜体",
+      "heading": "見出し",
+      "quote": "引用",
+      "list": "リスト",
+      "code": "コード",
+      "link": "リンク"
+    },
+    "placeholders": {
+      "bold": "太字のテキスト",
+      "italic": "斜体のテキスト",
+      "code": "コード",
+      "link": "テキスト"
+    },
+    "options": {
+      "title": "オプション",
+      "viewMode": "表示",
+      "viewSplit": "分割",
+      "viewEditor": "エディタのみ",
+      "viewPreview": "プレビューのみ",
+      "boxedPreview": "枠付きプレビュー"
+    },
+    "errors": {
+      "copyMarkdownSuccess": "Markdownをクリップボードにコピーしました！",
+      "copyHtmlSuccess": "HTMLをクリップボードにコピーしました！",
+      "copyError": "コピーに失敗しました。",
+      "downloadError": "ダウンロードに失敗しました。"
     }
   }
 }

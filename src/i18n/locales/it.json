@@ -133,7 +133,8 @@
     "markdownGuide": "Guida Markdown",
     "readmeGuide": "Guida README",
     "resources": "Risorse",
-    "asciiEmoji": "Emoji ASCII"
+    "asciiEmoji": "Emoji ASCII",
+    "markdownEditor": "Editor Markdown"
   },
   "tableGenerator": {
     "editor": {
@@ -283,6 +284,9 @@
       },
       "asciiEmoji": {
         "desc": "Una raccolta di emoticon e kaomoji ASCII da copiare e incollare con un clic."
+      },
+      "markdownEditor": {
+        "desc": "Scrivi Markdown con anteprima live, barra di formattazione ed evidenziazione del codice — copia o scarica con un clic."
       }
     }
   },
@@ -434,6 +438,49 @@
       "dance": "Ballare",
       "tableBack": "Rimetti il tavolo",
       "fight": "Pronto a combattere"
+    }
+  },
+  "markdownEditor": {
+    "editor": {
+      "title": "Editor",
+      "placeholder": "Scrivi qui il tuo Markdown...",
+      "clear": "Cancella"
+    },
+    "preview": {
+      "title": "Anteprima",
+      "copyMarkdown": "Copia MD",
+      "copyHtml": "Copia HTML",
+      "download": "Scarica",
+      "placeholder": "Il tuo Markdown renderizzato apparirà qui..."
+    },
+    "toolbar": {
+      "bold": "Grassetto",
+      "italic": "Corsivo",
+      "heading": "Titolo",
+      "quote": "Citazione",
+      "list": "Elenco",
+      "code": "Codice",
+      "link": "Link"
+    },
+    "placeholders": {
+      "bold": "testo in grassetto",
+      "italic": "testo in corsivo",
+      "code": "codice",
+      "link": "testo"
+    },
+    "options": {
+      "title": "Opzioni",
+      "viewMode": "Vista",
+      "viewSplit": "Divisa",
+      "viewEditor": "Solo editor",
+      "viewPreview": "Solo anteprima",
+      "boxedPreview": "Anteprima con riquadro"
+    },
+    "errors": {
+      "copyMarkdownSuccess": "Markdown copiato negli appunti!",
+      "copyHtmlSuccess": "HTML copiato negli appunti!",
+      "copyError": "Copia non riuscita.",
+      "downloadError": "Download non riuscito."
     }
   }
 }

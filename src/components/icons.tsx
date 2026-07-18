@@ -19,6 +19,7 @@ import {
   Delete02Icon,
   Download01Icon,
   Edit02Icon,
+  EyeIcon,
   File01Icon,
   FloppyDiskIcon,
   Folder01Icon,
@@ -31,6 +32,7 @@ import {
   HistoryIcon,
   Home09Icon,
   Image01Icon,
+  TextItalicIcon,
   JusticeScale01Icon,
   LeftToRightListBulletIcon,
   Link02Icon,
@@ -103,6 +105,7 @@ export const Code2 = createIcon(SourceCodeIcon, "Code2");
 export const Copy = createIcon(Copy01Icon, "Copy");
 export const Download = createIcon(Download01Icon, "Download");
 export const Edit3 = createIcon(Edit02Icon, "Edit3");
+export const Eye = createIcon(EyeIcon, "Eye");
 export const File = createIcon(File01Icon, "File");
 export const FileText = createIcon(Note01Icon, "FileText");
 export const Folder = createIcon(Folder01Icon, "Folder");
@@ -115,6 +118,7 @@ export const Heart = createIcon(HeartIcon, "Heart");
 export const History = createIcon(HistoryIcon, "History");
 export const Home = createIcon(Home09Icon, "Home");
 export const Image = createIcon(Image01Icon, "Image");
+export const Italic = createIcon(TextItalicIcon, "Italic");
 export const Link2 = createIcon(Link02Icon, "Link2");
 export const List = createIcon(LeftToRightListBulletIcon, "List");
 export const Minus = createIcon(MinusSignIcon, "Minus");

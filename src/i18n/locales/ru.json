@@ -133,7 +133,8 @@
     "markdownGuide": "Гид по Markdown",
     "readmeGuide": "Гайд по README",
     "resources": "Ресурсы",
-    "asciiEmoji": "ASCII-эмодзи"
+    "asciiEmoji": "ASCII-эмодзи",
+    "markdownEditor": "Редактор Markdown"
   },
   "tableGenerator": {
     "editor": {
@@ -283,6 +284,9 @@
       },
       "asciiEmoji": {
         "desc": "Коллекция ASCII-смайликов и каомодзи — копируйте одним щелчком."
+      },
+      "markdownEditor": {
+        "desc": "Пишите Markdown с предпросмотром в реальном времени, панелью форматирования и подсветкой кода — копируйте или скачивайте в один клик."
       }
     }
   },
@@ -434,6 +438,49 @@
       "dance": "Танцует",
       "tableBack": "Стол на место",
       "fight": "К бою"
+    }
+  },
+  "markdownEditor": {
+    "editor": {
+      "title": "Редактор",
+      "placeholder": "Пишите ваш Markdown здесь...",
+      "clear": "Очистить"
+    },
+    "preview": {
+      "title": "Предпросмотр",
+      "copyMarkdown": "Копировать MD",
+      "copyHtml": "Копировать HTML",
+      "download": "Скачать",
+      "placeholder": "Здесь появится отрендеренный Markdown..."
+    },
+    "toolbar": {
+      "bold": "Жирный",
+      "italic": "Курсив",
+      "heading": "Заголовок",
+      "quote": "Цитата",
+      "list": "Список",
+      "code": "Код",
+      "link": "Ссылка"
+    },
+    "placeholders": {
+      "bold": "жирный текст",
+      "italic": "курсив",
+      "code": "код",
+      "link": "текст"
+    },
+    "options": {
+      "title": "Параметры",
+      "viewMode": "Вид",
+      "viewSplit": "Разделённый",
+      "viewEditor": "Только редактор",
+      "viewPreview": "Только предпросмотр",
+      "boxedPreview": "Предпросмотр в рамке"
+    },
+    "errors": {
+      "copyMarkdownSuccess": "Markdown скопирован в буфер обмена!",
+      "copyHtmlSuccess": "HTML скопирован в буфер обмена!",
+      "copyError": "Не удалось скопировать.",
+      "downloadError": "Не удалось скачать."
     }
   }
 }

@@ -68,6 +68,17 @@ CPU     ▃▃▅▂▇▆▄▅`,
 ██║  ██║██║
 ╚═╝  ╚═╝╚═╝`,
   },
+  {
+    id: 'markdown-editor',
+    href: '/tools/markdown-editor',
+    tag: 'MARKDOWN',
+    nameKey: 'markdownEditor',
+    descKey: 'home.tools.markdownEditor.desc',
+    preview: `# Titre        │  Titre
+**gras**       │  gras
+- liste        │  • liste
+\`code\`         │  code`,
+  },
 ];
 
 // Reference guides — listed apart from the generators above.

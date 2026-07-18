@@ -426,6 +426,96 @@ const CONTENT: Record<ToolSlug, LocalizedToolContent> = {
       ],
     },
   },
+  'markdown-editor': {
+    en: {
+      heading: 'About the Markdown Editor',
+      intro:
+        'This free online Markdown editor renders your text live as you type, with GitHub Flavored Markdown support (tables, task lists, strikethrough) and syntax highlighting for code blocks. Use the formatting toolbar for bold, italic, headings, lists, links and quotes, then copy the Markdown or the rendered HTML, or download a .md file. Everything runs in your browser — nothing is uploaded.',
+      faq: [
+        { q: 'Is this Markdown editor free?', a: 'Yes. It is completely free, runs entirely in your browser, and needs no account. Your text is never sent to a server.' },
+        { q: 'Does it support GitHub Flavored Markdown?', a: 'Yes. Tables, task lists and strikethrough all render in the live preview, so what you see matches how it will look on GitHub.' },
+        { q: 'Can I export my document?', a: 'You can copy the Markdown source, copy the rendered HTML, or download your text as a .md file with one click.' },
+        { q: 'Are code blocks highlighted?', a: 'Yes. Fenced code blocks are syntax-highlighted in the preview; add a language name after the opening fence for the best results.' },
+      ],
+    },
+    fr: {
+      heading: "À propos de l'éditeur Markdown",
+      intro:
+        "Cet éditeur Markdown en ligne gratuit affiche votre texte en temps réel pendant la saisie, avec le support du GitHub Flavored Markdown (tableaux, listes de tâches, texte barré) et la coloration syntaxique des blocs de code. Utilisez la barre de formatage pour le gras, l'italique, les titres, les listes, les liens et les citations, puis copiez le Markdown ou le HTML rendu, ou téléchargez un fichier .md. Tout s'exécute dans votre navigateur — rien n'est envoyé sur un serveur.",
+      faq: [
+        { q: "L'éditeur Markdown est-il gratuit ?", a: 'Oui. Il est entièrement gratuit, fonctionne dans votre navigateur et ne nécessite aucun compte. Votre texte n\'est jamais envoyé sur un serveur.' },
+        { q: 'Prend-il en charge le GitHub Flavored Markdown ?', a: "Oui. Les tableaux, listes de tâches et texte barré s'affichent dans l'aperçu live, donc ce que vous voyez correspond au rendu GitHub." },
+        { q: 'Puis-je exporter mon document ?', a: 'Vous pouvez copier la source Markdown, copier le HTML rendu, ou télécharger votre texte en fichier .md en un clic.' },
+        { q: 'Les blocs de code sont-ils colorés ?', a: "Oui. Les blocs de code sont colorés dans l'aperçu ; ajoutez un nom de langage après la clôture d'ouverture pour un meilleur résultat." },
+      ],
+    },
+    es: {
+      heading: 'Acerca del Editor Markdown',
+      intro:
+        'Este editor Markdown en línea gratuito renderiza tu texto en vivo mientras escribes, con soporte para GitHub Flavored Markdown (tablas, listas de tareas, tachado) y resaltado de sintaxis en los bloques de código. Usa la barra de formato para negrita, cursiva, encabezados, listas, enlaces y citas, y luego copia el Markdown o el HTML renderizado, o descarga un archivo .md. Todo se ejecuta en tu navegador — nada se sube.',
+      faq: [
+        { q: '¿Es gratuito este editor Markdown?', a: 'Sí. Es completamente gratuito, funciona en tu navegador y no requiere cuenta. Tu texto nunca se envía a un servidor.' },
+        { q: '¿Admite GitHub Flavored Markdown?', a: 'Sí. Las tablas, listas de tareas y texto tachado se muestran en la vista previa en vivo, así que lo que ves coincide con GitHub.' },
+        { q: '¿Puedo exportar mi documento?', a: 'Puedes copiar el código Markdown, copiar el HTML renderizado o descargar tu texto como archivo .md con un clic.' },
+        { q: '¿Se resaltan los bloques de código?', a: 'Sí. Los bloques de código se resaltan en la vista previa; añade un nombre de lenguaje tras la apertura para mejores resultados.' },
+      ],
+    },
+    de: {
+      heading: 'Über den Markdown-Editor',
+      intro:
+        'Dieser kostenlose Online-Markdown-Editor stellt Ihren Text live beim Tippen dar, mit Unterstützung für GitHub Flavored Markdown (Tabellen, Aufgabenlisten, Durchstreichungen) und Syntaxhervorhebung für Codeblöcke. Nutzen Sie die Formatierungsleiste für Fett, Kursiv, Überschriften, Listen, Links und Zitate, kopieren Sie dann das Markdown oder das gerenderte HTML oder laden Sie eine .md-Datei herunter. Alles läuft in Ihrem Browser — nichts wird hochgeladen.',
+      faq: [
+        { q: 'Ist dieser Markdown-Editor kostenlos?', a: 'Ja. Er ist komplett kostenlos, läuft in Ihrem Browser und erfordert kein Konto. Ihr Text wird nie an einen Server gesendet.' },
+        { q: 'Unterstützt er GitHub Flavored Markdown?', a: 'Ja. Tabellen, Aufgabenlisten und Durchstreichungen werden in der Live-Vorschau dargestellt, sodass die Anzeige der Darstellung auf GitHub entspricht.' },
+        { q: 'Kann ich mein Dokument exportieren?', a: 'Sie können den Markdown-Quelltext kopieren, das gerenderte HTML kopieren oder Ihren Text mit einem Klick als .md-Datei herunterladen.' },
+        { q: 'Werden Codeblöcke hervorgehoben?', a: 'Ja. Codeblöcke werden in der Vorschau syntaxhervorgehoben; fügen Sie nach der öffnenden Zeile einen Sprachnamen hinzu, um beste Ergebnisse zu erzielen.' },
+      ],
+    },
+    it: {
+      heading: "Informazioni sull'Editor Markdown",
+      intro:
+        "Questo editor Markdown online gratuito renderizza il testo in tempo reale mentre scrivi, con supporto per il GitHub Flavored Markdown (tabelle, elenchi di attività, barrato) ed evidenziazione della sintassi nei blocchi di codice. Usa la barra di formattazione per grassetto, corsivo, titoli, elenchi, link e citazioni, poi copia il Markdown o l'HTML renderizzato, oppure scarica un file .md. Tutto viene eseguito nel browser — nulla viene caricato.",
+      faq: [
+        { q: "L'editor Markdown è gratuito?", a: 'Sì. È completamente gratuito, funziona nel browser e non richiede alcun account. Il testo non viene mai inviato a un server.' },
+        { q: 'Supporta il GitHub Flavored Markdown?', a: "Sì. Tabelle, elenchi di attività e testo barrato compaiono nell'anteprima live, quindi ciò che vedi corrisponde a GitHub." },
+        { q: 'Posso esportare il documento?', a: "Puoi copiare il sorgente Markdown, copiare l'HTML renderizzato o scaricare il testo come file .md con un clic." },
+        { q: 'I blocchi di codice sono evidenziati?', a: "Sì. I blocchi di codice sono evidenziati nell'anteprima; aggiungi un nome di linguaggio dopo l'apertura per risultati migliori." },
+      ],
+    },
+    pt: {
+      heading: 'Sobre o Editor Markdown',
+      intro:
+        'Este editor Markdown online gratuito renderiza o seu texto ao vivo enquanto escreve, com suporte a GitHub Flavored Markdown (tabelas, listas de tarefas, rasurado) e realce de sintaxe nos blocos de código. Use a barra de formatação para negrito, itálico, títulos, listas, links e citações, depois copie o Markdown ou o HTML renderizado, ou baixe um ficheiro .md. Tudo é executado no seu navegador — nada é enviado.',
+      faq: [
+        { q: 'Este editor Markdown é gratuito?', a: 'Sim. É totalmente gratuito, funciona no seu navegador e não requer conta. O seu texto nunca é enviado para um servidor.' },
+        { q: 'Suporta GitHub Flavored Markdown?', a: 'Sim. Tabelas, listas de tarefas e texto rasurado aparecem na pré-visualização ao vivo, por isso o que vê corresponde ao GitHub.' },
+        { q: 'Posso exportar o meu documento?', a: 'Pode copiar o código Markdown, copiar o HTML renderizado ou baixar o seu texto como ficheiro .md com um clique.' },
+        { q: 'Os blocos de código são realçados?', a: 'Sim. Os blocos de código são realçados na pré-visualização; adicione um nome de linguagem após a abertura para melhores resultados.' },
+      ],
+    },
+    ru: {
+      heading: 'О редакторе Markdown',
+      intro:
+        'Этот бесплатный онлайн-редактор Markdown отображает ваш текст в реальном времени по мере набора, с поддержкой GitHub Flavored Markdown (таблицы, списки задач, зачёркивание) и подсветкой синтаксиса в блоках кода. Используйте панель форматирования для жирного, курсива, заголовков, списков, ссылок и цитат, затем копируйте Markdown или отрендеренный HTML либо скачивайте файл .md. Всё работает в браузере — ничего не загружается.',
+      faq: [
+        { q: 'Этот редактор Markdown бесплатный?', a: 'Да. Он полностью бесплатный, работает в браузере и не требует учётной записи. Ваш текст никогда не отправляется на сервер.' },
+        { q: 'Поддерживает ли он GitHub Flavored Markdown?', a: 'Да. Таблицы, списки задач и зачёркивание отображаются в предпросмотре, поэтому увиденное соответствует виду на GitHub.' },
+        { q: 'Можно ли экспортировать документ?', a: 'Вы можете скопировать исходный Markdown, скопировать отрендеренный HTML или скачать текст в виде файла .md в один клик.' },
+        { q: 'Подсвечиваются ли блоки кода?', a: 'Да. Блоки кода подсвечиваются в предпросмотре; для лучшего результата укажите имя языка после открывающей строки.' },
+      ],
+    },
+    ja: {
+      heading: 'Markdownエディタについて',
+      intro:
+        'この無料オンラインMarkdownエディタは、入力しながらリアルタイムでテキストをレンダリングします。GitHub Flavored Markdown（表・タスクリスト・打ち消し線）とコードブロックの構文ハイライトに対応。書式ツールバーで太字・斜体・見出し・リスト・リンク・引用を挿入し、MarkdownやレンダリングされたHTMLをコピー、または.mdファイルとしてダウンロードできます。すべてブラウザ内で動作し、何もアップロードされません。',
+      faq: [
+        { q: 'このMarkdownエディタは無料ですか？', a: 'はい。完全に無料で、ブラウザ内で動作し、アカウントも不要です。テキストがサーバーに送信されることはありません。' },
+        { q: 'GitHub Flavored Markdownに対応していますか？', a: 'はい。表・タスクリスト・打ち消し線がライブプレビューに表示されるため、GitHubでの見え方と一致します。' },
+        { q: 'ドキュメントをエクスポートできますか？', a: 'Markdownソースのコピー、レンダリング済みHTMLのコピー、.mdファイルのダウンロードがワンクリックで行えます。' },
+        { q: 'コードブロックはハイライトされますか？', a: 'はい。コードブロックはプレビューでハイライトされます。開始行の後に言語名を書くとより良い結果になります。' },
+      ],
+    },
+  },
   'markdown-guide': {
     en: {
       heading: 'About this Markdown Guide',
