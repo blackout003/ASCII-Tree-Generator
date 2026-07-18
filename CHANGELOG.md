@@ -5,6 +5,21 @@ Toutes les évolutions notables de ASCII Tools sont documentées dans ce fichier
 Le format s'inspire de [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/)
 et le projet suit le [versionnage sémantique](https://semver.org/lang/fr/).
 
+## [2.1.0] - 2026-07-18
+
+Ajout d'un **éditeur Markdown** avec aperçu en direct.
+
+### Ajouté
+
+- **Éditeur Markdown** : édition en direct avec aperçu côte à côte, prise en
+  charge du GitHub Flavored Markdown (tableaux, listes de tâches, texte barré)
+  et coloration syntaxique des blocs de code.
+- **Barre de formatage** : gras, italique, titres, listes, citations, code et
+  liens insérés autour de la sélection.
+- **Export** : copie du Markdown, copie du HTML rendu et téléchargement en `.md`.
+- **Modes d'affichage** (partagé, éditeur seul, aperçu seul) et localisation dans
+  les 8 langues (fr, en, es, de, it, pt, ru, ja).
+
 ## [2.0.0] - 2026-07-14
 
 Passage d'un générateur unique à une **suite d'outils ASCII** complète, avec

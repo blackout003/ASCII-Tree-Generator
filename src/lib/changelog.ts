@@ -2,7 +2,7 @@
  * Version actuelle de l'application, affichée dans la barre latérale.
  * Doit rester synchronisée avec le champ "version" de package.json et CHANGELOG.md.
  */
-export const APP_VERSION = '2.0';
+export const APP_VERSION = '2.1.0';
 
 export interface ChangelogSection {
   /** Titre de la section (ex: "Ajouté", "Modifié"). */
@@ -24,6 +24,25 @@ export interface ChangelogEntry {
  * Source lisible : CHANGELOG.md à la racine du projet.
  */
 export const CHANGELOG: ChangelogEntry[] = [
+  {
+    version: '2.1.0',
+    date: '2026-07-18',
+    summary:
+      'Ajout d’un éditeur Markdown avec aperçu en direct, barre de formatage, coloration du code et export.',
+    sections: [
+      {
+        title: 'Ajouté',
+        items: [
+          'Éditeur Markdown : édition en direct avec aperçu côte à côte.',
+          'Prise en charge du GitHub Flavored Markdown (tableaux, listes de tâches, texte barré).',
+          'Coloration syntaxique des blocs de code dans l’aperçu.',
+          'Barre de formatage (gras, italique, titres, listes, citations, code, liens).',
+          'Export : copie du Markdown, copie du HTML rendu et téléchargement en .md.',
+          'Modes d’affichage (partagé, éditeur seul, aperçu seul) et localisation dans les 8 langues.',
+        ],
+      },
+    ],
+  },
   {
     version: '2.0.0',
     date: '2026-07-14',
