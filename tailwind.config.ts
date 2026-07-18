@@ -69,11 +69,21 @@ const config: Config = {
   			'rise-in': {
   				'0%': { opacity: '0', transform: 'translateY(8px)' },
   				'100%': { opacity: '1', transform: 'translateY(0)' }
+  			},
+  			float: {
+  				'0%, 100%': { transform: 'translateY(0)' },
+  				'50%': { transform: 'translateY(-10px)' }
+  			},
+  			'eye-blink': {
+  				'0%, 92%, 100%': { opacity: '0' },
+  				'94%, 98%': { opacity: '1' }
   			}
   		},
   		animation: {
   			blink: 'blink 1.1s steps(1) infinite',
-  			'rise-in': 'rise-in 0.5s ease-out both'
+  			'rise-in': 'rise-in 0.5s ease-out both',
+  			float: 'float 4s ease-in-out infinite',
+  			'eye-blink': 'eye-blink 5s steps(1) infinite'
   		}
   	}
   },

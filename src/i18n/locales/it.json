@@ -482,5 +482,13 @@
       "copyError": "Copia non riuscita.",
       "downloadError": "Download non riuscito."
     }
+  },
+  "notFound": {
+    "code": "Errore 404",
+    "title": "Questo ramo non esiste",
+    "description": "La pagina che cerchi è stata spostata, eliminata o non è mai cresciuta sull’albero.",
+    "branch": "~/pagine/non-trovata",
+    "home": "Torna alla home",
+    "tools": "Esplora gli strumenti"
   }
 }
