@@ -496,6 +496,7 @@
     "description": "Utilizamos ferramentas de análise para melhorar o site. Nenhum rastreamento é ativado sem o seu consentimento.",
     "accept": "Aceitar",
     "refuse": "Recusar",
-    "learnMore": "Saber mais"
+    "learnMore": "Saber mais",
+    "learnMoreAria": "Saiba mais sobre a proteção dos seus dados pessoais"
   }
 }

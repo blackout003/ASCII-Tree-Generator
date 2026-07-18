@@ -496,6 +496,7 @@
     "description": "Utilizamos herramientas de análisis para mejorar el sitio. No se activa ningún seguimiento sin tu consentimiento.",
     "accept": "Aceptar",
     "refuse": "Rechazar",
-    "learnMore": "Más información"
+    "learnMore": "Más información",
+    "learnMoreAria": "Más información sobre la protección de tus datos personales"
   }
 }

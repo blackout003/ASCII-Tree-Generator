@@ -496,6 +496,7 @@
     "description": "We use analytics tools to improve the site. No tracking is enabled without your consent.",
     "accept": "Accept",
     "refuse": "Decline",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "learnMoreAria": "Learn more about how we protect your personal data"
   }
 }

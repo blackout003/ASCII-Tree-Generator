@@ -496,6 +496,7 @@
     "description": "Nous utilisons des outils de mesure d'audience pour améliorer le site. Aucun suivi n'est activé sans votre accord.",
     "accept": "Accepter",
     "refuse": "Refuser",
-    "learnMore": "En savoir plus"
+    "learnMore": "En savoir plus",
+    "learnMoreAria": "En savoir plus sur la protection de vos données personnelles"
   }
 }

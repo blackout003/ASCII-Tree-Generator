@@ -26,6 +26,21 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 jours
   },
   
+  // Redirige www vers l'hôte canonique (sans www) pour éviter le contenu
+  // dupliqué : les deux hôtes pointent vers ce déploiement et répondaient tous
+  // deux en 200. Le canonical/hreflang utilisant `asciitree.fr`, cette
+  // redirection 308 rend l'URL canonique auto-référentielle (fix SEO Lighthouse).
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.asciitree.fr' }],
+        destination: 'https://asciitree.fr/:path*',
+        permanent: true,
+      },
+    ];
+  },
+
   // Configuration des headers HTTP
   async headers() {
     return [

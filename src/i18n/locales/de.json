@@ -496,6 +496,7 @@
     "description": "Wir verwenden Analyse-Tools, um die Website zu verbessern. Ohne deine Zustimmung wird kein Tracking aktiviert.",
     "accept": "Akzeptieren",
     "refuse": "Ablehnen",
-    "learnMore": "Mehr erfahren"
+    "learnMore": "Mehr erfahren",
+    "learnMoreAria": "Mehr über den Schutz Ihrer personenbezogenen Daten erfahren"
   }
 }

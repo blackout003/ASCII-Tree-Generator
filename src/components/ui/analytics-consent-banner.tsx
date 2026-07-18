@@ -66,6 +66,7 @@ export function AnalyticsConsentBanner() {
         <Link
           href={`/${locale}/donnees-personnelles`}
           className="font-medium text-primary underline-offset-2 hover:underline"
+          aria-label={t('learnMoreAria')}
         >
           {t('learnMore')}
         </Link>
