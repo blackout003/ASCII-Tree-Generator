@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
@@ -29,8 +30,18 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+
+  // Unknown locales resolve to the 404 page — don't advertise the home title
+  // or let crawlers index them.
+  if (!locales.includes(locale as (typeof locales)[number])) {
+    return {
+      title: '404 — Page introuvable',
+      robots: { index: false, follow: false },
+    };
+  }
+
   const localeMeta = getLocaleMetadata(locale);
-  
+
   return {
     title: localeMeta.title,
     description: localeMeta.description,
@@ -96,7 +107,13 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  
+
+  // Reject unknown locales (e.g. `/xyz`) so they render the 404 instead of
+  // silently falling back to the default-locale home page.
+  if (!locales.includes(locale as (typeof locales)[number])) {
+    notFound();
+  }
+
   let messages;
   try {
     messages = (await import(`@/i18n/locales/${locale}.json`)).default;

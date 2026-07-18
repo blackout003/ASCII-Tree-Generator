@@ -482,5 +482,13 @@
       "copyError": "Échec de la copie.",
       "downloadError": "Échec du téléchargement."
     }
+  },
+  "notFound": {
+    "code": "Erreur 404",
+    "title": "Cette branche n’existe pas",
+    "description": "La page que vous cherchez a été déplacée, supprimée, ou n’a jamais poussé sur l’arbre.",
+    "branch": "~/pages/introuvable",
+    "home": "Retour à l’accueil",
+    "tools": "Explorer les outils"
   }
 }

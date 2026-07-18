@@ -482,5 +482,13 @@
       "copyError": "コピーに失敗しました。",
       "downloadError": "ダウンロードに失敗しました。"
     }
+  },
+  "notFound": {
+    "code": "エラー 404",
+    "title": "このブランチは存在しません",
+    "description": "お探しのページは移動、削除されたか、ツリーに生えていないようです。",
+    "branch": "~/pages/not-found",
+    "home": "ホームに戻る",
+    "tools": "ツールを見る"
   }
 }

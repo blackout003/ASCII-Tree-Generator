@@ -75,9 +75,16 @@
 
 @media (prefers-reduced-motion: reduce) {
   .animate-blink,
-  .animate-rise-in {
+  .animate-rise-in,
+  .animate-float {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  /* The closed-eyes overlay must stay hidden when the blink animation is off. */
+  .animate-eye-blink {
+    animation: none !important;
+    opacity: 0 !important;
   }
 }

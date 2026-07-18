@@ -482,5 +482,13 @@
       "copyError": "Kopieren fehlgeschlagen.",
       "downloadError": "Download fehlgeschlagen."
     }
+  },
+  "notFound": {
+    "code": "Fehler 404",
+    "title": "Dieser Ast existiert nicht",
+    "description": "Die gesuchte Seite wurde verschoben, gelöscht oder ist nie am Baum gewachsen.",
+    "branch": "~/seiten/nicht-gefunden",
+    "home": "Zur Startseite",
+    "tools": "Werkzeuge entdecken"
   }
 }

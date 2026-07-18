@@ -482,5 +482,13 @@
       "copyError": "Failed to copy.",
       "downloadError": "Failed to download."
     }
+  },
+  "notFound": {
+    "code": "Error 404",
+    "title": "This branch doesn’t exist",
+    "description": "The page you’re looking for was moved, deleted, or never grew on the tree.",
+    "branch": "~/pages/not-found",
+    "home": "Back to home",
+    "tools": "Explore the tools"
   }
 }
