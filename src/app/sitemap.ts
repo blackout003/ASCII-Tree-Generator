@@ -6,7 +6,8 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://asciitree.fr'
 // Routes rendered for every locale, with their relative priority.
 const localizedRoutes: { path: string; priority: number }[] = [
   { path: '', priority: 1 },
-  { path: '/tools', priority: 0.9 },
+  // Note: `/tools` is intentionally omitted — it 307-redirects to
+  // `/tools/ascii-tree`, so listing it would put a redirect in the sitemap.
   { path: '/tools/ascii-tree', priority: 0.9 },
   { path: '/tools/ascii-table', priority: 0.8 },
   { path: '/tools/banner', priority: 0.8 },
