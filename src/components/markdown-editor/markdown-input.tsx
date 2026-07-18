@@ -13,10 +13,12 @@ interface MarkdownInputProps {
   value: string;
   onChange: (value: string) => void;
   onClear: () => void;
+  /** Export actions rendered in the header (kept reachable in every view mode). */
+  actions?: React.ReactNode;
   className?: string;
 }
 
-export function MarkdownInput({ value, onChange, onClear, className }: MarkdownInputProps) {
+export function MarkdownInput({ value, onChange, onClear, actions, className }: MarkdownInputProps) {
   const t = useTranslations('markdownEditor');
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
 
@@ -28,10 +30,13 @@ export function MarkdownInput({ value, onChange, onClear, className }: MarkdownI
             <Edit3 className="w-5 h-5" />
             {t('editor.title')}
           </CardTitle>
-          <Button size="sm" variant="destructive" onClick={onClear}>
-            <Trash2 className="w-4 h-4 mr-1" />
-            {t('editor.clear')}
-          </Button>
+          <div className="flex flex-wrap items-center gap-2">
+            {actions}
+            <Button size="sm" variant="destructive" onClick={onClear}>
+              <Trash2 className="w-4 h-4 mr-1" />
+              {t('editor.clear')}
+            </Button>
+          </div>
         </div>
         <MarkdownToolbar textareaRef={textareaRef} value={value} onChange={onChange} />
       </CardHeader>

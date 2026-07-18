@@ -74,6 +74,26 @@ export function MarkdownEditor() {
   const { viewMode, boxedPreview } = options;
   const showEditor = viewMode !== 'preview';
   const showPreview = viewMode !== 'editor';
+  const isEmpty = !input.trim();
+
+  // Export actions live in the editor header when it is visible, otherwise in
+  // the preview header — so they stay reachable in every view mode.
+  const exportActions = (
+    <div className="flex flex-wrap gap-2">
+      <Button onClick={copyMarkdown} size="sm" disabled={isEmpty}>
+        <Copy className="w-4 h-4 mr-1" />
+        {t('preview.copyMarkdown')}
+      </Button>
+      <Button onClick={copyHtml} size="sm" variant="outline" disabled={isEmpty}>
+        <Code2 className="w-4 h-4 mr-1" />
+        {t('preview.copyHtml')}
+      </Button>
+      <Button onClick={downloadMarkdown} size="sm" variant="outline" disabled={isEmpty}>
+        <Download className="w-4 h-4 mr-1" />
+        {t('preview.download')}
+      </Button>
+    </div>
+  );
 
   const previewPane = (
     <Card className={cn('flex flex-col min-h-0 gap-3 py-3', !showPreview && 'hidden')}>
@@ -83,20 +103,8 @@ export function MarkdownEditor() {
             <Eye className="w-5 h-5" />
             {t('preview.title')}
           </CardTitle>
-          <div className="flex flex-wrap gap-2">
-            <Button onClick={copyMarkdown} size="sm">
-              <Copy className="w-4 h-4 mr-1" />
-              {t('preview.copyMarkdown')}
-            </Button>
-            <Button onClick={copyHtml} size="sm" variant="outline">
-              <Code2 className="w-4 h-4 mr-1" />
-              {t('preview.copyHtml')}
-            </Button>
-            <Button onClick={downloadMarkdown} size="sm" variant="outline">
-              <Download className="w-4 h-4 mr-1" />
-              {t('preview.download')}
-            </Button>
-          </div>
+          {/* Only render here when the editor pane (which otherwise hosts them) is hidden. */}
+          {!showEditor && exportActions}
         </div>
       </CardHeader>
       <CardContent className="flex-1 min-h-0 overflow-y-auto px-4">
@@ -123,6 +131,7 @@ export function MarkdownEditor() {
           value={input}
           onChange={setInput}
           onClear={handleClear}
+          actions={exportActions}
           className={cn('min-h-0', !showEditor && 'hidden')}
         />
         {previewPane}

@@ -31,8 +31,12 @@ function wrapSelection(
   };
 }
 
-/** Prefix every line touched by the selection (e.g. "## ", "- ", "> "). */
-function prefixLines(
+/**
+ * Toggle a line prefix on every line touched by the selection (e.g. "## ",
+ * "- ", "> "). If all affected lines already start with the prefix it is
+ * removed; otherwise it is added to the lines that lack it.
+ */
+function toggleLinePrefix(
   el: HTMLTextAreaElement,
   value: string,
   prefix: string
@@ -41,16 +45,14 @@ function prefixLines(
   const end = el.selectionEnd;
   const lineStart = value.lastIndexOf('\n', start - 1) + 1;
   const block = value.slice(lineStart, end);
-  const prefixed = block
-    .split('\n')
-    .map((line) => prefix + line)
-    .join('\n');
-  const next = value.slice(0, lineStart) + prefixed + value.slice(end);
-  return {
-    next,
-    selStart: start + prefix.length,
-    selEnd: end + (prefixed.length - block.length),
-  };
+  const lines = block.split('\n');
+  const allPrefixed = lines.every((line) => line.startsWith(prefix));
+  const nextLines = allPrefixed
+    ? lines.map((line) => line.slice(prefix.length))
+    : lines.map((line) => (line.startsWith(prefix) ? line : prefix + line));
+  const nextBlock = nextLines.join('\n');
+  const next = value.slice(0, lineStart) + nextBlock + value.slice(end);
+  return { next, selStart: lineStart, selEnd: lineStart + nextBlock.length };
 }
 
 export function MarkdownToolbar({ textareaRef, value, onChange }: MarkdownToolbarProps) {
@@ -74,9 +76,9 @@ export function MarkdownToolbar({ textareaRef, value, onChange }: MarkdownToolba
   const actions = [
     { key: 'bold', icon: Bold, run: (el: HTMLTextAreaElement) => wrapSelection(el, value, '**', '**', t('placeholders.bold')) },
     { key: 'italic', icon: Italic, run: (el: HTMLTextAreaElement) => wrapSelection(el, value, '*', '*', t('placeholders.italic')) },
-    { key: 'heading', icon: Heading1, run: (el: HTMLTextAreaElement) => prefixLines(el, value, '## ') },
-    { key: 'quote', icon: Quote, run: (el: HTMLTextAreaElement) => prefixLines(el, value, '> ') },
-    { key: 'list', icon: List, run: (el: HTMLTextAreaElement) => prefixLines(el, value, '- ') },
+    { key: 'heading', icon: Heading1, run: (el: HTMLTextAreaElement) => toggleLinePrefix(el, value, '## ') },
+    { key: 'quote', icon: Quote, run: (el: HTMLTextAreaElement) => toggleLinePrefix(el, value, '> ') },
+    { key: 'list', icon: List, run: (el: HTMLTextAreaElement) => toggleLinePrefix(el, value, '- ') },
     { key: 'code', icon: Code2, run: (el: HTMLTextAreaElement) => wrapSelection(el, value, '`', '`', t('placeholders.code')) },
     { key: 'link', icon: Link2, run: (el: HTMLTextAreaElement) => wrapSelection(el, value, '[', '](url)', t('placeholders.link')) },
   ] as const;
