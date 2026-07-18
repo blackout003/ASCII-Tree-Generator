@@ -38,8 +38,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: guide.metaTitle,
       description: guide.metaDescription,
       images: ['/og-image.png'],
-      creator: SEO_CONFIG.social.twitter.handle,
-      site: SEO_CONFIG.social.twitter.site,
     },
   };
 }

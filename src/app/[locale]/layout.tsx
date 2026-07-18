@@ -72,8 +72,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: localeMeta.title,
       description: localeMeta.description,
       images: ['/og-image.png'],
-      creator: SEO_CONFIG.social.twitter.handle,
-      site: SEO_CONFIG.social.twitter.site,
     },
     robots: {
       index: true,

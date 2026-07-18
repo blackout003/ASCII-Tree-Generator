@@ -49,23 +49,8 @@ export const SEO_CONFIG = {
     "visualiser structure dossier markdown"
   ],
   
-  social: {
-    twitter: {
-      handle: '@asciitreegen',
-      site: '@asciitreegen'
-    },
-    facebook: {
-      appId: 'your-facebook-app-id'
-    }
-  },
-  
   verification: {
-    // Remplacez par votre vrai code de vérification Google Search Console
-    // Format : 'xxxxxxxxxx' (sans guillemets supplémentaires)
-    google: 'Us63uejMYf_eRurx-77CguTsgZPywmV4cgOlCB5ekyU',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
-    bing: 'your-bing-verification-code'
+    google: 'Us63uejMYf_eRurx-77CguTsgZPywmV4cgOlCB5ekyU'
   }
 };
 
@@ -258,8 +243,6 @@ export function buildToolMetadata(tool: ToolSlug, locale: string): Metadata {
       title,
       description,
       images: ['/og-image.png'],
-      creator: SEO_CONFIG.social.twitter.handle,
-      site: SEO_CONFIG.social.twitter.site,
     },
   };
 }

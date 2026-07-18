@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--max-old-space-size=2048' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -42,6 +42,7 @@
     "@types/node": "^20.19.30",
     "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
+    "critters": "^0.0.23",
     "eslint": "^9.39.2",
     "eslint-config-next": "^15.5.9",
     "shadcn": "^4.11.0",
