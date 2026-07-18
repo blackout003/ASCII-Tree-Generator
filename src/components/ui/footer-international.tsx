@@ -3,7 +3,7 @@
 import React from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
-import { Scale, ShieldCheck, Github } from 'lucide-react';
+import { Scale, ShieldCheck, Github } from '@/components/icons';
 import { Separator } from './separator';
 import { TOOLS, RESOURCES } from '@/lib/tools';
 

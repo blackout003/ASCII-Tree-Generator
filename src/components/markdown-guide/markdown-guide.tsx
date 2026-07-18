@@ -2,7 +2,7 @@
 
 import React, { useState, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
-import { Check, Copy } from 'lucide-react';
+import { Check, Copy } from '@/components/icons';
 import { useToast } from '@/hooks/use-toast';
 import { MARKDOWN_CATEGORIES } from '@/lib/markdown-guide-data';
 import { cn } from '@/lib/utils';

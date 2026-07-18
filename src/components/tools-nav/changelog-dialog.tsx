@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { History } from '@/components/icons';
 import {
   Dialog,
   DialogContent,
@@ -23,7 +23,7 @@ export function ChangelogDialog() {
           tooltip={`Version ${APP_VERSION}`}
           className="justify-center text-xs text-muted-foreground hover:text-foreground"
         >
-          <Sparkles className="size-3.5" />
+          <History className="size-3.5" />
           <span className="group-data-[collapsible=icon]:hidden">
             Version {APP_VERSION}
           </span>
@@ -32,7 +32,7 @@ export function ChangelogDialog() {
       <DialogContent className="max-w-lg">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <Sparkles className="size-5" />
+            <History className="size-5" />
             Notes de version
           </DialogTitle>
           <DialogDescription>

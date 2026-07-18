@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
-import { Home, Globe, Sun, Moon, Monitor, MoreHorizontal, PencilRuler } from 'lucide-react';
+import { Home, Globe, Sun, Moon, Monitor, MoreHorizontal, PencilRuler } from '@/components/icons';
 import { useTheme } from 'next-themes';
 import {
   Sidebar,

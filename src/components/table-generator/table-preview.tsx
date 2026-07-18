@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { TableIcon, Copy, Download } from 'lucide-react';
+import { TableIcon, Copy, Download } from '@/components/icons';
 import { useTranslations } from 'next-intl';
 
 interface TablePreviewProps {

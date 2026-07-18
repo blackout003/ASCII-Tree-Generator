@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Plus, Save, Upload, Trash2 } from 'lucide-react';
+import { Plus, Save, Upload, Trash2 } from '@/components/icons';
 import { useTranslations } from 'next-intl';
 
 interface TreeControlsProps {

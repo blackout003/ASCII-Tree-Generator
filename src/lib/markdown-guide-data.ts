@@ -11,8 +11,8 @@ import {
   Minus,
   Slash,
   Sparkles,
-} from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+} from '@/components/icons';
+import type { LucideIcon } from '@/components/icons';
 
 /**
  * A single Markdown example: the raw source the user types (`code`) and the

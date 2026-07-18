@@ -3,7 +3,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { PlusCircle, Trash2, TableIcon, Save, Upload } from 'lucide-react';
+import { PlusCircle, Trash2, TableIcon, Save, Upload } from '@/components/icons';
 import { TableData } from '@/lib/table-types';
 import { useTranslations } from 'next-intl';
 

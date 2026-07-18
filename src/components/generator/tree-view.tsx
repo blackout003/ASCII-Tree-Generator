@@ -3,7 +3,7 @@
 import React, { useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Folder, File, ChevronDown, ChevronRight, Trash2, Move, Edit3 } from 'lucide-react';
+import { Folder, File, ChevronDown, ChevronRight, Trash2, Move, Edit3 } from '@/components/icons';
 import { TreeNode } from '@/lib/types';
 import { useTranslations } from 'next-intl';
 

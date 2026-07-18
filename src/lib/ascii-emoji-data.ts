@@ -1,5 +1,5 @@
-import { Smile, Cat, Sparkles, Heart, Hand } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { Smile, Cat, Sparkles, Heart, Hand } from '@/components/icons';
+import type { LucideIcon } from '@/components/icons';
 
 /**
  * A single ASCII emoji: the glyph the user copies (`value`) and a `labelKey`

@@ -1,5 +1,5 @@
-import { FolderTree, Table, BarChart2, Type, BookMarked, Smile, FileText } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { FolderTree, Table, BarChart2, Type, BookMarked, Smile, FileText } from '@/components/icons';
+import type { LucideIcon } from '@/components/icons';
 
 export interface Tool {
   id: string;

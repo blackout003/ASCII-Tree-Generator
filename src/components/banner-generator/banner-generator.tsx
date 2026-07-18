@@ -12,7 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
-import { Type, X } from 'lucide-react';
+import { Type, X } from '@/components/icons';
 
 const DEFAULT_TEXT = 'Hello';
 

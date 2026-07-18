@@ -11,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { Settings } from 'lucide-react';
+import { Settings } from '@/components/icons';
 import { useTranslations } from 'next-intl';
 import { useRightSidebar } from '@/lib/contexts/right-sidebar-context';
 import { TreeNode, TreeOptions, ASCIITreeConfig } from '@/lib/types';
