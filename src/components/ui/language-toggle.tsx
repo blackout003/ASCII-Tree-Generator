@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Globe } from "lucide-react"
+import { Globe } from "@/components/icons"
 import { useLocale } from "next-intl"
 import { useRouter, usePathname } from "next/navigation"
 

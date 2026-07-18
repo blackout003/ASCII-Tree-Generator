@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(node -e \"const j=require\\('./src/i18n/locales/fr.json'\\); console.log\\(JSON.stringify\\(j.footer,null,2\\)\\);\")",
+      "Bash(node -e ' *)",
+      "WebFetch(domain:asciitree.fr)",
+      "WebSearch"
+    ]
+  }
+}

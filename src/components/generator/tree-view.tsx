@@ -3,7 +3,7 @@
 import React, { useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Folder, File, ChevronDown, ChevronRight, Trash2, Move, Edit3 } from 'lucide-react';
+import { Folder, File, ChevronDown, ChevronRight, Trash2, Move, Edit3 } from '@/components/icons';
 import { TreeNode } from '@/lib/types';
 import { useTranslations } from 'next-intl';
 
@@ -44,7 +44,6 @@ export function TreeView({
   onToggleExpansion,
   onAddNode,
   onDeleteNode,
-  onMoveNode,
   onDragStart,
   onDragEnd,
   onDragOver,
@@ -241,7 +240,7 @@ export function TreeView({
         )}
       </div>
     );
-  }, [editingNode, editingName, draggedNode, dragOverNode, onEditName, onStartEdit, onSaveEdit, onCancelEdit, onToggleExpansion, onAddNode, onDeleteNode, onMoveNode, onDragStart, onDragEnd, onDragOver, onDragLeave, onDrop, t]);
+  }, [editingNode, editingName, draggedNode, dragOverNode, onEditName, onStartEdit, onSaveEdit, onCancelEdit, onToggleExpansion, onAddNode, onDeleteNode, onDragStart, onDragEnd, onDragOver, onDragLeave, onDrop, t]);
 
   return (
     <div className="group">

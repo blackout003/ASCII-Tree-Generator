@@ -4,14 +4,13 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { File, Copy, Download, Sliders } from 'lucide-react';
+import { File, Copy, Download } from '@/components/icons';
 import { useTranslations } from 'next-intl';
 
 interface ASCIIPreviewProps {
   asciiOutput: string;
   onCopy: () => void;
   onDownload: () => void;
-  onOpenOptions?: () => void;
 }
 
 /**
@@ -21,7 +20,6 @@ export function ASCIIPreview({
   asciiOutput,
   onCopy,
   onDownload,
-  onOpenOptions,
 }: ASCIIPreviewProps) {
   const t = useTranslations();
 
@@ -46,12 +44,6 @@ export function ASCIIPreview({
             <Download className="w-4 h-4 mr-1" />
             {t('asciiPreview.download')}
           </Button>
-          {onOpenOptions && (
-            <Button onClick={onOpenOptions} size="sm" variant="outline" className="gap-2">
-              <Sliders className="w-4 h-4" />
-              {t('options.title')}
-            </Button>
-          )}
         </div>
         
         <Textarea

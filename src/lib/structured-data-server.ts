@@ -1,4 +1,8 @@
 // Données structurées pour le serveur (pas de 'use client')
+import { APP_VERSION } from '@/lib/changelog';
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://asciitree.fr';
+const IN_LANGUAGE = ['fr', 'en', 'es', 'de', 'it', 'pt', 'ru', 'ja'];
 
 export function generateWebsiteStructuredData() {
   return {
@@ -6,7 +10,7 @@ export function generateWebsiteStructuredData() {
     "@type": "WebApplication",
     "name": "ASCII Tree Generator",
     "description": "Générateur d'arbre ASCII gratuit et intuitif pour créer des structures de projet visuelles",
-    "url": "https://asciitree.fr",
+    "url": BASE_URL,
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Web Browser",
     "offers": {
@@ -26,7 +30,7 @@ export function generateWebsiteStructuredData() {
       "@type": "Organization",
       "name": "ASCII Tree Generator"
     },
-    "inLanguage": ["fr", "en", "es", "de", "it"],
+    "inLanguage": IN_LANGUAGE,
     "featureList": [
       "Génération d'arbres ASCII",
       "Interface drag & drop",
@@ -35,8 +39,8 @@ export function generateWebsiteStructuredData() {
       "Thème sombre/clair",
       "Prévisualisation en temps réel"
     ],
-    "screenshot": "https://asciitree.fr/og-image.png",
-    "softwareVersion": "1.0.0",
+    "screenshot": `${BASE_URL}/og-image.png`,
+    "softwareVersion": APP_VERSION,
     "datePublished": "2024-01-01",
     "dateModified": new Date().toISOString().split('T')[0]
   };
@@ -51,13 +55,13 @@ export function generateBreadcrumbStructuredData() {
         "@type": "ListItem",
         "position": 1,
         "name": "Accueil",
-        "item": "https://asciitree.fr/"
+        "item": `${BASE_URL}/`
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Générateur d'Arbre ASCII",
-        "item": "https://asciitree.fr/fr"
+        "item": `${BASE_URL}/fr`
       }
     ]
   };

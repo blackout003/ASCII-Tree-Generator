@@ -8,6 +8,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { SEO_CONFIG, getLocaleMetadata } from '@/lib/seo-config';
 import { Analytics, GoogleTagManagerNoScript } from '@/components/ui/analytics';
 import { Toaster } from '@/components/ui/toaster';
+import { StructuredData } from '@/components/ui/structured-data-server';
+import { generateWebsiteStructuredData, generateBreadcrumbStructuredData } from '@/lib/structured-data-server';
 import { locales, defaultLocale } from '@/i18n/locales';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -45,12 +47,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     alternates: {
       canonical: `/${locale}`,
       languages: {
-        'fr': '/fr',
-        'en': '/en',
-        'es': '/es',
-        'de': '/de',
-        'it': '/it',
-        'x-default': '/en',
+        ...Object.fromEntries(locales.map((l) => [l, `/${l}`])),
+        'x-default': `/${defaultLocale}`,
       },
     },
     openGraph: {
@@ -74,8 +72,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       title: localeMeta.title,
       description: localeMeta.description,
       images: ['/og-image.png'],
-      creator: SEO_CONFIG.social.twitter.handle,
-      site: SEO_CONFIG.social.twitter.site,
     },
     robots: {
       index: true,
@@ -130,6 +126,11 @@ export default async function LocaleLayout({
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>
+
+        {/* Structured data (JSON-LD) — rendered outside the client provider tree
+            so the <script> tags are server-only and never re-rendered on the client. */}
+        <StructuredData data={generateWebsiteStructuredData()} />
+        <StructuredData data={generateBreadcrumbStructuredData()} />
 
         {/* Analytics */}
         <Analytics />

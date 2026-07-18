@@ -11,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { Upload, Folder, File, X } from 'lucide-react';
+import { Upload, Folder, File, X } from '@/components/icons';
 import { TreeNode } from '@/lib/types';
 import { useTranslations } from 'next-intl';
 import { flattenTree } from '@/lib/tree-generator';

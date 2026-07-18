@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
@@ -11,10 +11,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { Settings, Sliders } from 'lucide-react';
-import { ThemeToggle } from '@/components/ui/theme-toggle';
-import { LanguageToggle } from '@/components/ui/language-toggle';
+import { Settings } from '@/components/icons';
 import { useTranslations } from 'next-intl';
+import { useRightSidebar } from '@/lib/contexts/right-sidebar-context';
 import { TreeNode, TreeOptions, ASCIITreeConfig } from '@/lib/types';
 import { generateASCIITree, sortTreeNodes, updateNodeName, toggleNodeExpansion, compressEmptyFolders, showOnlyFiles, showOnlyFolders, findNodeById } from '@/lib/tree-generator';
 import { validateSavedTreeData, validateNodeStructure } from '@/lib/validation';
@@ -79,12 +78,13 @@ export default function TreeGenerator() {
   const [editingName, setEditingName] = useState('');
   const [draggedNode, setDraggedNode] = useState<string | null>(null);
   const [dragOverNode, setDragOverNode] = useState<string | null>(null);
-  
+
   // États pour les modals de confirmation
   const [showClearConfirm, setShowClearConfirm] = useState(false);
   const [showLoadConfirm, setShowLoadConfirm] = useState(false);
   const [pendingFile, setPendingFile] = useState<File | null>(null);
-  const [optionsSheetOpen, setOptionsSheetOpen] = useState(false);
+
+  const { setContent } = useRightSidebar();
 
   /**
    * Ajoute un nouveau nœud (fichier ou dossier) à l'arbre
@@ -249,6 +249,14 @@ export default function TreeGenerator() {
     
     return output;
   }, [processedTreeData, asciiConfig, options.showFolderSlash, options.connectorStyle, options.indentSize, options.useTabs, options.rootPrefix, options.showRootPrefix, options.showFullPath, options.maxDepth, options.includeExtensions, options.showHidden, options.showLineNumbers, options.showSeparators]);
+
+  // Injecter le panneau d'options dans la sidebar droite
+  useEffect(() => {
+    setContent(
+      <TreeOptionsPanel options={options} onOptionsChange={setOptions} />
+    );
+    return () => setContent(null);
+  }, [options, setOptions, setContent]);
 
   /**
    * Copie la représentation ASCII de l'arbre dans le presse-papiers
@@ -578,17 +586,11 @@ export default function TreeGenerator() {
 
   return (
     <div className="container mx-auto p-6 max-w-7xl">
-      <div className="mb-8 flex justify-between items-start">
-        <div>
-          <h2 className="text-3xl font-bold mb-2">{t('title')}</h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            {t('description')}
-          </p>
-        </div>
-        <div className="flex gap-2">
-          <LanguageToggle />
-          <ThemeToggle />
-        </div>
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold mb-2">{t('title')}</h1>
+        <p className="text-gray-600 dark:text-gray-400">
+          {t('description')}
+        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -674,7 +676,6 @@ export default function TreeGenerator() {
           asciiOutput={asciiOutput}
           onCopy={copyToClipboard}
           onDownload={downloadASCII}
-          onOpenOptions={() => setOptionsSheetOpen(true)}
         />
       </div>
 
@@ -682,14 +683,6 @@ export default function TreeGenerator() {
       <div className="mt-6">
         <DragDropZone onFilesAdded={handleFilesAdded} />
       </div>
-
-      {/* Options de configuration */}
-      <TreeOptionsPanel
-        options={options}
-        onOptionsChange={setOptions}
-        open={optionsSheetOpen}
-        onOpenChange={setOptionsSheetOpen}
-      />
 
       {/* Modal de confirmation pour effacer tout */}
       <Dialog open={showClearConfirm} onOpenChange={setShowClearConfirm}>

@@ -57,10 +57,11 @@
     "copyright": "© {year} asciitree.fr. Alle Rechte vorbehalten.",
     "legalNotice": "Impressum",
     "privacyPolicy": "Datenschutz",
-    "tagline": "Erstelle ASCII-Baumstrukturen für READMEs und Dokumentationen.",
+    "tagline": "Das kostenlose ASCII-Toolkit: Dateibäume, Tabellen, Diagramme und Banner, direkt im Browser.",
     "links": "Links",
     "sourceCode": "Quellcode",
-    "madeWith": "Gemacht mit ♥ von"
+    "madeWith": "Gemacht mit ♥ von",
+    "tools": "Tools"
   },
   "errors": {
     "loadError": "Fehler beim Laden der Datei. Bitte überprüfe, dass es sich um eine gültige JSON-Datei handelt.",
@@ -80,44 +81,406 @@
     "cancel": "Abbrechen"
   },
   "seoContent": {
-    "title": "ASCII-Dateibaum-Generator",
-    "intro": "Der ASCII-Baum-Generator ist ein kostenloses Online-Tool, mit dem Sie einfach visuelle Darstellungen Ihrer Projektstruktur erstellen können. Perfekt zum Dokumentieren Ihrer Projekte, Erstellen von Diagrammen für Ihre README.md-Dateien und Teilen Ihrer Code-Organisation mit Ihrem Team.",
+    "title": "Kostenloses ASCII-Toolkit online",
+    "intro": "ASCII Tools vereint vier Online-Generatoren, um deine Ideen in kopierfertige ASCII-Kunst zu verwandeln: Dateibäume, Tabellen, Minidiagramme (Sparklines) und Textbanner. Alles läuft direkt im Browser, ohne Anmeldung oder Installation, und das Ergebnis passt überall hin: README, technische Doku, Code-Kommentare, Terminal oder Nachrichten.",
     "whyUse": {
-      "title": "Warum einen ASCII-Baum für Ihre Dokumentation verwenden?",
-      "para1": "Ob Sie an einem Open-Source-Projekt arbeiten, eine Webanwendung dokumentieren oder die Architektur eines professionellen Projekts präsentieren, ein ASCII-Dateibaum bietet mehrere Vorteile:",
-      "benefit1": "Klare Dokumentation: Visualisieren Sie Ihre gesamte Projektstruktur in nur wenigen Textzeilen",
-      "benefit2": "Universelle Kompatibilität: Einfaches Textformat, das korrekt auf GitHub, GitLab, Bitbucket und allen Texteditoren angezeigt wird",
-      "benefit3": "Einfache Integration: Kopieren und fügen Sie direkt in Ihre README.md-Dateien ein, ohne zusätzliche Formatierung",
-      "benefit4": "Versionskontrolle-freundlich: Strukturänderungen sind leicht in Ihren Git-Commits nachzuverfolgen"
+      "title": "Warum ASCII-Tools verwenden?",
+      "para1": "ASCII-Text ist universell: Er sieht überall gleich aus, ohne von Bildern oder komplexer Formatierung abzuhängen. Ob du ein Projekt dokumentierst, ein README vorbereitest oder ein Terminal darstellst – diese Tools bieten mehrere Vorteile:",
+      "benefit1": "Universelle Kompatibilität: wird korrekt auf GitHub, GitLab, im Terminal und in jedem Texteditor angezeigt",
+      "benefit2": "Sofortige Integration: füge das Ergebnis ohne zusätzliche Formatierung in Markdown, Code oder eine E-Mail ein",
+      "benefit3": "Versionierungsfreundlich: Änderungen bleiben lesbar und in deinen Git-Commits leicht nachvollziehbar",
+      "benefit4": "Leicht und schnell: reiner Text, keine schweren Bilder oder externen Abhängigkeiten"
     },
     "howToUse": {
-      "title": "Wie generiere ich einen Baum für Ihr README?",
-      "para1": "Unser ASCII-Baum-Generator vereinfacht die Erstellung von Dateistrukturen für Ihre Projekte. So verwenden Sie es:",
-      "step1": "Ziehen Sie Ihre Ordner und Dateien direkt in die Benutzeroberfläche oder verwenden Sie den Dateiselektor",
-      "step2": "Organisieren Sie Ihre Baumstruktur, indem Sie Elemente nach Bedarf hinzufügen, ändern oder löschen",
-      "step3": "Konfigurieren Sie Optionen: alphabetische Sortierung, maximale Tiefe, Anzeige versteckter Dateien",
-      "step4": "Kopieren Sie das generierte ASCII-Ergebnis und fügen Sie es in Ihre README.md-Datei oder Dokumentation ein",
-      "para2": "Das Tool generiert automatisch eine Dateistruktur im ASCII-Format, das mit Markdown kompatibel ist und es ideal für Ihre GitHub-Projekte, technische Dokumentation und Code-Struktur-Präsentationen macht."
+      "title": "Wie funktioniert es?",
+      "para1": "Jedes Tool folgt demselben einfachen Ablauf, von der Auswahl des Tools bis zum finalen Kopieren:",
+      "step1": "Wähle das passende Tool: Dateibaum, Tabelle, ASCII-Diagramm oder Textbanner",
+      "step2": "Gib deine Daten ein: Dateistruktur, Tabellenwerte, Zahlenreihen oder zu gestaltenden Text",
+      "step3": "Passe das Ergebnis mit den Optionen an: Stil, Sortierung, Ausrichtung, Zeichenformat",
+      "step4": "Kopiere das erzeugte ASCII und füge es in dein README, deine Doku oder dein Terminal ein",
+      "para2": "Alles wird in Echtzeit in deinem Browser berechnet: Es werden keine Daten an einen Server gesendet, und das Ergebnis aktualisiert sich sofort bei jeder Änderung."
     },
     "useCases": {
-      "title": "Strukturbeispiele und Anwendungsfälle",
-      "para1": "Der ASCII-Baum-Generator ist besonders nützlich für:",
-      "useCase1": "Visualisieren der Ordnerstruktur eines Webprojekts (React, Next.js, Vue.js...)",
-      "useCase2": "Dokumentieren der Organisation eines Python-Projekts mit seinen Modulen und Paketen",
-      "useCase3": "Erstellen von Baumdiagrammen für Node.js-Projekte und ihre Dateistruktur",
-      "useCase4": "Präsentieren der Projektarchitektur in einer professionellen README.md-Datei",
-      "para2": "Ob Sie die Struktur eines Windows-Projekts mit dem tree-Befehl visualisieren müssen oder einen Baum für ein Linux-Projekt erstellen möchten, unser Online-Tool funktioniert auf allen Betriebssystemen ohne Installation."
+      "title": "Anwendungsfälle",
+      "para1": "ASCII-Tools sind in vielen alltäglichen Situationen für Entwickler und technische Redakteure nützlich:",
+      "useCase1": "Die Struktur eines Webprojekts (React, Next.js, Vue.js…) mit einem übersichtlichen Dateibaum dokumentieren",
+      "useCase2": "Vergleichsdaten in einer ausgerichteten ASCII-Tabelle direkt in einem README präsentieren",
+      "useCase3": "Trends (Umsatz, Traffic, Leistung) mit kompakten Sparklines in deinen Berichten zusammenfassen",
+      "useCase4": "Gestaltete Textbanner für Skript-Header, Logs oder Willkommensnachrichten im Terminal erstellen",
+      "para2": "Ob unter Windows, macOS oder Linux – diese Online-Tools funktionieren auf jedem Betriebssystem, ganz ohne Installation."
     },
     "features": {
-      "title": "Generator-Funktionen",
-      "para1": "Unser ASCII-Baum-Generator bietet viele Funktionen, um alle Ihre Dokumentationsbedürfnisse zu erfüllen:",
-      "feature1": "Intuitive Drag & Drop-Oberfläche zum schnellen Importieren Ihrer Dateien und Ordner",
-      "feature2": "Interaktive Bearbeitung: Hinzufügen, Ändern oder Löschen von Elementen mit wenigen Klicks",
-      "feature3": "Einfacher Export: Kopieren Sie das Ergebnis oder laden Sie es als Textdatei herunter",
-      "feature4": "Erweiterte Optionen: Passen Sie Tiefe, Sortierung und Anzeige nach Ihren Wünschen an",
-      "feature5": "Echtzeit-Vorschau Ihrer ASCII-Baumstruktur",
-      "feature6": "Mehrsprachige Unterstützung für internationale Nutzung",
-      "para2": "Alle diese Tools sind kostenlos, ohne Registrierung und direkt in Ihrem Webbrowser verfügbar."
+      "title": "Die verfügbaren Tools",
+      "para1": "ASCII Tools bündelt vier ergänzende Generatoren, alle kostenlos und ohne Anmeldung:",
+      "feature1": "ASCII-Baum: Datei- und Ordnerbäume per Drag & Drop erstellen, ideal für deine READMEs",
+      "feature2": "ASCII-Tabelle: Daten in ausgerichtete Tabellen verwandeln, bereit zum Einfügen in Code oder Markdown",
+      "feature3": "ASCII-Diagramme: Zahlenreihen als kompakte Minidiagramme (Sparklines) visualisieren",
+      "feature4": "Textbanner: Text in große, gestaltete ASCII-Banner umwandeln",
+      "feature5": "Echtzeit-Vorschau und Export mit einem Klick (Kopieren oder Herunterladen)",
+      "feature6": "Mehrsprachige Oberfläche in 8 Sprachen, mit hellem und dunklem Modus",
+      "para2": "Alle diese Tools sind kostenlos, ohne Anmeldung und direkt in deinem Webbrowser verfügbar."
+    }
+  },
+  "nav": {
+    "home": "Startseite",
+    "tools": "Werkzeuge",
+    "asciiTree": "ASCII-Baum",
+    "asciiTable": "ASCII-Tabelle",
+    "sparkline": "ASCII-Diagramme",
+    "banner": "Textbanner",
+    "comingSoon": "Demnächst",
+    "openTool": "Werkzeug öffnen",
+    "markdownGuide": "Markdown-Leitfaden",
+    "readmeGuide": "README-Leitfaden",
+    "resources": "Ressourcen",
+    "asciiEmoji": "ASCII-Emojis",
+    "markdownEditor": "Markdown-Editor"
+  },
+  "tableGenerator": {
+    "editor": {
+      "title": "Tabellen-Editor",
+      "addRow": "Zeile hinzufügen",
+      "addColumn": "Spalte hinzufügen",
+      "deleteRow": "Zeile löschen",
+      "deleteColumn": "Spalte löschen",
+      "columnPlaceholder": "Spalte",
+      "save": "Speichern",
+      "load": "Laden",
+      "clearAll": "Alles löschen"
+    },
+    "preview": {
+      "title": "ASCII-Vorschau",
+      "copy": "Kopieren",
+      "download": "Herunterladen",
+      "placeholder": "Ihre ASCII-Tabelle wird hier angezeigt..."
+    },
+    "options": {
+      "title": "Konfigurationsoptionen",
+      "styleSection": "Stil",
+      "displaySection": "Anzeige",
+      "borderStyle": "Rahmenstil",
+      "alignment": "Ausrichtung",
+      "alignLeft": "Links",
+      "alignCenter": "Mitte",
+      "alignRight": "Rechts",
+      "padding": "Zellenabstand",
+      "hasHeader": "Kopfzeile anzeigen",
+      "styleSimple": "Einfach (Striche)"
+    },
+    "errors": {
+      "saveSuccess": "Tabelle erfolgreich gespeichert!",
+      "saveError": "Fehler beim Speichern.",
+      "loadSuccess": "Tabelle erfolgreich geladen!",
+      "loadError": "Fehler beim Laden. Bitte prüfen Sie die JSON-Datei.",
+      "loadConfirmTitle": "Laden bestätigen",
+      "loadConfirmDescription": "Aktuelle Daten werden überschrieben. Diese Aktion kann nicht rückgängig gemacht werden.",
+      "clearConfirmTitle": "Löschen bestätigen",
+      "clearConfirmDescription": "Alle Daten werden gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.",
+      "confirm": "Bestätigen",
+      "cancel": "Abbrechen",
+      "clearSuccess": "Tabelle erfolgreich zurückgesetzt!"
+    },
+    "copySuccess": "Tabelle in die Zwischenablage kopiert!",
+    "copyError": "Fehler beim Kopieren.",
+    "downloadError": "Fehler beim Herunterladen."
+  },
+  "bannerGenerator": {
+    "input": {
+      "title": "Text umwandeln",
+      "label": "Ihr Text",
+      "placeholder": "z. B.: Hello",
+      "hint": "Buchstaben, Ziffern und einfache Satzzeichen. Maximal 30 Zeichen.",
+      "clear": "Löschen"
+    },
+    "preview": {
+      "title": "ASCII-Vorschau",
+      "copy": "Kopieren",
+      "download": "Herunterladen",
+      "placeholder": "Ihr ASCII-Banner erscheint hier..."
+    },
+    "options": {
+      "title": "Optionen",
+      "styleSection": "Schriftart",
+      "layoutSection": "Layout",
+      "font": "ASCII-Schriftart",
+      "fontStandard": "Standard (klassisch)",
+      "fontBig": "Big (groß)",
+      "fontSmall": "Klein (kompakt)",
+      "fontMini": "Mini (winzig)",
+      "fontSlant": "Schräg (kursiv)",
+      "fontLean": "Lean (schlank)",
+      "fontBlock": "Block (# Blöcke)",
+      "fontDigital": "Digital (LCD)",
+      "fontDoom": "Doom (Rahmen)",
+      "fontShadow": "Schatten (rund o)",
+      "align": "Ausrichtung",
+      "alignLeft": "Links",
+      "alignCenter": "Mitte",
+      "alignRight": "Rechts",
+      "spacing": "Buchstabenabstand"
+    },
+    "errors": {
+      "copySuccess": "Banner in die Zwischenablage kopiert!",
+      "copyError": "Fehler beim Kopieren.",
+      "downloadError": "Fehler beim Herunterladen."
+    }
+  },
+  "sparklineGenerator": {
+    "input": {
+      "title": "Daten",
+      "placeholder": "Zahlen durch Komma oder Leerzeichen getrennt eingeben...\nBsp: 1, 3, 5, 2, 8, 4",
+      "valuesFound": "{count} Wert(e) gefunden",
+      "parseError": "Ungültiger Wert: \"{value}\"",
+      "clear": "Löschen",
+      "exampleLabel": "Beispiel:",
+      "example": "1, 3, 5, 2, 8, 4"
+    },
+    "preview": {
+      "title": "Vorschau",
+      "copy": "Kopieren",
+      "download": "Herunterladen",
+      "placeholder": "Ihr ASCII-Diagramm erscheint hier..."
+    },
+    "options": {
+      "title": "Optionen",
+      "chartType": "Diagrammtyp",
+      "typeSpark": "Sparkline (Zeile)",
+      "typeBar": "Vertikale Balken",
+      "barHeight": "Höhe (Zeilen)",
+      "showValues": "Werte anzeigen",
+      "barSpacing": "Balkenabstand",
+      "fillChar": "Füllzeichen",
+      "fillBlock": "█ Voller Block",
+      "fillShade": "▓ Schattiert",
+      "fillHash": "# Raute",
+      "fillPipe": "| Senkrechter Strich"
+    },
+    "errors": {
+      "copySuccess": "Diagramm in die Zwischenablage kopiert!",
+      "copyError": "Fehler beim Kopieren.",
+      "downloadError": "Fehler beim Herunterladen."
+    }
+  },
+  "home": {
+    "heroBadge": "4 kostenlose ASCII-Tools, ohne Anmeldung",
+    "heroTitle": "Das All-in-One-ASCII-Toolkit",
+    "heroSubtitle": "Erstelle Dateibäume, Tabellen, Diagramme und Banner als ASCII-Text. Direkt im Browser, bereit zum Kopieren und Einfügen.",
+    "open": "Tool öffnen",
+    "tools": {
+      "asciiTree": {
+        "desc": "Erstelle übersichtliche Datei- und Ordnerbäume für README, Doku und Projekte."
+      },
+      "asciiTable": {
+        "desc": "Verwandle Daten in ausgerichtete ASCII-Tabellen, bereit für Code oder Markdown."
+      },
+      "sparkline": {
+        "desc": "Visualisiere Zahlenreihen als kompakte ASCII-Minidiagramme für deine Berichte."
+      },
+      "banner": {
+        "desc": "Verwandle Text in große, stilisierte ASCII-Banner für Header und Terminals."
+      },
+      "markdownGuide": {
+        "desc": "Die gesamte Markdown-Syntax erklärt – Quelltext und Ergebnis nebeneinander."
+      },
+      "asciiEmoji": {
+        "desc": "Eine Sammlung von ASCII-Emoticons und Kaomoji zum Kopieren mit einem Klick."
+      },
+      "markdownEditor": {
+        "desc": "Schreiben Sie Markdown mit Live-Vorschau, Formatierungsleiste und Code-Highlighting — kopieren oder herunterladen per Klick."
+      }
+    }
+  },
+  "markdownGuide": {
+    "badge": "SPICKZETTEL",
+    "title": "Markdown-Leitfaden",
+    "subtitle": "Alles, was du zum Schreiben in Markdown brauchst: Jedes Syntaxelement wird links im Quelltext und rechts im Ergebnis gezeigt.",
+    "tocTitle": "Inhalt",
+    "markdown": "Markdown",
+    "result": "Ergebnis",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "copyError": "Kopieren fehlgeschlagen",
+    "flavorNote": "Markdown ist ein Standard, aber einige Elemente (Tabellen, Kontrollkästchen, Fußnoten, Emoji) hängen von der verwendeten Render-Engine ab.",
+    "categories": {
+      "headings": {
+        "title": "Überschriften",
+        "desc": "Sechs Überschriftenebenen, von groß bis klein, mit dem Zeichen #."
+      },
+      "paragraphs": {
+        "title": "Absätze",
+        "desc": "Trenne Absätze mit einer Leerzeile und erzwinge bei Bedarf einen Zeilenumbruch."
+      },
+      "emphasis": {
+        "title": "Hervorhebung",
+        "desc": "Setze Text fett, kursiv oder durchgestrichen."
+      },
+      "blockquotes": {
+        "title": "Zitate",
+        "desc": "Zitiere Text über eine oder mehrere Zeilen und verschachtele Zitate."
+      },
+      "lists": {
+        "title": "Listen",
+        "desc": "Aufzählungen, nummerierte, verschachtelte und Aufgabenlisten."
+      },
+      "code": {
+        "title": "Code",
+        "desc": "Inline-Code, Codeblöcke und Syntaxhervorhebung nach Sprache."
+      },
+      "links": {
+        "title": "Links",
+        "desc": "Einfache Links, Links mit Titel, Autolinks oder Referenzlinks."
+      },
+      "images": {
+        "title": "Bilder",
+        "desc": "Füge Bilder mit Alternativtext, Titel oder anklickbarem Link ein."
+      },
+      "tables": {
+        "title": "Tabellen",
+        "desc": "Erstelle Tabellen und richte Spalten links, zentriert oder rechts aus."
+      },
+      "rules": {
+        "title": "Trennlinien",
+        "desc": "Trenne Abschnitte mit einer horizontalen Linie."
+      },
+      "escaping": {
+        "title": "Maskierung",
+        "desc": "Zeige Sonderzeichen wörtlich an, statt sie interpretieren zu lassen."
+      },
+      "extended": {
+        "title": "Erweitertes Markdown",
+        "desc": "Fußnoten, Emoji und eingebettetes HTML (je nach Engine)."
+      }
+    }
+  },
+  "asciiEmoji": {
+    "badge": "SPICKZETTEL",
+    "title": "ASCII-Emojis",
+    "subtitle": "Eine Sammlung von Emoticons und Kaomoji zum Kopieren — vom klassischen :) bis zu japanischen Gesichtern. Klicke ein Emoji an, um es zu kopieren.",
+    "tocTitle": "Inhalt",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "copyError": "Kopieren nicht möglich",
+    "flavorNote": "Diese Emojis bestehen aus Textzeichen: Am besten sehen sie in einer Monospace-Schrift aus. Manche Kaomoji nutzen Unicode-Zeichen, die je nach Schrift unterschiedlich aussehen können.",
+    "categories": {
+      "classics": {
+        "title": "Klassiker",
+        "desc": "Die zeitlosen Emoticons — neige den Kopf nach links, um sie zu lesen."
+      },
+      "kaomoji": {
+        "title": "Kaomoji",
+        "desc": "Gesichter im japanischen Stil, die man aufrecht liest."
+      },
+      "animals": {
+        "title": "Tiere",
+        "desc": "Ein paar Tierchen aus ASCII-Zeichen."
+      },
+      "love": {
+        "title": "Liebe",
+        "desc": "Herzen und Küsse für deine liebevollen Nachrichten."
+      },
+      "actions": {
+        "title": "Aktionen",
+        "desc": "Kaomoji mitten in Aktion: winken, tanzen, kämpfen."
+      }
+    },
+    "labels": {
+      "happy": "Fröhlich",
+      "laugh": "Lachen",
+      "wink": "Zwinkern",
+      "sad": "Traurig",
+      "cry": "Weinen",
+      "tongue": "Zunge raus",
+      "unsure": "Unsicher",
+      "surprised": "Überrascht",
+      "heart": "Herz",
+      "brokenHeart": "Gebrochenes Herz",
+      "kiss": "Kuss",
+      "neutral": "Neutral",
+      "shrug": "Schulterzucken",
+      "tableFlip": "Tisch umwerfen",
+      "lenny": "Lenny",
+      "cool": "Cool",
+      "disapproval": "Missbilligung",
+      "hug": "Umarmung",
+      "cheer": "Jubel",
+      "sparkle": "Funkeln",
+      "cry2": "In Tränen",
+      "cat": "Katze",
+      "bear": "Bär",
+      "fish": "Fisch",
+      "bunny": "Hase",
+      "cute": "Niedlich",
+      "sunglasses": "Sonnenbrille",
+      "angry": "Wütend",
+      "embarrassed": "Verlegen",
+      "happyTears": "Freudentränen",
+      "laughHard": "Totlachen",
+      "rage": "Wut",
+      "sob": "Schluchzen",
+      "smirk": "Grinsen",
+      "shock": "Schock",
+      "delight": "Entzücken",
+      "suspicious": "Misstrauisch",
+      "flex": "Muskeln zeigen",
+      "confused": "Verwirrt",
+      "cat2": "Kätzchen",
+      "dog": "Hund",
+      "mouse": "Maus",
+      "squid": "Tintenfisch",
+      "inLove": "Verliebt",
+      "kissHeart": "Kuss mit Herz",
+      "blowKiss": "Kuss zuwerfen",
+      "hearts": "Herzen",
+      "hugLove": "Große Umarmung",
+      "armsUp": "Arme hoch",
+      "wave": "Winken",
+      "run": "Rennen",
+      "dance": "Tanzen",
+      "tableBack": "Tisch zurück",
+      "fight": "Kampfbereit"
+    }
+  },
+  "markdownEditor": {
+    "editor": {
+      "title": "Editor",
+      "placeholder": "Schreiben Sie hier Ihr Markdown...",
+      "clear": "Löschen"
+    },
+    "preview": {
+      "title": "Vorschau",
+      "copyMarkdown": "MD kopieren",
+      "copyHtml": "HTML kopieren",
+      "download": "Herunterladen",
+      "placeholder": "Ihr gerendertes Markdown erscheint hier..."
+    },
+    "toolbar": {
+      "bold": "Fett",
+      "italic": "Kursiv",
+      "heading": "Überschrift",
+      "quote": "Zitat",
+      "list": "Liste",
+      "code": "Code",
+      "link": "Link"
+    },
+    "placeholders": {
+      "bold": "fetter Text",
+      "italic": "kursiver Text",
+      "code": "Code",
+      "link": "Text"
+    },
+    "options": {
+      "title": "Optionen",
+      "viewMode": "Ansicht",
+      "viewSplit": "Geteilt",
+      "viewEditor": "Nur Editor",
+      "viewPreview": "Nur Vorschau",
+      "boxedPreview": "Vorschau mit Rahmen"
+    },
+    "errors": {
+      "copyMarkdownSuccess": "Markdown in die Zwischenablage kopiert!",
+      "copyHtmlSuccess": "HTML in die Zwischenablage kopiert!",
+      "copyError": "Kopieren fehlgeschlagen.",
+      "downloadError": "Download fehlgeschlagen."
     }
   }
 }

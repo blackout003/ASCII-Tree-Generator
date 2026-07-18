@@ -57,10 +57,11 @@
     "copyright": "© {year} asciitree.fr. All rights reserved.",
     "legalNotice": "法的情報",
     "privacyPolicy": "プライバシーポリシー",
-    "tagline": "READMEやドキュメント用のASCIIツリー構造を生成します。",
+    "tagline": "無料のASCIIツールキット：ファイルツリー、表、グラフ、バナーをブラウザ上で。",
     "links": "リンク",
     "sourceCode": "ソースコード",
-    "madeWith": "♥ を込めて制作"
+    "madeWith": "♥ を込めて制作",
+    "tools": "ツール"
   },
   "errors": {
     "loadError": "ファイルの読み込みエラーです。有効なJSONファイルであることを確認してください。",
@@ -80,44 +81,406 @@
     "cancel": "キャンセル"
   },
   "seoContent": {
-    "title": "ASCIIファイルツリージェネレーター",
-    "intro": "ASCIIツリージェネレーターは、プロジェクト構造の視覚的な表現を簡単に作成できる無料のオンラインツールです。プロジェクトのドキュメント化、README.mdファイルのダイアグラム作成、チームとのコード構成の共有に最適です。",
+    "title": "無料オンラインASCIIツールキット",
+    "intro": "ASCII Tools は、アイデアをコピー＆ペーストできるASCIIアートに変える4つのオンラインジェネレーターを集めています。ファイルツリー、表、ミニグラフ（スパークライン）、テキストバナー。すべてブラウザ上で動作し、登録もインストールも不要。生成結果はREADME、技術ドキュメント、コードコメント、ターミナル、メッセージなど、どこにでも貼り付けられます。",
     "whyUse": {
-      "title": "ドキュメントにASCIIツリーを使う理由は？",
-      "para1": "オープンソースプロジェクトに取り組んでいる場合でも、Webアプリケーションをドキュメント化している場合でも、プロフェッショナルなプロジェクトのアーキテクチャを提示している場合でも、ASCIIファイルツリーにはいくつかの利点があります：",
-      "benefit1": "明確なドキュメント：プロジェクト全体の構造を数行のテキストで可視化",
-      "benefit2": "ユニバーサル互換性：GitHub、GitLab、Bitbucketとすべてのテキストエディターで正しく表示されるシンプルなテキスト形式",
-      "benefit3": "簡単な統合：追加フォーマットなしにREADME.mdファイルへ直接コピー＆ペースト",
-      "benefit4": "バージョン管理に優しい：構造の変更はGitコミットで簡単に追跡可能"
+      "title": "なぜASCIIツールを使うのか？",
+      "para1": "ASCIIテキストは万能です。画像や複雑な書式に頼らず、どこでも同じように表示されます。プロジェクトの文書化、READMEの作成、ターミナルの表現など、これらのツールには多くの利点があります：",
+      "benefit1": "普遍的な互換性：GitHub、GitLab、ターミナル、あらゆるテキストエディタで正しく表示",
+      "benefit2": "即座に統合：追加の書式なしで、Markdownやコード、メールに結果を貼り付け可能",
+      "benefit3": "バージョン管理に最適：変更が読みやすく、Gitコミットで追跡しやすい",
+      "benefit4": "軽量で高速：重い画像や外部依存のないプレーンテキスト"
     },
     "howToUse": {
-      "title": "READMEのツリーを生成する方法は？",
-      "para1": "ASCIIツリージェネレーターは、プロジェクトのファイル構造の作成を簡単にします。使い方は以下の通りです：",
-      "step1": "フォルダやファイルをインターフェースに直接ドラッグ＆ドロップするか、ファイルセレクターを使用してください",
-      "step2": "必要に応じて要素を追加、変更、削除してツリー構造を整理してください",
-      "step3": "オプションを設定：アルファベット順の並べ替え、最大深度、隠しファイルの表示",
-      "step4": "生成されたASCII結果をコピーして、README.mdファイルやドキュメントに貼り付けてください",
-      "para2": "このツールはMarkdown互換のASCII形式でファイルツリーを自動生成するため、GitHubプロジェクト、技術ドキュメント、コード構造のプレゼンテーションに理想的です。"
+      "title": "使い方",
+      "para1": "どのツールも、ツールを選ぶところから最後のコピー＆ペーストまで、同じシンプルな流れです：",
+      "step1": "適したツールを選ぶ：ファイルツリー、表、ASCIIグラフ、テキストバナー",
+      "step2": "データを入力：ファイル構造、表の値、数値の系列、装飾するテキスト",
+      "step3": "オプションで出力をカスタマイズ：スタイル、並び順、揃え、文字フォーマット",
+      "step4": "生成されたASCIIをコピーし、README・ドキュメント・ターミナルに貼り付け",
+      "para2": "すべてブラウザ上でリアルタイムに計算されます。データはサーバーに送信されず、変更するたびに結果が即座に更新されます。"
     },
     "useCases": {
-      "title": "構造例とユースケース",
-      "para1": "ASCIIツリージェネレーターは特に以下の用途に役立ちます：",
-      "useCase1": "Webプロジェクト（React、Next.js、Vue.js...）のフォルダ構造の可視化",
-      "useCase2": "モジュールとパッケージを含むPythonプロジェクトの構成のドキュメント化",
-      "useCase3": "Node.jsプロジェクトとそのファイル構造のツリーダイアグラムの作成",
-      "useCase4": "プロフェッショナルなREADME.mdファイルでのプロジェクトアーキテクチャの提示",
-      "para2": "treeコマンドを使ってWindowsプロジェクトの構造を可視化したい場合でも、Linuxプロジェクトのツリーを作成したい場合でも、当オンラインツールはインストール不要ですべてのOSで動作します。"
+      "title": "活用シーン",
+      "para1": "ASCIIツールは、開発者やテクニカルライターの日常のさまざまな場面で役立ちます：",
+      "useCase1": "Webプロジェクト（React、Next.js、Vue.js…）の構造を見やすいファイルツリーで文書化",
+      "useCase2": "比較データを整列したASCII表でREADMEに直接掲載",
+      "useCase3": "傾向（売上、トラフィック、パフォーマンス）をコンパクトなスパークラインでレポートに要約",
+      "useCase4": "スクリプトのヘッダー、ログ、ターミナルの歓迎メッセージ用に装飾テキストバナーを作成",
+      "para2": "Windows、macOS、Linuxのいずれでも、これらのオンラインツールはあらゆるOSでインストール不要で動作します。"
     },
     "features": {
-      "title": "ジェネレーターの機能",
-      "para1": "ASCIIツリージェネレーターは、すべてのドキュメントニーズに対応する多くの機能を提供しています：",
-      "feature1": "ファイルやフォルダをすばやくインポートできる直感的なドラッグ＆ドロップインターフェース",
-      "feature2": "インタラクティブな編集：数回のクリックで要素の追加、変更、削除が可能",
-      "feature3": "シンプルなエクスポート：結果をコピーするかテキストファイルとしてダウンロード",
-      "feature4": "高度なオプション：好みに合わせて深度、並べ替え、表示をカスタマイズ",
-      "feature5": "ASCIIツリー構造のリアルタイムプレビュー",
-      "feature6": "国際的な使用のための多言語サポート",
-      "para2": "これらのツールはすべて無料で、登録不要でウェブブラウザから直接利用できます。"
+      "title": "利用できるツール",
+      "para1": "ASCII Tools は、すべて無料・登録不要の4つの補完的なジェネレーターを揃えています：",
+      "feature1": "ASCIIツリー：ドラッグ＆ドロップでファイル/フォルダーツリーを作成、READMEに最適",
+      "feature2": "ASCIIテーブル：データを整列した表に変換し、コードやMarkdownにそのまま貼り付け",
+      "feature3": "ASCIIグラフ：数値の系列をコンパクトなミニグラフ（スパークライン）で可視化",
+      "feature4": "テキストバナー：テキストを大きな装飾ASCIIバナーに変換",
+      "feature5": "リアルタイムプレビューとワンクリックのエクスポート（コピーまたはダウンロード）",
+      "feature6": "8言語対応の多言語インターフェース、ライト／ダークモード対応",
+      "para2": "これらのツールはすべて無料で、登録不要、ブラウザ上で直接利用できます。"
+    }
+  },
+  "nav": {
+    "home": "ホーム",
+    "tools": "ツール",
+    "asciiTree": "ASCIIツリー",
+    "asciiTable": "ASCIIテーブル",
+    "sparkline": "ASCIIグラフ",
+    "banner": "テキストバナー",
+    "comingSoon": "近日公開",
+    "openTool": "ツールを開く",
+    "markdownGuide": "Markdown ガイド",
+    "readmeGuide": "READMEガイド",
+    "resources": "リソース",
+    "asciiEmoji": "ASCII絵文字",
+    "markdownEditor": "Markdownエディタ"
+  },
+  "tableGenerator": {
+    "editor": {
+      "title": "テーブルエディター",
+      "addRow": "行を追加",
+      "addColumn": "列を追加",
+      "deleteRow": "行を削除",
+      "deleteColumn": "列を削除",
+      "columnPlaceholder": "列",
+      "save": "保存",
+      "load": "読込",
+      "clearAll": "すべて削除"
+    },
+    "preview": {
+      "title": "ASCIIプレビュー",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "placeholder": "ASCIIテーブルがここに表示されます..."
+    },
+    "options": {
+      "title": "設定オプション",
+      "styleSection": "スタイル",
+      "displaySection": "表示",
+      "borderStyle": "ボーダースタイル",
+      "alignment": "配置",
+      "alignLeft": "左",
+      "alignCenter": "中央",
+      "alignRight": "右",
+      "padding": "セルパディング",
+      "hasHeader": "ヘッダーを表示",
+      "styleSimple": "シンプル（ダッシュ）"
+    },
+    "errors": {
+      "saveSuccess": "テーブルを保存しました！",
+      "saveError": "保存中にエラーが発生しました。",
+      "loadSuccess": "テーブルを読み込みました！",
+      "loadError": "読み込みエラー。有効なJSONファイルか確認してください。",
+      "loadConfirmTitle": "読み込みの確認",
+      "loadConfirmDescription": "現在のデータは上書きされます。この操作は元に戻せません。",
+      "clearConfirmTitle": "削除の確認",
+      "clearConfirmDescription": "すべてのデータが削除されます。この操作は元に戻せません。",
+      "confirm": "確認",
+      "cancel": "キャンセル",
+      "clearSuccess": "テーブルをリセットしました！"
+    },
+    "copySuccess": "テーブルをクリップボードにコピーしました！",
+    "copyError": "コピーに失敗しました。",
+    "downloadError": "ダウンロードに失敗しました。"
+  },
+  "bannerGenerator": {
+    "input": {
+      "title": "変換するテキスト",
+      "label": "テキスト",
+      "placeholder": "例: Hello",
+      "hint": "文字、数字、基本的な句読点。最大30文字。",
+      "clear": "クリア"
+    },
+    "preview": {
+      "title": "ASCIIプレビュー",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "placeholder": "ASCIIバナーがここに表示されます..."
+    },
+    "options": {
+      "title": "オプション",
+      "styleSection": "フォント",
+      "layoutSection": "レイアウト",
+      "font": "ASCIIフォント",
+      "fontStandard": "Standard（クラシック）",
+      "fontBig": "Big（大型）",
+      "fontSmall": "Small（コンパクト）",
+      "fontMini": "Mini（超小型）",
+      "fontSlant": "Slant（斜体）",
+      "fontLean": "Lean（細字）",
+      "fontBlock": "Block（#ブロック）",
+      "fontDigital": "Digital（LCD）",
+      "fontDoom": "Doom（枠線）",
+      "fontShadow": "Shadow（丸み o）",
+      "align": "揃え",
+      "alignLeft": "左揃え",
+      "alignCenter": "中央揃え",
+      "alignRight": "右揃え",
+      "spacing": "文字間隔"
+    },
+    "errors": {
+      "copySuccess": "バナーをクリップボードにコピーしました！",
+      "copyError": "コピーに失敗しました。",
+      "downloadError": "ダウンロードに失敗しました。"
+    }
+  },
+  "sparklineGenerator": {
+    "input": {
+      "title": "データ",
+      "placeholder": "カンマまたはスペースで区切って数値を入力...\n例: 1, 3, 5, 2, 8, 4",
+      "valuesFound": "{count} 個の値が見つかりました",
+      "parseError": "無効な値: \"{value}\"",
+      "clear": "クリア",
+      "exampleLabel": "例：",
+      "example": "1, 3, 5, 2, 8, 4"
+    },
+    "preview": {
+      "title": "プレビュー",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "placeholder": "ASCIIグラフがここに表示されます..."
+    },
+    "options": {
+      "title": "オプション",
+      "chartType": "グラフの種類",
+      "typeSpark": "スパークライン（1行）",
+      "typeBar": "棒グラフ（縦）",
+      "barHeight": "高さ（行数）",
+      "showValues": "値を表示",
+      "barSpacing": "棒の間隔",
+      "fillChar": "塗りつぶし文字",
+      "fillBlock": "█ 全ブロック",
+      "fillShade": "▓ シェード",
+      "fillHash": "# ハッシュ",
+      "fillPipe": "| パイプ"
+    },
+    "errors": {
+      "copySuccess": "グラフをクリップボードにコピーしました！",
+      "copyError": "コピーに失敗しました。",
+      "downloadError": "ダウンロードに失敗しました。"
+    }
+  },
+  "home": {
+    "heroBadge": "登録不要、4つの無料ASCIIツール",
+    "heroTitle": "オールインワンのASCIIツールキット",
+    "heroSubtitle": "ファイルツリー、表、グラフ、バナーをASCIIテキストで生成。ブラウザ上で完結し、どこにでもコピー＆ペーストできます。",
+    "open": "ツールを開く",
+    "tools": {
+      "asciiTree": {
+        "desc": "README・ドキュメント・プロジェクト向けに、見やすいファイル/フォルダーツリーを作成。"
+      },
+      "asciiTable": {
+        "desc": "データを整列したASCIIテーブルに変換。コードやMarkdownにそのまま貼り付け可能。"
+      },
+      "sparkline": {
+        "desc": "数値の並びをコンパクトなASCIIミニグラフで可視化。レポートに最適。"
+      },
+      "banner": {
+        "desc": "テキストを大きな装飾ASCIIバナーに変換。ヘッダーやターミナルに。"
+      },
+      "markdownGuide": {
+        "desc": "Markdown の全構文を、ソースと表示結果を並べて解説します。"
+      },
+      "asciiEmoji": {
+        "desc": "コピペできるASCII顔文字とkaomojiのコレクション。"
+      },
+      "markdownEditor": {
+        "desc": "ライブプレビュー、書式ツールバー、コードハイライト付きでMarkdownを執筆 — ワンクリックでコピーまたはダウンロード。"
+      }
+    }
+  },
+  "markdownGuide": {
+    "badge": "チートシート",
+    "title": "Markdown ガイド",
+    "subtitle": "Markdown を書くために必要なすべて。各構文を、左にソース、右に表示結果を並べて紹介します。",
+    "tocTitle": "目次",
+    "markdown": "Markdown",
+    "result": "結果",
+    "copy": "コピー",
+    "copied": "コピー済み",
+    "copyError": "コピーできませんでした",
+    "flavorNote": "Markdown は標準仕様ですが、一部の要素（表、チェックボックス、脚注、絵文字）は使用するレンダリングエンジンに依存します。",
+    "categories": {
+      "headings": {
+        "title": "見出し",
+        "desc": "# 記号を使った、大きいものから小さいものまで 6 段階の見出し。"
+      },
+      "paragraphs": {
+        "title": "段落",
+        "desc": "空行で段落を区切り、必要に応じて改行を強制します。"
+      },
+      "emphasis": {
+        "title": "強調",
+        "desc": "テキストを太字・斜体・打ち消し線にします。"
+      },
+      "blockquotes": {
+        "title": "引用",
+        "desc": "1 行または複数行の引用と、引用の入れ子。"
+      },
+      "lists": {
+        "title": "リスト",
+        "desc": "箇条書き・番号付き・入れ子・タスクリスト。"
+      },
+      "code": {
+        "title": "コード",
+        "desc": "インラインコード、コードブロック、言語ごとのシンタックスハイライト。"
+      },
+      "links": {
+        "title": "リンク",
+        "desc": "通常のリンク、タイトル付き、自動リンク、参照リンク。"
+      },
+      "images": {
+        "title": "画像",
+        "desc": "代替テキスト・タイトル・クリック可能なリンク付きで画像を挿入します。"
+      },
+      "tables": {
+        "title": "表",
+        "desc": "表を作成し、列を左・中央・右に揃えます。"
+      },
+      "rules": {
+        "title": "水平線",
+        "desc": "水平線でセクションを区切ります。"
+      },
+      "escaping": {
+        "title": "エスケープ",
+        "desc": "特殊文字を解釈させず、そのまま表示します。"
+      },
+      "extended": {
+        "title": "拡張 Markdown",
+        "desc": "脚注・絵文字・埋め込み HTML（エンジンによる）。"
+      }
+    }
+  },
+  "asciiEmoji": {
+    "badge": "早見表",
+    "title": "ASCII絵文字",
+    "subtitle": "コピペできる顔文字とkaomojiのコレクション。定番の :) から日本の顔文字まで。絵文字をクリックするとコピーできます。",
+    "tocTitle": "目次",
+    "copy": "コピー",
+    "copied": "コピー完了",
+    "copyError": "コピーできませんでした",
+    "flavorNote": "これらの絵文字は文字で作られており、等幅フォントで最もきれいに表示されます。一部のkaomojiはフォントによって見え方が変わるUnicode文字を使用しています。",
+    "categories": {
+      "classics": {
+        "title": "定番",
+        "desc": "昔ながらの顔文字。頭を左に傾けると読めます。"
+      },
+      "kaomoji": {
+        "title": "顔文字",
+        "desc": "日本風の顔文字。そのまま読めます。"
+      },
+      "animals": {
+        "title": "どうぶつ",
+        "desc": "ASCII文字でできた小さな動物たち。"
+      },
+      "love": {
+        "title": "ラブ",
+        "desc": "やさしいメッセージ向けのハートとキス。"
+      },
+      "actions": {
+        "title": "アクション",
+        "desc": "動きのある顔文字：手を振る、踊る、戦う。"
+      }
+    },
+    "labels": {
+      "happy": "うれしい",
+      "laugh": "笑い",
+      "wink": "ウィンク",
+      "sad": "悲しい",
+      "cry": "泣く",
+      "tongue": "あっかんべー",
+      "unsure": "微妙",
+      "surprised": "驚き",
+      "heart": "ハート",
+      "brokenHeart": "失恋",
+      "kiss": "キス",
+      "neutral": "真顔",
+      "shrug": "やれやれ",
+      "tableFlip": "ちゃぶ台返し",
+      "lenny": "レニー",
+      "cool": "キメ顔",
+      "disapproval": "不満",
+      "hug": "ハグ",
+      "cheer": "バンザイ",
+      "sparkle": "キラキラ",
+      "cry2": "号泣",
+      "cat": "ねこ",
+      "bear": "くま",
+      "fish": "さかな",
+      "bunny": "うさぎ",
+      "cute": "かわいい",
+      "sunglasses": "サングラス",
+      "angry": "怒り",
+      "embarrassed": "照れ",
+      "happyTears": "感涙",
+      "laughHard": "大笑い",
+      "rage": "激怒",
+      "sob": "すすり泣き",
+      "smirk": "ニヤリ",
+      "shock": "びっくり",
+      "delight": "大喜び",
+      "suspicious": "疑い",
+      "flex": "筋肉自慢",
+      "confused": "困惑",
+      "cat2": "こねこ",
+      "dog": "いぬ",
+      "mouse": "ねずみ",
+      "squid": "イカ",
+      "inLove": "恋",
+      "kissHeart": "投げキッス",
+      "blowKiss": "投げキス",
+      "hearts": "ハート",
+      "hugLove": "ぎゅー",
+      "armsUp": "万歳",
+      "wave": "お手振り",
+      "run": "ダッシュ",
+      "dance": "ダンス",
+      "tableBack": "ちゃぶ台戻し",
+      "fight": "やる気"
+    }
+  },
+  "markdownEditor": {
+    "editor": {
+      "title": "エディタ",
+      "placeholder": "ここにMarkdownを入力...",
+      "clear": "クリア"
+    },
+    "preview": {
+      "title": "プレビュー",
+      "copyMarkdown": "MDをコピー",
+      "copyHtml": "HTMLをコピー",
+      "download": "ダウンロード",
+      "placeholder": "レンダリングされたMarkdownがここに表示されます..."
+    },
+    "toolbar": {
+      "bold": "太字",
+      "italic": "斜体",
+      "heading": "見出し",
+      "quote": "引用",
+      "list": "リスト",
+      "code": "コード",
+      "link": "リンク"
+    },
+    "placeholders": {
+      "bold": "太字のテキスト",
+      "italic": "斜体のテキスト",
+      "code": "コード",
+      "link": "テキスト"
+    },
+    "options": {
+      "title": "オプション",
+      "viewMode": "表示",
+      "viewSplit": "分割",
+      "viewEditor": "エディタのみ",
+      "viewPreview": "プレビューのみ",
+      "boxedPreview": "枠付きプレビュー"
+    },
+    "errors": {
+      "copyMarkdownSuccess": "Markdownをクリップボードにコピーしました！",
+      "copyHtmlSuccess": "HTMLをクリップボードにコピーしました！",
+      "copyError": "コピーに失敗しました。",
+      "downloadError": "ダウンロードに失敗しました。"
     }
   }
 }

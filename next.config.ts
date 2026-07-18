@@ -8,7 +8,16 @@ const nextConfig: NextConfig = {
   poweredByHeader: false, // Supprime le header X-Powered-By
   compress: true, // Compression gzip
   generateEtags: true, // Génération d'ETags pour le cache
-  
+
+  // Autorise l'accès aux ressources de dev (HMR) depuis le réseau local
+  allowedDevOrigins: ['192.168.1.9'],
+
+  // Fixe la racine du projet pour éviter que Turbopack ne remonte vers un
+  // lockfile parent (ex. ~/package-lock.json) et se trompe de dossier racine.
+  turbopack: {
+    root: __dirname,
+  },
+
   // Configuration des images
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -78,48 +87,12 @@ const nextConfig: NextConfig = {
     ];
   },
   
-  // Configuration des redirections
-  async redirects() {
-    return [
-      // Redirection supprimée car gérée par next-intl middleware
-    ];
-  },
-  
-  // Configuration des rewrites
-  async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-      },
-    ];
-  },
-  
   // Optimisations de build
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
-  
-  // Configuration du webpack
-  webpack: (config, { dev, isServer }) => {
-    // Optimisations pour la production
-    if (!dev && !isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-          },
-        },
-      };
-    }
-    
-    return config;
-  },
-  
+
   // Configuration TypeScript
   typescript: {
     ignoreBuildErrors: false,
