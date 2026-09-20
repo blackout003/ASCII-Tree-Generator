@@ -291,7 +291,7 @@
       "securityWpa": "WPA/WPA2/WPA3",
       "securityWep": "WEP",
       "securityNone": "パスワードなし",
-      "hidden": "ステルスネットワーク",
+      "hidden": "非公開ネットワーク",
       "emailTo": "宛先",
       "emailSubject": "件名",
       "emailBody": "メッセージ",
@@ -331,8 +331,8 @@
       "ariaLabel": "文字で描かれたQRコード"
     },
     "errors": {
-      "copySuccess": "QRコードをクリップボードにコピーしました!",
-      "copyMarkdownSuccess": "Markdownをクリップボードにコピーしました!",
+      "copySuccess": "QRコードをクリップボードにコピーしました！",
+      "copyMarkdownSuccess": "Markdownをクリップボードにコピーしました！",
       "copyError": "コピーに失敗しました。",
       "downloadError": "ダウンロードに失敗しました。",
       "pngError": "PNGの生成に失敗しました。"

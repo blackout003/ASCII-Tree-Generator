@@ -267,9 +267,9 @@
       "title": "Inhalt",
       "templateLabel": "Typ",
       "counter": "{count}/{max} Zeichen",
-      "tooLong": "Inhalt zu lang: {count}/{max} Zeichen. Kürzen Sie ihn, um den QR-Code zu erzeugen.",
+      "tooLong": "Inhalt zu lang: {count}/{max} Zeichen. Kürze ihn, um den QR-Code zu erzeugen.",
       "clear": "Löschen",
-      "empty": "Füllen Sie das Formular aus, um Ihren QR-Code zu erzeugen."
+      "empty": "Fülle das Formular aus, um deinen QR-Code zu erzeugen."
     },
     "templates": {
       "url": "URL",
@@ -316,7 +316,7 @@
       "eccQ": "Q — 25 %",
       "eccH": "H — 30 %",
       "invert": "Invertieren (dunkler Hintergrund)",
-      "invertHint": "Aktivieren Sie diese Option, wenn Sie das Ergebnis in ein dunkles Terminal oder einen dunklen Editor einfügen.",
+      "invertHint": "Aktiviere diese Option, wenn du das Ergebnis in ein dunkles Terminal oder einen dunklen Editor einfügst.",
       "quietZoneNote": "Es wird immer ein Rand von 4 Modulen hinzugefügt: Er ist für das Scannen erforderlich."
     },
     "preview": {
@@ -325,8 +325,8 @@
       "copyMarkdown": "Als Markdown kopieren",
       "download": ".txt herunterladen",
       "downloadPng": "PNG herunterladen",
-      "placeholder": "Ihr QR-Code erscheint hier...",
-      "monospaceNote": "Fügen Sie ihn in einer Festbreitenschrift ein, sonst wird der QR-Code verzerrt.",
+      "placeholder": "Dein QR-Code erscheint hier...",
+      "monospaceNote": "Füge ihn in einer Festbreitenschrift ein, sonst wird der QR-Code verzerrt.",
       "pngNote": "Das PNG ist immer schwarz auf weiß, unabhängig von der Option Invertieren.",
       "ariaLabel": "Mit Textzeichen gezeichneter QR-Code"
     },
@@ -354,7 +354,7 @@
         "desc": "Visualisiere Zahlenreihen als kompakte ASCII-Minidiagramme für deine Berichte."
       },
       "qrCode": {
-        "desc": "Verwandeln Sie Text, Links oder WLAN-Zugangsdaten in einen scannbaren QR-Code aus Textzeichen."
+        "desc": "Verwandle Text, Links oder WLAN-Zugangsdaten in einen scannbaren QR-Code aus Textzeichen."
       },
       "banner": {
         "desc": "Verwandle Text in große, stilisierte ASCII-Banner für Header und Terminals."
