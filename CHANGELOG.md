@@ -11,7 +11,7 @@ Remplacement de tous les outils de mesure d'audience par Plausible Analytics.
 
 ### Modifié
 
-- **Plausible Analytics** (`@plausible-analytics/tracker`, domaine `asciitree.fr`)
+- **Plausible Analytics** (instance auto-hébergée `analytics.egweb.fr`)
   devient le seul outil de mesure d'audience ; il n'est initialisé qu'après
   consentement explicite de l'utilisateur.
 - Texte de la page « Données personnelles » mis à jour en conséquence.

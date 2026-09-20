@@ -95,7 +95,7 @@ npm run lint
 
 ## Environment Variables
 
-All variables are optional. Analytics (Plausible, domain `asciitree.fr`) are opt-in and need no variable. The app works without any of them in development.
+All variables are optional. Analytics (Plausible, self-hosted) are opt-in and need no variable. The app works without any of them in development.
 
 ```env
 # Override the base URL (defaults to https://asciitree.fr)

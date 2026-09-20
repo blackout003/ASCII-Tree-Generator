@@ -61,7 +61,7 @@ All routes live under `src/app/[locale]/`. Locales are statically generated via 
 
 ### Environment variables
 
-All prefixed `NEXT_PUBLIC_`. See `.env.example` for the full list. Analytics use Plausible (`@plausible-analytics/tracker`, domain `asciitree.fr`), initialized only after user consent in `analytics-scripts.tsx`.
+All prefixed `NEXT_PUBLIC_`. See `.env.example` for the full list. Analytics use Plausible (self-hosted at `analytics.egweb.fr`, script injected via `next/script`), initialized only after user consent in `analytics-scripts.tsx`.
 
 ### Legal pages
 
