@@ -7,5 +7,9 @@
       "WebFetch(domain:asciitree.fr)",
       "WebSearch"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "shadcn"
+  ],
+  "enableAllProjectMcpServers": true
 }

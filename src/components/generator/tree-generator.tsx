@@ -23,6 +23,7 @@ import { TreeView } from './tree-view';
 import { TreeControls } from './tree-controls';
 import { ASCIIPreview } from './ascii-preview';
 import { TreeOptionsPanel } from './tree-options-panel';
+import { AdSlot } from '@/components/ui/ad-slot';
 import { useToast } from '@/hooks/use-toast';
 
 /**
@@ -683,6 +684,8 @@ export default function TreeGenerator() {
       <div className="mt-6">
         <DragDropZone onFilesAdded={handleFilesAdded} />
       </div>
+
+      <AdSlot slot="generator-bottom" format="horizontal" className="mt-6" />
 
       {/* Modal de confirmation pour effacer tout */}
       <Dialog open={showClearConfirm} onOpenChange={setShowClearConfirm}>

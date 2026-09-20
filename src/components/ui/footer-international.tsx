@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Scale, ShieldCheck, Github } from '@/components/icons';
 import { Separator } from './separator';
 import { TOOLS, RESOURCES } from '@/lib/tools';
+import { AdSlot } from './ad-slot';
 
 export function FooterInternational() {
   const currentYear = new Date().getFullYear();
@@ -14,7 +15,10 @@ export function FooterInternational() {
   const tNav = useTranslations('nav');
 
   return (
-    <footer className="w-full border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <>
+      <AdSlot slot="footer" format="horizontal" className="container mx-auto mt-4 px-4" />
+
+      <footer className="w-full border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 pt-12 pb-6">
 
         {/* Main grid */}
@@ -144,5 +148,6 @@ export function FooterInternational() {
 
       </div>
     </footer>
+    </>
   );
 }

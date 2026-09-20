@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { AppLayout } from '@/components/tools-nav/app-layout';
 import { FooterInternational } from '@/components/ui/footer-international';
 import { StructuredData } from '@/components/ui/structured-data-server';
+import { AdSlot } from '@/components/ui/ad-slot';
 import { SEO_CONFIG } from '@/lib/seo-config';
 import { locales, defaultLocale } from '@/i18n/locales';
 import { getFileTreeGuide, GUIDE_SLUG } from '@/lib/guides/file-tree-guide';
@@ -129,6 +130,8 @@ export default async function FileTreeGuidePage({ params }: { params: Promise<{ 
                 )}
               </section>
             ))}
+
+            <AdSlot slot="guide-mid" format="rectangle" className="mt-10" />
 
             <section className="mt-10 border-t border-border pt-8">
               <h2 className="font-mono text-2xl font-bold tracking-tight text-foreground">
