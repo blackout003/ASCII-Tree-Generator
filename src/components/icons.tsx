@@ -46,6 +46,7 @@ import {
   PencilRulerIcon,
   PlusSignCircleIcon,
   PlusSignIcon,
+  QrCodeIcon,
   QuoteUpIcon,
   SecurityCheckIcon,
   Settings01Icon,
@@ -132,6 +133,7 @@ export const Pilcrow = createIcon(ParagraphIcon, "Pilcrow");
 export const Plus = createIcon(PlusSignIcon, "Plus");
 export const PlusCircle = createIcon(PlusSignCircleIcon, "PlusCircle");
 export const Quote = createIcon(QuoteUpIcon, "Quote");
+export const QrCode = createIcon(QrCodeIcon, "QrCode");
 export const Save = createIcon(FloppyDiskIcon, "Save");
 export const Scale = createIcon(JusticeScale01Icon, "Scale");
 export const Settings = createIcon(Settings01Icon, "Settings");
