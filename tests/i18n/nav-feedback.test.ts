@@ -29,7 +29,12 @@ describe('GitHub issue links', () => {
     expect(GITHUB_ISSUE_URLS.feature.endsWith('/issues/new?template=feature_request.md')).toBe(true);
   });
 
-  it.each(['bug_report.md', 'feature_request.md'])('template %s exists', (file) => {
+  it('points to the emoji suggestion template', () => {
+    expect(GITHUB_ISSUE_URLS.emoji.startsWith(prefix)).toBe(true);
+    expect(GITHUB_ISSUE_URLS.emoji.endsWith('/issues/new?template=emoji_suggestion.md')).toBe(true);
+  });
+
+  it.each(['bug_report.md', 'feature_request.md', 'emoji_suggestion.md'])('template %s exists', (file) => {
     expect(existsSync(join(process.cwd(), '.github/ISSUE_TEMPLATE', file))).toBe(true);
   });
 });

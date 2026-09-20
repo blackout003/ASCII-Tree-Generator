@@ -5,6 +5,16 @@ Toutes les évolutions notables de ASCII Tools sont documentées dans ce fichier
 Le format s'inspire de [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/)
 et le projet suit le [versionnage sémantique](https://semver.org/lang/fr/).
 
+## [2.2.2] - 2026-09-20
+
+Possibilité de proposer un nouvel émoji depuis la page Émojis ASCII.
+
+### Ajouté
+
+- **Encart « Il manque un émoji ? »** sur la page Émojis ASCII : le bouton ouvre
+  directement le nouveau modèle de ticket GitHub `emoji_suggestion.md`.
+- **Modèle de ticket « Proposition d'émoji ASCII »** dans `.github/ISSUE_TEMPLATE`.
+
 ## [2.2.1] - 2026-09-20
 
 Ajout d'un accès direct aux signalements GitHub depuis le menu.

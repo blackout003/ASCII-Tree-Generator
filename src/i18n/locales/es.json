@@ -443,6 +443,9 @@
     "copied": "Copiado",
     "copyError": "No se pudo copiar",
     "flavorNote": "Estos emojis están hechos de caracteres de texto: se ven mejor en una fuente monoespaciada. Algunos kaomoji usan caracteres Unicode que pueden variar entre fuentes.",
+    "suggestTitle": "¿Falta algún emoji?",
+    "suggestDesc": "Propónlo abriendo una incidencia en GitHub y podrá añadirse a la colección.",
+    "suggestCta": "Proponer un emoji",
     "categories": {
       "classics": {
         "title": "Clásicos",

@@ -1,6 +1,6 @@
 {
   "name": "ascii-tree-generator",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--max-old-space-size=2048' next dev",

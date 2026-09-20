@@ -2,7 +2,7 @@
  * Version actuelle de l'application, affichée dans la barre latérale.
  * Doit rester synchronisée avec le champ "version" de package.json et CHANGELOG.md.
  */
-export const APP_VERSION = '2.2.1';
+export const APP_VERSION = '2.2.2';
 
 export interface ChangelogSection {
   /** Titre de la section (ex: "Ajouté", "Modifié"). */
@@ -24,6 +24,20 @@ export interface ChangelogEntry {
  * Source lisible : CHANGELOG.md à la racine du projet.
  */
 export const CHANGELOG: ChangelogEntry[] = [
+  {
+    version: '2.2.2',
+    date: '2026-09-20',
+    summary: 'Possibilité de proposer un nouvel émoji depuis la page Émojis ASCII.',
+    sections: [
+      {
+        title: 'Ajouté',
+        items: [
+          'Encart « Il manque un émoji ? » sur la page Émojis ASCII : le bouton ouvre directement le nouveau modèle de ticket GitHub.',
+          'Modèle de ticket « Proposition d’émoji ASCII » dans .github/ISSUE_TEMPLATE.',
+        ],
+      },
+    ],
+  },
   {
     version: '2.2.1',
     date: '2026-09-20',

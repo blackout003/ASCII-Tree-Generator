@@ -443,6 +443,9 @@
     "copied": "コピー完了",
     "copyError": "コピーできませんでした",
     "flavorNote": "これらの絵文字は文字で作られており、等幅フォントで最もきれいに表示されます。一部のkaomojiはフォントによって見え方が変わるUnicode文字を使用しています。",
+    "suggestTitle": "足りない絵文字はありますか？",
+    "suggestDesc": "GitHubでIssueを作成して提案してください。コレクションに追加される場合があります。",
+    "suggestCta": "絵文字を提案する",
     "categories": {
       "classics": {
         "title": "定番",

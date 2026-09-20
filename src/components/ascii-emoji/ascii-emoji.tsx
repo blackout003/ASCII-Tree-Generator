@@ -2,9 +2,10 @@
 
 import React, { useState, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
-import { Check, Copy } from '@/components/icons';
+import { Check, Copy, Lightbulb } from '@/components/icons';
 import { useToast } from '@/hooks/use-toast';
 import { ASCII_EMOJI_CATEGORIES } from '@/lib/ascii-emoji-data';
+import { GITHUB_ISSUE_URLS } from '@/lib/github-links';
 import { cn } from '@/lib/utils';
 
 type GuideT = ReturnType<typeof useTranslations>;
@@ -145,8 +146,29 @@ export function AsciiEmoji() {
         ))}
       </div>
 
+      {/* Suggest a new emoji */}
+      <aside className="mt-14 flex flex-col gap-4 rounded-lg border border-dashed border-border bg-muted/20 p-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-start gap-3">
+          <div className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-lg border border-border bg-muted/40">
+            <Lightbulb className="size-4 text-foreground" />
+          </div>
+          <div>
+            <h2 className="font-mono text-base font-semibold text-foreground">{t('suggestTitle')}</h2>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{t('suggestDesc')}</p>
+          </div>
+        </div>
+        <a
+          href={GITHUB_ISSUE_URLS.emoji}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex shrink-0 items-center justify-center rounded-md border border-foreground bg-foreground px-4 py-2 font-mono text-xs text-background transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          {t('suggestCta')}
+        </a>
+      </aside>
+
       {/* Footer note */}
-      <p className="mt-16 border-t border-border pt-6 text-sm text-muted-foreground">
+      <p className="mt-8 border-t border-border pt-6 text-sm text-muted-foreground">
         {t('flavorNote')}
       </p>
     </div>

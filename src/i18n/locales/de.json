@@ -443,6 +443,9 @@
     "copied": "Kopiert",
     "copyError": "Kopieren nicht möglich",
     "flavorNote": "Diese Emojis bestehen aus Textzeichen: Am besten sehen sie in einer Monospace-Schrift aus. Manche Kaomoji nutzen Unicode-Zeichen, die je nach Schrift unterschiedlich aussehen können.",
+    "suggestTitle": "Fehlt ein Emoji?",
+    "suggestDesc": "Schlage es per Issue auf GitHub vor – es kann dann in die Sammlung aufgenommen werden.",
+    "suggestCta": "Emoji vorschlagen",
     "categories": {
       "classics": {
         "title": "Klassiker",
