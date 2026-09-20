@@ -7,7 +7,7 @@ import {
   isAnalyticsGranted,
 } from '@/lib/analytics-consent';
 
-const PLAUSIBLE_DOMAIN = 'asciitree.fr';
+const PLAUSIBLE_DOMAIN = 'analytics.egweb.fr';
 
 let initialized = false;
 
