@@ -100,6 +100,14 @@ describe('scan round-trip: rendered text decodes to the original payload', () =>
     const text = renderQr(generateMatrix(payload, ecc), style, invert);
     expect(decodeInk(parseRendered(text, style), invert)).toBe(payload);
   });
+
+  it('polarity guard: decoding a non-inverted rendering as inverted fails', () => {
+    const m = generateMatrix('hello', 'M');
+    const text = renderQr(m, 'blocks', false); // render with invert=false
+    const ink = parseRendered(text, 'blocks');
+    // claim it was inverted, should fail to decode
+    expect(decodeInk(ink, true)).not.toBe('hello');
+  });
 });
 
 describe('toMarkdown', () => {

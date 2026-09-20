@@ -61,6 +61,6 @@ export function decodeInk(ink: boolean[][], invert: boolean, scale = 4): string 
     }
   }
 
-  const result = jsQR(data, width, width);
+  const result = jsQR(data, width, width, { inversionAttempts: 'dontInvert' });
   return result ? result.data : null;
 }
