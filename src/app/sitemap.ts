@@ -12,6 +12,7 @@ const localizedRoutes: { path: string; priority: number }[] = [
   { path: '/tools/ascii-table', priority: 0.8 },
   { path: '/tools/banner', priority: 0.8 },
   { path: '/tools/sparkline', priority: 0.8 },
+  { path: '/tools/qr-code-generator', priority: 0.8 },
   { path: '/tools/markdown-editor', priority: 0.8 },
   { path: '/tools/ascii-emoji', priority: 0.8 },
   { path: '/tools/markdown-guide', priority: 0.8 },

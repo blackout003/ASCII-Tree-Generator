@@ -5,6 +5,24 @@ Toutes les évolutions notables de ASCII Tools sont documentées dans ce fichier
 Le format s'inspire de [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/)
 et le projet suit le [versionnage sémantique](https://semver.org/lang/fr/).
 
+## [2.2.0] - 2026-09-20
+
+Ajout d'un **générateur de QR code ASCII**.
+
+### Ajouté
+
+- **Générateur de QR code ASCII** (`/tools/qr-code-generator`) : QR codes
+  scannables dessinés avec des caractères texte.
+- Trois styles : demi-blocs Unicode, blocs pleins Unicode et ASCII 7 bits pur,
+  avec option « Inverser » pour les fonds sombres.
+- Modèles guidés : texte, URL, Wi-Fi, e-mail, téléphone, SMS et vCard, dans la
+  limite de 300 caractères.
+- Niveau de correction d'erreur réglable (M par défaut).
+- Export : copie, bloc Markdown, fichier `.txt` et image PNG.
+- Génération 100 % dans le navigateur : le contenu n'est jamais envoyé à un serveur.
+- Premiers tests automatisés (Vitest) : les QR codes générés sont relus par un
+  décodeur (jsQR) pour garantir qu'ils restent scannables.
+
 ## [2.1.0] - 2026-07-18
 
 Ajout d'un **éditeur Markdown** avec aperçu en direct.

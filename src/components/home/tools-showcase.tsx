@@ -69,6 +69,16 @@ CPU     ▃▃▅▂▇▆▄▅`,
 ╚═╝  ╚═╝╚═╝`,
   },
   {
+    id: 'qr-code',
+    href: '/tools/qr-code-generator',
+    tag: 'QR',
+    nameKey: 'qrCode',
+    descKey: 'home.tools.qrCode.desc',
+    preview: `█▀▀▀█ ▄▀█ █▀▀▀█
+█ ▄ █ ▀▄▀ █ ▄ █
+█▄▄▄█ █▄▀ █▄▄▄█`,
+  },
+  {
     id: 'markdown-editor',
     href: '/tools/markdown-editor',
     tag: 'MARKDOWN',

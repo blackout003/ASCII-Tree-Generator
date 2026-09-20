@@ -1,4 +1,4 @@
-import { FolderTree, Table, BarChart2, Type, BookMarked, Smile, FileText, Edit3 } from '@/components/icons';
+import { FolderTree, Table, BarChart2, Type, BookMarked, Smile, FileText, Edit3, QrCode } from '@/components/icons';
 import type { LucideIcon } from '@/components/icons';
 
 export interface Tool {
@@ -33,6 +33,12 @@ export const TOOLS: Tool[] = [
     href: '/tools/banner',
     icon: Type,
     nameKey: 'banner',
+  },
+  {
+    id: 'qr-code',
+    href: '/tools/qr-code-generator',
+    icon: QrCode,
+    nameKey: 'qrCode',
   },
   {
     id: 'markdown-editor',

@@ -2,7 +2,7 @@
  * Version actuelle de l'application, affichée dans la barre latérale.
  * Doit rester synchronisée avec le champ "version" de package.json et CHANGELOG.md.
  */
-export const APP_VERSION = '2.1.0';
+export const APP_VERSION = '2.2.0';
 
 export interface ChangelogSection {
   /** Titre de la section (ex: "Ajouté", "Modifié"). */
@@ -25,20 +25,39 @@ export interface ChangelogEntry {
  */
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: '2.2.0',
+    date: '2026-09-20',
+    summary:
+      'Ajout d\'un générateur de QR code ASCII : QR codes scannables dessinés en caractères texte, avec export texte, Markdown et PNG.',
+    sections: [
+      {
+        title: 'Ajouté',
+        items: [
+          'Générateur de QR code ASCII : trois styles (demi-blocs Unicode, blocs pleins, ASCII pur) et option « Inverser » pour les fonds sombres.',
+          'Modèles guidés : texte, URL, Wi-Fi, e-mail, téléphone, SMS et vCard (300 caractères maximum).',
+          'Niveau de correction d\'erreur réglable (M par défaut).',
+          'Export : copie, bloc Markdown, fichier .txt et image PNG.',
+          'Génération 100 % dans le navigateur : le contenu n\'est jamais envoyé à un serveur.',
+          'Premiers tests automatisés : les QR codes générés sont relus par un décodeur pour garantir leur lisibilité.',
+        ],
+      },
+    ],
+  },
+  {
     version: '2.1.0',
     date: '2026-07-18',
     summary:
-      'Ajout d’un éditeur Markdown avec aperçu en direct, barre de formatage, coloration du code et export.',
+      'Ajout d\'un éditeur Markdown avec aperçu en direct, barre de formatage, coloration du code et export.',
     sections: [
       {
         title: 'Ajouté',
         items: [
           'Éditeur Markdown : édition en direct avec aperçu côte à côte.',
           'Prise en charge du GitHub Flavored Markdown (tableaux, listes de tâches, texte barré).',
-          'Coloration syntaxique des blocs de code dans l’aperçu.',
+          'Coloration syntaxique des blocs de code dans l\'aperçu.',
           'Barre de formatage (gras, italique, titres, listes, citations, code, liens).',
           'Export : copie du Markdown, copie du HTML rendu et téléchargement en .md.',
-          'Modes d’affichage (partagé, éditeur seul, aperçu seul) et localisation dans les 8 langues.',
+          'Modes d\'affichage (partagé, éditeur seul, aperçu seul) et localisation dans les 8 langues.',
         ],
       },
     ],
