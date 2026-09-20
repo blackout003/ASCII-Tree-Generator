@@ -127,6 +127,7 @@
     "asciiTree": "ASCII-дерево",
     "asciiTable": "ASCII-таблица",
     "sparkline": "ASCII-графики",
+    "qrCode": "QR-код",
     "banner": "Текстовые баннеры",
     "comingSoon": "Скоро",
     "openTool": "Открыть инструмент",
@@ -261,6 +262,82 @@
       "downloadError": "Ошибка при скачивании."
     }
   },
+  "qrGenerator": {
+    "input": {
+      "title": "Содержимое",
+      "templateLabel": "Тип",
+      "counter": "{count}/{max} символов",
+      "tooLong": "Содержимое слишком длинное: {count}/{max} символов. Сократите его, чтобы создать QR-код.",
+      "clear": "Очистить",
+      "empty": "Заполните форму, чтобы создать QR-код."
+    },
+    "templates": {
+      "url": "URL",
+      "text": "Текст",
+      "wifi": "Wi-Fi",
+      "email": "Эл. почта",
+      "phone": "Телефон",
+      "sms": "SMS",
+      "vcard": "Контакт (vCard)"
+    },
+    "fields": {
+      "text": "Текст",
+      "textPlaceholder": "Введите или вставьте текст...",
+      "url": "Веб-адрес",
+      "urlPlaceholder": "https://example.com",
+      "ssid": "Название сети (SSID)",
+      "password": "Пароль",
+      "security": "Защита",
+      "securityWpa": "WPA/WPA2/WPA3",
+      "securityWep": "WEP",
+      "securityNone": "Без пароля",
+      "hidden": "Скрытая сеть",
+      "emailTo": "Получатель",
+      "emailSubject": "Тема",
+      "emailBody": "Сообщение",
+      "phone": "Номер телефона",
+      "smsNumber": "Номер телефона",
+      "smsMessage": "Сообщение",
+      "firstName": "Имя",
+      "lastName": "Фамилия",
+      "org": "Компания",
+      "vcardPhone": "Телефон",
+      "vcardEmail": "Эл. почта"
+    },
+    "options": {
+      "title": "Настройки",
+      "style": "Стиль",
+      "styleHalf": "Полублоки Unicode (компактно)",
+      "styleBlocks": "Полные блоки Unicode",
+      "styleAscii": "Чистый ASCII (#)",
+      "ecc": "Коррекция ошибок",
+      "eccL": "L — 7%",
+      "eccM": "M — 15% (рекомендуется)",
+      "eccQ": "Q — 25%",
+      "eccH": "H — 30%",
+      "invert": "Инвертировать (тёмный фон)",
+      "invertHint": "Включите, если вставляете результат в тёмный терминал или редактор.",
+      "quietZoneNote": "Поля в 4 модуля добавляются всегда: они необходимы для сканирования."
+    },
+    "preview": {
+      "title": "Предпросмотр",
+      "copy": "Копировать",
+      "copyMarkdown": "Копировать как Markdown",
+      "download": "Скачать .txt",
+      "downloadPng": "Скачать PNG",
+      "placeholder": "Ваш QR-код появится здесь...",
+      "monospaceNote": "Вставляйте его моноширинным шрифтом, иначе QR-код исказится.",
+      "pngNote": "PNG всегда чёрный на белом, независимо от параметра «Инвертировать».",
+      "ariaLabel": "QR-код, нарисованный текстовыми символами"
+    },
+    "errors": {
+      "copySuccess": "QR-код скопирован в буфер обмена!",
+      "copyMarkdownSuccess": "Markdown скопирован в буфер обмена!",
+      "copyError": "Не удалось скопировать.",
+      "downloadError": "Не удалось скачать.",
+      "pngError": "Не удалось создать PNG."
+    }
+  },
   "home": {
     "heroBadge": "4 бесплатных ASCII-инструмента, без регистрации",
     "heroTitle": "Универсальный набор ASCII-инструментов",
@@ -275,6 +352,9 @@
       },
       "sparkline": {
         "desc": "Отображайте ряды чисел компактными ASCII-мини-графиками для отчётов."
+      },
+      "qrCode": {
+        "desc": "Превратите любой текст, ссылку или сеть Wi-Fi в QR-код из текстовых символов, который можно отсканировать."
       },
       "banner": {
         "desc": "Превращайте текст в крупные стилизованные ASCII-баннеры для заголовков и терминалов."

@@ -127,6 +127,7 @@
     "asciiTree": "Albero ASCII",
     "asciiTable": "Tabella ASCII",
     "sparkline": "Grafici ASCII",
+    "qrCode": "QR Code",
     "banner": "Banner di Testo",
     "comingSoon": "Prossimamente",
     "openTool": "Apri strumento",
@@ -261,6 +262,82 @@
       "downloadError": "Errore durante il download."
     }
   },
+  "qrGenerator": {
+    "input": {
+      "title": "Contenuto",
+      "templateLabel": "Tipo",
+      "counter": "{count}/{max} caratteri",
+      "tooLong": "Contenuto troppo lungo: {count}/{max} caratteri. Accorcialo per generare il QR code.",
+      "clear": "Cancella",
+      "empty": "Compila il modulo per generare il tuo QR code."
+    },
+    "templates": {
+      "url": "URL",
+      "text": "Testo",
+      "wifi": "Wi-Fi",
+      "email": "Email",
+      "phone": "Telefono",
+      "sms": "SMS",
+      "vcard": "Contatto (vCard)"
+    },
+    "fields": {
+      "text": "Testo",
+      "textPlaceholder": "Scrivi o incolla il tuo testo...",
+      "url": "Indirizzo web",
+      "urlPlaceholder": "https://esempio.it",
+      "ssid": "Nome della rete (SSID)",
+      "password": "Password",
+      "security": "Sicurezza",
+      "securityWpa": "WPA/WPA2/WPA3",
+      "securityWep": "WEP",
+      "securityNone": "Nessuna password",
+      "hidden": "Rete nascosta",
+      "emailTo": "Destinatario",
+      "emailSubject": "Oggetto",
+      "emailBody": "Messaggio",
+      "phone": "Numero di telefono",
+      "smsNumber": "Numero di telefono",
+      "smsMessage": "Messaggio",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "org": "Azienda",
+      "vcardPhone": "Telefono",
+      "vcardEmail": "Email"
+    },
+    "options": {
+      "title": "Opzioni",
+      "style": "Stile",
+      "styleHalf": "Semiblocchi Unicode (compatto)",
+      "styleBlocks": "Blocchi pieni Unicode",
+      "styleAscii": "ASCII puro (#)",
+      "ecc": "Correzione degli errori",
+      "eccL": "L — 7%",
+      "eccM": "M — 15% (consigliato)",
+      "eccQ": "Q — 25%",
+      "eccH": "H — 30%",
+      "invert": "Inverti (sfondo scuro)",
+      "invertHint": "Attivalo se incolli il risultato in un terminale o in un editor scuro.",
+      "quietZoneNote": "Viene sempre aggiunto un margine di 4 moduli: è indispensabile per la scansione."
+    },
+    "preview": {
+      "title": "Anteprima",
+      "copy": "Copia",
+      "copyMarkdown": "Copia come Markdown",
+      "download": "Scarica .txt",
+      "downloadPng": "Scarica PNG",
+      "placeholder": "Il tuo QR code apparirà qui...",
+      "monospaceNote": "Incollalo con un carattere a spaziatura fissa, altrimenti il QR code risulterà deformato.",
+      "pngNote": "Il PNG è sempre nero su bianco, qualunque sia l'opzione Inverti.",
+      "ariaLabel": "QR code disegnato con caratteri di testo"
+    },
+    "errors": {
+      "copySuccess": "QR code copiato negli appunti!",
+      "copyMarkdownSuccess": "Markdown copiato negli appunti!",
+      "copyError": "Copia non riuscita.",
+      "downloadError": "Download non riuscito.",
+      "pngError": "Generazione del PNG non riuscita."
+    }
+  },
   "home": {
     "heroBadge": "4 strumenti ASCII gratuiti, senza registrazione",
     "heroTitle": "Il toolkit ASCII tutto in uno",
@@ -275,6 +352,9 @@
       },
       "sparkline": {
         "desc": "Visualizza serie di numeri come mini-grafici ASCII compatti per i tuoi report."
+      },
+      "qrCode": {
+        "desc": "Trasforma qualsiasi testo, link o rete Wi-Fi in un QR code scansionabile fatto di caratteri di testo."
       },
       "banner": {
         "desc": "Trasforma il testo in grandi banner ASCII stilizzati per intestazioni e terminali."

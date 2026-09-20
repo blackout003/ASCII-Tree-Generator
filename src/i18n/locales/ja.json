@@ -127,6 +127,7 @@
     "asciiTree": "ASCIIツリー",
     "asciiTable": "ASCIIテーブル",
     "sparkline": "ASCIIグラフ",
+    "qrCode": "QRコード",
     "banner": "テキストバナー",
     "comingSoon": "近日公開",
     "openTool": "ツールを開く",
@@ -261,6 +262,82 @@
       "downloadError": "ダウンロードに失敗しました。"
     }
   },
+  "qrGenerator": {
+    "input": {
+      "title": "内容",
+      "templateLabel": "種類",
+      "counter": "{count}/{max} 文字",
+      "tooLong": "内容が長すぎます: {count}/{max} 文字。QRコードを生成するには短くしてください。",
+      "clear": "クリア",
+      "empty": "フォームに入力するとQRコードが生成されます。"
+    },
+    "templates": {
+      "url": "URL",
+      "text": "テキスト",
+      "wifi": "Wi-Fi",
+      "email": "メール",
+      "phone": "電話",
+      "sms": "SMS",
+      "vcard": "連絡先 (vCard)"
+    },
+    "fields": {
+      "text": "テキスト",
+      "textPlaceholder": "テキストを入力または貼り付け...",
+      "url": "Webアドレス",
+      "urlPlaceholder": "https://example.com",
+      "ssid": "ネットワーク名 (SSID)",
+      "password": "パスワード",
+      "security": "セキュリティ",
+      "securityWpa": "WPA/WPA2/WPA3",
+      "securityWep": "WEP",
+      "securityNone": "パスワードなし",
+      "hidden": "ステルスネットワーク",
+      "emailTo": "宛先",
+      "emailSubject": "件名",
+      "emailBody": "メッセージ",
+      "phone": "電話番号",
+      "smsNumber": "電話番号",
+      "smsMessage": "メッセージ",
+      "firstName": "名",
+      "lastName": "姓",
+      "org": "会社名",
+      "vcardPhone": "電話",
+      "vcardEmail": "メール"
+    },
+    "options": {
+      "title": "オプション",
+      "style": "スタイル",
+      "styleHalf": "Unicode ハーフブロック (コンパクト)",
+      "styleBlocks": "Unicode フルブロック",
+      "styleAscii": "純粋な ASCII (#)",
+      "ecc": "誤り訂正",
+      "eccL": "L — 7%",
+      "eccM": "M — 15% (推奨)",
+      "eccQ": "Q — 25%",
+      "eccH": "H — 30%",
+      "invert": "反転 (暗い背景)",
+      "invertHint": "暗いターミナルやエディタに貼り付ける場合はオンにしてください。",
+      "quietZoneNote": "4モジュール分の余白が常に追加されます。スキャンに必須です。"
+    },
+    "preview": {
+      "title": "プレビュー",
+      "copy": "コピー",
+      "copyMarkdown": "Markdownとしてコピー",
+      "download": ".txt をダウンロード",
+      "downloadPng": "PNG をダウンロード",
+      "placeholder": "QRコードがここに表示されます...",
+      "monospaceNote": "等幅フォントで貼り付けてください。そうしないとQRコードが崩れます。",
+      "pngNote": "PNGは反転オプションに関わらず、常に白地に黒です。",
+      "ariaLabel": "文字で描かれたQRコード"
+    },
+    "errors": {
+      "copySuccess": "QRコードをクリップボードにコピーしました!",
+      "copyMarkdownSuccess": "Markdownをクリップボードにコピーしました!",
+      "copyError": "コピーに失敗しました。",
+      "downloadError": "ダウンロードに失敗しました。",
+      "pngError": "PNGの生成に失敗しました。"
+    }
+  },
   "home": {
     "heroBadge": "登録不要、4つの無料ASCIIツール",
     "heroTitle": "オールインワンのASCIIツールキット",
@@ -275,6 +352,9 @@
       },
       "sparkline": {
         "desc": "数値の並びをコンパクトなASCIIミニグラフで可視化。レポートに最適。"
+      },
+      "qrCode": {
+        "desc": "テキスト、リンク、Wi-Fiを、文字で描かれたスキャン可能なQRコードに変換します。"
       },
       "banner": {
         "desc": "テキストを大きな装飾ASCIIバナーに変換。ヘッダーやターミナルに。"
