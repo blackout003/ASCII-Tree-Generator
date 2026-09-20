@@ -55,8 +55,7 @@ export function AnalyticsOptOut() {
       </CardHeader>
       <CardContent className="space-y-4">
         <p className="text-sm text-muted-foreground">
-          Nous utilisons des outils de mesure d&apos;audience (Umami, Google Analytics,
-          Matomo, etc.) pour comprendre l&apos;usage du site. Aucun script de suivi
+          Nous utilisons un outil de mesure d&apos;audience respectueux de la vie privée (Plausible Analytics) pour comprendre l&apos;usage du site. Aucun script de suivi
           n&apos;est chargé tant que vous ne l&apos;avez pas explicitement autorisé, et
           votre choix est enregistré uniquement dans votre navigateur.
         </p>

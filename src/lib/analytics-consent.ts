@@ -1,4 +1,4 @@
-// Gestion du consentement à la collecte statistique (Umami, GA, GTM, Matomo, Hotjar).
+// Gestion du consentement à la collecte statistique (Plausible).
 //
 // Modèle opt-in : aucun script de suivi n'est chargé tant que l'utilisateur n'a
 // pas explicitement accepté (conforme aux recommandations de la CNIL). Le choix
@@ -9,9 +9,6 @@ export type AnalyticsConsent = 'granted' | 'denied';
 
 /** Clé localStorage conservant le choix de consentement. */
 export const ANALYTICS_CONSENT_KEY = 'analytics-consent';
-
-/** Clé native reconnue par le script Umami pour désactiver le suivi. */
-const UMAMI_DISABLED_KEY = 'umami.disabled';
 
 /** Événement diffusé quand le choix de consentement change (même onglet). */
 export const ANALYTICS_CONSENT_EVENT = 'analytics-consent-change';
@@ -39,18 +36,11 @@ export function hasDecidedAnalyticsConsent(): boolean {
 
 /**
  * Enregistre le choix de l'utilisateur et prévient les composants concernés.
- * En cas de refus, on positionne aussi `umami.disabled` pour bloquer le suivi
- * même si le script Umami avait déjà été chargé lors d'une visite précédente.
  */
 export function setAnalyticsConsent(consent: AnalyticsConsent): void {
   if (typeof window === 'undefined') return;
   try {
     window.localStorage.setItem(ANALYTICS_CONSENT_KEY, consent);
-    if (consent === 'denied') {
-      window.localStorage.setItem(UMAMI_DISABLED_KEY, '1');
-    } else {
-      window.localStorage.removeItem(UMAMI_DISABLED_KEY);
-    }
     window.dispatchEvent(new Event(ANALYTICS_CONSENT_EVENT));
   } catch {
     // localStorage indisponible (mode privé strict) : rien à faire.

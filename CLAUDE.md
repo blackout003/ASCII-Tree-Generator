@@ -61,7 +61,7 @@ All routes live under `src/app/[locale]/`. Locales are statically generated via 
 
 ### Environment variables
 
-All prefixed `NEXT_PUBLIC_`. See `.env.example` for the full list. Analytics providers (GA4, GTM, Hotjar, Matomo, Umami) are opt-in via env vars — the `analytics.tsx` component conditionally injects scripts.
+All prefixed `NEXT_PUBLIC_`. See `.env.example` for the full list. Analytics use Plausible (`@plausible-analytics/tracker`, domain `asciitree.fr`), initialized only after user consent in `analytics-scripts.tsx`.
 
 ### Legal pages
 

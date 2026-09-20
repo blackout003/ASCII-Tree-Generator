@@ -5,6 +5,22 @@ Toutes les évolutions notables de ASCII Tools sont documentées dans ce fichier
 Le format s'inspire de [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/)
 et le projet suit le [versionnage sémantique](https://semver.org/lang/fr/).
 
+## [2.2.3] - 2026-09-20
+
+Remplacement de tous les outils de mesure d'audience par Plausible Analytics.
+
+### Modifié
+
+- **Plausible Analytics** (`@plausible-analytics/tracker`, domaine `asciitree.fr`)
+  devient le seul outil de mesure d'audience ; il n'est initialisé qu'après
+  consentement explicite de l'utilisateur.
+- Texte de la page « Données personnelles » mis à jour en conséquence.
+
+### Supprimé
+
+- Google Analytics, Google Tag Manager, Hotjar, Matomo et Umami, ainsi que
+  leurs variables d'environnement.
+
 ## [2.2.2] - 2026-09-20
 
 Possibilité de proposer un nouvel émoji depuis la page Émojis ASCII.

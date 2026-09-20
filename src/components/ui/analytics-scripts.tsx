@@ -1,27 +1,32 @@
 "use client";
 
-import Script from 'next/script';
-import { useEffect, useState } from 'react';
-import { Analytics, GoogleTagManagerNoScript } from '@/components/ui/analytics';
+import { useEffect } from 'react';
+import { init } from '@plausible-analytics/tracker';
 import {
   ANALYTICS_CONSENT_EVENT,
   isAnalyticsGranted,
 } from '@/lib/analytics-consent';
 
-const umamiScriptUrl = process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL;
-const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID;
+const PLAUSIBLE_DOMAIN = 'asciitree.fr';
+
+let initialized = false;
 
 /**
- * Passerelle client pour l'ensemble des scripts de collecte statistique.
- * Modèle opt-in : les scripts (GA, GTM, Matomo, Hotjar, Umami) ne sont montés
- * que si l'utilisateur a explicitement accepté la collecte. Le choix est relu à
- * chaque changement de consentement, y compris entre onglets via `storage`.
+ * Passerelle client pour la collecte statistique (Plausible).
+ * Modèle opt-in : le tracker n'est initialisé qu'après acceptation explicite.
+ * Le package ne propose pas de « désinitialisation » : en cas de retrait du
+ * consentement, `transformRequest` ignore tous les événements suivants.
  */
 export function AnalyticsScripts() {
-  const [enabled, setEnabled] = useState(false);
-
   useEffect(() => {
-    const update = () => setEnabled(isAnalyticsGranted());
+    const update = () => {
+      if (initialized || !isAnalyticsGranted()) return;
+      initialized = true;
+      init({
+        domain: PLAUSIBLE_DOMAIN,
+        transformRequest: (payload) => (isAnalyticsGranted() ? payload : null),
+      });
+    };
     update();
     window.addEventListener(ANALYTICS_CONSENT_EVENT, update);
     window.addEventListener('storage', update);
@@ -31,19 +36,5 @@ export function AnalyticsScripts() {
     };
   }, []);
 
-  if (!enabled) return null;
-
-  return (
-    <>
-      <Analytics />
-      <GoogleTagManagerNoScript />
-      {umamiScriptUrl && umamiWebsiteId && (
-        <Script
-          src={umamiScriptUrl}
-          data-website-id={umamiWebsiteId}
-          strategy="afterInteractive"
-        />
-      )}
-    </>
-  );
+  return null;
 }

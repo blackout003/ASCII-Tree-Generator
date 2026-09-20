@@ -95,29 +95,11 @@ npm run lint
 
 ## Environment Variables
 
-All variables are optional. The app works without any of them in development.
+All variables are optional. Analytics (Plausible, domain `asciitree.fr`) are opt-in and need no variable. The app works without any of them in development.
 
 ```env
 # Override the base URL (defaults to https://asciitree.fr)
 NEXT_PUBLIC_BASE_URL=https://your-domain.com
-
-# Google Analytics 4 (production only)
-NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
-
-# Google Tag Manager (production only)
-NEXT_PUBLIC_GTM_CONTAINER_ID=GTM-XXXXXXX
-
-# Hotjar (production only)
-NEXT_PUBLIC_HOTJAR_ID=0000000
-NEXT_PUBLIC_HOTJAR_SNIPPET_VERSION=6
-
-# Matomo — privacy-focused analytics alternative (production only)
-NEXT_PUBLIC_MATOMO_URL=https://your-matomo.com
-NEXT_PUBLIC_MATOMO_SITE_ID=1
-
-#UMAMI
-NEXT_PUBLIC_UMAMI_SCRIPT_URL=https://your-umami-instance.com/script.js
-NEXT_PUBLIC_UMAMI_WEBSITE_ID=your-website-id
 ```
 
 Create a `.env.local` file at the root and add any variables you need.

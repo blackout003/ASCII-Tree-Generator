@@ -2,7 +2,7 @@
  * Version actuelle de l'application, affichée dans la barre latérale.
  * Doit rester synchronisée avec le champ "version" de package.json et CHANGELOG.md.
  */
-export const APP_VERSION = '2.2.2';
+export const APP_VERSION = '2.2.3';
 
 export interface ChangelogSection {
   /** Titre de la section (ex: "Ajouté", "Modifié"). */
@@ -24,6 +24,26 @@ export interface ChangelogEntry {
  * Source lisible : CHANGELOG.md à la racine du projet.
  */
 export const CHANGELOG: ChangelogEntry[] = [
+  {
+    version: '2.2.3',
+    date: '2026-09-20',
+    summary: 'Plausible Analytics devient le seul outil de mesure d’audience.',
+    sections: [
+      {
+        title: 'Modifié',
+        items: [
+          'Plausible Analytics (domaine asciitree.fr) remplace tous les autres outils ; il n’est initialisé qu’après consentement explicite.',
+          'Texte de la page « Données personnelles » mis à jour.',
+        ],
+      },
+      {
+        title: 'Supprimé',
+        items: [
+          'Google Analytics, Google Tag Manager, Hotjar, Matomo et Umami, ainsi que leurs variables d’environnement.',
+        ],
+      },
+    ],
+  },
   {
     version: '2.2.2',
     date: '2026-09-20',
