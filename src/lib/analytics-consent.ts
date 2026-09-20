@@ -1,10 +1,11 @@
 // Gestion du consentement à la collecte statistique (Plausible).
 //
-// Modèle opt-in : aucun script de suivi n'est chargé tant que l'utilisateur n'a
-// pas explicitement accepté (conforme aux recommandations de la CNIL). Le choix
-// est stocké côté navigateur dans localStorage — rien n'est envoyé à nos serveurs.
+// Modèle opt-out : le suivi est actif par défaut, sauf si l'utilisateur l'a
+// refusé ou si son navigateur envoie « Ne pas suivre » (DNT) / Global Privacy
+// Control. Le choix est stocké côté navigateur dans localStorage — rien n'est
+// envoyé à nos serveurs.
 
-/** Choix explicite de l'utilisateur. `null` = pas encore décidé. */
+/** Choix explicite de l'utilisateur. `null` = pas de choix (suivi actif par défaut). */
 export type AnalyticsConsent = 'granted' | 'denied';
 
 /** Clé localStorage conservant le choix de consentement. */
@@ -27,9 +28,17 @@ export function getAnalyticsConsent(): AnalyticsConsent | null {
   }
 }
 
-/** `true` uniquement si l'utilisateur a explicitement accepté la collecte. */
-export function isAnalyticsGranted(): boolean {
-  return getAnalyticsConsent() === 'granted';
+/** `true` si le navigateur signale « Ne pas suivre » (DNT) ou Global Privacy Control. */
+export function isDoNotTrackEnabled(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
+  const dnt = nav.doNotTrack ?? (window as unknown as { doNotTrack?: string }).doNotTrack;
+  return dnt === '1' || dnt === 'yes' || nav.globalPrivacyControl === true;
+}
+
+/** `true` si le suivi est autorisé : pas de refus explicite et pas de « Ne pas suivre ». */
+export function isAnalyticsAllowed(): boolean {
+  return !isDoNotTrackEnabled() && getAnalyticsConsent() !== 'denied';
 }
 
 /** `true` si l'utilisateur a déjà fait un choix (accepté ou refusé). */

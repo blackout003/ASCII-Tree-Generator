@@ -32,7 +32,7 @@ export const CHANGELOG: ChangelogEntry[] = [
       {
         title: 'Modifié',
         items: [
-          'Plausible Analytics (instance auto-hébergée) remplace tous les autres outils ; il n’est initialisé qu’après consentement explicite.',
+          'Plausible Analytics (instance auto-hébergée) remplace tous les autres outils ; il est actif par défaut, désactivé en cas de refus ou de signal « Ne pas suivre ».',
           'Texte de la page « Données personnelles » mis à jour.',
         ],
       },

@@ -578,7 +578,7 @@
   },
   "cookieConsent": {
     "title": "Respeitamos a sua privacidade",
-    "description": "Utilizamos ferramentas de análise para melhorar o site. Nenhum rastreamento é ativado sem o seu consentimento.",
+    "description": "Usamos uma ferramenta de análise anónima para melhorar o site. Pode recusá-la a qualquer momento; fica desativada se o seu navegador enviar «Não rastrear».",
     "accept": "Aceitar",
     "refuse": "Recusar",
     "learnMore": "Saber mais",

@@ -4,7 +4,7 @@ import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import {
   ANALYTICS_CONSENT_EVENT,
-  isAnalyticsGranted,
+  isAnalyticsAllowed,
 } from '@/lib/analytics-consent';
 
 const PLAUSIBLE_SCRIPT_URL =
@@ -12,14 +12,15 @@ const PLAUSIBLE_SCRIPT_URL =
 
 /**
  * Passerelle client pour la collecte statistique (Plausible, instance auto-hébergée).
- * Modèle opt-in : le script n'est monté qu'après acceptation explicite. Le choix
- * est relu à chaque changement de consentement, y compris entre onglets.
+ * Modèle opt-out : le script est monté par défaut, sauf refus explicite ou
+ * signal « Ne pas suivre » du navigateur. Le choix est relu à chaque changement,
+ * y compris entre onglets.
  */
 export function AnalyticsScripts() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    const update = () => setEnabled(isAnalyticsGranted());
+    const update = () => setEnabled(isAnalyticsAllowed());
     update();
     window.addEventListener(ANALYTICS_CONSENT_EVENT, update);
     window.addEventListener('storage', update);

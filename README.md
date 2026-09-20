@@ -36,7 +36,7 @@ Plus reference resources:
 - **8 languages** — French, English, Italian, Spanish, German, Portuguese, Russian, Japanese
 - **Dark / Light theme**
 - **PWA-ready** — installable on desktop and mobile
-- **Privacy-first** — no account required, analytics are production-only and opt-in
+- **Privacy-first** — no account required, anonymous analytics (Plausible) on by default, opt-out and Do-Not-Track aware
 
 ---
 
@@ -95,7 +95,7 @@ npm run lint
 
 ## Environment Variables
 
-All variables are optional. Analytics (Plausible, self-hosted) are opt-in and need no variable. The app works without any of them in development.
+All variables are optional. Analytics (Plausible, self-hosted) are opt-out and need no variable. The app works without any of them in development.
 
 ```env
 # Override the base URL (defaults to https://asciitree.fr)

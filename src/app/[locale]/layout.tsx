@@ -143,7 +143,7 @@ export default async function LocaleLayout({
             {children}
           </ThemeProvider>
 
-          {/* Bannière de consentement (opt-in) — nécessite les traductions */}
+          {/* Bannière de consentement (opt-out) — nécessite les traductions */}
           <AnalyticsConsentBanner />
         </NextIntlClientProvider>
 

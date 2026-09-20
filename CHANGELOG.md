@@ -12,8 +12,8 @@ Remplacement de tous les outils de mesure d'audience par Plausible Analytics.
 ### Modifié
 
 - **Plausible Analytics** (instance auto-hébergée `analytics.egweb.fr`)
-  devient le seul outil de mesure d'audience ; il n'est initialisé qu'après
-  consentement explicite de l'utilisateur.
+  devient le seul outil de mesure d'audience ; il est actif par défaut (opt-out),
+  désactivé si l'utilisateur le refuse ou si son navigateur envoie « Ne pas suivre ».
 - Texte de la page « Données personnelles » mis à jour en conséquence.
 
 ### Supprimé

@@ -578,7 +578,7 @@
   },
   "cookieConsent": {
     "title": "We value your privacy",
-    "description": "We use analytics tools to improve the site. No tracking is enabled without your consent.",
+    "description": "We use an anonymous analytics tool to improve the site. You can decline at any time; it is disabled if your browser sends “Do Not Track”.",
     "accept": "Accept",
     "refuse": "Decline",
     "learnMore": "Learn more",

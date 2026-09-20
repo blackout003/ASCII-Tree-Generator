@@ -578,7 +578,7 @@
   },
   "cookieConsent": {
     "title": "Wir schützen deine Privatsphäre",
-    "description": "Wir verwenden Analyse-Tools, um die Website zu verbessern. Ohne deine Zustimmung wird kein Tracking aktiviert.",
+    "description": "Wir nutzen ein anonymes Analyse-Tool, um die Seite zu verbessern. Du kannst jederzeit ablehnen; es ist deaktiviert, wenn dein Browser „Do Not Track“ sendet.",
     "accept": "Akzeptieren",
     "refuse": "Ablehnen",
     "learnMore": "Mehr erfahren",

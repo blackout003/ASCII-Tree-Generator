@@ -8,13 +8,14 @@ import { ShieldCheck, X } from '@/components/icons';
 import {
   ANALYTICS_CONSENT_EVENT,
   hasDecidedAnalyticsConsent,
+  isDoNotTrackEnabled,
   setAnalyticsConsent,
 } from '@/lib/analytics-consent';
 
 /**
  * Bannière de consentement affichée en bas à droite lors de l'arrivée sur le
- * site, tant que le visiteur n'a pas fait de choix. Pilote la collecte
- * statistique en modèle opt-in (aucun suivi tant que « Accepter » n'est pas cliqué).
+ * site, tant que le visiteur n'a pas fait de choix (et masquée si le navigateur
+ * envoie « Ne pas suivre »). Le suivi est actif par défaut : « Refuser » le coupe.
  */
 export function AnalyticsConsentBanner() {
   const t = useTranslations('cookieConsent');
@@ -22,7 +23,7 @@ export function AnalyticsConsentBanner() {
   const [visible, setVisible] = React.useState(false);
 
   React.useEffect(() => {
-    const sync = () => setVisible(!hasDecidedAnalyticsConsent());
+    const sync = () => setVisible(!hasDecidedAnalyticsConsent() && !isDoNotTrackEnabled());
     sync();
     // Se met à jour si le choix est fait ailleurs (autre onglet, page de confidentialité).
     window.addEventListener(ANALYTICS_CONSENT_EVENT, sync);

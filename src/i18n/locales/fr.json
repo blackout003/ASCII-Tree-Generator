@@ -578,7 +578,7 @@
   },
   "cookieConsent": {
     "title": "Respect de votre vie privée",
-    "description": "Nous utilisons des outils de mesure d'audience pour améliorer le site. Aucun suivi n'est activé sans votre accord.",
+    "description": "Nous utilisons un outil de mesure d'audience anonyme pour améliorer le site. Vous pouvez le refuser à tout moment ; il est désactivé si votre navigateur envoie « Ne pas suivre ».",
     "accept": "Accepter",
     "refuse": "Refuser",
     "learnMore": "En savoir plus",
