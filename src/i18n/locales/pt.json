@@ -268,8 +268,7 @@
       "templateLabel": "Tipo",
       "counter": "{count}/{max} caracteres",
       "tooLong": "Conteúdo muito longo: {count}/{max} caracteres. Encurte-o para gerar o QR code.",
-      "clear": "Limpar",
-      "empty": "Preencha o formulário para gerar seu QR code."
+      "clear": "Limpar"
     },
     "templates": {
       "url": "URL",

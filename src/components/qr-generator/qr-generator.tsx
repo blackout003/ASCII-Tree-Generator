@@ -5,8 +5,8 @@ import { useTranslations } from 'next-intl';
 import { useRightSidebar } from '@/lib/contexts/right-sidebar-context';
 import { useToast } from '@/hooks/use-toast';
 import { useDebouncedValue } from '@/hooks/use-debounced-value';
-import { QR_MAX_LENGTH, type QrFields, type QrOptions, type QrTemplate } from '@/lib/qr-types';
-import { buildPayload, countChars, DEFAULT_FIELDS } from '@/lib/qr-templates';
+import { type QrFields, type QrOptions, type QrTemplate } from '@/lib/qr-types';
+import { buildPayload, countChars, isWithinLimit, DEFAULT_FIELDS } from '@/lib/qr-templates';
 import { generateMatrix, renderQr, toMarkdown } from '@/lib/qr-generator';
 import { renderPngBlob } from '@/lib/qr-png';
 import { QrInput } from './qr-input';
@@ -42,7 +42,7 @@ export function QrGenerator() {
   // The length is re-checked on the debounced value: it can lag behind and still be too long,
   // and feeding an over-long string to the encoder would throw.
   const debouncedPayload = useDebouncedValue(payload, 150);
-  const safePayload = countChars(debouncedPayload) <= QR_MAX_LENGTH ? debouncedPayload : '';
+  const safePayload = isWithinLimit(debouncedPayload) ? debouncedPayload : '';
 
   const matrix = useMemo(() => generateMatrix(safePayload, options.ecc), [safePayload, options.ecc]);
   const output = useMemo(

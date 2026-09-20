@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildPayload, countChars, DEFAULT_FIELDS } from '@/lib/qr-templates';
+import { buildPayload, countChars, isWithinLimit, DEFAULT_FIELDS } from '@/lib/qr-templates';
 import type { QrFields } from '@/lib/qr-types';
 
 const f = (over: Partial<QrFields>): QrFields => ({ ...DEFAULT_FIELDS, ...over });
@@ -74,11 +74,50 @@ describe('buildPayload', () => {
         'TEL:+44 1',
         'EMAIL:ada@x.org',
         'END:VCARD',
-      ].join('\n')
+      ].join('\r\n')
     );
     expect(buildPayload('vcard', f({ firstName: 'Ada' }))).toBe(
-      ['BEGIN:VCARD', 'VERSION:3.0', 'N:;Ada;;;', 'FN:Ada', 'END:VCARD'].join('\n')
+      ['BEGIN:VCARD', 'VERSION:3.0', 'N:;Ada;;;', 'FN:Ada', 'END:VCARD'].join('\r\n')
     );
     expect(buildPayload('vcard', f({}))).toBe('');
+  });
+
+  it('vcard: escapes a newline as a literal \n and never breaks a line', () => {
+    const out = buildPayload('vcard', f({ firstName: 'Ada\nB', org: 'A\r\nB' }));
+    expect(out).toContain('FN:Ada\\nB');
+    expect(out).toContain('ORG:A\\nB');
+    expect(out.split('\r\n')).toEqual([
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'N:;Ada\\nB;;;',
+      'FN:Ada\\nB',
+      'ORG:A\\nB',
+      'END:VCARD',
+    ]);
+  });
+
+  it('wifi: blank ssid gives empty payload, real spaces are kept', () => {
+    expect(buildPayload('wifi', f({ ssid: '   ' }))).toBe('');
+    expect(buildPayload('wifi', f({ ssid: ' My Net ', password: 'pw' }))).toBe('WIFI:T:WPA;S: My Net ;P:pw;;');
+  });
+
+  it('wifi: WEP security and backslash escaping', () => {
+    expect(buildPayload('wifi', f({ ssid: 'Net', password: 'pw', security: 'WEP' }))).toBe('WIFI:T:WEP;S:Net;P:pw;;');
+    expect(buildPayload('wifi', f({ ssid: 'a\\b' }))).toBe('WIFI:T:WPA;S:a\\\\b;;');
+  });
+
+  it('email: subject only and body only', () => {
+    expect(buildPayload('email', f({ emailTo: 'a@b.fr', emailSubject: 'Hi' }))).toBe('mailto:a@b.fr?subject=Hi');
+    expect(buildPayload('email', f({ emailTo: 'a@b.fr', emailBody: 'Yo' }))).toBe('mailto:a@b.fr?body=Yo');
+  });
+});
+
+describe('isWithinLimit', () => {
+  it('counts code points against the 300 limit', () => {
+    expect(isWithinLimit('é'.repeat(300))).toBe(true);
+    expect(isWithinLimit('é'.repeat(301))).toBe(false);
+    expect(isWithinLimit('😀'.repeat(300))).toBe(true);
+    expect(isWithinLimit('😀'.repeat(301))).toBe(false);
+    expect(isWithinLimit('')).toBe(true);
   });
 });

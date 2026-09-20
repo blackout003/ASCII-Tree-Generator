@@ -268,8 +268,7 @@
       "templateLabel": "種類",
       "counter": "{count}/{max} 文字",
       "tooLong": "内容が長すぎます: {count}/{max} 文字。QRコードを生成するには短くしてください。",
-      "clear": "クリア",
-      "empty": "フォームに入力するとQRコードが生成されます。"
+      "clear": "クリア"
     },
     "templates": {
       "url": "URL",

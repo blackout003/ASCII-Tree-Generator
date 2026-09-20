@@ -1,4 +1,4 @@
-import type { QrFields, QrTemplate } from './qr-types';
+import { QR_MAX_LENGTH, type QrFields, type QrTemplate } from './qr-types';
 
 export const DEFAULT_FIELDS: QrFields = {
   text: '',
@@ -25,6 +25,11 @@ export function countChars(s: string): number {
   return Array.from(s).length;
 }
 
+/** True when the final encoded string fits the tool's limit (in characters / code points). */
+export function isWithinLimit(payload: string): boolean {
+  return countChars(payload) <= QR_MAX_LENGTH;
+}
+
 const escapeWifi = (s: string) => s.replace(/([\\;,:"])/g, '\\$1');
 const escapeVcard = (s: string) => s.replace(/([\\;,])/g, '\\$1').replace(/\r?\n/g, '\\n');
 const cleanNumber = (s: string) => s.replace(/[^\d+]/g, '');
@@ -42,7 +47,7 @@ export function buildPayload(template: QrTemplate, f: QrFields): string {
       return f.url.trim();
 
     case 'wifi': {
-      if (!f.ssid) return '';
+      if (!f.ssid.trim()) return '';
       const parts = [`T:${f.security}`, `S:${escapeWifi(f.ssid)}`];
       if (f.security !== 'nopass' && f.password) parts.push(`P:${escapeWifi(f.password)}`);
       if (f.hidden) parts.push('H:true');
@@ -82,7 +87,7 @@ export function buildPayload(template: QrTemplate, f: QrFields): string {
       if (f.vcardPhone.trim()) lines.push(`TEL:${escapeVcard(f.vcardPhone.trim())}`);
       if (f.vcardEmail.trim()) lines.push(`EMAIL:${escapeVcard(f.vcardEmail.trim())}`);
       lines.push('END:VCARD');
-      return lines.join('\n');
+      return lines.join('\r\n');
     }
   }
 }

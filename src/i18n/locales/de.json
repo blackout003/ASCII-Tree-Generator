@@ -268,8 +268,7 @@
       "templateLabel": "Typ",
       "counter": "{count}/{max} Zeichen",
       "tooLong": "Inhalt zu lang: {count}/{max} Zeichen. Kürze ihn, um den QR-Code zu erzeugen.",
-      "clear": "Löschen",
-      "empty": "Fülle das Formular aus, um deinen QR-Code zu erzeugen."
+      "clear": "Löschen"
     },
     "templates": {
       "url": "URL",
@@ -333,8 +332,8 @@
     "errors": {
       "copySuccess": "QR-Code in die Zwischenablage kopiert!",
       "copyMarkdownSuccess": "Markdown in die Zwischenablage kopiert!",
-      "copyError": "Kopieren fehlgeschlagen.",
-      "downloadError": "Herunterladen fehlgeschlagen.",
+      "copyError": "Fehler beim Kopieren.",
+      "downloadError": "Fehler beim Herunterladen.",
       "pngError": "PNG konnte nicht erzeugt werden."
     }
   },
