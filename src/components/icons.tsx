@@ -8,6 +8,8 @@ import {
   ArrowLeft01Icon,
   BarChartIcon,
   Bookmark01Icon,
+  BugIcon,
+  BulbIcon,
   Cancel01Icon,
   CatIcon,
   ChevronDownIcon,
@@ -39,6 +41,7 @@ import {
   MinusSignIcon,
   Moon02Icon,
   MoreHorizontalIcon,
+  MessageMultiple01Icon,
   MoveIcon,
   Note01Icon,
   PanelLeftIcon,
@@ -94,6 +97,7 @@ export const ArrowLeft = createIcon(ArrowLeft01Icon, "ArrowLeft");
 export const BarChart2 = createIcon(BarChartIcon, "BarChart2");
 export const Bold = createIcon(TextBoldIcon, "Bold");
 export const BookMarked = createIcon(Bookmark01Icon, "BookMarked");
+export const Bug = createIcon(BugIcon, "Bug");
 export const Cat = createIcon(CatIcon, "Cat");
 export const Check = createIcon(Tick02Icon, "Check");
 export const CheckIcon = createIcon(Tick02Icon, "CheckIcon");
@@ -121,7 +125,9 @@ export const Home = createIcon(Home09Icon, "Home");
 export const Image = createIcon(Image01Icon, "Image");
 export const Italic = createIcon(TextItalicIcon, "Italic");
 export const Link2 = createIcon(Link02Icon, "Link2");
+export const Lightbulb = createIcon(BulbIcon, "Lightbulb");
 export const List = createIcon(LeftToRightListBulletIcon, "List");
+export const MessageSquare = createIcon(MessageMultiple01Icon, "MessageSquare");
 export const Minus = createIcon(MinusSignIcon, "Minus");
 export const Monitor = createIcon(ComputerIcon, "Monitor");
 export const Moon = createIcon(Moon02Icon, "Moon");

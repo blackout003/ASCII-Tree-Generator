@@ -5,6 +5,15 @@ Toutes les évolutions notables de ASCII Tools sont documentées dans ce fichier
 Le format s'inspire de [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/)
 et le projet suit le [versionnage sémantique](https://semver.org/lang/fr/).
 
+## [2.2.1] - 2026-09-20
+
+Ajout d'un accès direct aux signalements GitHub depuis le menu.
+
+### Ajouté
+
+- **Menu « Un retour ? »** dans la barre latérale : signaler un bug ou proposer une
+  fonctionnalité ouvre directement le modèle de ticket GitHub correspondant.
+
 ## [2.2.0] - 2026-09-20
 
 Ajout d'un **générateur de QR code ASCII**.

@@ -2,7 +2,7 @@
  * Version actuelle de l'application, affichée dans la barre latérale.
  * Doit rester synchronisée avec le champ "version" de package.json et CHANGELOG.md.
  */
-export const APP_VERSION = '2.2.0';
+export const APP_VERSION = '2.2.1';
 
 export interface ChangelogSection {
   /** Titre de la section (ex: "Ajouté", "Modifié"). */
@@ -24,6 +24,20 @@ export interface ChangelogEntry {
  * Source lisible : CHANGELOG.md à la racine du projet.
  */
 export const CHANGELOG: ChangelogEntry[] = [
+  {
+    version: '2.2.1',
+    date: '2026-09-20',
+    summary:
+      'Ajout d’un accès direct aux signalements GitHub (bug ou demande de fonctionnalité) depuis le menu.',
+    sections: [
+      {
+        title: 'Ajouté',
+        items: [
+          'Menu « Un retour ? » dans la barre latérale : signaler un bug ou proposer une fonctionnalité ouvre directement le modèle de ticket GitHub correspondant.',
+        ],
+      },
+    ],
+  },
   {
     version: '2.2.0',
     date: '2026-09-20',

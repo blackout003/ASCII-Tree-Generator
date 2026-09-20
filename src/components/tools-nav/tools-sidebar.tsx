@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
-import { Home, Globe, Sun, Moon, Monitor, MoreHorizontal, PencilRuler } from '@/components/icons';
+import { Home, Globe, Sun, Moon, Monitor, MoreHorizontal, PencilRuler, MessageSquare, Bug, Lightbulb } from '@/components/icons';
 import { useTheme } from 'next-themes';
 import {
   Sidebar,
@@ -26,6 +26,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { ChangelogDialog } from '@/components/tools-nav/changelog-dialog';
 import { TOOLS, RESOURCES } from '@/lib/tools';
+import { GITHUB_ISSUE_URLS } from '@/lib/github-links';
 import { locales, localeNames, type Locale } from '@/i18n/locales';
 
 const localeFlags: Record<Locale, string> = {
@@ -203,6 +204,32 @@ export function ToolsSidebar() {
                 <DropdownMenuItem onClick={() => setTheme('system')}>
                   <Monitor className="mr-2 h-4 w-4" />
                   Système
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </SidebarMenuItem>
+
+          <SidebarMenuItem>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <SidebarMenuButton tooltip={t('feedback')}>
+                  <MessageSquare className="size-4" />
+                  <span>{t('feedback')}</span>
+                  <MoreHorizontal className="ml-auto size-4 opacity-50" />
+                </SidebarMenuButton>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent side="right" align="end">
+                <DropdownMenuItem asChild>
+                  <a href={GITHUB_ISSUE_URLS.bug} target="_blank" rel="noopener noreferrer">
+                    <Bug className="mr-2 h-4 w-4" />
+                    {t('reportBug')}
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href={GITHUB_ISSUE_URLS.feature} target="_blank" rel="noopener noreferrer">
+                    <Lightbulb className="mr-2 h-4 w-4" />
+                    {t('requestFeature')}
+                  </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
