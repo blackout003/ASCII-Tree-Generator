@@ -157,6 +157,28 @@ export const TOOLS_SEO = {
       ja: "数値からテキスト文字でインラインのスパークライングラフを作成。README、ダッシュボード、コミットメッセージに最適。データを貼り付けてコピー。無料。",
     },
   },
+  'qr-code-generator': {
+    titles: {
+      fr: "Générateur de QR Code ASCII — QR Code en Texte Scannable | Gratuit",
+      en: "ASCII QR Code Generator — Scannable Text QR Codes | Free Online",
+      es: "Generador de QR ASCII — Códigos QR de Texto Escaneables | Online Gratis",
+      de: "ASCII-QR-Code-Generator — Scannbare Text-QR-Codes | Kostenlos Online",
+      it: "Generatore di QR Code ASCII — QR Code di Testo Scansionabili | Online Gratis",
+      pt: "Gerador de QR Code ASCII — QR Codes de Texto Digitalizáveis | Online Grátis",
+      ru: "Генератор ASCII QR-кодов — сканируемые текстовые QR-коды | Онлайн бесплатно",
+      ja: "ASCII QRコード生成 — スキャンできるテキストQRコード｜無料オンライン",
+    },
+    descriptions: {
+      fr: "Générez des QR codes scannables en caractères texte (blocs Unicode ou ASCII pur) pour README, terminaux et docs. Wi-Fi, URL, vCard, SMS. Gratuit, 100 % dans votre navigateur.",
+      en: "Generate scannable QR codes made of text characters (Unicode blocks or pure ASCII) for READMEs, terminals and docs. Wi-Fi, URL, vCard, SMS. Free, 100% in your browser.",
+      es: "Genera códigos QR escaneables con caracteres de texto (bloques Unicode o ASCII puro) para README, terminales y docs. Wi-Fi, URL, vCard, SMS. Gratis, 100 % en tu navegador.",
+      de: "Erstellen Sie scannbare QR-Codes aus Textzeichen (Unicode-Blöcke oder reines ASCII) für READMEs, Terminals und Docs. WLAN, URL, vCard, SMS. Kostenlos, 100 % im Browser.",
+      it: "Genera QR code scansionabili con caratteri di testo (blocchi Unicode o ASCII puro) per README, terminali e documenti. Wi-Fi, URL, vCard, SMS. Gratis, 100% nel tuo browser.",
+      pt: "Gere QR codes digitalizáveis com caracteres de texto (blocos Unicode ou ASCII puro) para READMEs, terminais e docs. Wi-Fi, URL, vCard, SMS. Grátis, 100 % no seu navegador.",
+      ru: "Создавайте сканируемые QR-коды из текстовых символов (блоки Unicode или чистый ASCII) для README, терминалов и доков. Wi-Fi, URL, vCard, SMS. Бесплатно, прямо в браузере.",
+      ja: "テキスト文字（Unicodeブロックまたは純粋なASCII）でスキャン可能なQRコードを生成。README、ターミナル、ドキュメントに最適。Wi-Fi・URL・vCard・SMS対応。無料、ブラウザ内で完結。",
+    },
+  },
   'ascii-emoji': {
     titles: {
       fr: "Générateur d'Émoji ASCII & Kaomoji — Émoticônes Texte | Gratuit",

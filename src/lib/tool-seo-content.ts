@@ -344,6 +344,88 @@ const CONTENT: Record<ToolSlug, LocalizedToolContent> = {
       ],
     },
   },
+  'qr-code-generator': {
+    en: {
+      heading: 'About the ASCII QR Code Generator',
+      intro:
+        'Turn any text, link, Wi-Fi network or contact card into a QR code drawn with text characters. Pick Unicode half-blocks for a compact result or pure ASCII for maximum compatibility, then paste it into a README, a terminal, a code comment or a plain-text email. Everything runs in your browser: your content is never sent to a server.',
+      faq: [
+        { q: 'Can an ASCII QR code really be scanned?', a: 'Yes. The tool always adds the 4-module quiet zone required by the QR standard and uses a real error-correction level (M by default). Display it in a monospace font at a readable size and any phone camera can read it.' },
+        { q: 'What is the difference between the three styles?', a: 'Half-blocks (▀▄█) are the most compact and closest to square. Full blocks (██) are simple and robust. Pure ASCII (##) uses only 7-bit characters, so it survives any text channel, but it is much wider.' },
+        { q: 'Why is there an Invert option?', a: 'Terminals and dark editors show light text on a dark background, which reverses the QR code. Turn on Invert to print the light modules instead, so the code reads correctly on a dark background.' },
+      ],
+    },
+    fr: {
+      heading: 'À propos du générateur de QR code ASCII',
+      intro:
+        'Transformez un texte, un lien, un réseau Wi-Fi ou une carte de contact en QR code dessiné avec des caractères texte. Choisissez les demi-blocs Unicode pour un résultat compact ou l’ASCII pur pour une compatibilité maximale, puis collez-le dans un README, un terminal, un commentaire de code ou un e-mail en texte brut. Tout fonctionne dans votre navigateur : votre contenu n’est jamais envoyé à un serveur.',
+      faq: [
+        { q: 'Un QR code ASCII est-il vraiment scannable ?', a: 'Oui. L’outil ajoute toujours la marge de 4 modules exigée par la norme QR et utilise un vrai niveau de correction d’erreur (M par défaut). Affichez-le dans une police à chasse fixe, à une taille lisible, et n’importe quel appareil photo de téléphone le lit.' },
+        { q: 'Quelle différence entre les trois styles ?', a: 'Les demi-blocs (▀▄█) sont les plus compacts et les plus proches d’un carré. Les blocs pleins (██) sont simples et robustes. L’ASCII pur (##) n’utilise que des caractères 7 bits et passe donc par tous les canaux texte, mais il est beaucoup plus large.' },
+        { q: 'À quoi sert l’option Inverser ?', a: 'Les terminaux et éditeurs sombres affichent du texte clair sur fond sombre, ce qui inverse le QR code. Activez Inverser pour imprimer les modules clairs à la place : le code se lit alors correctement sur fond sombre.' },
+      ],
+    },
+    es: {
+      heading: 'Acerca del Generador de QR ASCII',
+      intro:
+        'Convierte cualquier texto, enlace, red Wi-Fi o tarjeta de contacto en un código QR dibujado con caracteres de texto. Elige los medios bloques Unicode para un resultado compacto o ASCII puro para la máxima compatibilidad, y pégalo en un README, una terminal, un comentario de código o un correo en texto plano. Todo funciona en tu navegador: tu contenido nunca se envía a un servidor.',
+      faq: [
+        { q: '¿Se puede escanear de verdad un código QR ASCII?', a: 'Sí. La herramienta siempre añade la zona de silencio de 4 módulos que exige el estándar QR y usa un nivel real de corrección de errores (M por defecto). Muéstralo en una fuente monoespaciada a un tamaño legible y cualquier cámara de móvil podrá leerlo.' },
+        { q: '¿Cuál es la diferencia entre los tres estilos?', a: 'Los medios bloques (▀▄█) son los más compactos y los más cercanos a un cuadrado. Los bloques completos (██) son simples y robustos. El ASCII puro (##) usa solo caracteres de 7 bits, por lo que sobrevive a cualquier canal de texto, pero es mucho más ancho.' },
+        { q: '¿Para qué sirve la opción Invertir?', a: 'Las terminales y los editores oscuros muestran texto claro sobre fondo oscuro, lo que invierte el código QR. Activa Invertir para imprimir los módulos claros en su lugar, de modo que el código se lea correctamente sobre fondo oscuro.' },
+      ],
+    },
+    de: {
+      heading: 'Über den ASCII-QR-Code-Generator',
+      intro:
+        'Verwandeln Sie beliebigen Text, Links, WLAN-Netzwerke oder Kontaktkarten in einen QR-Code aus Textzeichen. Wählen Sie Unicode-Halbblöcke für ein kompaktes Ergebnis oder reines ASCII für maximale Kompatibilität und fügen Sie ihn dann in ein README, ein Terminal, einen Code-Kommentar oder eine Klartext-E-Mail ein. Alles läuft in Ihrem Browser: Ihre Inhalte werden nie an einen Server gesendet.',
+      faq: [
+        { q: 'Lässt sich ein ASCII-QR-Code wirklich scannen?', a: 'Ja. Das Tool fügt immer die vom QR-Standard geforderte Ruhezone von 4 Modulen hinzu und nutzt eine echte Fehlerkorrekturstufe (standardmäßig M). Zeigen Sie ihn in einer Monospace-Schrift in lesbarer Größe an, und jede Handykamera kann ihn lesen.' },
+        { q: 'Was ist der Unterschied zwischen den drei Stilen?', a: 'Halbblöcke (▀▄█) sind am kompaktesten und kommen einem Quadrat am nächsten. Vollblöcke (██) sind einfach und robust. Reines ASCII (##) verwendet nur 7-Bit-Zeichen und übersteht daher jeden Textkanal, ist aber deutlich breiter.' },
+        { q: 'Wozu dient die Option Invertieren?', a: 'Terminals und dunkle Editoren zeigen hellen Text auf dunklem Hintergrund an, was den QR-Code umkehrt. Aktivieren Sie Invertieren, um stattdessen die hellen Module zu drucken, damit der Code auf dunklem Hintergrund korrekt lesbar ist.' },
+      ],
+    },
+    it: {
+      heading: 'Informazioni sul Generatore di QR Code ASCII',
+      intro:
+        'Trasforma qualsiasi testo, link, rete Wi-Fi o biglietto da visita in un QR code disegnato con caratteri di testo. Scegli i mezzi blocchi Unicode per un risultato compatto o l’ASCII puro per la massima compatibilità, poi incollalo in un README, in un terminale, in un commento di codice o in un’e-mail in testo semplice. Tutto funziona nel tuo browser: i tuoi contenuti non vengono mai inviati a un server.',
+      faq: [
+        { q: 'Un QR code ASCII si può davvero scansionare?', a: 'Sì. Lo strumento aggiunge sempre la zona di rispetto di 4 moduli richiesta dallo standard QR e usa un vero livello di correzione degli errori (M per impostazione predefinita). Mostralo in un carattere a spaziatura fissa a una dimensione leggibile e qualsiasi fotocamera di smartphone potrà leggerlo.' },
+        { q: 'Qual è la differenza tra i tre stili?', a: 'I mezzi blocchi (▀▄█) sono i più compatti e i più vicini a un quadrato. I blocchi pieni (██) sono semplici e robusti. L’ASCII puro (##) usa solo caratteri a 7 bit, quindi supera qualsiasi canale di testo, ma è molto più largo.' },
+        { q: 'A cosa serve l’opzione Inverti?', a: 'I terminali e gli editor scuri mostrano testo chiaro su sfondo scuro, il che inverte il QR code. Attiva Inverti per stampare invece i moduli chiari, così il codice si legge correttamente su sfondo scuro.' },
+      ],
+    },
+    pt: {
+      heading: 'Sobre o Gerador de QR Code ASCII',
+      intro:
+        'Transforme qualquer texto, link, rede Wi-Fi ou cartão de contacto num QR code desenhado com caracteres de texto. Escolha os meios blocos Unicode para um resultado compacto ou o ASCII puro para máxima compatibilidade e cole-o num README, num terminal, num comentário de código ou num e-mail em texto simples. Tudo funciona no seu navegador: o seu conteúdo nunca é enviado para um servidor.',
+      faq: [
+        { q: 'Um QR code ASCII pode mesmo ser digitalizado?', a: 'Sim. A ferramenta acrescenta sempre a zona de silêncio de 4 módulos exigida pela norma QR e usa um nível real de correção de erros (M por predefinição). Mostre-o num tipo de letra monoespaçado com um tamanho legível e qualquer câmara de telemóvel consegue lê-lo.' },
+        { q: 'Qual é a diferença entre os três estilos?', a: 'Os meios blocos (▀▄█) são os mais compactos e os mais próximos de um quadrado. Os blocos inteiros (██) são simples e robustos. O ASCII puro (##) usa apenas caracteres de 7 bits, por isso sobrevive a qualquer canal de texto, mas é muito mais largo.' },
+        { q: 'Para que serve a opção Inverter?', a: 'Os terminais e os editores escuros mostram texto claro sobre fundo escuro, o que inverte o QR code. Ative Inverter para imprimir os módulos claros em vez dos escuros, para que o código seja lido corretamente sobre fundo escuro.' },
+      ],
+    },
+    ru: {
+      heading: 'О генераторе ASCII QR-кодов',
+      intro:
+        'Превращайте любой текст, ссылку, сеть Wi-Fi или визитку в QR-код, нарисованный текстовыми символами. Выберите половинные блоки Unicode для компактного результата или чистый ASCII для максимальной совместимости, а затем вставьте код в README, терминал, комментарий в коде или письмо в виде обычного текста. Всё работает в вашем браузере: ваши данные никогда не отправляются на сервер.',
+      faq: [
+        { q: 'Можно ли действительно отсканировать ASCII QR-код?', a: 'Да. Инструмент всегда добавляет свободную зону в 4 модуля, которую требует стандарт QR, и использует настоящий уровень коррекции ошибок (по умолчанию M). Покажите код моноширинным шрифтом читаемого размера, и его прочитает камера любого телефона.' },
+        { q: 'Чем отличаются три стиля?', a: 'Половинные блоки (▀▄█) самые компактные и ближе всего к квадрату. Полные блоки (██) просты и надёжны. Чистый ASCII (##) использует только 7-битные символы, поэтому проходит через любой текстовый канал, но получается гораздо шире.' },
+        { q: 'Зачем нужна опция «Инвертировать»?', a: 'Терминалы и тёмные редакторы показывают светлый текст на тёмном фоне, из-за чего QR-код оказывается инвертированным. Включите «Инвертировать», чтобы вместо тёмных выводились светлые модули, и код корректно читался на тёмном фоне.' },
+      ],
+    },
+    ja: {
+      heading: 'ASCII QRコード生成ツールについて',
+      intro:
+        'テキスト、リンク、Wi-Fiネットワーク、連絡先カードを、テキスト文字で描いたQRコードに変換します。コンパクトに仕上げるならUnicodeのハーフブロック、互換性を最大にするなら純粋なASCIIを選び、README、ターミナル、コードコメント、プレーンテキストのメールに貼り付けられます。すべてブラウザ内で処理され、入力内容がサーバーに送信されることはありません。',
+      faq: [
+        { q: 'ASCIIのQRコードは本当にスキャンできますか？', a: 'はい。このツールはQR規格が定める4モジュールのクワイエットゾーンを必ず付加し、実際の誤り訂正レベル（デフォルトはM）を使用します。等幅フォントで読み取れる大きさで表示すれば、どのスマートフォンのカメラでも読み取れます。' },
+        { q: '3つのスタイルの違いは何ですか？', a: 'ハーフブロック（▀▄█）は最もコンパクトで、正方形に最も近くなります。フルブロック（██）はシンプルで堅牢です。純粋なASCII（##）は7ビット文字のみを使うため、どんなテキスト経路でも崩れませんが、幅はかなり広くなります。' },
+        { q: '「反転」オプションは何のためにありますか？', a: 'ターミナルやダークテーマのエディタは暗い背景に明るい文字を表示するため、QRコードの白黒が逆転します。「反転」をオンにすると明るいモジュールを描画するので、暗い背景でも正しく読み取れます。' },
+      ],
+    },
+  },
   'ascii-emoji': {
     en: {
       heading: 'About the ASCII Emoji & Kaomoji Generator',
