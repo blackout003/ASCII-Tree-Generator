@@ -1,5 +1,6 @@
 import { FooterInternational } from '@/components/ui/footer-international';
 import { SeoContentSection } from '@/components/home/seo-content-section';
+import { HomeFaqSection } from '@/components/home/home-faq-section';
 import { ToolsShowcase } from '@/components/home/tools-showcase';
 import { AdSlot } from '@/components/ui/ad-slot';
 import { locales } from '@/i18n/locales';
@@ -21,6 +22,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <ToolsShowcase />
           <AdSlot slot="home-mid" format="rectangle" className="container mx-auto my-10 px-4" />
           <SeoContentSection />
+          <HomeFaqSection locale={locale} />
         </main>
 
         <FooterInternational />

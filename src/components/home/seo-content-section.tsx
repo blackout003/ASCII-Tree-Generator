@@ -99,6 +99,10 @@ export function SeoContentSection() {
               t('features.feature4'),
               t('features.feature5'),
               t('features.feature6'),
+              t('features.feature7'),
+              t('features.feature8'),
+              t('features.feature9'),
+              t('features.feature10'),
             ]}
           />
           <p>{t('features.para2')}</p>

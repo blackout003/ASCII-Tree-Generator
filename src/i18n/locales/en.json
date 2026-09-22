@@ -82,7 +82,7 @@
   },
   "seoContent": {
     "title": "Free online ASCII toolkit",
-    "intro": "ASCII Tools brings together four online generators to turn your ideas into copy-paste-ready ASCII art: file trees, tables, mini-charts (sparklines) and text banners. Everything runs right in your browser, with no signup or install, and the output fits anywhere: READMEs, technical docs, code comments, the terminal or messages.",
+    "intro": "ASCII Tools brings together eight free online tools to turn your ideas into copy-paste-ready ASCII art: file trees, tables, mini-charts (sparklines), text banners, QR codes, a Markdown editor and ASCII emoji. Everything runs right in your browser, with no signup or install, and the output fits anywhere: READMEs, technical docs, code comments, the terminal or messages.",
     "whyUse": {
       "title": "Why use ASCII tools?",
       "para1": "ASCII text is universal: it looks the same everywhere, without relying on images or complex formatting. Whether you're documenting a project, preparing a README or illustrating a terminal, these tools offer several benefits:",
@@ -111,13 +111,17 @@
     },
     "features": {
       "title": "The available tools",
-      "para1": "ASCII Tools gathers four complementary generators, all free and signup-free:",
+      "para1": "ASCII Tools gathers eight complementary tools, all free and signup-free:",
       "feature1": "ASCII Tree: build file and folder trees by drag & drop, perfect for your READMEs",
       "feature2": "ASCII Table: turn your data into aligned tables, ready to paste into code or Markdown",
-      "feature3": "ASCII Charts: visualize number series as compact mini-charts (sparklines)",
-      "feature4": "Text Banners: convert text into large stylized ASCII banners",
-      "feature5": "Real-time preview and one-click export (copy or download)",
-      "feature6": "Multilingual interface available in 8 languages, with light and dark mode",
+      "feature3": "ASCII Sparkline: visualize number series as compact, inline mini-charts",
+      "feature4": "ASCII Banner: convert text into large stylized FIGlet-style banners",
+      "feature5": "ASCII QR Code: generate scannable QR codes made of text characters for Wi-Fi, URLs and vCards",
+      "feature6": "Markdown Editor: write Markdown with live preview and one-click export to .md or HTML",
+      "feature7": "ASCII Emoji & Kaomoji: browse and copy hundreds of text faces for chats and code comments",
+      "feature8": "Markdown Guide: a syntax cheat sheet with rendered examples side by side",
+      "feature9": "Real-time preview and one-click export (copy or download)",
+      "feature10": "Multilingual interface available in 8 languages, with light and dark mode",
       "para2": "All of these tools are available for free, without signup and directly in your web browser."
     }
   },

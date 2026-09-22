@@ -46,6 +46,18 @@ export function generateWebsiteStructuredData() {
   };
 }
 
+export function generateFAQStructuredData(faq: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faq.map((item) => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": { "@type": "Answer", "text": item.a }
+    }))
+  };
+}
+
 export function generateBreadcrumbStructuredData() {
   return {
     "@context": "https://schema.org",

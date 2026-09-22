@@ -7,7 +7,7 @@ export const SEO_CONFIG = {
   supportedLocales: ['fr', 'en', 'es', 'de', 'it', 'pt', 'ru', 'ja'],
 
   titles: {
-    fr: "Générateur d'Arbre ASCII pour README & Documentation | Gratuit & En ligne",
+    fr: "Boîte à Outils ASCII & Générateur d'Arbre pour README",
     en: "ASCII Tree Generator for README & Documentation | Free & Online",
     es: "Generador de Árbol ASCII para README y Documentación | Gratis y Online",
     de: "ASCII-Baum-Generator für README & Dokumentation | Kostenlos & Online",
@@ -18,7 +18,7 @@ export const SEO_CONFIG = {
   },
 
   descriptions: {
-    fr: "Créez et visualisez facilement l'arborescence de vos projets au format texte (ASCII). Idéal pour vos fichiers README.md et documentations techniques. Export simple, gratuit et sans installation.",
+    fr: "Générez arborescences de fichiers, tableaux, graphiques et bannières ASCII pour vos README GitHub et docs. Gratuit, instantané et sans inscription.",
     en: "Easily create and visualize your project structure in text format (ASCII). Perfect for your README.md files and technical documentation. Simple export, free and no installation required.",
     es: "Crea y visualiza fácilmente la estructura de tus proyectos en formato texto (ASCII). Ideal para tus archivos README.md y documentación técnica. Exportación simple, gratuita y sin instalación.",
     de: "Erstellen und visualisieren Sie mühelos Ihre Projektstruktur im Textformat (ASCII). Ideal für Ihre README.md-Dateien und technische Dokumentation. Einfacher Export, kostenlos und ohne Installation.",

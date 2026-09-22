@@ -82,7 +82,7 @@
   },
   "seoContent": {
     "title": "Kostenloses ASCII-Toolkit online",
-    "intro": "ASCII Tools vereint vier Online-Generatoren, um deine Ideen in kopierfertige ASCII-Kunst zu verwandeln: Dateibäume, Tabellen, Minidiagramme (Sparklines) und Textbanner. Alles läuft direkt im Browser, ohne Anmeldung oder Installation, und das Ergebnis passt überall hin: README, technische Doku, Code-Kommentare, Terminal oder Nachrichten.",
+    "intro": "ASCII Tools vereint acht kostenlose Online-Werkzeuge, um deine Ideen in kopierfertige ASCII-Kunst zu verwandeln: Dateibäume, Tabellen, Minidiagramme (Sparklines), Textbanner, QR-Codes, einen Markdown-Editor und ASCII-Emojis. Alles läuft direkt im Browser, ohne Anmeldung oder Installation, und das Ergebnis passt überall hin: README, technische Doku, Code-Kommentare, Terminal oder Nachrichten.",
     "whyUse": {
       "title": "Warum ASCII-Tools verwenden?",
       "para1": "ASCII-Text ist universell: Er sieht überall gleich aus, ohne von Bildern oder komplexer Formatierung abzuhängen. Ob du ein Projekt dokumentierst, ein README vorbereitest oder ein Terminal darstellst – diese Tools bieten mehrere Vorteile:",
@@ -111,13 +111,17 @@
     },
     "features": {
       "title": "Die verfügbaren Tools",
-      "para1": "ASCII Tools bündelt vier ergänzende Generatoren, alle kostenlos und ohne Anmeldung:",
+      "para1": "ASCII Tools vereint acht sich ergänzende Werkzeuge, alle kostenlos und ohne Anmeldung:",
       "feature1": "ASCII-Baum: Datei- und Ordnerbäume per Drag & Drop erstellen, ideal für deine READMEs",
       "feature2": "ASCII-Tabelle: Daten in ausgerichtete Tabellen verwandeln, bereit zum Einfügen in Code oder Markdown",
-      "feature3": "ASCII-Diagramme: Zahlenreihen als kompakte Minidiagramme (Sparklines) visualisieren",
-      "feature4": "Textbanner: Text in große, gestaltete ASCII-Banner umwandeln",
-      "feature5": "Echtzeit-Vorschau und Export mit einem Klick (Kopieren oder Herunterladen)",
-      "feature6": "Mehrsprachige Oberfläche in 8 Sprachen, mit hellem und dunklem Modus",
+      "feature3": "ASCII-Sparkline: Zahlenreihen als kompakte, inline einsetzbare Minidiagramme visualisieren",
+      "feature4": "ASCII-Banner: Text in große, gestaltete Banner im FIGlet-Stil umwandeln",
+      "feature5": "ASCII-QR-Code: scannbare QR-Codes aus Textzeichen für WLAN, URLs und vCards erzeugen",
+      "feature6": "Markdown-Editor: Markdown mit Live-Vorschau schreiben und per Klick als .md oder HTML exportieren",
+      "feature7": "ASCII-Emoji & Kaomoji: Hunderte Text-Smileys für Chats und Code-Kommentare durchsuchen und kopieren",
+      "feature8": "Markdown-Anleitung: ein Syntax-Spickzettel mit direkt daneben angezeigtem Ergebnis",
+      "feature9": "Echtzeit-Vorschau und Export mit einem Klick (Kopieren oder Herunterladen)",
+      "feature10": "Mehrsprachige Oberfläche in 8 Sprachen, mit hellem und dunklem Modus",
       "para2": "Alle diese Tools sind kostenlos, ohne Anmeldung und direkt in deinem Webbrowser verfügbar."
     }
   },

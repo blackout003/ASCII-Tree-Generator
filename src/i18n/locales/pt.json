@@ -82,7 +82,7 @@
   },
   "seoContent": {
     "title": "Kit de ferramentas ASCII grátis online",
-    "intro": "O ASCII Tools reúne quatro geradores online para transformar suas ideias em arte ASCII pronta para copiar e colar: árvores de arquivos, tabelas, minigráficos (sparklines) e banners de texto. Tudo funciona direto no navegador, sem cadastro nem instalação, e o resultado se encaixa em qualquer lugar: README, documentação técnica, comentários de código, terminal ou mensagens.",
+    "intro": "O ASCII Tools reúne oito ferramentas gratuitas online para transformar suas ideias em arte ASCII pronta para copiar e colar: árvores de arquivos, tabelas, minigráficos (sparklines), banners de texto, códigos QR, um editor Markdown e emojis ASCII. Tudo funciona direto no navegador, sem cadastro nem instalação, e o resultado se encaixa em qualquer lugar: README, documentação técnica, comentários de código, terminal ou mensagens.",
     "whyUse": {
       "title": "Por que usar ferramentas ASCII?",
       "para1": "O texto ASCII é universal: aparece igual em todos os lugares, sem depender de imagens ou formatação complexa. Seja documentando um projeto, preparando um README ou ilustrando um terminal, essas ferramentas oferecem várias vantagens:",
@@ -111,13 +111,17 @@
     },
     "features": {
       "title": "As ferramentas disponíveis",
-      "para1": "O ASCII Tools reúne quatro geradores complementares, todos grátis e sem cadastro:",
+      "para1": "O ASCII Tools reúne oito ferramentas complementares, todas grátis e sem cadastro:",
       "feature1": "Árvore ASCII: crie árvores de arquivos e pastas com arrastar e soltar, ideais para seus README",
       "feature2": "Tabela ASCII: transforme seus dados em tabelas alinhadas, prontas para colar em código ou Markdown",
-      "feature3": "Gráficos ASCII: visualize séries de números como minigráficos (sparklines) compactos",
-      "feature4": "Banners de texto: converta texto em grandes banners ASCII estilizados",
-      "feature5": "Prévia em tempo real e exportação com um clique (copiar ou baixar)",
-      "feature6": "Interface multilíngue disponível em 8 idiomas, com modo claro e escuro",
+      "feature3": "Sparkline ASCII: visualize séries de números em minigráficos compactos, inseríveis em linha",
+      "feature4": "Banner ASCII: converta texto em grandes banners estilizados ao estilo FIGlet",
+      "feature5": "QR Code ASCII: gere códigos QR escaneáveis com caracteres de texto para Wi-Fi, URL e vCard",
+      "feature6": "Editor Markdown: escreva em Markdown com prévia ao vivo e exportação com um clique (.md ou HTML)",
+      "feature7": "Emojis e Kaomoji ASCII: navegue e copie centenas de carinhas de texto para chats e comentários de código",
+      "feature8": "Guia Markdown: uma folha de consulta de sintaxe com o resultado exibido lado a lado",
+      "feature9": "Prévia em tempo real e exportação com um clique (copiar ou baixar)",
+      "feature10": "Interface multilíngue disponível em 8 idiomas, com modo claro e escuro",
       "para2": "Todas essas ferramentas estão disponíveis gratuitamente, sem cadastro e diretamente no seu navegador."
     }
   },
