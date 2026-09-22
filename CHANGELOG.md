@@ -5,6 +5,16 @@ Toutes les évolutions notables de ASCII Tools sont documentées dans ce fichier
 Le format s'inspire de [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/)
 et le projet suit le [versionnage sémantique](https://semver.org/lang/fr/).
 
+## [2.3.0] - 2026-09-22
+
+Ajout d'un nouvel outil : générateur de séparateurs & badges ASCII.
+
+### Ajouté
+
+- **Générateur de séparateurs & badges ASCII** (`/tools/separators`) : lignes
+  décoratives, badges de statut et blocs de commentaires encadrés (C/JS,
+  Python/Bash) pour structurer README et fichiers de code.
+
 ## [2.2.3] - 2026-09-20
 
 Remplacement de tous les outils de mesure d'audience par Plausible Analytics.

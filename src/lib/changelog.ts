@@ -2,7 +2,7 @@
  * Version actuelle de l'application, affichée dans la barre latérale.
  * Doit rester synchronisée avec le champ "version" de package.json et CHANGELOG.md.
  */
-export const APP_VERSION = '2.2.3';
+export const APP_VERSION = '2.3.0';
 
 export interface ChangelogSection {
   /** Titre de la section (ex: "Ajouté", "Modifié"). */
@@ -24,6 +24,19 @@ export interface ChangelogEntry {
  * Source lisible : CHANGELOG.md à la racine du projet.
  */
 export const CHANGELOG: ChangelogEntry[] = [
+  {
+    version: '2.3.0',
+    date: '2026-09-22',
+    summary: 'Nouvel outil : générateur de séparateurs & badges ASCII.',
+    sections: [
+      {
+        title: 'Ajouté',
+        items: [
+          'Générateur de séparateurs & badges ASCII (/tools/separators) : lignes décoratives, badges de statut et blocs de commentaires encadrés (C/JS, Python/Bash) pour structurer README et fichiers de code.',
+        ],
+      },
+    ],
+  },
   {
     version: '2.2.3',
     date: '2026-09-20',
