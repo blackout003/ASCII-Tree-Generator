@@ -245,6 +245,28 @@ export const TOOLS_SEO = {
       ja: "見出し・リスト・表・コード・リンクなど、例が豊富な分かりやすいチートシートでMarkdown記法を習得。レンダリング結果を横並びで確認。無料。",
     },
   },
+  'separators': {
+    titles: {
+      fr: "Générateur de Séparateurs & Badges ASCII — Pour README | Gratuit",
+      en: "ASCII Separator & Badge Generator — For README & Code | Free Online",
+      es: "Generador de Separadores e Insignias ASCII — Para README | Gratis",
+      de: "ASCII-Trenner- & Badge-Generator — Für README & Code | Kostenlos Online",
+      it: "Generatore di Separatori e Badge ASCII — Per README | Online Gratis",
+      pt: "Gerador de Separadores e Selos ASCII — Para README | Online Grátis",
+      ru: "Генератор ASCII-разделителей и бейджей — для README | Онлайн бесплатно",
+      ja: "ASCII区切り線＆バッジ生成 — README・コード向け｜無料オンライン",
+    },
+    descriptions: {
+      fr: "Générez des lignes décoratives, badges et blocs de commentaires ASCII pour structurer vos README et fichiers de code. Styles C/JS, Python, Bash. Gratuit, copie en un clic.",
+      en: "Generate decorative lines, badges and comment blocks in ASCII to structure your README and source files. C/JS, Python and Bash styles. Free, one-click copy.",
+      es: "Genera líneas decorativas, insignias y bloques de comentarios ASCII para estructurar tu README y archivos de código. Estilos C/JS, Python y Bash. Gratis, copia con un clic.",
+      de: "Erzeugen Sie dekorative Linien, Badges und Kommentarblöcke in ASCII, um README und Quellcode zu strukturieren. Stile für C/JS, Python und Bash. Kostenlos, Kopie per Klick.",
+      it: "Genera linee decorative, badge e blocchi di commento ASCII per strutturare il tuo README e i file di codice. Stili C/JS, Python e Bash. Gratis, copia con un clic.",
+      pt: "Gere linhas decorativas, selos e blocos de comentários em ASCII para estruturar o seu README e ficheiros de código. Estilos C/JS, Python e Bash. Grátis, cópia com um clique.",
+      ru: "Создавайте декоративные линии, бейджи и блоки комментариев в ASCII для структурирования README и файлов кода. Стили C/JS, Python и Bash. Бесплатно, копирование в один клик.",
+      ja: "READMEやソースファイルを整理するための装飾ライン、バッジ、コメントブロックをASCIIで生成。C/JS、Python、Bashスタイル対応。無料、ワンクリックコピー。",
+    },
+  },
 } satisfies Record<string, ToolMeta>;
 
 export type ToolSlug = keyof typeof TOOLS_SEO;

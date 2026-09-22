@@ -680,6 +680,88 @@ const CONTENT: Record<ToolSlug, LocalizedToolContent> = {
       ],
     },
   },
+  'separators': {
+    en: {
+      heading: 'About the ASCII Separator & Badge Generator',
+      intro:
+        'This free tool generates decorative lines, status badges and plain-text comment blocks to structure your READMEs, source files and documentation. Pick a style, type your text and copy the result — no installation required.',
+      faq: [
+        { q: 'What are ASCII comment blocks for?', a: 'They visually mark the major sections of a code file (controllers, modules, configuration) with a boxed header, more readable than a single-line comment.' },
+        { q: 'Can I use these badges in a GitHub README?', a: 'Yes. Paste the badge or line inside a fenced code block (```) in your README.md so the characters stay aligned on GitHub.' },
+        { q: 'Is the ASCII separator generator free?', a: 'Yes, it is completely free, runs entirely in your browser, and requires no account. Nothing you create is uploaded to a server.' },
+      ],
+    },
+    fr: {
+      heading: 'À propos du générateur de séparateurs & badges ASCII',
+      intro:
+        "Cet outil gratuit génère des lignes décoratives, des badges de statut et des blocs de commentaires en texte brut pour structurer vos README, vos fichiers source et votre documentation. Choisissez un style, tapez votre texte et copiez le résultat — aucune installation requise.",
+      faq: [
+        { q: 'À quoi servent les blocs de commentaires ASCII ?', a: 'Ils marquent visuellement les grandes sections d\'un fichier de code (contrôleurs, modules, configuration) avec un en-tête encadré, plus lisible qu\'un simple commentaire sur une ligne.' },
+        { q: 'Puis-je utiliser ces badges dans un fichier README GitHub ?', a: 'Oui. Collez le badge ou la ligne dans un bloc de code (```) de votre README.md pour conserver l\'alignement des caractères sur GitHub.' },
+        { q: "L'outil de séparateurs ASCII est-il gratuit ?", a: 'Oui, il est entièrement gratuit, fonctionne dans votre navigateur et ne nécessite aucun compte. Rien de ce que vous créez n\'est envoyé sur un serveur.' },
+      ],
+    },
+    es: {
+      heading: 'Acerca del generador de separadores e insignias ASCII',
+      intro:
+        'Esta herramienta gratuita genera líneas decorativas, insignias de estado y bloques de comentarios en texto plano para estructurar tus README, archivos fuente y documentación. Elige un estilo, escribe tu texto y copia el resultado — sin instalación.',
+      faq: [
+        { q: '¿Para qué sirven los bloques de comentarios ASCII?', a: 'Marcan visualmente las secciones principales de un archivo de código (controladores, módulos, configuración) con un encabezado enmarcado, más legible que un comentario de una sola línea.' },
+        { q: '¿Puedo usar estas insignias en un README de GitHub?', a: 'Sí. Pega la insignia o la línea dentro de un bloque de código (```) en tu README.md para mantener la alineación de los caracteres en GitHub.' },
+        { q: '¿Es gratuito el generador de separadores ASCII?', a: 'Sí, es completamente gratuito, funciona en tu navegador y no requiere cuenta. Nada de lo que crees se sube a un servidor.' },
+      ],
+    },
+    de: {
+      heading: 'Über den ASCII-Trenner- & Badge-Generator',
+      intro:
+        'Dieses kostenlose Tool erzeugt dekorative Linien, Status-Badges und Kommentarblöcke aus reinem Text, um README-Dateien, Quellcode und Dokumentation zu strukturieren. Stil wählen, Text eingeben, Ergebnis kopieren — ohne Installation.',
+      faq: [
+        { q: 'Wofür sind ASCII-Kommentarblöcke gedacht?', a: 'Sie markieren die wichtigsten Abschnitte einer Codedatei (Controller, Module, Konfiguration) visuell mit einer umrahmten Überschrift — besser lesbar als ein einzeiliger Kommentar.' },
+        { q: 'Kann ich diese Badges in einer GitHub-README verwenden?', a: 'Ja. Fügen Sie das Badge oder die Linie in einen Codeblock (```) Ihrer README.md ein, damit die Zeichen auf GitHub ausgerichtet bleiben.' },
+        { q: 'Ist der ASCII-Trenner-Generator kostenlos?', a: 'Ja, er ist völlig kostenlos, läuft vollständig in Ihrem Browser und erfordert kein Konto. Nichts, was Sie erstellen, wird auf einen Server hochgeladen.' },
+      ],
+    },
+    it: {
+      heading: 'Informazioni sul generatore di separatori e badge ASCII',
+      intro:
+        'Questo strumento gratuito genera linee decorative, badge di stato e blocchi di commento in puro testo per strutturare i tuoi README, file sorgente e documentazione. Scegli uno stile, digita il testo e copia il risultato — nessuna installazione richiesta.',
+      faq: [
+        { q: 'A cosa servono i blocchi di commento ASCII?', a: 'Segnano visivamente le sezioni principali di un file di codice (controller, moduli, configurazione) con un\'intestazione riquadrata, più leggibile di un commento su una riga.' },
+        { q: 'Posso usare questi badge in un README di GitHub?', a: 'Sì. Incolla il badge o la linea all\'interno di un blocco di codice (```) nel tuo README.md per mantenere l\'allineamento dei caratteri su GitHub.' },
+        { q: 'Il generatore di separatori ASCII è gratuito?', a: 'Sì, è completamente gratuito, funziona interamente nel browser e non richiede un account. Nulla di ciò che crei viene caricato su un server.' },
+      ],
+    },
+    pt: {
+      heading: 'Sobre o gerador de separadores e selos ASCII',
+      intro:
+        'Esta ferramenta gratuita gera linhas decorativas, selos de estado e blocos de comentários em texto simples para estruturar os seus READMEs, ficheiros de código e documentação. Escolha um estilo, escreva o texto e copie o resultado — sem instalação.',
+      faq: [
+        { q: 'Para que servem os blocos de comentários ASCII?', a: 'Marcam visualmente as secções principais de um ficheiro de código (controladores, módulos, configuração) com um cabeçalho emoldurado, mais legível do que um comentário de uma linha.' },
+        { q: 'Posso usar estes selos num README do GitHub?', a: 'Sim. Cole o selo ou a linha dentro de um bloco de código (```) no seu README.md para manter o alinhamento dos caracteres no GitHub.' },
+        { q: 'O gerador de separadores ASCII é gratuito?', a: 'Sim, é totalmente gratuito, funciona inteiramente no seu navegador e não requer conta. Nada do que criar é enviado para um servidor.' },
+      ],
+    },
+    ru: {
+      heading: 'О генераторе ASCII-разделителей и бейджей',
+      intro:
+        'Этот бесплатный инструмент создаёт декоративные линии, статусные бейджи и блоки комментариев в виде обычного текста для структурирования README, исходных файлов и документации. Выберите стиль, введите текст и скопируйте результат — установка не требуется.',
+      faq: [
+        { q: 'Для чего нужны блоки комментариев ASCII?', a: 'Они визуально выделяют основные разделы файла кода (контроллеры, модули, конфигурация) рамкой с заголовком — это читается лучше, чем однострочный комментарий.' },
+        { q: 'Можно ли использовать эти бейджи в README на GitHub?', a: 'Да. Вставьте бейдж или линию внутрь блока кода (```) в вашем README.md, чтобы символы сохранили выравнивание на GitHub.' },
+        { q: 'Бесплатен ли генератор ASCII-разделителей?', a: 'Да, он полностью бесплатен, работает прямо в браузере и не требует аккаунта. Ничего из созданного вами не отправляется на сервер.' },
+      ],
+    },
+    ja: {
+      heading: 'ASCII区切り線＆バッジ生成ツールについて',
+      intro:
+        'この無料ツールは、READMEやソースファイル、ドキュメントを整理するための装飾ライン、ステータスバッジ、プレーンテキストのコメントブロックを生成します。スタイルを選んでテキストを入力し、結果をコピーするだけ。インストール不要。',
+      faq: [
+        { q: 'ASCIIコメントブロックは何のためにあるのですか？', a: 'コードファイルの主要セクション（コントローラー、モジュール、設定など）を枠で囲んだ見出しで視覚的に区切ります。1行コメントより読みやすくなります。' },
+        { q: 'これらのバッジをGitHubのREADMEで使えますか？', a: 'はい。README.md内のコードブロック（```）の中に貼り付ければ、GitHub上でも文字の位置が崩れません。' },
+        { q: 'ASCII区切り線ジェネレーターは無料ですか？', a: 'はい、完全無料で、すべてブラウザ内で動作し、アカウントも不要です。作成した内容がサーバーにアップロードされることはありません。' },
+      ],
+    },
+  },
 };
 
 export function getToolContent(tool: ToolSlug, locale: string): ToolContent {
