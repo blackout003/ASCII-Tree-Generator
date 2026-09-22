@@ -136,6 +136,7 @@
     "reportBug": "Informar de un error",
     "requestFeature": "Sugerir una función",
     "banner": "Banners de Texto",
+    "separators": "Separadores e Insignias",
     "comingSoon": "Próximamente",
     "openTool": "Abrir herramienta",
     "markdownGuide": "Guía Markdown",
@@ -269,6 +270,41 @@
       "downloadError": "Error al descargar."
     }
   },
+  "separatorGenerator": {
+    "input": {
+      "title": "Texto",
+      "placeholder": "Introduce el texto de la insignia o el título del bloque...",
+      "lineHint": "Este estilo no necesita texto — ajusta el carácter y el ancho en las opciones.",
+      "clear": "Borrar"
+    },
+    "preview": {
+      "title": "Vista previa",
+      "copy": "Copiar",
+      "download": "Descargar",
+      "placeholder": "Tu bloque ASCII aparecerá aquí..."
+    },
+    "options": {
+      "title": "Opciones",
+      "blockType": "Tipo de bloque",
+      "typeLine": "Línea decorativa",
+      "typeBadge": "Insignia",
+      "typeComment": "Bloque de comentario",
+      "lineChar": "Carácter",
+      "width": "Ancho",
+      "badgeStyle": "Estilo de insignia",
+      "badgeBrackets": "Corchetes [ ]",
+      "badgeDashes": "Guiones -- --",
+      "badgeBlock": "Bloque sólido █ █",
+      "commentLang": "Lenguaje",
+      "commentC": "C / JS (/* */)",
+      "commentHash": "Python / Bash (#)"
+    },
+    "errors": {
+      "copySuccess": "¡Copiado al portapapeles!",
+      "copyError": "Error al copiar",
+      "downloadError": "Error al descargar"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "Contenido",
@@ -373,6 +409,9 @@
       },
       "markdownEditor": {
         "desc": "Escribe Markdown con vista previa en vivo, barra de formato y resaltado de código — copia o descarga con un clic."
+      },
+      "separators": {
+        "desc": "Genera líneas decorativas, insignias de estado y bloques de comentarios ASCII para estructurar tus README y archivos de código."
       }
     }
   },

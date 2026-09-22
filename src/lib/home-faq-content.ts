@@ -19,7 +19,7 @@ const HOME_FAQ: LocalizedFaq = {
     },
     {
       q: 'Is this ASCII toolbox really free?',
-      a: 'Yes, every tool (file tree, table, sparkline, banner, QR code, Markdown editor and emoji picker) is free to use, with no usage limits.',
+      a: 'Yes, every tool (file tree, table, sparkline, banner, QR code, Markdown editor, separator generator and emoji picker) is free to use, with no usage limits.',
     },
   ],
   fr: [
@@ -37,7 +37,7 @@ const HOME_FAQ: LocalizedFaq = {
     },
     {
       q: 'Cette boîte à outils ASCII est-elle vraiment gratuite ?',
-      a: "Oui, chaque outil (arbre de fichiers, tableau, sparkline, bannière, QR code, éditeur Markdown et émojis) est gratuit et sans limite d'utilisation.",
+      a: "Oui, chaque outil (arbre de fichiers, tableau, sparkline, bannière, QR code, éditeur Markdown, générateur de séparateurs et émojis) est gratuit et sans limite d'utilisation.",
     },
   ],
 };

@@ -136,6 +136,7 @@
     "reportBug": "Signaler un bug",
     "requestFeature": "Proposer une fonctionnalité",
     "banner": "Bannières Texte",
+    "separators": "Séparateurs & Badges",
     "comingSoon": "Bientôt",
     "openTool": "Ouvrir l'outil",
     "markdownGuide": "Guide Markdown",
@@ -269,6 +270,41 @@
       "downloadError": "Erreur lors du téléchargement."
     }
   },
+  "separatorGenerator": {
+    "input": {
+      "title": "Texte",
+      "placeholder": "Entrez le texte du badge ou du titre...",
+      "lineHint": "Ce style n'a pas besoin de texte — ajustez le caractère et la largeur dans les options.",
+      "clear": "Effacer"
+    },
+    "preview": {
+      "title": "Prévisualisation",
+      "copy": "Copier",
+      "download": "Télécharger",
+      "placeholder": "Votre bloc ASCII apparaîtra ici..."
+    },
+    "options": {
+      "title": "Options",
+      "blockType": "Type de bloc",
+      "typeLine": "Ligne décorative",
+      "typeBadge": "Badge",
+      "typeComment": "Bloc de commentaire",
+      "lineChar": "Caractère",
+      "width": "Largeur",
+      "badgeStyle": "Style de badge",
+      "badgeBrackets": "Crochets [ ]",
+      "badgeDashes": "Tirets -- --",
+      "badgeBlock": "Bloc plein █ █",
+      "commentLang": "Langage",
+      "commentC": "C / JS (/* */)",
+      "commentHash": "Python / Bash (#)"
+    },
+    "errors": {
+      "copySuccess": "Copié dans le presse-papiers !",
+      "copyError": "Échec de la copie",
+      "downloadError": "Échec du téléchargement"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "Contenu",
@@ -373,6 +409,9 @@
       },
       "markdownEditor": {
         "desc": "Écrivez du Markdown avec aperçu live, barre de formatage et coloration du code — copiez ou téléchargez en un clic."
+      },
+      "separators": {
+        "desc": "Générez des lignes décoratives, badges de statut et blocs de commentaires ASCII pour structurer vos README et fichiers de code."
       }
     }
   },

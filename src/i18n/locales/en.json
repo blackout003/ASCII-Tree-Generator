@@ -136,6 +136,7 @@
     "reportBug": "Report a bug",
     "requestFeature": "Request a feature",
     "banner": "Text Banners",
+    "separators": "Separators & Badges",
     "comingSoon": "Coming Soon",
     "openTool": "Open tool",
     "markdownGuide": "Markdown Guide",
@@ -269,6 +270,41 @@
       "downloadError": "Failed to download."
     }
   },
+  "separatorGenerator": {
+    "input": {
+      "title": "Text",
+      "placeholder": "Enter the badge text or block title...",
+      "lineHint": "This style needs no text — adjust the character and width in the options.",
+      "clear": "Clear"
+    },
+    "preview": {
+      "title": "Preview",
+      "copy": "Copy",
+      "download": "Download",
+      "placeholder": "Your ASCII block will appear here..."
+    },
+    "options": {
+      "title": "Options",
+      "blockType": "Block type",
+      "typeLine": "Decorative line",
+      "typeBadge": "Badge",
+      "typeComment": "Comment block",
+      "lineChar": "Character",
+      "width": "Width",
+      "badgeStyle": "Badge style",
+      "badgeBrackets": "Brackets [ ]",
+      "badgeDashes": "Dashes -- --",
+      "badgeBlock": "Solid block █ █",
+      "commentLang": "Language",
+      "commentC": "C / JS (/* */)",
+      "commentHash": "Python / Bash (#)"
+    },
+    "errors": {
+      "copySuccess": "Copied to clipboard!",
+      "copyError": "Copy failed",
+      "downloadError": "Download failed"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "Content",
@@ -373,6 +409,9 @@
       },
       "markdownEditor": {
         "desc": "Write Markdown with a live preview, formatting toolbar and code highlighting — copy or download in a click."
+      },
+      "separators": {
+        "desc": "Generate decorative lines, status badges and ASCII comment blocks to structure your READMEs and code files."
       }
     }
   },

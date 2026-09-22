@@ -136,6 +136,7 @@
     "reportBug": "バグを報告",
     "requestFeature": "機能をリクエスト",
     "banner": "テキストバナー",
+    "separators": "区切り線＆バッジ",
     "comingSoon": "近日公開",
     "openTool": "ツールを開く",
     "markdownGuide": "Markdown ガイド",
@@ -269,6 +270,41 @@
       "downloadError": "ダウンロードに失敗しました。"
     }
   },
+  "separatorGenerator": {
+    "input": {
+      "title": "テキスト",
+      "placeholder": "バッジのテキストまたはブロックのタイトルを入力...",
+      "lineHint": "このスタイルはテキスト不要です。オプションで文字と幅を調整してください。",
+      "clear": "クリア"
+    },
+    "preview": {
+      "title": "プレビュー",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "placeholder": "ASCIIブロックがここに表示されます..."
+    },
+    "options": {
+      "title": "オプション",
+      "blockType": "ブロックの種類",
+      "typeLine": "装飾ライン",
+      "typeBadge": "バッジ",
+      "typeComment": "コメントブロック",
+      "lineChar": "文字",
+      "width": "幅",
+      "badgeStyle": "バッジスタイル",
+      "badgeBrackets": "角括弧 [ ]",
+      "badgeDashes": "ダッシュ -- --",
+      "badgeBlock": "ブロック █ █",
+      "commentLang": "言語",
+      "commentC": "C / JS (/* */)",
+      "commentHash": "Python / Bash (#)"
+    },
+    "errors": {
+      "copySuccess": "クリップボードにコピーしました！",
+      "copyError": "コピーに失敗しました",
+      "downloadError": "ダウンロードに失敗しました"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "内容",
@@ -373,6 +409,9 @@
       },
       "markdownEditor": {
         "desc": "ライブプレビュー、書式ツールバー、コードハイライト付きでMarkdownを執筆 — ワンクリックでコピーまたはダウンロード。"
+      },
+      "separators": {
+        "desc": "READMEやコードファイルを整理するための装飾ライン、ステータスバッジ、ASCIIコメントブロックを生成します。"
       }
     }
   },
