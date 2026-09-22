@@ -409,6 +409,9 @@
       },
       "markdownEditor": {
         "desc": "Escreva Markdown com pré-visualização ao vivo, barra de formatação e destaque de código — copie ou baixe num clique."
+      },
+      "separators": {
+        "desc": "Gere linhas decorativas, selos de estado e blocos de comentários ASCII para estruturar os seus READMEs e ficheiros de código."
       }
     }
   },

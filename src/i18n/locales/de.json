@@ -409,6 +409,9 @@
       },
       "markdownEditor": {
         "desc": "Schreiben Sie Markdown mit Live-Vorschau, Formatierungsleiste und Code-Highlighting — kopieren oder herunterladen per Klick."
+      },
+      "separators": {
+        "desc": "Erzeugen Sie dekorative Linien, Status-Badges und ASCII-Kommentarblöcke, um Ihre READMEs und Codedateien zu strukturieren."
       }
     }
   },

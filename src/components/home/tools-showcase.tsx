@@ -89,6 +89,16 @@ CPU     ▃▃▅▂▇▆▄▅`,
 - liste        │  • liste
 \`code\`         │  code`,
   },
+  {
+    id: 'separators',
+    href: '/tools/separators',
+    tag: 'SEP',
+    nameKey: 'separators',
+    descKey: 'home.tools.separators.desc',
+    preview: `────────────────
+[ STATUS: ACTIVE ]
+# ---- CONFIG ----`,
+  },
 ];
 
 // Reference guides — listed apart from the generators above.
