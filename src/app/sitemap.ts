@@ -15,6 +15,7 @@ const localizedRoutes: { path: string; priority: number }[] = [
   { path: '/tools/qr-code-generator', priority: 0.8 },
   { path: '/tools/markdown-editor', priority: 0.8 },
   { path: '/tools/ascii-emoji', priority: 0.8 },
+  { path: '/tools/separators', priority: 0.8 },
   { path: '/tools/markdown-guide', priority: 0.8 },
   { path: '/guides/file-tree-for-github-readme', priority: 0.7 },
 ]
