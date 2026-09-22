@@ -136,6 +136,7 @@
     "reportBug": "Segnala un bug",
     "requestFeature": "Proponi una funzionalità",
     "banner": "Banner di Testo",
+    "separators": "Separatori e Badge",
     "comingSoon": "Prossimamente",
     "openTool": "Apri strumento",
     "markdownGuide": "Guida Markdown",
@@ -267,6 +268,41 @@
       "copySuccess": "Grafico copiato negli appunti!",
       "copyError": "Errore durante la copia.",
       "downloadError": "Errore durante il download."
+    }
+  },
+  "separatorGenerator": {
+    "input": {
+      "title": "Testo",
+      "placeholder": "Inserisci il testo del badge o il titolo del blocco...",
+      "lineHint": "Questo stile non richiede testo — regola il carattere e la larghezza nelle opzioni.",
+      "clear": "Cancella"
+    },
+    "preview": {
+      "title": "Anteprima",
+      "copy": "Copia",
+      "download": "Scarica",
+      "placeholder": "Il tuo blocco ASCII apparirà qui..."
+    },
+    "options": {
+      "title": "Opzioni",
+      "blockType": "Tipo di blocco",
+      "typeLine": "Linea decorativa",
+      "typeBadge": "Badge",
+      "typeComment": "Blocco di commento",
+      "lineChar": "Carattere",
+      "width": "Larghezza",
+      "badgeStyle": "Stile badge",
+      "badgeBrackets": "Parentesi [ ]",
+      "badgeDashes": "Trattini -- --",
+      "badgeBlock": "Blocco pieno █ █",
+      "commentLang": "Linguaggio",
+      "commentC": "C / JS (/* */)",
+      "commentHash": "Python / Bash (#)"
+    },
+    "errors": {
+      "copySuccess": "Copiato negli appunti!",
+      "copyError": "Copia non riuscita",
+      "downloadError": "Download non riuscito"
     }
   },
   "qrGenerator": {

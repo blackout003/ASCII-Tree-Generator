@@ -136,6 +136,7 @@
     "reportBug": "Reportar um bug",
     "requestFeature": "Sugerir uma funcionalidade",
     "banner": "Banners de Texto",
+    "separators": "Separadores e Selos",
     "comingSoon": "Em breve",
     "openTool": "Abrir ferramenta",
     "markdownGuide": "Guia Markdown",
@@ -267,6 +268,41 @@
       "copySuccess": "Gráfico copiado para a área de transferência!",
       "copyError": "Erro ao copiar.",
       "downloadError": "Erro ao baixar."
+    }
+  },
+  "separatorGenerator": {
+    "input": {
+      "title": "Texto",
+      "placeholder": "Insira o texto do selo ou o título do bloco...",
+      "lineHint": "Este estilo não precisa de texto — ajuste o carácter e a largura nas opções.",
+      "clear": "Limpar"
+    },
+    "preview": {
+      "title": "Pré-visualização",
+      "copy": "Copiar",
+      "download": "Transferir",
+      "placeholder": "O seu bloco ASCII aparecerá aqui..."
+    },
+    "options": {
+      "title": "Opções",
+      "blockType": "Tipo de bloco",
+      "typeLine": "Linha decorativa",
+      "typeBadge": "Selo",
+      "typeComment": "Bloco de comentário",
+      "lineChar": "Carácter",
+      "width": "Largura",
+      "badgeStyle": "Estilo do selo",
+      "badgeBrackets": "Colchetes [ ]",
+      "badgeDashes": "Traços -- --",
+      "badgeBlock": "Bloco sólido █ █",
+      "commentLang": "Linguagem",
+      "commentC": "C / JS (/* */)",
+      "commentHash": "Python / Bash (#)"
+    },
+    "errors": {
+      "copySuccess": "Copiado para a área de transferência!",
+      "copyError": "Falha ao copiar",
+      "downloadError": "Falha ao transferir"
     }
   },
   "qrGenerator": {

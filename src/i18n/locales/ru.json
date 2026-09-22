@@ -136,6 +136,7 @@
     "reportBug": "Сообщить об ошибке",
     "requestFeature": "Предложить функцию",
     "banner": "Текстовые баннеры",
+    "separators": "Разделители и бейджи",
     "comingSoon": "Скоро",
     "openTool": "Открыть инструмент",
     "markdownGuide": "Гид по Markdown",
@@ -267,6 +268,41 @@
       "copySuccess": "График скопирован в буфер обмена!",
       "copyError": "Ошибка при копировании.",
       "downloadError": "Ошибка при скачивании."
+    }
+  },
+  "separatorGenerator": {
+    "input": {
+      "title": "Текст",
+      "placeholder": "Введите текст бейджа или заголовок блока...",
+      "lineHint": "Для этого стиля текст не нужен — настройте символ и ширину в параметрах.",
+      "clear": "Очистить"
+    },
+    "preview": {
+      "title": "Предпросмотр",
+      "copy": "Копировать",
+      "download": "Скачать",
+      "placeholder": "Ваш ASCII-блок появится здесь..."
+    },
+    "options": {
+      "title": "Настройки",
+      "blockType": "Тип блока",
+      "typeLine": "Декоративная линия",
+      "typeBadge": "Бейдж",
+      "typeComment": "Блок комментария",
+      "lineChar": "Символ",
+      "width": "Ширина",
+      "badgeStyle": "Стиль бейджа",
+      "badgeBrackets": "Скобки [ ]",
+      "badgeDashes": "Дефисы -- --",
+      "badgeBlock": "Сплошной блок █ █",
+      "commentLang": "Язык",
+      "commentC": "C / JS (/* */)",
+      "commentHash": "Python / Bash (#)"
+    },
+    "errors": {
+      "copySuccess": "Скопировано в буфер обмена!",
+      "copyError": "Не удалось скопировать",
+      "downloadError": "Не удалось скачать"
     }
   },
   "qrGenerator": {
