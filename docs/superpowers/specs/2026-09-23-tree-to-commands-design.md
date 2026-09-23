@@ -47,9 +47,9 @@ Aucun parseur de ce type n'existe dans le code actuel (vérifié : `drag-drop-zo
      - sinon → **dossier vide**.
 5. **Lignes non reconnues** (ex. ligne vide, ligne sans connecteur valide au milieu du texte) : ignorées individuellement, ajoutées à un tableau `errors: string[]` retourné à l'appelant, sans bloquer le reste du parsing.
 
-Signature :
+Signature (voir aussi section « Avertissements » pour le champ `warnings`) :
 ```ts
-function parseAsciiTreeText(text: string): { nodes: TreeNode[]; errors: string[] }
+function parseAsciiTreeText(text: string): { nodes: TreeNode[]; errors: string[]; warnings: string[] }
 ```
 
 ## Parsing en Mode B (commandes → TreeNode[])
@@ -62,15 +62,15 @@ Format d'entrée reconnu : uniquement `mkdir -p <chemin>` et `touch <chemin>`, *
 4. Lignes non reconnues → ignorées, ajoutées à `errors: string[]`.
 5. L'arbre `TreeNode[]` résultant est ensuite rendu en ASCII via `generateASCIITree()` existant, avec le `connectorStyle` choisi dans le panneau d'options (unicode par défaut).
 
-Signature :
+Signature (voir aussi section « Avertissements » pour le champ `warnings`) :
 ```ts
-function parseShellCommands(text: string): { nodes: TreeNode[]; errors: string[] }
+function parseShellCommands(text: string): { nodes: TreeNode[]; errors: string[]; warnings: string[] }
 ```
 
 ## Fichiers à créer/modifier
 
 ### Logique pure
-- `src/lib/tree-commands-types.ts` — `TreeCommandsMode = 'treeToCommands' | 'commandsToTree'`, `ParseResult = { nodes: TreeNode[]; errors: string[] }`.
+- `src/lib/tree-commands-types.ts` — `TreeCommandsMode = 'treeToCommands' | 'commandsToTree'`, `ParseResult = { nodes: TreeNode[]; errors: string[]; warnings: string[] }`.
 - `src/lib/tree-commands-generator.ts` — `parseAsciiTreeText()`, `generateShellCommands(nodes: TreeNode[]): string`, `parseShellCommands()`. Fonctions pures, sans state React, réutilisent les types `TreeNode`/`ConnectorStyle` de `src/lib/types.ts` et `generateASCIITree()` de `src/lib/tree-generator.ts`.
 
 ### UI
@@ -78,8 +78,8 @@ function parseShellCommands(text: string): { nodes: TreeNode[]; errors: string[]
 - `src/components/tree-commands-generator/` (nouveau dossier, pattern `sparkline-generator/`) :
   - `tree-commands-generator.tsx` — conteneur `'use client'`. State : `mode: TreeCommandsMode`, `input: string`, `connectorStyle: ConnectorStyle`. `useMemo` pour calculer le résultat (`parseResult` + sortie texte) selon le mode. Pousse `<TreeCommandsOptionsPanel>` dans `useRightSidebar()` uniquement quand `mode === 'commandsToTree'` (le Mode A n'a pas d'options, la sortie est toujours du texte brut).
   - `tree-commands-mode-toggle.tsx` — segmented control / deux boutons pour basculer entre les deux modes.
-  - `tree-commands-input.tsx` — textarea d'entrée, placeholder et texte d'exemple qui changent selon le mode actif, affichage non bloquant des `errors` sous le champ.
-  - `tree-commands-preview.tsx` — bloc de sortie en lecture seule + boutons copier/télécharger, pattern `ascii-preview.tsx`.
+  - `tree-commands-input.tsx` — textarea d'entrée, placeholder et texte d'exemple qui changent selon le mode actif, affichage non bloquant des `errors` (rouge) et `warnings` (ambre) sous le champ.
+  - `tree-commands-preview.tsx` — bloc de sortie en lecture seule + boutons copier/télécharger, pattern `ascii-preview.tsx`, plus le rappel permanent « vérifie avant d'exécuter » en Mode A (voir section « Avertissements »).
   - `tree-commands-options-panel.tsx` — un seul champ : choix `connectorStyle` (unicode/ascii), visible uniquement en Mode B.
 
 ### Registre & SEO
@@ -96,6 +96,25 @@ function parseShellCommands(text: string): { nodes: TreeNode[]; errors: string[]
 - Lignes non reconnues (Mode A : ligne sans connecteur valide ; Mode B : ligne qui n'est ni `mkdir -p` ni `touch`) : ignorées individuellement, accumulées dans `errors` et affichées sous forme de liste non bloquante sous le textarea d'entrée (cohérent avec `parseError` du sparkline generator — pas de toast).
 - Saut de profondeur incohérent en Mode A (ex. un enfant à profondeur +2 sans intermédiaire) : traité comme si la profondeur réelle était `profondeur du parent + 1` (on ne rejette pas la ligne, on la rattache au meilleur parent disponible dans la pile), pour rester tolérant à un copier-coller légèrement mal formaté.
 - Noms de fichiers/dossiers avec espaces : conservés tels quels dans les commandes générées (Mode A), sans guillemets automatiques — hors scope d'ajouter un échappement shell complet (YAGNI ; le README/l'exemple de l'outil peut mentionner cette limite).
+
+## Avertissements
+
+### Sécurité : chemins dangereux
+
+Dans les deux modes, un segment de chemin peut contenir `..` (path traversal) ou un chemin peut commencer par `/` (chemin absolu) — que ce soit dans le nom d'un nœud collé en Mode A, ou dans le chemin capturé d'une commande `mkdir -p`/`touch` en Mode B. Ce sont des cas légitimes à détecter, pas à silencieusement accepter, car l'utilisateur pourrait ensuite coller/exécuter ces commandes dans un terminal sans les relire :
+
+- `parseAsciiTreeText()` et `parseShellCommands()` détectent, pour chaque segment de chemin, un segment égal à `..` ou un chemin commençant par `/`. Ces nœuds/commandes sont **quand même générés** (pas de blocage silencieux qui tronquerait l'arbre), mais chaque occurrence ajoute une entrée dédiée à un tableau `warnings: string[]` (distinct de `errors`, qui reste réservé aux lignes non parseables).
+- `ParseResult` devient `{ nodes: TreeNode[]; errors: string[]; warnings: string[] }`.
+- L'UI affiche ces `warnings` dans un bloc visuellement distinct des `errors` (ex. couleur ambre plutôt que rouge), au-dessus de la sortie, avec un message du type « Chemin potentiellement dangereux détecté : `../secrets.env` — vérifie cette commande avant de l'exécuter ».
+
+### UI : rappel avant exécution
+
+En Mode A (arbre → commandes), un message d'avertissement discret et permanent (pas seulement conditionnel aux `warnings` ci-dessus) est affiché à proximité du bloc de sortie, rappelant que :
+- les commandes générées ne sont pas exécutées automatiquement par l'outil (l'utilisateur doit les copier/coller lui-même) ;
+- il faut relire les commandes avant de les exécuter dans un terminal ;
+- les noms de fichiers/dossiers contenant des espaces ou des caractères spéciaux ne sont pas échappés automatiquement.
+
+Ce message est traduit dans les 8 locales comme le reste de l'UI (`treeCommandsGenerator.preview.securityNotice` ou clé équivalente), et n'est pas une simple note dans le code — il doit être visible par l'utilisateur final.
 
 ## Analytics
 
