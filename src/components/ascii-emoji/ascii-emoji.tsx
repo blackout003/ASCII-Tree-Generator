@@ -7,6 +7,7 @@ import { useToast } from '@/hooks/use-toast';
 import { ASCII_EMOJI_CATEGORIES } from '@/lib/ascii-emoji-data';
 import { GITHUB_ISSUE_URLS } from '@/lib/github-links';
 import { cn } from '@/lib/utils';
+import { trackEvent } from '@/lib/analytics-events';
 
 type GuideT = ReturnType<typeof useTranslations>;
 
@@ -18,6 +19,7 @@ function EmojiChip({ value, label }: { value: string; label: string }) {
   const handleCopy = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(value);
+      trackEvent('Copy', { tool: 'ascii-emoji' });
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {

@@ -9,6 +9,7 @@ import { parseInput, generateChart } from '@/lib/sparkline-generator';
 import { SparklineInput } from './sparkline-input';
 import { SparklinePreview } from './sparkline-preview';
 import { SparklineOptionsPanel } from './sparkline-options-panel';
+import { trackEvent } from '@/lib/analytics-events';
 
 const DEFAULT_INPUT = '1, 3, 5, 2, 8, 4';
 
@@ -50,11 +51,12 @@ export function SparklineGenerator() {
   const copyToClipboard = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(output);
+      trackEvent('Copy', { tool: 'sparkline-generator', chartType: options.chartType });
       toast({ description: t('errors.copySuccess') });
     } catch {
       toast({ description: t('errors.copyError'), variant: 'destructive' });
     }
-  }, [output, t, toast]);
+  }, [output, t, toast, options.chartType]);
 
   const downloadOutput = useCallback(() => {
     try {
@@ -65,10 +67,11 @@ export function SparklineGenerator() {
       a.download = 'sparkline.txt';
       a.click();
       URL.revokeObjectURL(url);
+      trackEvent('Download', { tool: 'sparkline-generator', format: 'txt', chartType: options.chartType });
     } catch {
       toast({ description: t('errors.downloadError'), variant: 'destructive' });
     }
-  }, [output, t, toast]);
+  }, [output, t, toast, options.chartType]);
 
   return (
     <div className="p-6 space-y-6 max-w-3xl mx-auto">

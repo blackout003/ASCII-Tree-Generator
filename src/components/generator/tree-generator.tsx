@@ -25,6 +25,7 @@ import { ASCIIPreview } from './ascii-preview';
 import { TreeOptionsPanel } from './tree-options-panel';
 import { AdSlot } from '@/components/ui/ad-slot';
 import { useToast } from '@/hooks/use-toast';
+import { trackEvent } from '@/lib/analytics-events';
 
 /**
  * Composant principal pour l'édition et la génération d'arbres ASCII
@@ -266,6 +267,7 @@ export default function TreeGenerator() {
   const copyToClipboard = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(asciiOutput);
+      trackEvent('Copy', { tool: 'tree-generator', connectorStyle: options.connectorStyle });
       toast({
         title: t('errors.copySuccess'),
         variant: 'default',
@@ -277,7 +279,7 @@ export default function TreeGenerator() {
         variant: 'destructive',
       });
     }
-  }, [asciiOutput, toast, t]);
+  }, [asciiOutput, toast, t, options.connectorStyle]);
 
   /**
    * Télécharge la représentation ASCII de l'arbre sous forme de fichier texte
@@ -294,6 +296,7 @@ export default function TreeGenerator() {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+      trackEvent('Download', { tool: 'tree-generator', format: 'txt', connectorStyle: options.connectorStyle });
       toast({
         title: t('errors.downloadSuccess'),
         variant: 'default',
@@ -305,7 +308,7 @@ export default function TreeGenerator() {
         variant: 'destructive',
       });
     }
-  }, [asciiOutput, toast, t]);
+  }, [asciiOutput, toast, t, options.connectorStyle]);
 
   const handleFilesAdded = useCallback((newNodes: TreeNode[]) => {
     setTreeData(prev => [...prev, ...newNodes]);

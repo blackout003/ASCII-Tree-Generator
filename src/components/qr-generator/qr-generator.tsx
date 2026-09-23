@@ -12,6 +12,7 @@ import { renderPngBlob } from '@/lib/qr-png';
 import { QrInput } from './qr-input';
 import { QrPreview } from './qr-preview';
 import { QrOptionsPanel } from './qr-options-panel';
+import { trackEvent } from '@/lib/analytics-events';
 
 const EXAMPLE_URL = 'https://asciitree.fr';
 
@@ -59,38 +60,48 @@ export function QrGenerator() {
   const handleClear = useCallback(() => setFields(DEFAULT_FIELDS), []);
 
   const copyText = useCallback(
-    async (text: string, successKey: 'errors.copySuccess' | 'errors.copyMarkdownSuccess') => {
+    async (
+      text: string,
+      successKey: 'errors.copySuccess' | 'errors.copyMarkdownSuccess',
+      format: 'text' | 'markdown'
+    ) => {
       try {
         await navigator.clipboard.writeText(text);
+        trackEvent('Copy', { tool: 'qr-generator', format, style: options.style });
         toast({ description: t(successKey) });
       } catch {
         toast({ description: t('errors.copyError'), variant: 'destructive' });
       }
     },
-    [t, toast]
+    [t, toast, options.style]
   );
 
-  const handleCopy = useCallback(() => copyText(output, 'errors.copySuccess'), [copyText, output]);
+  const handleCopy = useCallback(
+    () => copyText(output, 'errors.copySuccess', 'text'),
+    [copyText, output]
+  );
   const handleCopyMarkdown = useCallback(
-    () => copyText(toMarkdown(output), 'errors.copyMarkdownSuccess'),
+    () => copyText(toMarkdown(output), 'errors.copyMarkdownSuccess', 'markdown'),
     [copyText, output]
   );
 
   const handleDownload = useCallback(() => {
     try {
       saveBlob(new Blob([output], { type: 'text/plain' }), 'qr-code.txt');
+      trackEvent('Download', { tool: 'qr-generator', format: 'text', style: options.style });
     } catch {
       toast({ description: t('errors.downloadError'), variant: 'destructive' });
     }
-  }, [output, t, toast]);
+  }, [output, t, toast, options.style]);
 
   const handleDownloadPng = useCallback(async () => {
     try {
       saveBlob(await renderPngBlob(matrix), 'qr-code.png');
+      trackEvent('Download', { tool: 'qr-generator', format: 'png', style: options.style });
     } catch {
       toast({ description: t('errors.pngError'), variant: 'destructive' });
     }
-  }, [matrix, t, toast]);
+  }, [matrix, t, toast, options.style]);
 
   return (
     <div className="p-6 space-y-6 max-w-3xl mx-auto">

@@ -16,6 +16,7 @@ import {
 import { MarkdownInput } from './markdown-input';
 import { MarkdownPreview } from './markdown-preview';
 import { MarkdownEditorOptionsPanel } from './markdown-editor-options-panel';
+import { trackEvent } from '@/lib/analytics-events';
 
 export function MarkdownEditor() {
   const t = useTranslations('markdownEditor');
@@ -41,6 +42,7 @@ export function MarkdownEditor() {
   const copyMarkdown = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(input);
+      trackEvent('Copy', { tool: 'markdown-editor', format: 'markdown' });
       toast({ description: t('errors.copyMarkdownSuccess') });
     } catch {
       toast({ description: t('errors.copyError'), variant: 'destructive' });
@@ -51,6 +53,7 @@ export function MarkdownEditor() {
     try {
       const html = previewContentRef.current?.innerHTML ?? '';
       await navigator.clipboard.writeText(html);
+      trackEvent('Copy', { tool: 'markdown-editor', format: 'html' });
       toast({ description: t('errors.copyHtmlSuccess') });
     } catch {
       toast({ description: t('errors.copyError'), variant: 'destructive' });
@@ -66,6 +69,7 @@ export function MarkdownEditor() {
       a.download = 'document.md';
       a.click();
       URL.revokeObjectURL(url);
+      trackEvent('Download', { tool: 'markdown-editor', format: 'markdown' });
     } catch {
       toast({ description: t('errors.downloadError'), variant: 'destructive' });
     }

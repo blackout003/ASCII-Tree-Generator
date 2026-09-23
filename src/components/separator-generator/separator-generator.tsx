@@ -9,6 +9,7 @@ import { generateBlock } from '@/lib/separator-generator';
 import { SeparatorInput } from './separator-input';
 import { SeparatorPreview } from './separator-preview';
 import { SeparatorOptionsPanel } from './separator-options-panel';
+import { trackEvent } from '@/lib/analytics-events';
 
 const DEFAULT_LABEL = 'STATUS: ACTIVE';
 
@@ -45,11 +46,12 @@ export function SeparatorGenerator() {
   const copyToClipboard = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(output);
+      trackEvent('Copy', { tool: 'separator-generator', blockType: options.blockType });
       toast({ description: t('errors.copySuccess') });
     } catch {
       toast({ description: t('errors.copyError'), variant: 'destructive' });
     }
-  }, [output, t, toast]);
+  }, [output, t, toast, options.blockType]);
 
   const downloadOutput = useCallback(() => {
     try {
@@ -60,10 +62,11 @@ export function SeparatorGenerator() {
       a.download = 'separator.txt';
       a.click();
       URL.revokeObjectURL(url);
+      trackEvent('Download', { tool: 'separator-generator', format: 'txt', blockType: options.blockType });
     } catch {
       toast({ description: t('errors.downloadError'), variant: 'destructive' });
     }
-  }, [output, t, toast]);
+  }, [output, t, toast, options.blockType]);
 
   return (
     <div className="p-6 space-y-6 max-w-3xl mx-auto">

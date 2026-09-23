@@ -13,6 +13,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Type, X } from '@/components/icons';
+import { trackEvent } from '@/lib/analytics-events';
 
 const DEFAULT_TEXT = 'Hello';
 
@@ -43,11 +44,12 @@ export function BannerGenerator() {
   const copyToClipboard = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(output);
+      trackEvent('Copy', { tool: 'banner-generator', font: options.font, align: options.align });
       toast({ description: t('errors.copySuccess') });
     } catch {
       toast({ description: t('errors.copyError'), variant: 'destructive' });
     }
-  }, [output, t, toast]);
+  }, [output, t, toast, options.font, options.align]);
 
   const downloadOutput = useCallback(() => {
     try {
@@ -58,10 +60,11 @@ export function BannerGenerator() {
       a.download = 'banner.txt';
       a.click();
       URL.revokeObjectURL(url);
+      trackEvent('Download', { tool: 'banner-generator', format: 'txt', font: options.font, align: options.align });
     } catch {
       toast({ description: t('errors.downloadError'), variant: 'destructive' });
     }
-  }, [output, t, toast]);
+  }, [output, t, toast, options.font, options.align]);
 
   return (
     <div className="p-6 space-y-6 max-w-4xl mx-auto">

@@ -19,6 +19,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import { trackEvent } from '@/lib/analytics-events';
 
 const defaultData: TableData = {
   columns: ['Nom', 'Âge', 'Ville'],
@@ -208,11 +209,12 @@ export function TableGenerator() {
   const copyToClipboard = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(asciiOutput);
+      trackEvent('Copy', { tool: 'table-generator', borderStyle: options.borderStyle });
       toast({ description: t('copySuccess') });
     } catch {
       toast({ description: t('copyError'), variant: 'destructive' });
     }
-  }, [asciiOutput, t, toast]);
+  }, [asciiOutput, t, toast, options.borderStyle]);
 
   const downloadASCII = useCallback(() => {
     try {
@@ -225,10 +227,11 @@ export function TableGenerator() {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+      trackEvent('Download', { tool: 'table-generator', format: 'txt', borderStyle: options.borderStyle });
     } catch {
       toast({ description: t('downloadError'), variant: 'destructive' });
     }
-  }, [asciiOutput, t, toast]);
+  }, [asciiOutput, t, toast, options.borderStyle]);
 
   return (
     <div className="p-6 space-y-6 max-w-5xl mx-auto">
