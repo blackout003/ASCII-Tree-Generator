@@ -122,3 +122,60 @@ export function parseAsciiTreeText(text: string): ParseResult {
   applyFileFolderHeuristic(root);
   return { nodes: root, errors, warnings };
 }
+
+function insertPath(level: TreeNode[], segments: string[], isFile: boolean): void {
+  let currentLevel = level;
+
+  segments.forEach((segment, index) => {
+    const isLastSegment = index === segments.length - 1;
+    const nodeType: 'file' | 'folder' = isLastSegment && isFile ? 'file' : 'folder';
+
+    let node = currentLevel.find((n) => n.name === segment);
+    if (!node) {
+      node = {
+        id: crypto.randomUUID(),
+        name: segment,
+        type: nodeType,
+        children: nodeType === 'folder' ? [] : undefined,
+      };
+      currentLevel.push(node);
+    } else if (nodeType === 'folder' && !node.children) {
+      node.children = [];
+    }
+
+    if (nodeType === 'folder') {
+      currentLevel = node.children!;
+    }
+  });
+}
+
+export function parseShellCommands(text: string): ParseResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const root: TreeNode[] = [];
+
+  for (const rawLine of text.split('\n')) {
+    const line = rawLine.trim();
+    if (line === '') continue;
+
+    const mkdirMatch = line.match(/^mkdir\s+-p\s+(.+)$/);
+    const touchMatch = line.match(/^touch\s+(.+)$/);
+
+    if (!mkdirMatch && !touchMatch) {
+      errors.push(line);
+      continue;
+    }
+
+    const path = (mkdirMatch ? mkdirMatch[1] : touchMatch![1]).trim();
+    const isFile = !mkdirMatch;
+    const segments = path.split('/').filter((s) => s !== '');
+
+    if (path.startsWith('/') || segments.includes('..')) {
+      warnings.push(path);
+    }
+
+    insertPath(root, segments, isFile);
+  }
+
+  return { nodes: root, errors, warnings };
+}
