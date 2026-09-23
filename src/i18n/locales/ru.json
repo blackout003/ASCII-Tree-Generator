@@ -137,6 +137,7 @@
     "requestFeature": "Предложить функцию",
     "banner": "Текстовые баннеры",
     "separators": "Разделители и бейджи",
+    "treeToCommands": "Дерево ↔ Команды",
     "comingSoon": "Скоро",
     "openTool": "Открыть инструмент",
     "markdownGuide": "Гид по Markdown",
@@ -305,6 +306,40 @@
       "downloadError": "Не удалось скачать"
     }
   },
+  "treeCommandsGenerator": {
+    "modes": {
+      "treeToCommands": "Дерево → Команды",
+      "commandsToTree": "Команды → Дерево"
+    },
+    "input": {
+      "title": "Ввод",
+      "clear": "Очистить",
+      "placeholderTree": "Вставьте ASCII-дерево (unicode или ascii)…",
+      "placeholderCommands": "Вставьте команды mkdir -p / touch, по одной на строку…"
+    },
+    "preview": {
+      "title": "Результат",
+      "copy": "Копировать",
+      "download": "Скачать",
+      "placeholder": "Результат появится здесь.",
+      "securityNotice": "Команды не выполняются автоматически: проверьте их перед вставкой в терминал. Имена с пробелами или спецсимволами не экранируются."
+    },
+    "warnings": {
+      "dangerousPath": "Обнаружен потенциально опасный путь: {path} — проверьте эту команду перед выполнением."
+    },
+    "errors": {
+      "unrecognizedLine": "Строка проигнорирована (формат не распознан): {line}",
+      "copySuccess": "Скопировано в буфер обмена!",
+      "copyError": "Не удалось скопировать.",
+      "downloadError": "Не удалось скачать."
+    },
+    "options": {
+      "title": "Настройки",
+      "connectorStyle": "Стиль соединителя",
+      "styleUnicode": "Unicode (├── └──)",
+      "styleAscii": "ASCII (|-- `--)"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "Содержимое",
@@ -412,6 +447,9 @@
       },
       "separators": {
         "desc": "Создавайте декоративные линии, статусные бейджи и блоки комментариев ASCII для структурирования README и файлов кода."
+      },
+      "treeToCommands": {
+        "desc": "Преобразует ASCII-дерево в готовые команды mkdir/touch и восстанавливает дерево из команд shell."
       }
     }
   },

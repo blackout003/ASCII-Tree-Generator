@@ -137,6 +137,7 @@
     "requestFeature": "Sugerir una función",
     "banner": "Banners de Texto",
     "separators": "Separadores e Insignias",
+    "treeToCommands": "Árbol ↔ Comandos",
     "comingSoon": "Próximamente",
     "openTool": "Abrir herramienta",
     "markdownGuide": "Guía Markdown",
@@ -305,6 +306,40 @@
       "downloadError": "Error al descargar"
     }
   },
+  "treeCommandsGenerator": {
+    "modes": {
+      "treeToCommands": "Árbol → Comandos",
+      "commandsToTree": "Comandos → Árbol"
+    },
+    "input": {
+      "title": "Entrada",
+      "clear": "Borrar",
+      "placeholderTree": "Pega un árbol ASCII (unicode o ascii)…",
+      "placeholderCommands": "Pega comandos mkdir -p / touch, uno por línea…"
+    },
+    "preview": {
+      "title": "Resultado",
+      "copy": "Copiar",
+      "download": "Descargar",
+      "placeholder": "El resultado aparecerá aquí.",
+      "securityNotice": "Los comandos no se ejecutan automáticamente: revísalos antes de pegarlos en una terminal. Los nombres con espacios o caracteres especiales no se escapan."
+    },
+    "warnings": {
+      "dangerousPath": "Ruta potencialmente peligrosa detectada: {path} — revisa este comando antes de ejecutarlo."
+    },
+    "errors": {
+      "unrecognizedLine": "Línea ignorada (formato no reconocido): {line}",
+      "copySuccess": "¡Copiado al portapapeles!",
+      "copyError": "Error al copiar.",
+      "downloadError": "Error al descargar."
+    },
+    "options": {
+      "title": "Opciones",
+      "connectorStyle": "Estilo de conector",
+      "styleUnicode": "Unicode (├── └──)",
+      "styleAscii": "ASCII (|-- `--)"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "Contenido",
@@ -412,6 +447,9 @@
       },
       "separators": {
         "desc": "Genera líneas decorativas, insignias de estado y bloques de comentarios ASCII para estructurar tus README y archivos de código."
+      },
+      "treeToCommands": {
+        "desc": "Convierte un árbol ASCII en comandos mkdir/touch listos para ejecutar, y reconstruye un árbol a partir de comandos de shell."
       }
     }
   },

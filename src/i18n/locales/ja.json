@@ -137,6 +137,7 @@
     "requestFeature": "機能をリクエスト",
     "banner": "テキストバナー",
     "separators": "区切り線＆バッジ",
+    "treeToCommands": "ツリー ⇄ コマンド",
     "comingSoon": "近日公開",
     "openTool": "ツールを開く",
     "markdownGuide": "Markdown ガイド",
@@ -305,6 +306,40 @@
       "downloadError": "ダウンロードに失敗しました"
     }
   },
+  "treeCommandsGenerator": {
+    "modes": {
+      "treeToCommands": "ツリー → コマンド",
+      "commandsToTree": "コマンド → ツリー"
+    },
+    "input": {
+      "title": "入力",
+      "clear": "クリア",
+      "placeholderTree": "ASCIIツリーを貼り付け（unicodeまたはascii）…",
+      "placeholderCommands": "mkdir -p / touch コマンドを1行ずつ貼り付け…"
+    },
+    "preview": {
+      "title": "結果",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "placeholder": "結果はここに表示されます。",
+      "securityNotice": "コマンドは自動実行されません。ターミナルに貼り付ける前に内容を確認してください。スペースや特殊文字を含む名前はエスケープされません。"
+    },
+    "warnings": {
+      "dangerousPath": "危険な可能性のあるパスを検出しました：{path} — 実行前にこのコマンドを確認してください。"
+    },
+    "errors": {
+      "unrecognizedLine": "認識できない形式のため行を無視しました：{line}",
+      "copySuccess": "クリップボードにコピーしました！",
+      "copyError": "コピーに失敗しました。",
+      "downloadError": "ダウンロードに失敗しました。"
+    },
+    "options": {
+      "title": "オプション",
+      "connectorStyle": "コネクタースタイル",
+      "styleUnicode": "Unicode (├── └──)",
+      "styleAscii": "ASCII (|-- `--)"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "内容",
@@ -412,6 +447,9 @@
       },
       "separators": {
         "desc": "READMEやコードファイルを整理するための装飾ライン、ステータスバッジ、ASCIIコメントブロックを生成します。"
+      },
+      "treeToCommands": {
+        "desc": "ASCIIツリーを実行可能なmkdir/touchコマンドに変換し、逆にシェルコマンドからツリーを再構築します。"
       }
     }
   },

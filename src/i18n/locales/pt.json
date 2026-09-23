@@ -137,6 +137,7 @@
     "requestFeature": "Sugerir uma funcionalidade",
     "banner": "Banners de Texto",
     "separators": "Separadores e Selos",
+    "treeToCommands": "Árvore ↔ Comandos",
     "comingSoon": "Em breve",
     "openTool": "Abrir ferramenta",
     "markdownGuide": "Guia Markdown",
@@ -305,6 +306,40 @@
       "downloadError": "Falha ao transferir"
     }
   },
+  "treeCommandsGenerator": {
+    "modes": {
+      "treeToCommands": "Árvore → Comandos",
+      "commandsToTree": "Comandos → Árvore"
+    },
+    "input": {
+      "title": "Entrada",
+      "clear": "Limpar",
+      "placeholderTree": "Cole uma árvore ASCII (unicode ou ascii)…",
+      "placeholderCommands": "Cole comandos mkdir -p / touch, um por linha…"
+    },
+    "preview": {
+      "title": "Resultado",
+      "copy": "Copiar",
+      "download": "Transferir",
+      "placeholder": "O resultado aparecerá aqui.",
+      "securityNotice": "Os comandos não são executados automaticamente: reveja-os antes de colar num terminal. Nomes com espaços ou caracteres especiais não são escapados."
+    },
+    "warnings": {
+      "dangerousPath": "Caminho potencialmente perigoso detetado: {path} — reveja este comando antes de o executar."
+    },
+    "errors": {
+      "unrecognizedLine": "Linha ignorada (formato não reconhecido): {line}",
+      "copySuccess": "Copiado para a área de transferência!",
+      "copyError": "Falha ao copiar.",
+      "downloadError": "Falha ao transferir."
+    },
+    "options": {
+      "title": "Opções",
+      "connectorStyle": "Estilo de conector",
+      "styleUnicode": "Unicode (├── └──)",
+      "styleAscii": "ASCII (|-- `--)"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "Conteúdo",
@@ -412,6 +447,9 @@
       },
       "separators": {
         "desc": "Gere linhas decorativas, selos de estado e blocos de comentários ASCII para estruturar os seus READMEs e ficheiros de código."
+      },
+      "treeToCommands": {
+        "desc": "Converte uma árvore ASCII em comandos mkdir/touch prontos a executar, e reconstrói uma árvore a partir de comandos de shell."
       }
     }
   },

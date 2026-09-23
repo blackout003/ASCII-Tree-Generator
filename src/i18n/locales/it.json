@@ -137,6 +137,7 @@
     "requestFeature": "Proponi una funzionalità",
     "banner": "Banner di Testo",
     "separators": "Separatori e Badge",
+    "treeToCommands": "Albero ↔ Comandi",
     "comingSoon": "Prossimamente",
     "openTool": "Apri strumento",
     "markdownGuide": "Guida Markdown",
@@ -305,6 +306,40 @@
       "downloadError": "Download non riuscito"
     }
   },
+  "treeCommandsGenerator": {
+    "modes": {
+      "treeToCommands": "Albero → Comandi",
+      "commandsToTree": "Comandi → Albero"
+    },
+    "input": {
+      "title": "Input",
+      "clear": "Cancella",
+      "placeholderTree": "Incolla un albero ASCII (unicode o ascii)…",
+      "placeholderCommands": "Incolla comandi mkdir -p / touch, uno per riga…"
+    },
+    "preview": {
+      "title": "Risultato",
+      "copy": "Copia",
+      "download": "Scarica",
+      "placeholder": "Il risultato apparirà qui.",
+      "securityNotice": "I comandi non vengono eseguiti automaticamente: controllali prima di incollarli in un terminale. I nomi con spazi o caratteri speciali non vengono sottoposti a escape."
+    },
+    "warnings": {
+      "dangerousPath": "Percorso potenzialmente pericoloso rilevato: {path} — controlla questo comando prima di eseguirlo."
+    },
+    "errors": {
+      "unrecognizedLine": "Riga ignorata (formato non riconosciuto): {line}",
+      "copySuccess": "Copiato negli appunti!",
+      "copyError": "Copia non riuscita.",
+      "downloadError": "Download non riuscito."
+    },
+    "options": {
+      "title": "Opzioni",
+      "connectorStyle": "Stile connettore",
+      "styleUnicode": "Unicode (├── └──)",
+      "styleAscii": "ASCII (|-- `--)"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "Contenuto",
@@ -412,6 +447,9 @@
       },
       "separators": {
         "desc": "Genera linee decorative, badge di stato e blocchi di commento ASCII per strutturare i tuoi README e file di codice."
+      },
+      "treeToCommands": {
+        "desc": "Converte un albero ASCII in comandi mkdir/touch pronti all'uso, e ricostruisce un albero a partire da comandi shell."
       }
     }
   },

@@ -137,6 +137,7 @@
     "requestFeature": "Proposer une fonctionnalité",
     "banner": "Bannières Texte",
     "separators": "Séparateurs & Badges",
+    "treeToCommands": "Arbre ↔ Commandes",
     "comingSoon": "Bientôt",
     "openTool": "Ouvrir l'outil",
     "markdownGuide": "Guide Markdown",
@@ -305,6 +306,40 @@
       "downloadError": "Échec du téléchargement"
     }
   },
+  "treeCommandsGenerator": {
+    "modes": {
+      "treeToCommands": "Arbre → Commandes",
+      "commandsToTree": "Commandes → Arbre"
+    },
+    "input": {
+      "title": "Entrée",
+      "clear": "Effacer",
+      "placeholderTree": "Collez un arbre ASCII (unicode ou ascii)…",
+      "placeholderCommands": "Collez des commandes mkdir -p / touch, une par ligne…"
+    },
+    "preview": {
+      "title": "Résultat",
+      "copy": "Copier",
+      "download": "Télécharger",
+      "placeholder": "Le résultat apparaîtra ici.",
+      "securityNotice": "Les commandes ne sont pas exécutées automatiquement : relisez-les avant de les coller dans un terminal. Les noms avec espaces ou caractères spéciaux ne sont pas échappés."
+    },
+    "warnings": {
+      "dangerousPath": "Chemin potentiellement dangereux détecté : {path} — vérifiez cette commande avant de l'exécuter."
+    },
+    "errors": {
+      "unrecognizedLine": "Ligne ignorée (format non reconnu) : {line}",
+      "copySuccess": "Copié dans le presse-papiers !",
+      "copyError": "Échec de la copie.",
+      "downloadError": "Échec du téléchargement."
+    },
+    "options": {
+      "title": "Options",
+      "connectorStyle": "Style de connecteur",
+      "styleUnicode": "Unicode (├── └──)",
+      "styleAscii": "ASCII (|-- `--)"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "Contenu",
@@ -412,6 +447,9 @@
       },
       "separators": {
         "desc": "Générez des lignes décoratives, badges de statut et blocs de commentaires ASCII pour structurer vos README et fichiers de code."
+      },
+      "treeToCommands": {
+        "desc": "Convertissez un arbre ASCII en commandes mkdir/touch prêtes à exécuter, et inversement recréez un arbre depuis des commandes shell."
       }
     }
   },

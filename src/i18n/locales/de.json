@@ -137,6 +137,7 @@
     "requestFeature": "Funktion vorschlagen",
     "banner": "Textbanner",
     "separators": "Trenner & Badges",
+    "treeToCommands": "Baum ↔ Befehle",
     "comingSoon": "Demnächst",
     "openTool": "Werkzeug öffnen",
     "markdownGuide": "Markdown-Leitfaden",
@@ -305,6 +306,40 @@
       "downloadError": "Download fehlgeschlagen"
     }
   },
+  "treeCommandsGenerator": {
+    "modes": {
+      "treeToCommands": "Baum → Befehle",
+      "commandsToTree": "Befehle → Baum"
+    },
+    "input": {
+      "title": "Eingabe",
+      "clear": "Leeren",
+      "placeholderTree": "ASCII-Baum einfügen (unicode oder ascii)…",
+      "placeholderCommands": "mkdir -p / touch-Befehle einfügen, einer pro Zeile…"
+    },
+    "preview": {
+      "title": "Ergebnis",
+      "copy": "Kopieren",
+      "download": "Herunterladen",
+      "placeholder": "Das Ergebnis erscheint hier.",
+      "securityNotice": "Befehle werden nicht automatisch ausgeführt: prüfen Sie sie vor dem Einfügen in ein Terminal. Namen mit Leerzeichen oder Sonderzeichen werden nicht escaped."
+    },
+    "warnings": {
+      "dangerousPath": "Potenziell gefährlicher Pfad erkannt: {path} — prüfen Sie diesen Befehl vor der Ausführung."
+    },
+    "errors": {
+      "unrecognizedLine": "Zeile ignoriert (unbekanntes Format): {line}",
+      "copySuccess": "In die Zwischenablage kopiert!",
+      "copyError": "Kopieren fehlgeschlagen.",
+      "downloadError": "Download fehlgeschlagen."
+    },
+    "options": {
+      "title": "Optionen",
+      "connectorStyle": "Verbindungsstil",
+      "styleUnicode": "Unicode (├── └──)",
+      "styleAscii": "ASCII (|-- `--)"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "Inhalt",
@@ -412,6 +447,9 @@
       },
       "separators": {
         "desc": "Erzeugen Sie dekorative Linien, Status-Badges und ASCII-Kommentarblöcke, um Ihre READMEs und Codedateien zu strukturieren."
+      },
+      "treeToCommands": {
+        "desc": "Wandelt einen ASCII-Baum in ausführbare mkdir/touch-Befehle um und erstellt umgekehrt einen Baum aus Shell-Befehlen."
       }
     }
   },

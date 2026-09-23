@@ -137,6 +137,7 @@
     "requestFeature": "Request a feature",
     "banner": "Text Banners",
     "separators": "Separators & Badges",
+    "treeToCommands": "Tree ↔ Commands",
     "comingSoon": "Coming Soon",
     "openTool": "Open tool",
     "markdownGuide": "Markdown Guide",
@@ -305,6 +306,40 @@
       "downloadError": "Download failed"
     }
   },
+  "treeCommandsGenerator": {
+    "modes": {
+      "treeToCommands": "Tree → Commands",
+      "commandsToTree": "Commands → Tree"
+    },
+    "input": {
+      "title": "Input",
+      "clear": "Clear",
+      "placeholderTree": "Paste an ASCII tree (unicode or ascii)…",
+      "placeholderCommands": "Paste mkdir -p / touch commands, one per line…"
+    },
+    "preview": {
+      "title": "Result",
+      "copy": "Copy",
+      "download": "Download",
+      "placeholder": "The result will appear here.",
+      "securityNotice": "Commands are not executed automatically: review them before pasting into a terminal. Names with spaces or special characters are not escaped."
+    },
+    "warnings": {
+      "dangerousPath": "Potentially dangerous path detected: {path} — review this command before running it."
+    },
+    "errors": {
+      "unrecognizedLine": "Line ignored (unrecognized format): {line}",
+      "copySuccess": "Copied to clipboard!",
+      "copyError": "Copy failed.",
+      "downloadError": "Download failed."
+    },
+    "options": {
+      "title": "Options",
+      "connectorStyle": "Connector style",
+      "styleUnicode": "Unicode (├── └──)",
+      "styleAscii": "ASCII (|-- `--)"
+    }
+  },
   "qrGenerator": {
     "input": {
       "title": "Content",
@@ -412,6 +447,9 @@
       },
       "separators": {
         "desc": "Generate decorative lines, status badges and ASCII comment blocks to structure your READMEs and code files."
+      },
+      "treeToCommands": {
+        "desc": "Convert an ASCII tree into ready-to-run mkdir/touch commands, and rebuild a tree from shell commands."
       }
     }
   },
