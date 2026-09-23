@@ -18,13 +18,20 @@ export function generateShellCommands(nodes: TreeNode[]): string {
   return lines.join('\n');
 }
 
-const UNICODE_PIPE = '│   '; // '│   '
+const UNICODE_PIPE = '│   ';
 const ASCII_PIPE = '|   ';
 const BLANK_INDENT = '    ';
-const UNICODE_BRANCH = '├── '; // '├── '
-const UNICODE_LAST = '└── '; // '└── '
+const UNICODE_BRANCH = '├── ';
+const UNICODE_LAST = '└── ';
 const ASCII_BRANCH = '|-- ';
 const ASCII_LAST = '`-- ';
+
+const TREE_SUMMARY_LINE = /^\d+ (?:directory|directories), \d+ files?$/;
+
+function hasDangerousSegment(path: string): boolean {
+  if (path.startsWith('/')) return true;
+  return path.split('/').some((segment) => segment === '..');
+}
 
 function stripConnector(line: string): { depth: number; name: string } | null {
   let rest = line;
@@ -52,20 +59,26 @@ function stripConnector(line: string): { depth: number; name: string } | null {
 }
 
 function looksLikeFile(name: string): boolean {
+  if (name === '.' || name === '..') return false; // '.' and '..' are never files
   if (name.startsWith('.')) return true; // dotfiles: .gitignore, .env
   return /\.[^./\\]+$/.test(name); // has a trailing extension segment
 }
 
 function applyFileFolderHeuristic(nodes: TreeNode[]): void {
   for (const node of nodes) {
+    let hadMarker = false;
+    if (node.name.endsWith('/') || node.name.endsWith('\\')) {
+      node.name = node.name.slice(0, -1);
+      hadMarker = true;
+    }
+
     if (node.children && node.children.length > 0) {
       node.type = 'folder';
       applyFileFolderHeuristic(node.children);
       continue;
     }
     node.children = undefined;
-    if (node.name.endsWith('/') || node.name.endsWith('\\')) {
-      node.name = node.name.slice(0, -1);
+    if (hadMarker) {
       node.type = 'folder';
       continue;
     }
@@ -85,6 +98,10 @@ export function parseAsciiTreeText(text: string): ParseResult {
 
     const parsed = stripConnector(line);
     if (!parsed) {
+      const trimmed = line.trim();
+      if (trimmed === '.' || trimmed === './' || TREE_SUMMARY_LINE.test(trimmed)) {
+        continue; // Unix `tree` CLI boilerplate: root marker or summary line
+      }
       errors.push(line);
       continue;
     }
@@ -97,7 +114,7 @@ export function parseAsciiTreeText(text: string): ParseResult {
     }
 
     const name = parsed.name;
-    if (name === '..' || name.startsWith('/')) {
+    if (hasDangerousSegment(name)) {
       warnings.push(name);
     }
 
@@ -170,7 +187,7 @@ export function parseShellCommands(text: string): ParseResult {
     const isFile = !mkdirMatch;
     const segments = path.split('/').filter((s) => s !== '');
 
-    if (path.startsWith('/') || segments.includes('..')) {
+    if (hasDangerousSegment(path)) {
       warnings.push(path);
     }
 

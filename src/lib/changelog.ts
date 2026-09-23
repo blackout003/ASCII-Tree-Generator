@@ -2,7 +2,7 @@
  * Version actuelle de l'application, affichée dans la barre latérale.
  * Doit rester synchronisée avec le champ "version" de package.json et CHANGELOG.md.
  */
-export const APP_VERSION = '2.3.0';
+export const APP_VERSION = '2.4.0';
 
 export interface ChangelogSection {
   /** Titre de la section (ex: "Ajouté", "Modifié"). */
@@ -24,6 +24,19 @@ export interface ChangelogEntry {
  * Source lisible : CHANGELOG.md à la racine du projet.
  */
 export const CHANGELOG: ChangelogEntry[] = [
+  {
+    version: '2.4.0',
+    date: '2026-09-23',
+    summary: 'Nouvel outil : conversion Arbre ASCII ↔ Commandes mkdir/touch.',
+    sections: [
+      {
+        title: 'Ajouté',
+        items: [
+          "Arbre ASCII ↔ Commandes mkdir/touch (/tools/tree-to-commands) : convertit un arbre ASCII collé en commandes shell mkdir -p / touch prêtes à l'emploi, et inversement reconstruit un arbre lisible à partir de commandes shell.",
+        ],
+      },
+    ],
+  },
   {
     version: '2.3.0',
     date: '2026-09-22',

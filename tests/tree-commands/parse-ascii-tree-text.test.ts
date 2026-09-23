@@ -85,4 +85,52 @@ describe('parseAsciiTreeText', () => {
     expect(parseAsciiTreeText('')).toEqual({ nodes: [], errors: [], warnings: [] });
     expect(parseAsciiTreeText('\n\n')).toEqual({ nodes: [], errors: [], warnings: [] });
   });
+
+  it('strips a trailing folder-slash marker from a non-leaf node (showFolderSlash output)', () => {
+    // 'src\' has children, so it is NOT a leaf — the marker must still be stripped.
+    const text = ['├── src\\', '│   └── index.ts'].join('\n');
+    const { nodes, errors, warnings } = parseAsciiTreeText(text);
+
+    expect(errors).toEqual([]);
+    expect(warnings).toEqual([]);
+    expect(nodes[0]).toMatchObject({
+      name: 'src',
+      type: 'folder',
+      children: [{ name: 'index.ts', type: 'file' }],
+    });
+  });
+
+  it('warns on a name containing a "../" segment, not just an exact ".." name', () => {
+    const { warnings } = parseAsciiTreeText('├── ../secrets.env');
+    expect(warnings).toEqual(['../secrets.env']);
+  });
+
+  it('classifies a lone ".." leaf node as a folder, not a file', () => {
+    const { nodes } = parseAsciiTreeText('└── ..');
+    expect(nodes[0]).toMatchObject({ name: '..', type: 'folder' });
+  });
+
+  it('silently drops the Unix `tree` CLI root marker line without an error', () => {
+    const text = ['.', '├── src', '└── README.md'].join('\n');
+    const { nodes, errors, warnings } = parseAsciiTreeText(text);
+
+    expect(errors).toEqual([]);
+    expect(warnings).toEqual([]);
+    expect(nodes.map((n) => n.name)).toEqual(['src', 'README.md']);
+  });
+
+  it('silently drops the Unix `tree` CLI summary line without an error', () => {
+    const text = ['├── src', '└── README.md', '', '1 directory, 1 file'].join('\n');
+    const { nodes, errors, warnings } = parseAsciiTreeText(text);
+
+    expect(errors).toEqual([]);
+    expect(warnings).toEqual([]);
+    expect(nodes.map((n) => n.name)).toEqual(['src', 'README.md']);
+  });
+
+  it('still reports an actually-unrecognized line as an error', () => {
+    const text = ['├── src', 'garbage input', '└── README.md'].join('\n');
+    const { errors } = parseAsciiTreeText(text);
+    expect(errors).toEqual(['garbage input']);
+  });
 });

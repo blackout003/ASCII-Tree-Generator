@@ -283,7 +283,7 @@ export const TOOLS_SEO = {
       en: "Convert a pasted ASCII tree into ready-to-run mkdir -p / touch commands, or rebuild a readable tree from shell commands. Free, runs entirely in your browser.",
       es: "Convierte un árbol ASCII pegado en comandos mkdir -p / touch listos para ejecutar, o reconstruye un árbol legible a partir de comandos de shell. Gratis, sin instalación.",
       de: "Wandelt einen eingefügten ASCII-Baum in ausführbare mkdir -p / touch-Befehle um oder erstellt aus Shell-Befehlen wieder einen lesbaren Baum. Kostenlos, ohne Installation.",
-      it: "Converte un albero ASCII incollato in comandi mkdir -p / touch pronti alluso, oppure ricostruisce un albero leggibile a partire da comandi shell. Gratis, senza installazione.",
+      it: "Converte un albero ASCII incollato in comandi mkdir -p / touch pronti all'uso, oppure ricostruisce un albero leggibile a partire da comandi shell. Gratis, senza installazione.",
       pt: "Converte uma árvore ASCII colada em comandos mkdir -p / touch prontos a executar, ou reconstrói uma árvore legível a partir de comandos de shell. Grátis, sem instalação.",
       ru: "Преобразует вставленное ASCII-дерево в готовые команды mkdir -p / touch, либо восстанавливает читаемое дерево из команд shell. Бесплатно, без установки.",
       ja: "貼り付けたASCIIツリーを実行可能なmkdir -p / touchコマンドに変換、または逆にシェルコマンドから見やすいツリーを再構築します。無料、ブラウザだけで動作します。",

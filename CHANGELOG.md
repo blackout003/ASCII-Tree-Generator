@@ -5,6 +5,16 @@ Toutes les évolutions notables de ASCII Tools sont documentées dans ce fichier
 Le format s'inspire de [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/)
 et le projet suit le [versionnage sémantique](https://semver.org/lang/fr/).
 
+## [2.4.0] - 2026-09-23
+
+Ajout d'un nouvel outil : conversion Arbre ASCII ↔ Commandes mkdir/touch.
+
+### Ajouté
+
+- **Arbre ASCII ↔ Commandes mkdir/touch** (`/tools/tree-to-commands`) : convertit
+  un arbre ASCII collé en commandes shell `mkdir -p` / `touch` prêtes à l'emploi,
+  et inversement reconstruit un arbre lisible à partir de commandes shell.
+
 ## [2.3.0] - 2026-09-22
 
 Ajout d'un nouvel outil : générateur de séparateurs & badges ASCII.

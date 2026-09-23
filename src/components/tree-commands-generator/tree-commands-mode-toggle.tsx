@@ -14,11 +14,12 @@ export function TreeCommandsModeToggle({ mode, onModeChange }: TreeCommandsModeT
   const t = useTranslations('treeCommandsGenerator');
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2" role="group" aria-label={t('input.title')}>
       <Button
         size="sm"
         variant={mode === 'treeToCommands' ? 'default' : 'outline'}
         onClick={() => onModeChange('treeToCommands')}
+        aria-pressed={mode === 'treeToCommands'}
       >
         {t('modes.treeToCommands')}
       </Button>
@@ -26,6 +27,7 @@ export function TreeCommandsModeToggle({ mode, onModeChange }: TreeCommandsModeT
         size="sm"
         variant={mode === 'commandsToTree' ? 'default' : 'outline'}
         onClick={() => onModeChange('commandsToTree')}
+        aria-pressed={mode === 'commandsToTree'}
       >
         {t('modes.commandsToTree')}
       </Button>
