@@ -762,6 +762,88 @@ const CONTENT: Record<ToolSlug, LocalizedToolContent> = {
       ],
     },
   },
+  'tree-to-commands': {
+    en: {
+      heading: 'About the ASCII Tree ↔ Commands Converter',
+      intro:
+        "This free tool converts a pasted ASCII tree (from this site's tree generator, or from the Unix `tree` command) into a list of `mkdir -p` and `touch` commands ready to paste into a terminal to recreate the folder structure on disk. It also works the other way: paste mkdir/touch commands to generate the matching ASCII tree.",
+      faq: [
+        { q: 'Are the generated commands executed automatically?', a: 'No. The tool only generates text to copy; you paste and run the commands yourself in your terminal, after reviewing them.' },
+        { q: 'Which ASCII tree formats are supported?', a: 'Both unicode (├── └── │) and ascii (|-- `-- |) connector styles are detected automatically, even mixed within the same pasted text.' },
+        { q: "What happens if a path contains '..' or starts with '/'?", a: 'The tool still generates it, but adds a visible warning since such a path could escape the target folder — review it before running the command.' },
+      ],
+    },
+    fr: {
+      heading: 'À propos du convertisseur Arbre ASCII ↔ Commandes',
+      intro:
+        "Cet outil gratuit convertit un arbre ASCII collé (sortie du générateur d'arbre du site, ou de la commande `tree` Unix) en une liste de commandes `mkdir -p` et `touch` prêtes à coller dans un terminal pour recréer l'arborescence sur disque. Il fait aussi l'inverse : coller des commandes mkdir/touch génère l'arbre ASCII correspondant.",
+      faq: [
+        { q: 'Les commandes générées sont-elles exécutées automatiquement ?', a: "Non. L'outil ne fait que générer du texte à coller ; c'est à vous de coller et d'exécuter les commandes dans votre terminal, après les avoir relues." },
+        { q: "Quels formats d'arbre ASCII sont acceptés ?", a: 'Les styles unicode (├── └── │) et ascii (|-- `-- |) sont reconnus automatiquement, y compris mélangés dans le même texte collé.' },
+        { q: "Que se passe-t-il si un chemin contient '..' ou commence par '/' ?", a: "L'outil l'affiche quand même, mais ajoute un avertissement visible car ce type de chemin peut sortir du dossier cible — à vérifier avant d'exécuter la commande." },
+      ],
+    },
+    es: {
+      heading: 'Acerca del convertidor Árbol ASCII ↔ Comandos',
+      intro:
+        "Esta herramienta gratuita convierte un árbol ASCII pegado (procedente del generador de árboles del sitio, o del comando `tree` de Unix) en una lista de comandos `mkdir -p` y `touch` listos para pegar en una terminal y recrear la estructura de carpetas en disco. También funciona al revés: pega comandos mkdir/touch para generar el árbol ASCII correspondiente.",
+      faq: [
+        { q: '¿Los comandos generados se ejecutan automáticamente?', a: 'No. La herramienta solo genera texto para copiar; tú pegas y ejecutas los comandos en tu terminal, después de revisarlos.' },
+        { q: '¿Qué formatos de árbol ASCII se admiten?', a: 'Se detectan automáticamente los estilos unicode (├── └── │) y ascii (|-- `-- |), incluso mezclados en el mismo texto pegado.' },
+        { q: "¿Qué ocurre si una ruta contiene '..' o empieza por '/'?", a: 'La herramienta la genera igualmente, pero añade una advertencia visible porque ese tipo de ruta puede salir de la carpeta destino — revísala antes de ejecutar el comando.' },
+      ],
+    },
+    de: {
+      heading: 'Über den ASCII-Baum-↔-Befehle-Konverter',
+      intro:
+        'Dieses kostenlose Tool wandelt einen eingefügten ASCII-Baum (aus dem Baumgenerator dieser Seite oder dem Unix-Befehl `tree`) in eine Liste von `mkdir -p`- und `touch`-Befehlen um, die Sie in ein Terminal einfügen können, um die Ordnerstruktur auf der Festplatte nachzubilden. Es funktioniert auch umgekehrt: mkdir/touch-Befehle einfügen erzeugt den passenden ASCII-Baum.',
+      faq: [
+        { q: 'Werden die erzeugten Befehle automatisch ausgeführt?', a: 'Nein. Das Tool erzeugt nur Text zum Kopieren; Sie fügen die Befehle selbst in Ihr Terminal ein und führen sie nach Prüfung aus.' },
+        { q: 'Welche ASCII-Baum-Formate werden unterstützt?', a: 'Sowohl der Unicode-Stil (├── └── │) als auch der ASCII-Stil (|-- `-- |) werden automatisch erkannt, auch gemischt im selben eingefügten Text.' },
+        { q: "Was passiert, wenn ein Pfad '..' enthält oder mit '/' beginnt?", a: 'Das Tool erzeugt ihn trotzdem, zeigt aber eine sichtbare Warnung, da ein solcher Pfad den Zielordner verlassen könnte — vor der Ausführung prüfen.' },
+      ],
+    },
+    it: {
+      heading: 'Informazioni sul convertitore Albero ASCII ↔ Comandi',
+      intro:
+        "Questo strumento gratuito converte un albero ASCII incollato (proveniente dal generatore di alberi del sito, o dal comando Unix `tree`) in un elenco di comandi `mkdir -p` e `touch` pronti da incollare in un terminale per ricreare la struttura di cartelle su disco. Funziona anche al contrario: incolla comandi mkdir/touch per generare l'albero ASCII corrispondente.",
+      faq: [
+        { q: 'I comandi generati vengono eseguiti automaticamente?', a: 'No. Lo strumento genera solo testo da copiare; sei tu a incollare ed eseguire i comandi nel terminale, dopo averli controllati.' },
+        { q: 'Quali formati di albero ASCII sono supportati?', a: 'Vengono riconosciuti automaticamente sia lo stile unicode (├── └── │) sia lo stile ascii (|-- `-- |), anche mescolati nello stesso testo incollato.' },
+        { q: "Cosa succede se un percorso contiene '..' o inizia con '/'?", a: "Lo strumento lo genera comunque, ma aggiunge un avviso visibile perché questo tipo di percorso potrebbe uscire dalla cartella di destinazione — controllalo prima di eseguire il comando." },
+      ],
+    },
+    pt: {
+      heading: 'Sobre o conversor Árvore ASCII ↔ Comandos',
+      intro:
+        "Esta ferramenta gratuita converte uma árvore ASCII colada (proveniente do gerador de árvores do site, ou do comando Unix `tree`) numa lista de comandos `mkdir -p` e `touch` prontos a colar num terminal para recriar a estrutura de pastas no disco. Também funciona ao contrário: cola comandos mkdir/touch para gerar a árvore ASCII correspondente.",
+      faq: [
+        { q: 'Os comandos gerados são executados automaticamente?', a: 'Não. A ferramenta apenas gera texto para copiar; é você quem cola e executa os comandos no terminal, depois de os rever.' },
+        { q: 'Que formatos de árvore ASCII são suportados?', a: 'Os estilos unicode (├── └── │) e ascii (|-- `-- |) são detetados automaticamente, mesmo misturados no mesmo texto colado.' },
+        { q: "O que acontece se um caminho contiver '..' ou começar por '/'?", a: 'A ferramenta gera-o na mesma, mas adiciona um aviso visível, pois esse tipo de caminho pode sair da pasta de destino — revê-o antes de executar o comando.' },
+      ],
+    },
+    ru: {
+      heading: 'О конвертере ASCII-дерево ↔ команды',
+      intro:
+        'Этот бесплатный инструмент преобразует вставленное ASCII-дерево (из генератора деревьев на этом сайте или из команды Unix `tree`) в список команд `mkdir -p` и `touch`, готовых для вставки в терминал для воссоздания структуры папок на диске. Работает и в обратную сторону: вставьте команды mkdir/touch, чтобы получить соответствующее ASCII-дерево.',
+      faq: [
+        { q: 'Выполняются ли сгенерированные команды автоматически?', a: 'Нет. Инструмент только создаёт текст для копирования; вы сами вставляете и выполняете команды в терминале после проверки.' },
+        { q: 'Какие форматы ASCII-дерева поддерживаются?', a: 'Автоматически распознаются стили unicode (├── └── │) и ascii (|-- `-- |), даже смешанные в одном вставленном тексте.' },
+        { q: "Что произойдёт, если путь содержит '..' или начинается с '/'?", a: 'Инструмент всё равно сгенерирует его, но добавит заметное предупреждение, так как такой путь может выйти за пределы целевой папки — проверьте перед выполнением.' },
+      ],
+    },
+    ja: {
+      heading: 'ASCIIツリー⇄コマンド変換ツールについて',
+      intro:
+        'この無料ツールは、貼り付けたASCIIツリー（本サイトのツリー生成ツールの出力、またはUnixの`tree`コマンドの出力）を、ターミナルに貼り付けて実行するだけでフォルダ構成を再現できる`mkdir -p`と`touch`コマンドのリストに変換します。逆方向にも対応しており、mkdir/touchコマンドを貼り付けると対応するASCIIツリーを生成します。',
+      faq: [
+        { q: '生成されたコマンドは自動的に実行されますか？', a: 'いいえ。このツールはコピー用のテキストを生成するだけです。内容を確認した上で、ご自身でターミナルに貼り付けて実行してください。' },
+        { q: 'どのASCIIツリー形式に対応していますか？', a: 'unicode形式（├── └── │）とascii形式（|-- `-- |）の両方が自動検出され、同じテキスト内で混在していても認識されます。' },
+        { q: "パスに'..'が含まれていたり'/'で始まっていたりする場合はどうなりますか？", a: 'その場合もコマンドは生成されますが、対象フォルダの外に出る可能性があるため目立つ警告が表示されます。実行前に必ず確認してください。' },
+      ],
+    },
+  },
 };
 
 export function getToolContent(tool: ToolSlug, locale: string): ToolContent {

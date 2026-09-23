@@ -1,4 +1,4 @@
-import { FolderTree, Table, BarChart2, Type, BookMarked, Smile, FileText, Edit3, QrCode, Minus } from '@/components/icons';
+import { FolderTree, Table, BarChart2, Type, BookMarked, Smile, FileText, Edit3, QrCode, Minus, Terminal } from '@/components/icons';
 import type { LucideIcon } from '@/components/icons';
 
 export interface Tool {
@@ -51,6 +51,12 @@ export const TOOLS: Tool[] = [
     href: '/tools/separators',
     icon: Minus,
     nameKey: 'separators',
+  },
+  {
+    id: 'tree-to-commands',
+    href: '/tools/tree-to-commands',
+    icon: Terminal,
+    nameKey: 'treeToCommands',
   },
 ];
 

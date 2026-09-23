@@ -99,6 +99,16 @@ CPU     ▃▃▅▂▇▆▄▅`,
 [ STATUS: ACTIVE ]
 # ---- CONFIG ----`,
   },
+  {
+    id: 'tree-to-commands',
+    href: '/tools/tree-to-commands',
+    tag: 'MKDIR',
+    nameKey: 'treeToCommands',
+    descKey: 'home.tools.treeToCommands.desc',
+    preview: `mkdir -p src
+touch src/index.ts
+touch README.md`,
+  },
 ];
 
 // Reference guides — listed apart from the generators above.

@@ -267,6 +267,28 @@ export const TOOLS_SEO = {
       ja: "READMEやソースファイルを整理するための装飾ライン、バッジ、コメントブロックをASCIIで生成。C/JS、Python、Bashスタイル対応。無料、ワンクリックコピー。",
     },
   },
+  'tree-to-commands': {
+    titles: {
+      fr: "Arbre ASCII → Commandes mkdir/touch | Générateur Gratuit",
+      en: "ASCII Tree to mkdir/touch Commands Converter | Free",
+      es: "Árbol ASCII a Comandos mkdir/touch | Generador Gratis",
+      de: "ASCII-Baum zu mkdir/touch-Befehlen | Kostenloser Generator",
+      it: "Albero ASCII in Comandi mkdir/touch | Generatore Gratis",
+      pt: "Árvore ASCII para Comandos mkdir/touch | Gerador Grátis",
+      ru: "ASCII-дерево в команды mkdir/touch | Бесплатный генератор",
+      ja: "ASCIIツリー⇄mkdir/touchコマンド変換ツール | 無料",
+    },
+    descriptions: {
+      fr: "Convertissez un arbre ASCII collé en commandes mkdir -p / touch prêtes à exécuter, ou reconstruisez un arbre lisible depuis des commandes shell. Gratuit, sans installation.",
+      en: "Convert a pasted ASCII tree into ready-to-run mkdir -p / touch commands, or rebuild a readable tree from shell commands. Free, runs entirely in your browser.",
+      es: "Convierte un árbol ASCII pegado en comandos mkdir -p / touch listos para ejecutar, o reconstruye un árbol legible a partir de comandos de shell. Gratis, sin instalación.",
+      de: "Wandelt einen eingefügten ASCII-Baum in ausführbare mkdir -p / touch-Befehle um oder erstellt aus Shell-Befehlen wieder einen lesbaren Baum. Kostenlos, ohne Installation.",
+      it: "Converte un albero ASCII incollato in comandi mkdir -p / touch pronti alluso, oppure ricostruisce un albero leggibile a partire da comandi shell. Gratis, senza installazione.",
+      pt: "Converte uma árvore ASCII colada em comandos mkdir -p / touch prontos a executar, ou reconstrói uma árvore legível a partir de comandos de shell. Grátis, sem instalação.",
+      ru: "Преобразует вставленное ASCII-дерево в готовые команды mkdir -p / touch, либо восстанавливает читаемое дерево из команд shell. Бесплатно, без установки.",
+      ja: "貼り付けたASCIIツリーを実行可能なmkdir -p / touchコマンドに変換、または逆にシェルコマンドから見やすいツリーを再構築します。無料、ブラウザだけで動作します。",
+    },
+  },
 } satisfies Record<string, ToolMeta>;
 
 export type ToolSlug = keyof typeof TOOLS_SEO;
