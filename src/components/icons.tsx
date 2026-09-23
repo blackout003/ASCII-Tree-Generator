@@ -59,6 +59,7 @@ import {
   SparklesIcon,
   Sun01Icon,
   TableIcon as HugeTableIcon,
+  TerminalIcon,
   TextBoldIcon,
   TextFontIcon,
   Tick02Icon,
@@ -150,6 +151,7 @@ export const Sparkles = createIcon(SparklesIcon, "Sparkles");
 export const Sun = createIcon(Sun01Icon, "Sun");
 export const Table = createIcon(HugeTableIcon, "Table");
 export const TableIcon = createIcon(HugeTableIcon, "TableIcon");
+export const Terminal = createIcon(TerminalIcon, "Terminal");
 export const Trash2 = createIcon(Delete02Icon, "Trash2");
 export const Type = createIcon(TextFontIcon, "Type");
 export const Upload = createIcon(Upload01Icon, "Upload");
