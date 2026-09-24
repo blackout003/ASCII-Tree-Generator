@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { META_LIMITS } from './defaults';
 import { getBlockDefinition, isBlockType } from './registry';
 import { createBlockId } from './state';
 import type { Block, ReadmeState } from './types';
@@ -11,11 +12,11 @@ const envelopeSchema = z.object({
   mode: z.enum(['project', 'profile']),
   theme: z.object({ accentColor: z.string().regex(/^[0-9a-fA-F]{6}$/) }),
   meta: z.object({
-    name: z.string().max(200),
-    description: z.string().max(1000),
-    author: z.string().max(200),
-    license: z.string().max(100),
-    repoUrl: z.string().max(2000),
+    name: z.string().max(META_LIMITS.name),
+    description: z.string().max(META_LIMITS.description),
+    author: z.string().max(META_LIMITS.author),
+    license: z.string().max(META_LIMITS.license),
+    repoUrl: z.string().max(META_LIMITS.repoUrl),
   }),
   blocks: z
     .array(

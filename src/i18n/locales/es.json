@@ -730,7 +730,8 @@
       "importDropped": "Bloques ignorados: {count}.",
       "modeSwitchDropped": "Bloques eliminados (no disponibles en este modo): {count}.",
       "resetDone": "Editor restablecido.",
-      "storageUnavailable": "El guardado automático no está disponible en este navegador."
+      "storageUnavailable": "El guardado automático no está disponible en este navegador.",
+      "undo": "Deshacer"
     }
   }
 }

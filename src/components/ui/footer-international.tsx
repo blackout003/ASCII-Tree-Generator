@@ -56,7 +56,7 @@ export function FooterInternational() {
               {t('tools')}
             </h3>
             <nav className="flex flex-col gap-2">
-              {TOOLS.map((tool) => {
+              {TOOLS.filter((tool) => !tool.comingSoon).map((tool) => {
                 const Icon = tool.icon;
                 return (
                   <Link

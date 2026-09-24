@@ -48,6 +48,7 @@ const REQUIRED_KEYS = [
   'messages.modeSwitchDropped',
   'messages.resetDone',
   'messages.storageUnavailable',
+  'messages.undo',
 ] as const;
 
 const PLACEHOLDERS: Record<string, string> = {

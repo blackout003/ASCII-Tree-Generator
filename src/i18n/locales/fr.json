@@ -730,7 +730,8 @@
       "importDropped": "Blocs ignorés : {count}.",
       "modeSwitchDropped": "Blocs retirés (incompatibles avec ce mode) : {count}.",
       "resetDone": "Éditeur réinitialisé.",
-      "storageUnavailable": "Sauvegarde automatique indisponible dans ce navigateur."
+      "storageUnavailable": "Sauvegarde automatique indisponible dans ce navigateur.",
+      "undo": "Annuler"
     }
   }
 }

@@ -730,7 +730,8 @@
       "importDropped": "Blocks ignored: {count}.",
       "modeSwitchDropped": "Blocks removed (not available in this mode): {count}.",
       "resetDone": "Editor reset.",
-      "storageUnavailable": "Automatic saving is unavailable in this browser."
+      "storageUnavailable": "Automatic saving is unavailable in this browser.",
+      "undo": "Undo"
     }
   }
 }

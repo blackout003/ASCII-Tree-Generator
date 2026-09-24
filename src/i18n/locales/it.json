@@ -730,7 +730,8 @@
       "importDropped": "Blocchi ignorati: {count}.",
       "modeSwitchDropped": "Blocchi rimossi (non disponibili in questa modalità): {count}.",
       "resetDone": "Editor reimpostato.",
-      "storageUnavailable": "Il salvataggio automatico non è disponibile in questo browser."
+      "storageUnavailable": "Il salvataggio automatico non è disponibile in questo browser.",
+      "undo": "Annulla"
     }
   }
 }

@@ -730,7 +730,8 @@
       "importDropped": "Ignorierte Blöcke: {count}.",
       "modeSwitchDropped": "Entfernte Blöcke (in diesem Modus nicht verfügbar): {count}.",
       "resetDone": "Editor zurückgesetzt.",
-      "storageUnavailable": "Automatisches Speichern ist in diesem Browser nicht verfügbar."
+      "storageUnavailable": "Automatisches Speichern ist in diesem Browser nicht verfügbar.",
+      "undo": "Rückgängig"
     }
   }
 }

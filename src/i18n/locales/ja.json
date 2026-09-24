@@ -730,7 +730,8 @@
       "importDropped": "無視したブロック：{count}件。",
       "modeSwitchDropped": "このモードで使えないため削除したブロック：{count}件。",
       "resetDone": "エディタをリセットしました。",
-      "storageUnavailable": "このブラウザでは自動保存を利用できません。"
+      "storageUnavailable": "このブラウザでは自動保存を利用できません。",
+      "undo": "元に戻す"
     }
   }
 }

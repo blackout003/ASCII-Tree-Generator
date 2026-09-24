@@ -730,7 +730,8 @@
       "importDropped": "Blocos ignorados: {count}.",
       "modeSwitchDropped": "Blocos removidos (indisponíveis neste modo): {count}.",
       "resetDone": "Editor reposto.",
-      "storageUnavailable": "A gravação automática não está disponível neste navegador."
+      "storageUnavailable": "A gravação automática não está disponível neste navegador.",
+      "undo": "Desfazer"
     }
   }
 }

@@ -2,7 +2,9 @@ import { z } from 'zod';
 import { defineBlock } from '../block-definition';
 import { escapeAlt, safeUrl, singleLine } from '../markdown-utils';
 
-export const HEADER_LIMITS = { title: 200, tagline: 500, logoUrl: 2000, logoAlt: 200 } as const;
+// title and tagline are seeded from `meta.name` / `meta.description`, so they
+// must accept at least as much as META_LIMITS allows there.
+export const HEADER_LIMITS = { title: 200, tagline: 1000, logoUrl: 2000, logoAlt: 200 } as const;
 
 const schema = z.object({
   title: z.string().max(HEADER_LIMITS.title),

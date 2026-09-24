@@ -42,4 +42,22 @@ describe('safeUrl', () => {
   it('returns an empty string for blank input', () => {
     expect(safeUrl('   ')).toBe('');
   });
+
+  // CommonMark decodes the link destination after we check it, so each of these
+  // used to come out of the parser as a javascript: URL.
+  it('does not let angle brackets, entities or backslash escapes rebuild a javascript: URL', () => {
+    expect(safeUrl('<javascript:alert(1)>')).toBe('%3Cjavascript:alert%281%29%3E');
+    expect(safeUrl('javascript&#58;alert(1)')).toBe('javascript&amp;#58;alert%281%29');
+    expect(safeUrl('javascript\\:alert(1)')).toBe('javascript%5C:alert%281%29');
+  });
+
+  it('keeps a query string intact by escaping the ampersand the Markdown way', () => {
+    expect(safeUrl('https://x.io/?a=1&b=2')).toBe('https://x.io/?a=1&amp;b=2');
+  });
+
+  it('rejects a URL containing a tab, a line break or another control character', () => {
+    expect(safeUrl('https://x.io/a\tb')).toBe('');
+    expect(safeUrl('https://x.io/a\nb')).toBe('');
+    expect(safeUrl('https://x.io/a\u0000b')).toBe('');
+  });
 });

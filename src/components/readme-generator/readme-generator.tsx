@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ToastAction } from '@/components/ui/toast';
 import { useToast } from '@/hooks/use-toast';
 import { trackEvent } from '@/lib/analytics-events';
 import { generateReadme } from '@/lib/readme/generate';
@@ -86,12 +87,30 @@ export function ReadmeGenerator() {
   }));
   const blockLabels = Object.fromEntries(state.blocks.map((block) => [block.id, t(`blocks.${block.type}`)]));
 
+  // Actions that replace the whole work (mode switch, import, reset) offer to
+  // restore the state they replaced: the autosave would otherwise overwrite the
+  // only copy.
+  const undoAction = (previous: ReadmeState) => (
+    <ToastAction
+      altText={t('messages.undo')}
+      onClick={() => {
+        setState(previous);
+        setSelectedId(null);
+      }}
+    >
+      {t('messages.undo')}
+    </ToastAction>
+  );
+
   const handleModeChange = (mode: ReadmeMode) => {
     const result = switchMode(state, mode);
     setState(result.state);
     setSelectedId(null);
     if (result.dropped > 0) {
-      toast({ description: t('messages.modeSwitchDropped', { count: result.dropped }) });
+      toast({
+        description: t('messages.modeSwitchDropped', { count: result.dropped }),
+        action: undoAction(state),
+      });
     }
   };
 
@@ -141,7 +160,7 @@ export function ReadmeGenerator() {
         result.dropped > 0
           ? `${t('messages.importSuccess')} ${t('messages.importDropped', { count: result.dropped })}`
           : t('messages.importSuccess');
-      toast({ description });
+      toast({ description, action: undoAction(state) });
     } catch {
       toast({ description: t('messages.importError'), variant: 'destructive' });
     }
@@ -150,7 +169,7 @@ export function ReadmeGenerator() {
   const handleReset = () => {
     setState(createInitialState(state.mode));
     setSelectedId(null);
-    toast({ description: t('messages.resetDone') });
+    toast({ description: t('messages.resetDone'), action: undoAction(state) });
   };
 
   return (
