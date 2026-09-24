@@ -9,6 +9,10 @@ export interface BlockDefinition<TData> {
   singleton: boolean;
   /** Added automatically when a README of a compatible mode is created. */
   defaultOnCreate: boolean;
+  /** Pre-ticked in the wizard's "Sections" step (critical and recommended blocks). */
+  recommended?: boolean;
+  /** True when `toMarkdown` needs `ctx.headings` (the table of contents). */
+  usesHeadings?: boolean;
   schema: z.ZodType<TData>;
   createData: (meta: ReadmeMeta) => TData;
   toMarkdown: (data: TData, ctx: GenerateContext) => string;
@@ -23,6 +27,8 @@ export interface AnyBlockDefinition {
   modes: readonly ReadmeMode[];
   singleton: boolean;
   defaultOnCreate: boolean;
+  recommended: boolean;
+  usesHeadings: boolean;
   createData: (meta: ReadmeMeta) => unknown;
   parseData: (input: unknown) => ParsedData;
   toMarkdown: (data: unknown, ctx: GenerateContext) => string;
@@ -35,6 +41,8 @@ export function defineBlock<TData>(def: BlockDefinition<TData>): AnyBlockDefinit
     modes: def.modes,
     singleton: def.singleton,
     defaultOnCreate: def.defaultOnCreate,
+    recommended: def.recommended ?? false,
+    usesHeadings: def.usesHeadings ?? false,
     createData: def.createData,
     parseData: (input) => {
       const result = def.schema.safeParse(input);

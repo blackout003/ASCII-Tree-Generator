@@ -9,6 +9,8 @@ const maximalMeta: ReadmeMeta = {
   author: 'x'.repeat(META_LIMITS.author),
   license: 'x'.repeat(META_LIMITS.license),
   repoUrl: 'x'.repeat(META_LIMITS.repoUrl),
+  installCommand: 'x'.repeat(META_LIMITS.installCommand),
+  language: 'fr',
 };
 
 describe('block registry contract', () => {

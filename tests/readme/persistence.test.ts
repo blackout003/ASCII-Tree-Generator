@@ -45,6 +45,18 @@ describe('parseReadmeState', () => {
     expect(parseReadmeState(input)).toEqual({ ok: false });
   });
 
+  it('accepts a file saved before meta.language and meta.installCommand existed', () => {
+    const legacyMeta = { name: '', description: '', author: '', license: '', repoUrl: '' };
+    const result = parseReadmeState(fileWith({ meta: legacyMeta }));
+    expect(result.ok && result.state.meta).toEqual({ ...legacyMeta, installCommand: '', language: 'en' });
+  });
+
+  it('rejects an unknown README language and an install command that is too long', () => {
+    const meta = { ...EMPTY_META };
+    expect(parseReadmeState(fileWith({ meta: { ...meta, language: 'xx' } })).ok).toBe(false);
+    expect(parseReadmeState(fileWith({ meta: { ...meta, installCommand: 'x'.repeat(301) } })).ok).toBe(false);
+  });
+
   it('rejects a wrong version, an unknown mode and a bad accent color', () => {
     expect(parseReadmeState(fileWith({ version: 2 })).ok).toBe(false);
     expect(parseReadmeState(fileWith({ mode: 'org' })).ok).toBe(false);

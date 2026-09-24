@@ -1,6 +1,11 @@
+import type { Locale } from '@/i18n/locales';
+
 export type ReadmeMode = 'project' | 'profile';
 
-/** Extended by later plans: add the literal here and an entry in `registry.ts`. */
+/** Language of the generated README, independent of the interface language. */
+export type ReadmeLanguage = Locale;
+
+/** Extended by later tasks: add the literal here and an entry in `registry.ts`. */
 export type BlockType = 'header' | 'freeMarkdown';
 
 export interface Block {
@@ -22,6 +27,8 @@ export interface ReadmeMeta {
   author: string;
   license: string;
   repoUrl: string;
+  installCommand: string;
+  language: ReadmeLanguage;
 }
 
 export interface ReadmeState {
@@ -36,6 +43,8 @@ export interface GenerateContext {
   mode: ReadmeMode;
   theme: ThemeOptions;
   meta: ReadmeMeta;
+  /** Level-2 headings of the other blocks, as written; set for blocks that use them. */
+  headings?: string[];
 }
 
 export type WarningCode = 'imageMissingAlt' | 'htmlTagMismatch' | 'layoutTable';

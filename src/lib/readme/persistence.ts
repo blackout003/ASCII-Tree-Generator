@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { locales } from '@/i18n/locales';
 import { META_LIMITS } from './defaults';
 import { getBlockDefinition, isBlockType } from './registry';
 import { createBlockId } from './state';
@@ -17,6 +18,8 @@ const envelopeSchema = z.object({
     author: z.string().max(META_LIMITS.author),
     license: z.string().max(META_LIMITS.license),
     repoUrl: z.string().max(META_LIMITS.repoUrl),
+    installCommand: z.string().max(META_LIMITS.installCommand).default(''),
+    language: z.enum(locales).default('en'),
   }),
   blocks: z
     .array(
