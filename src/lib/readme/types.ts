@@ -6,7 +6,7 @@ export type ReadmeMode = 'project' | 'profile';
 export type ReadmeLanguage = Locale;
 
 /** Extended by later tasks: add the literal here and an entry in `registry.ts`. */
-export type BlockType = 'header' | 'freeMarkdown';
+export type BlockType = 'header' | 'visualProof' | 'installation' | 'usage' | 'alert' | 'freeMarkdown';
 
 export interface Block {
   id: string;

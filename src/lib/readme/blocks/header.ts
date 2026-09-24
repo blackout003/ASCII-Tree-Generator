@@ -20,6 +20,7 @@ export const headerBlock = defineBlock<HeaderData>({
   modes: ['project'],
   singleton: true,
   defaultOnCreate: true,
+  recommended: true,
   schema,
   createData: (meta) => ({ title: meta.name, tagline: meta.description, logoUrl: '', logoAlt: '' }),
   toMarkdown: (data) => {
