@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ToastAction } from '@/components/ui/toast';
 import { useToast } from '@/hooks/use-toast';
 import { trackEvent } from '@/lib/analytics-events';
+import { mergeMeta, type ExtractedKey, type ExtractedMeta } from '@/lib/readme/extract';
 import { generateReadme } from '@/lib/readme/generate';
 import {
   loadState,
@@ -17,14 +18,17 @@ import {
 import { getCatalog } from '@/lib/readme/registry';
 import {
   addBlock,
+  applySelection,
   canAddBlock,
   createInitialState,
   moveBlock,
   removeBlock,
   reorderBlock,
+  setAccentColor,
   switchMode,
   toggleBlock,
   updateBlockData,
+  updateMeta,
 } from '@/lib/readme/state';
 import type { BlockType, ReadmeMode, ReadmeState } from '@/lib/readme/types';
 import { validateReadme } from '@/lib/readme/validate';
@@ -33,6 +37,7 @@ import { BlockForm } from './block-forms';
 import { BlockList } from './block-list';
 import { ReadmePreview } from './readme-preview';
 import { ReadmeToolbar } from './readme-toolbar';
+import { ReadmeWizard } from './readme-wizard';
 import { WarningsPanel } from './warnings-panel';
 
 const MAX_IMPORT_BYTES = 1_000_000;
@@ -52,22 +57,37 @@ export function ReadmeGenerator() {
 
   // `null` until mounted: the saved state is only known in the browser.
   const [state, setState] = useState<ReadmeState | null>(null);
+  const [view, setView] = useState<'wizard' | 'editor'>('editor');
+  // A first README has no block yet: the wizard creates them, seeded from what it collected.
+  const [wizardIsNew, setWizardIsNew] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [tab, setTab] = useState<'edit' | 'preview'>('edit');
   const storageWarned = useRef(false);
+  const latestState = useRef<ReadmeState | null>(null);
 
   useEffect(() => {
-    setState(loadState() ?? createInitialState('project'));
+    const saved = loadState();
+    if (saved) {
+      setState(saved);
+      return;
+    }
+    setState({ ...createInitialState('project'), blocks: [] });
+    setWizardIsNew(true);
+    setView('wizard');
   }, []);
 
   useEffect(() => {
-    if (!state) return;
+    latestState.current = state;
+  }, [state]);
+
+  useEffect(() => {
+    if (!state || (view === 'wizard' && wizardIsNew)) return;
     if (!saveState(state) && !storageWarned.current) {
       storageWarned.current = true;
       toast({ description: t('messages.storageUnavailable') });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state]);
+  }, [state, view, wizardIsNew]);
 
   const markdown = useMemo(() => (state ? generateReadme(state) : ''), [state]);
   const warnings = useMemo(() => (state ? validateReadme(state) : []), [state]);
@@ -87,8 +107,8 @@ export function ReadmeGenerator() {
   }));
   const blockLabels = Object.fromEntries(state.blocks.map((block) => [block.id, t(`blocks.${block.type}`)]));
 
-  // Actions that replace the whole work (mode switch, import, reset) offer to
-  // restore the state they replaced: the autosave would otherwise overwrite the
+  // Actions that replace the whole work (mode switch, import, reset, wizard) offer
+  // to restore the state they replaced: the autosave would otherwise overwrite the
   // only copy.
   const undoAction = (previous: ReadmeState) => (
     <ToastAction
@@ -172,11 +192,59 @@ export function ReadmeGenerator() {
     toast({ description: t('messages.resetDone'), action: undoAction(state) });
   };
 
+  const handleOpenWizard = () => {
+    setWizardIsNew(false);
+    setView('wizard');
+  };
+
+  const handleWizardMode = (mode: ReadmeMode) => {
+    if (wizardIsNew) update((current) => ({ ...current, mode, blocks: [] }));
+    else handleModeChange(mode);
+  };
+
+  // Reads the latest committed state so a slow request never overwrites what was typed meanwhile.
+  const handleExtracted = (extracted: ExtractedMeta): ExtractedKey[] => {
+    const current = latestState.current;
+    if (!current) return [];
+    const { filled } = mergeMeta(current.meta, extracted);
+    update((latest) => ({ ...latest, meta: mergeMeta(latest.meta, extracted).meta }));
+    return filled;
+  };
+
+  const handleWizardFinish = (selectedTypes: BlockType[]) => {
+    const next = applySelection(state, selectedTypes);
+    const removed = state.blocks.filter((block) => !next.blocks.some((kept) => kept.id === block.id)).length;
+    setState(next);
+    setSelectedId(null);
+    setTab('edit');
+    setView('editor');
+    setWizardIsNew(false);
+    if (removed > 0) {
+      toast({ description: t('messages.wizardRemoved', { count: removed }), action: undoAction(state) });
+    }
+  };
+
+  if (view === 'wizard') {
+    return (
+      <ReadmeWizard
+        key={wizardIsNew ? 'new' : 'edit'}
+        state={state}
+        isNew={wizardIsNew}
+        onModeChange={handleWizardMode}
+        onMetaChange={(patch) => update((current) => updateMeta(current, patch))}
+        onAccentChange={(color) => update((current) => setAccentColor(current, color))}
+        onExtracted={handleExtracted}
+        onFinish={handleWizardFinish}
+      />
+    );
+  }
+
   return (
     <div className="mx-auto max-w-6xl space-y-6 p-6">
       <ReadmeToolbar
         mode={state.mode}
         onModeChange={handleModeChange}
+        onOpenWizard={handleOpenWizard}
         onCopy={handleCopy}
         onDownload={handleDownload}
         onExportJson={handleExportJson}
@@ -213,6 +281,7 @@ export function ReadmeGenerator() {
               </CardHeader>
               <CardContent>
                 <BlockForm
+                  key={selected.id}
                   block={selected}
                   onChange={(data) => update((current) => updateBlockData(current, selected.id, data))}
                 />

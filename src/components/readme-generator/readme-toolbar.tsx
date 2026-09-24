@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
-import { Copy, Download, Save, Trash2, Upload } from '@/components/icons';
+import { Copy, Download, Save, Sparkles, Trash2, Upload } from '@/components/icons';
 import type { ReadmeMode } from '@/lib/readme/types';
 
 const MODES: ReadmeMode[] = ['project', 'profile'];
@@ -11,6 +11,7 @@ const MODES: ReadmeMode[] = ['project', 'profile'];
 interface ReadmeToolbarProps {
   mode: ReadmeMode;
   onModeChange: (mode: ReadmeMode) => void;
+  onOpenWizard: () => void;
   onCopy: () => void;
   onDownload: () => void;
   onExportJson: () => void;
@@ -21,6 +22,7 @@ interface ReadmeToolbarProps {
 export function ReadmeToolbar({
   mode,
   onModeChange,
+  onOpenWizard,
   onCopy,
   onDownload,
   onExportJson,
@@ -44,6 +46,10 @@ export function ReadmeToolbar({
             {t(`modes.${value}`)}
           </Button>
         ))}
+        <Button size="sm" variant="ghost" onClick={onOpenWizard}>
+          <Sparkles className="w-4 h-4 mr-1" />
+          {t('toolbar.wizard')}
+        </Button>
       </div>
       <div className="flex flex-wrap gap-2">
         <Button size="sm" onClick={onCopy}>
