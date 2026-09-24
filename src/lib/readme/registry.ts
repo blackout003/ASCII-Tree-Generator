@@ -41,3 +41,10 @@ export function getBlockDefinition(type: BlockType): AnyBlockDefinition {
 export function getCatalog(mode: ReadmeMode): AnyBlockDefinition[] {
   return BLOCK_TYPES.map((type) => DEFINITIONS[type]).filter((def) => def.modes.includes(mode));
 }
+
+/** Blocks pre-ticked in the wizard's "Sections" step for a mode, in catalog order. */
+export function getRecommendedTypes(mode: ReadmeMode): BlockType[] {
+  return getCatalog(mode)
+    .filter((def) => def.recommended)
+    .map((def) => def.type);
+}

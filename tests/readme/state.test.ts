@@ -1,15 +1,20 @@
 import { describe, expect, it } from 'vitest';
 import {
   addBlock,
+  applySelection,
   canAddBlock,
   createInitialState,
   moveBlock,
   removeBlock,
   reorderBlock,
+  setAccentColor,
   switchMode,
   toggleBlock,
   updateBlockData,
+  updateMeta,
 } from '@/lib/readme/state';
+import { getRecommendedTypes } from '@/lib/readme/registry';
+import { EMPTY_META } from '@/lib/readme/defaults';
 import { freeMarkdown, header, stateWith } from './helpers';
 
 const ids = (state: { blocks: { id: string }[] }) => state.blocks.map((b) => b.id);
@@ -139,5 +144,66 @@ describe('switchMode', () => {
     const result = switchMode(state, 'project');
     expect(result.state).toBe(state);
     expect(result.dropped).toBe(0);
+  });
+});
+
+describe('getRecommendedTypes', () => {
+  it('lists the critical and recommended blocks of the project catalog, in catalog order', () => {
+    expect(getRecommendedTypes('project')).toEqual(['header', 'badges', 'visualProof', 'installation', 'usage', 'license']);
+  });
+
+  it('is empty for the profile catalog, which has no recommended block yet', () => {
+    expect(getRecommendedTypes('profile')).toEqual([]);
+  });
+});
+
+describe('applySelection', () => {
+  const fresh = { ...stateWith([]), meta: { ...EMPTY_META, name: 'Demo' } };
+
+  it('creates the selected blocks in catalog order, seeded from the meta', () => {
+    const result = applySelection(fresh, ['usage', 'header']);
+    expect(result.blocks.map((b) => b.type)).toEqual(['header', 'usage']);
+    expect((result.blocks[0].data as { title: string }).title).toBe('Demo');
+  });
+
+  it('keeps existing blocks with their data, drops deselected types and appends new ones', () => {
+    const base = stateWith([header('h', { title: 'Mine' }), freeMarkdown('f', 'keep'), freeMarkdown('g', 'also')]);
+    const kept = applySelection(base, ['header', 'freeMarkdown', 'usage']);
+    expect(kept.blocks.map((b) => b.id).slice(0, 3)).toEqual(['h', 'f', 'g']);
+    expect(kept.blocks[0].data).toEqual(base.blocks[0].data);
+    expect(kept.blocks[3].type).toBe('usage');
+    expect(ids(applySelection(base, ['freeMarkdown']))).toEqual(['f', 'g']);
+  });
+
+  it('ignores types outside the mode catalog', () => {
+    expect(applySelection(stateWith([], 'profile'), ['header']).blocks).toEqual([]);
+  });
+
+  it('does not mutate the previous state', () => {
+    const base = stateWith([header('h')]);
+    applySelection(base, []);
+    expect(ids(base)).toEqual(['h']);
+  });
+});
+
+describe('updateMeta / setAccentColor', () => {
+  it('merges a patch into the meta only', () => {
+    const base = stateWith([]);
+    const next = updateMeta(base, { name: 'Demo', language: 'fr' });
+    expect(next.meta).toEqual({ ...base.meta, name: 'Demo', language: 'fr' });
+    expect(next.blocks).toBe(base.blocks);
+  });
+
+  it('accepts a hex color with or without #, in any case', () => {
+    const base = stateWith([]);
+    expect(setAccentColor(base, '#FF0000').theme.accentColor).toBe('ff0000');
+    expect(setAccentColor(base, '00aa11').theme.accentColor).toBe('00aa11');
+  });
+
+  it('ignores anything that is not six hex digits and returns the same state', () => {
+    const base = stateWith([]);
+    for (const bad of ['red', '#12345', '1234567', '', 'gg0000']) {
+      expect(setAccentColor(base, bad)).toBe(base);
+    }
   });
 });

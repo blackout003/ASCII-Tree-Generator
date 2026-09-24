@@ -83,3 +83,29 @@ export function switchMode(state: ReadmeState, mode: ReadmeMode): { state: Readm
   const blocks = kept.length > 0 ? kept : getDefaultBlocks(mode, state.meta);
   return { state: { ...state, mode, blocks }, dropped: state.blocks.length - kept.length };
 }
+
+/**
+ * Applies the wizard's "Sections" choice: keeps the existing blocks of the
+ * selected types (order and data untouched), drops the others, and creates one
+ * block, seeded from `state.meta`, for each selected type that has none yet.
+ */
+export function applySelection(state: ReadmeState, selected: readonly BlockType[]): ReadmeState {
+  const wanted = new Set(selected);
+  const kept = state.blocks.filter((block) => wanted.has(block.type));
+  const present = new Set(kept.map((block) => block.type));
+  const added = getCatalog(state.mode)
+    .filter((def) => wanted.has(def.type) && !present.has(def.type))
+    .map((def) => createBlock(def.type, state.meta));
+  return { ...state, blocks: [...kept, ...added] };
+}
+
+export function updateMeta(state: ReadmeState, patch: Partial<ReadmeMeta>): ReadmeState {
+  return { ...state, meta: { ...state.meta, ...patch } };
+}
+
+/** Sets the badge accent color; anything but six hex digits leaves the state untouched. */
+export function setAccentColor(state: ReadmeState, color: string): ReadmeState {
+  const hex = color.trim().replace(/^#/, '');
+  if (!/^[0-9a-fA-F]{6}$/.test(hex)) return state;
+  return { ...state, theme: { ...state.theme, accentColor: hex.toLowerCase() } };
+}
