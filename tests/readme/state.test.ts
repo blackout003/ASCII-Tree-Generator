@@ -18,7 +18,7 @@ describe('createInitialState', () => {
   it('starts a project README with the critical blocks', () => {
     const state = createInitialState('project');
     expect(state.mode).toBe('project');
-    expect(state.blocks.map((b) => b.type)).toEqual(['header', 'installation', 'usage']);
+    expect(state.blocks.map((b) => b.type)).toEqual(['header', 'installation', 'usage', 'license']);
     expect(state.blocks.every((b) => b.enabled)).toBe(true);
   });
 
@@ -130,7 +130,7 @@ describe('switchMode', () => {
 
   it('seeds the default blocks when switching an empty README to project', () => {
     const result = switchMode(stateWith([], 'profile'), 'project');
-    expect(result.state.blocks.map((b) => b.type)).toEqual(['header', 'installation', 'usage']);
+    expect(result.state.blocks.map((b) => b.type)).toEqual(['header', 'installation', 'usage', 'license']);
     expect(result.dropped).toBe(0);
   });
 

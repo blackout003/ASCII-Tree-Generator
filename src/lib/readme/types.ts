@@ -6,7 +6,17 @@ export type ReadmeMode = 'project' | 'profile';
 export type ReadmeLanguage = Locale;
 
 /** Extended by later tasks: add the literal here and an entry in `registry.ts`. */
-export type BlockType = 'header' | 'visualProof' | 'installation' | 'usage' | 'alert' | 'freeMarkdown';
+export type BlockType =
+  | 'header'
+  | 'badges'
+  | 'visualProof'
+  | 'installation'
+  | 'usage'
+  | 'architecture'
+  | 'contributing'
+  | 'license'
+  | 'alert'
+  | 'freeMarkdown';
 
 export interface Block {
   id: string;
@@ -47,7 +57,7 @@ export interface GenerateContext {
   headings?: string[];
 }
 
-export type WarningCode = 'imageMissingAlt' | 'htmlTagMismatch' | 'layoutTable';
+export type WarningCode = 'imageMissingAlt' | 'htmlTagMismatch' | 'layoutTable' | 'tooManyBadges';
 
 export interface BlockWarning {
   code: WarningCode;
