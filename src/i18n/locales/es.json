@@ -672,7 +672,9 @@
   "readmeGenerator": {
     "modes": {
       "project": "Proyecto",
-      "profile": "Perfil de GitHub"
+      "profile": "Perfil de GitHub",
+      "projectDesc": "Documentación de un repositorio: instalación, uso, licencia.",
+      "profileDesc": "Página de presentación de tu perfil de GitHub."
     },
     "toolbar": {
       "mode": "Tipo de README",
@@ -680,7 +682,8 @@
       "download": "Descargar",
       "exportJson": "Exportar (JSON)",
       "importJson": "Importar (JSON)",
-      "reset": "Restablecer"
+      "reset": "Restablecer",
+      "wizard": "Asistente"
     },
     "blocks": {
       "title": "Bloques",
@@ -692,21 +695,60 @@
       "remove": "Eliminar",
       "drag": "Arrastra para reordenar",
       "header": "Encabezado",
-      "freeMarkdown": "Markdown libre"
+      "freeMarkdown": "Markdown libre",
+      "badges": "Insignias",
+      "visualProof": "Prueba visual",
+      "tableOfContents": "Tabla de contenidos",
+      "installation": "Instalación",
+      "usage": "Uso",
+      "architecture": "Arquitectura y hoja de ruta",
+      "contributing": "Contribución",
+      "license": "Licencia y agradecimientos",
+      "alert": "Alerta"
     },
     "fields": {
       "title": "Título",
       "tagline": "Eslogan",
       "logoUrl": "URL del logotipo",
       "logoAlt": "Texto alternativo del logotipo",
-      "content": "Contenido Markdown"
+      "content": "Contenido Markdown",
+      "heading": "Título de la sección",
+      "prerequisites": "Requisitos previos",
+      "packageManager": "Gestor de paquetes",
+      "packageName": "Nombre del paquete",
+      "commands": "Comandos",
+      "description": "Descripción",
+      "code": "Ejemplo de código",
+      "codeLanguage": "Lenguaje del código",
+      "url": "URL de la imagen",
+      "alt": "Texto alternativo",
+      "caption": "Leyenda",
+      "text": "Texto",
+      "linkUrl": "URL del enlace",
+      "linkLabel": "Texto del enlace",
+      "license": "Licencia",
+      "holder": "Titular de los derechos",
+      "year": "Año",
+      "credits": "Agradecimientos",
+      "alertType": "Tipo de alerta",
+      "badgeLabel": "Etiqueta",
+      "badgeMessage": "Valor",
+      "badgeColor": "Color",
+      "badgeLink": "Enlace de la insignia",
+      "addBadge": "Añadir una insignia",
+      "removeBadge": "Quitar la insignia",
+      "architecture": "Descripción de la arquitectura",
+      "roadmap": "Hoja de ruta",
+      "roadmapHeading": "Título de la hoja de ruta"
     },
     "placeholders": {
       "title": "Mi proyecto genial",
       "tagline": "Una frase que explique qué hace el proyecto.",
       "logoUrl": "https://ejemplo.com/logo.png",
       "logoAlt": "Logotipo de Mi proyecto genial",
-      "content": "## Una sección\n\nEscribe aquí tu Markdown…"
+      "content": "## Una sección\n\nEscribe aquí tu Markdown…",
+      "repoUrl": "https://github.com/usuario/repositorio",
+      "packageName": "mi-paquete"
     },
     "preview": {
       "title": "Vista previa",
@@ -719,7 +761,8 @@
       "none": "Sin advertencias.",
       "imageMissingAlt": "Imágenes sin texto alternativo (alt): {count}.",
       "htmlTagMismatch": "Etiquetas HTML sin emparejar: {tags}.",
-      "layoutTable": "Tabla usada para maquetar: reserva las tablas para datos."
+      "layoutTable": "Tabla usada para maquetar: reserva las tablas para datos.",
+      "tooManyBadges": "Demasiadas insignias ({count}): conserva las 5 más útiles."
     },
     "messages": {
       "copySuccess": "README copiado al portapapeles.",
@@ -731,7 +774,65 @@
       "modeSwitchDropped": "Bloques eliminados (no disponibles en este modo): {count}.",
       "resetDone": "Editor restablecido.",
       "storageUnavailable": "El guardado automático no está disponible en este navegador.",
-      "undo": "Deshacer"
+      "undo": "Deshacer",
+      "wizardRemoved": "Secciones eliminadas: {count}."
+    },
+    "hints": {
+      "prerequisites": "Un requisito por línea.",
+      "commands": "Un comando por línea, añadido tras el comando del gestor.",
+      "credits": "Un agradecimiento por línea.",
+      "roadmap": "Un paso por línea, mostrado como casilla.",
+      "badgeColor": "Código hexadecimal sin #. Vacío: el color de acento del estilo."
+    },
+    "wizard": {
+      "title": "Asistente de creación",
+      "step": "Paso {current} de {total}",
+      "next": "Siguiente",
+      "back": "Atrás",
+      "finish": "Terminar",
+      "skip": "Ir al editor",
+      "stepMode": "Tipo de README",
+      "stepStart": "Punto de partida",
+      "stepInfos": "Información",
+      "stepSections": "Secciones",
+      "stepStyle": "Estilo",
+      "modeHint": "Elige el tipo de README que quieres crear.",
+      "scratch": "Empezar desde cero",
+      "scratchDesc": "Rellena cada dato a mano. No hay que importar nada.",
+      "prefill": "Rellenar desde un repositorio",
+      "prefillDesc": "Opcional: importa un archivo de manifiesto o indica una URL pública de GitHub.",
+      "infosHint": "Todos los campos son opcionales.",
+      "sectionsHint": "Marca las secciones que quieres incluir. Podrás cambiarlas después.",
+      "styleHint": "Se aplica un único color de acento a todas las insignias.",
+      "accent": "Color de acento",
+      "accentCustom": "Otro color (hex)",
+      "accentInvalid": "Código no válido: se esperan 6 caracteres hexadecimales."
+    },
+    "meta": {
+      "name": "Nombre",
+      "description": "Descripción corta",
+      "author": "Autor",
+      "license": "Licencia",
+      "repoUrl": "URL del repositorio",
+      "installCommand": "Comando de instalación",
+      "language": "Idioma del README",
+      "autoFilled": "Rellenado automáticamente"
+    },
+    "extraction": {
+      "file": "Archivo de manifiesto (package.json, Cargo.toml, pyproject.toml)",
+      "url": "URL de un repositorio público de GitHub",
+      "fetch": "Obtener",
+      "choose": "Elegir un archivo",
+      "success": "Campos rellenados: {fields}.",
+      "nothing": "Nada que rellenar: los campos ya están rellenos o no existen.",
+      "privacy": "Los archivos se quedan en tu navegador.",
+      "unsupportedFile": "Archivo no admitido. Usa package.json, Cargo.toml o pyproject.toml.",
+      "invalidFile": "Archivo ilegible: no se ha rellenado nada.",
+      "invalidUrl": "URL no válida: usa una dirección como github.com/usuario/repositorio.",
+      "rateLimit": "Se alcanzó el límite de solicitudes de GitHub. Inténtalo más tarde o introduce los datos a mano.",
+      "notFound": "Repositorio no encontrado o privado. Puedes introducir los datos a mano.",
+      "network": "No se pudo conectar. Revisa tu red o introduce los datos a mano.",
+      "invalidResponse": "Respuesta inesperada de GitHub. Puedes introducir los datos a mano."
     }
   }
 }

@@ -672,7 +672,9 @@
   "readmeGenerator": {
     "modes": {
       "project": "プロジェクト",
-      "profile": "GitHubプロフィール"
+      "profile": "GitHubプロフィール",
+      "projectDesc": "ソフトウェアリポジトリの文書：インストール、使い方、ライセンス。",
+      "profileDesc": "GitHubプロフィールの紹介ページ。"
     },
     "toolbar": {
       "mode": "READMEの種類",
@@ -680,7 +682,8 @@
       "download": "ダウンロード",
       "exportJson": "エクスポート（JSON）",
       "importJson": "インポート（JSON）",
-      "reset": "リセット"
+      "reset": "リセット",
+      "wizard": "ウィザード"
     },
     "blocks": {
       "title": "ブロック",
@@ -692,21 +695,60 @@
       "remove": "削除",
       "drag": "ドラッグして並べ替え",
       "header": "ヘッダー",
-      "freeMarkdown": "自由なMarkdown"
+      "freeMarkdown": "自由なMarkdown",
+      "badges": "バッジ",
+      "visualProof": "ビジュアルデモ",
+      "tableOfContents": "目次",
+      "installation": "インストール",
+      "usage": "使い方",
+      "architecture": "アーキテクチャとロードマップ",
+      "contributing": "コントリビューション",
+      "license": "ライセンスと謝辞",
+      "alert": "アラート"
     },
     "fields": {
       "title": "タイトル",
       "tagline": "キャッチコピー",
       "logoUrl": "ロゴのURL",
       "logoAlt": "ロゴの代替テキスト",
-      "content": "Markdownの内容"
+      "content": "Markdownの内容",
+      "heading": "セクション見出し",
+      "prerequisites": "前提条件",
+      "packageManager": "パッケージマネージャー",
+      "packageName": "パッケージ名",
+      "commands": "コマンド",
+      "description": "説明",
+      "code": "コード例",
+      "codeLanguage": "コードの言語",
+      "url": "画像のURL",
+      "alt": "代替テキスト",
+      "caption": "キャプション",
+      "text": "テキスト",
+      "linkUrl": "リンクのURL",
+      "linkLabel": "リンクのテキスト",
+      "license": "ライセンス",
+      "holder": "著作権者",
+      "year": "年",
+      "credits": "謝辞",
+      "alertType": "アラートの種類",
+      "badgeLabel": "ラベル",
+      "badgeMessage": "値",
+      "badgeColor": "色",
+      "badgeLink": "バッジのリンク",
+      "addBadge": "バッジを追加",
+      "removeBadge": "バッジを削除",
+      "architecture": "アーキテクチャの説明",
+      "roadmap": "ロードマップ",
+      "roadmapHeading": "ロードマップの見出し"
     },
     "placeholders": {
       "title": "私のすてきなプロジェクト",
       "tagline": "プロジェクトが何をするのかを一文で説明します。",
       "logoUrl": "https://example.com/logo.png",
       "logoAlt": "私のすてきなプロジェクトのロゴ",
-      "content": "## セクション\n\nここにMarkdownを書きます…"
+      "content": "## セクション\n\nここにMarkdownを書きます…",
+      "repoUrl": "https://github.com/owner/repo",
+      "packageName": "my-package"
     },
     "preview": {
       "title": "プレビュー",
@@ -719,7 +761,8 @@
       "none": "警告はありません。",
       "imageMissingAlt": "代替テキスト（alt）のない画像：{count}件。",
       "htmlTagMismatch": "対応していないHTMLタグ：{tags}。",
-      "layoutTable": "レイアウトのために表が使われています。表はデータ用にしましょう。"
+      "layoutTable": "レイアウトのために表が使われています。表はデータ用にしましょう。",
+      "tooManyBadges": "バッジが多すぎます（{count}個）。役立つ5個までに絞りましょう。"
     },
     "messages": {
       "copySuccess": "READMEをクリップボードにコピーしました。",
@@ -731,7 +774,65 @@
       "modeSwitchDropped": "このモードで使えないため削除したブロック：{count}件。",
       "resetDone": "エディタをリセットしました。",
       "storageUnavailable": "このブラウザでは自動保存を利用できません。",
-      "undo": "元に戻す"
+      "undo": "元に戻す",
+      "wizardRemoved": "削除したセクション：{count}件。"
+    },
+    "hints": {
+      "prerequisites": "1行に1つ入力します。",
+      "commands": "1行に1つのコマンド。パッケージマネージャーのコマンドの後に追加されます。",
+      "credits": "1行に1つ入力します。",
+      "roadmap": "1行に1ステップ。チェックボックスとして表示されます。",
+      "badgeColor": "#なしの16進コード。空欄の場合はスタイルのアクセント色。"
+    },
+    "wizard": {
+      "title": "作成ウィザード",
+      "step": "ステップ {current}/{total}",
+      "next": "次へ",
+      "back": "戻る",
+      "finish": "完了",
+      "skip": "エディタへ進む",
+      "stepMode": "READMEの種類",
+      "stepStart": "開始方法",
+      "stepInfos": "情報",
+      "stepSections": "セクション",
+      "stepStyle": "スタイル",
+      "modeHint": "作成するREADMEの種類を選びます。",
+      "scratch": "ゼロから始める",
+      "scratchDesc": "すべて手入力で進めます。インポートは不要です。",
+      "prefill": "リポジトリから自動入力",
+      "prefillDesc": "任意：マニフェストファイルをインポートするか、公開GitHubのURLを入力します。",
+      "infosHint": "すべての項目は任意です。",
+      "sectionsHint": "含めるセクションを選びます。後から変更できます。",
+      "styleHint": "1つのアクセント色がすべてのバッジに適用されます。",
+      "accent": "アクセント色",
+      "accentCustom": "その他の色（16進）",
+      "accentInvalid": "無効なコードです。16進数6文字で入力してください。"
+    },
+    "meta": {
+      "name": "名前",
+      "description": "短い説明",
+      "author": "作者",
+      "license": "ライセンス",
+      "repoUrl": "リポジトリのURL",
+      "installCommand": "インストールコマンド",
+      "language": "READMEの言語",
+      "autoFilled": "自動入力"
+    },
+    "extraction": {
+      "file": "マニフェストファイル（package.json、Cargo.toml、pyproject.toml）",
+      "url": "公開GitHubリポジトリのURL",
+      "fetch": "取得",
+      "choose": "ファイルを選択",
+      "success": "入力した項目：{fields}。",
+      "nothing": "入力する項目がありません。該当する項目は入力済み、または存在しません。",
+      "privacy": "ファイルはブラウザ内に留まります。",
+      "unsupportedFile": "非対応のファイルです。package.json、Cargo.toml、pyproject.tomlを使ってください。",
+      "invalidFile": "ファイルを読み取れないため、何も入力されませんでした。",
+      "invalidUrl": "無効なURLです。github.com/owner/repo の形式で入力してください。",
+      "rateLimit": "GitHubのリクエスト上限に達しました。しばらくしてから再試行するか、手入力してください。",
+      "notFound": "リポジトリが見つからないか、非公開です。手入力もできます。",
+      "network": "接続できませんでした。ネットワークを確認するか、手入力してください。",
+      "invalidResponse": "GitHubから予期しない応答がありました。手入力もできます。"
     }
   }
 }

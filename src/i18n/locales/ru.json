@@ -672,7 +672,9 @@
   "readmeGenerator": {
     "modes": {
       "project": "Проект",
-      "profile": "Профиль GitHub"
+      "profile": "Профиль GitHub",
+      "projectDesc": "Документация репозитория: установка, использование, лицензия.",
+      "profileDesc": "Страница-визитка вашего профиля GitHub."
     },
     "toolbar": {
       "mode": "Тип README",
@@ -680,7 +682,8 @@
       "download": "Скачать",
       "exportJson": "Экспорт (JSON)",
       "importJson": "Импорт (JSON)",
-      "reset": "Сбросить"
+      "reset": "Сбросить",
+      "wizard": "Мастер"
     },
     "blocks": {
       "title": "Блоки",
@@ -692,21 +695,60 @@
       "remove": "Удалить",
       "drag": "Перетащите для изменения порядка",
       "header": "Заголовок",
-      "freeMarkdown": "Свободный Markdown"
+      "freeMarkdown": "Свободный Markdown",
+      "badges": "Бейджи",
+      "visualProof": "Визуальное подтверждение",
+      "tableOfContents": "Содержание",
+      "installation": "Установка",
+      "usage": "Использование",
+      "architecture": "Архитектура и дорожная карта",
+      "contributing": "Участие в разработке",
+      "license": "Лицензия и благодарности",
+      "alert": "Уведомление"
     },
     "fields": {
       "title": "Название",
       "tagline": "Слоган",
       "logoUrl": "URL логотипа",
       "logoAlt": "Альтернативный текст логотипа",
-      "content": "Содержимое Markdown"
+      "content": "Содержимое Markdown",
+      "heading": "Заголовок раздела",
+      "prerequisites": "Требования",
+      "packageManager": "Менеджер пакетов",
+      "packageName": "Название пакета",
+      "commands": "Команды",
+      "description": "Описание",
+      "code": "Пример кода",
+      "codeLanguage": "Язык кода",
+      "url": "URL изображения",
+      "alt": "Альтернативный текст",
+      "caption": "Подпись",
+      "text": "Текст",
+      "linkUrl": "URL ссылки",
+      "linkLabel": "Текст ссылки",
+      "license": "Лицензия",
+      "holder": "Правообладатель",
+      "year": "Год",
+      "credits": "Благодарности",
+      "alertType": "Тип уведомления",
+      "badgeLabel": "Метка",
+      "badgeMessage": "Значение",
+      "badgeColor": "Цвет",
+      "badgeLink": "Ссылка бейджа",
+      "addBadge": "Добавить бейдж",
+      "removeBadge": "Удалить бейдж",
+      "architecture": "Описание архитектуры",
+      "roadmap": "Дорожная карта",
+      "roadmapHeading": "Заголовок дорожной карты"
     },
     "placeholders": {
       "title": "Мой замечательный проект",
       "tagline": "Одно предложение о том, что делает проект.",
       "logoUrl": "https://example.com/logo.png",
       "logoAlt": "Логотип проекта «Мой замечательный проект»",
-      "content": "## Раздел\n\nНапишите здесь свой Markdown…"
+      "content": "## Раздел\n\nНапишите здесь свой Markdown…",
+      "repoUrl": "https://github.com/owner/repo",
+      "packageName": "my-package"
     },
     "preview": {
       "title": "Предпросмотр",
@@ -719,7 +761,8 @@
       "none": "Предупреждений нет.",
       "imageMissingAlt": "Изображения без альтернативного текста (alt): {count}.",
       "htmlTagMismatch": "Непарные HTML-теги: {tags}.",
-      "layoutTable": "Таблица используется для вёрстки: таблицы предназначены для данных."
+      "layoutTable": "Таблица используется для вёрстки: таблицы предназначены для данных.",
+      "tooManyBadges": "Слишком много бейджей ({count}): оставьте 5 самых полезных."
     },
     "messages": {
       "copySuccess": "README скопирован в буфер обмена.",
@@ -731,7 +774,65 @@
       "modeSwitchDropped": "Удалено блоков (недоступны в этом режиме): {count}.",
       "resetDone": "Редактор сброшен.",
       "storageUnavailable": "Автосохранение недоступно в этом браузере.",
-      "undo": "Отменить"
+      "undo": "Отменить",
+      "wizardRemoved": "Удалено разделов: {count}."
+    },
+    "hints": {
+      "prerequisites": "Одно требование на строку.",
+      "commands": "Одна команда на строку, добавляется после команды менеджера пакетов.",
+      "credits": "Одна благодарность на строку.",
+      "roadmap": "Один шаг на строку, отображается как флажок.",
+      "badgeColor": "HEX-код без #. Пусто — акцентный цвет стиля."
+    },
+    "wizard": {
+      "title": "Мастер создания",
+      "step": "Шаг {current} из {total}",
+      "next": "Далее",
+      "back": "Назад",
+      "finish": "Готово",
+      "skip": "Перейти к редактору",
+      "stepMode": "Тип README",
+      "stepStart": "Отправная точка",
+      "stepInfos": "Информация",
+      "stepSections": "Разделы",
+      "stepStyle": "Стиль",
+      "modeHint": "Выберите, какой README создать.",
+      "scratch": "Начать с нуля",
+      "scratchDesc": "Заполните всё вручную. Ничего импортировать не нужно.",
+      "prefill": "Заполнить из репозитория",
+      "prefillDesc": "По желанию: импортируйте файл манифеста или укажите публичный URL GitHub.",
+      "infosHint": "Все поля необязательны.",
+      "sectionsHint": "Отметьте разделы для включения. Позже их можно изменить.",
+      "styleHint": "Один акцентный цвет применяется ко всем бейджам.",
+      "accent": "Акцентный цвет",
+      "accentCustom": "Другой цвет (HEX)",
+      "accentInvalid": "Неверный код: нужно 6 шестнадцатеричных символов."
+    },
+    "meta": {
+      "name": "Название",
+      "description": "Краткое описание",
+      "author": "Автор",
+      "license": "Лицензия",
+      "repoUrl": "URL репозитория",
+      "installCommand": "Команда установки",
+      "language": "Язык README",
+      "autoFilled": "Заполнено автоматически"
+    },
+    "extraction": {
+      "file": "Файл манифеста (package.json, Cargo.toml, pyproject.toml)",
+      "url": "URL публичного репозитория GitHub",
+      "fetch": "Получить",
+      "choose": "Выбрать файл",
+      "success": "Заполнены поля: {fields}.",
+      "nothing": "Заполнять нечего: поля уже заполнены или отсутствуют.",
+      "privacy": "Файлы остаются в вашем браузере.",
+      "unsupportedFile": "Файл не поддерживается. Используйте package.json, Cargo.toml или pyproject.toml.",
+      "invalidFile": "Файл не читается: ничего не заполнено.",
+      "invalidUrl": "Неверный URL: укажите адрес вида github.com/owner/repo.",
+      "rateLimit": "Достигнут лимит запросов GitHub. Повторите позже или введите данные вручную.",
+      "notFound": "Репозиторий не найден или закрыт. Вы можете ввести данные вручную.",
+      "network": "Не удалось подключиться. Проверьте сеть или введите данные вручную.",
+      "invalidResponse": "Неожиданный ответ GitHub. Вы можете ввести данные вручную."
     }
   }
 }

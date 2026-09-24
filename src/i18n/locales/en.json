@@ -672,7 +672,9 @@
   "readmeGenerator": {
     "modes": {
       "project": "Project",
-      "profile": "GitHub profile"
+      "profile": "GitHub profile",
+      "projectDesc": "Documentation for a software repository: installation, usage, license.",
+      "profileDesc": "Introduction page for your GitHub profile."
     },
     "toolbar": {
       "mode": "README type",
@@ -680,7 +682,8 @@
       "download": "Download",
       "exportJson": "Export (JSON)",
       "importJson": "Import (JSON)",
-      "reset": "Reset"
+      "reset": "Reset",
+      "wizard": "Wizard"
     },
     "blocks": {
       "title": "Blocks",
@@ -692,21 +695,60 @@
       "remove": "Remove",
       "drag": "Drag to reorder",
       "header": "Header",
-      "freeMarkdown": "Free Markdown"
+      "freeMarkdown": "Free Markdown",
+      "badges": "Badges",
+      "visualProof": "Visual proof",
+      "tableOfContents": "Table of contents",
+      "installation": "Installation",
+      "usage": "Usage",
+      "architecture": "Architecture and roadmap",
+      "contributing": "Contributing",
+      "license": "License and credits",
+      "alert": "Alert"
     },
     "fields": {
       "title": "Title",
       "tagline": "Tagline",
       "logoUrl": "Logo URL",
       "logoAlt": "Logo alt text",
-      "content": "Markdown content"
+      "content": "Markdown content",
+      "heading": "Section heading",
+      "prerequisites": "Prerequisites",
+      "packageManager": "Package manager",
+      "packageName": "Package name",
+      "commands": "Commands",
+      "description": "Description",
+      "code": "Code example",
+      "codeLanguage": "Code language",
+      "url": "Image URL",
+      "alt": "Alt text",
+      "caption": "Caption",
+      "text": "Text",
+      "linkUrl": "Link URL",
+      "linkLabel": "Link text",
+      "license": "License",
+      "holder": "Copyright holder",
+      "year": "Year",
+      "credits": "Acknowledgements",
+      "alertType": "Alert type",
+      "badgeLabel": "Label",
+      "badgeMessage": "Value",
+      "badgeColor": "Color",
+      "badgeLink": "Badge link",
+      "addBadge": "Add a badge",
+      "removeBadge": "Remove the badge",
+      "architecture": "Architecture description",
+      "roadmap": "Roadmap",
+      "roadmapHeading": "Roadmap heading"
     },
     "placeholders": {
       "title": "My awesome project",
       "tagline": "One sentence explaining what the project does.",
       "logoUrl": "https://example.com/logo.png",
       "logoAlt": "My awesome project logo",
-      "content": "## A section\n\nWrite your Markdown here…"
+      "content": "## A section\n\nWrite your Markdown here…",
+      "repoUrl": "https://github.com/owner/repo",
+      "packageName": "my-package"
     },
     "preview": {
       "title": "Preview",
@@ -719,7 +761,8 @@
       "none": "No warnings.",
       "imageMissingAlt": "Images without alt text: {count}.",
       "htmlTagMismatch": "Mismatched HTML tags: {tags}.",
-      "layoutTable": "Table used for layout: keep tables for data."
+      "layoutTable": "Table used for layout: keep tables for data.",
+      "tooManyBadges": "Too many badges ({count}): keep the 5 most useful."
     },
     "messages": {
       "copySuccess": "README copied to the clipboard.",
@@ -731,7 +774,65 @@
       "modeSwitchDropped": "Blocks removed (not available in this mode): {count}.",
       "resetDone": "Editor reset.",
       "storageUnavailable": "Automatic saving is unavailable in this browser.",
-      "undo": "Undo"
+      "undo": "Undo",
+      "wizardRemoved": "Sections removed: {count}."
+    },
+    "hints": {
+      "prerequisites": "One prerequisite per line.",
+      "commands": "One command per line, added after the package manager command.",
+      "credits": "One acknowledgement per line.",
+      "roadmap": "One step per line, shown as a checkbox.",
+      "badgeColor": "Hex code without #. Empty: the style accent color."
+    },
+    "wizard": {
+      "title": "Setup wizard",
+      "step": "Step {current} of {total}",
+      "next": "Next",
+      "back": "Back",
+      "finish": "Finish",
+      "skip": "Skip to the editor",
+      "stepMode": "README type",
+      "stepStart": "Starting point",
+      "stepInfos": "Information",
+      "stepSections": "Sections",
+      "stepStyle": "Style",
+      "modeHint": "Choose the kind of README to create.",
+      "scratch": "Start from scratch",
+      "scratchDesc": "Fill in each detail by hand. Nothing to import.",
+      "prefill": "Pre-fill from a repository",
+      "prefillDesc": "Optional: import a manifest file or enter a public GitHub URL.",
+      "infosHint": "Every field is optional.",
+      "sectionsHint": "Tick the sections to include. You can change them later.",
+      "styleHint": "A single accent color is applied to every badge.",
+      "accent": "Accent color",
+      "accentCustom": "Other color (hex)",
+      "accentInvalid": "Invalid code: 6 hexadecimal characters expected."
+    },
+    "meta": {
+      "name": "Name",
+      "description": "Short description",
+      "author": "Author",
+      "license": "License",
+      "repoUrl": "Repository URL",
+      "installCommand": "Install command",
+      "language": "README language",
+      "autoFilled": "Filled automatically"
+    },
+    "extraction": {
+      "file": "Manifest file (package.json, Cargo.toml, pyproject.toml)",
+      "url": "Public GitHub repository URL",
+      "fetch": "Fetch",
+      "choose": "Choose a file",
+      "success": "Fields filled: {fields}.",
+      "nothing": "Nothing to fill: the matching fields are already filled or missing.",
+      "privacy": "Files stay in your browser.",
+      "unsupportedFile": "Unsupported file. Use package.json, Cargo.toml or pyproject.toml.",
+      "invalidFile": "Unreadable file: nothing was filled.",
+      "invalidUrl": "Invalid URL: use an address like github.com/owner/repo.",
+      "rateLimit": "GitHub request limit reached. Try again later or enter the details by hand.",
+      "notFound": "Repository not found or private. You can enter the details by hand.",
+      "network": "Could not connect. Check your network or enter the details by hand.",
+      "invalidResponse": "Unexpected response from GitHub. You can enter the details by hand."
     }
   }
 }
