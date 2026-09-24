@@ -15,23 +15,38 @@ const OPTIONAL_CLOSE_TAGS = new Set(['p', 'li', 'dt', 'dd', 'tr', 'td', 'th', 't
 /** Matches a trimmed table separator row such as `|---|:-:|`. */
 const SEPARATOR_ROW = /^\|?\s*:?-+:?\s*(?:\|\s*:?-+:?\s*)*\|?$/;
 
-/** Removes fenced and inline code so their content is never analyzed. */
-function stripCode(markdown: string): string {
+/**
+ * Lines that are not inside a fenced code block. A fence closes only on a line
+ * made of the same character, at least as long as the opening one.
+ */
+export function linesOutsideFences(markdown: string): string[] {
   const kept: string[] = [];
-  let fence: string | null = null;
+  let open: { char: string; length: number } | null = null;
   for (const line of markdown.split('\n')) {
-    if (fence === null) {
-      const opening = /^(```|~~~)/.exec(line);
-      if (opening) {
-        fence = opening[1];
+    const marker = /^ {0,3}(`{3,}|~{3,})/.exec(line);
+    if (open === null) {
+      if (marker) {
+        open = { char: marker[1][0], length: marker[1].length };
         continue;
       }
-      kept.push(line.replace(/`[^`\n]*`/g, ''));
-    } else if (line.startsWith(fence) && line.slice(fence.length).trim() === '') {
-      fence = null;
+      kept.push(line);
+    } else if (
+      marker &&
+      marker[1][0] === open.char &&
+      marker[1].length >= open.length &&
+      line.slice(marker[0].length).trim() === ''
+    ) {
+      open = null;
     }
   }
-  return kept.join('\n');
+  return kept;
+}
+
+/** Removes fenced and inline code so their content is never analyzed. */
+function stripCode(markdown: string): string {
+  return linesOutsideFences(markdown)
+    .map((line) => line.replace(/`[^`\n]*`/g, ''))
+    .join('\n');
 }
 
 /** Removes `<!-- … -->` comments; an unterminated one hides the rest, as on GitHub. */

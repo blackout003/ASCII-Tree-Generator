@@ -19,6 +19,11 @@ describe('countImagesMissingAlt', () => {
   it('ignores images inside code', () => {
     expect(countImagesMissingAlt('`![](a.png)`\n\n```md\n![](b.png)\n```')).toBe(0);
   });
+
+  it('understands fences longer than three backticks', () => {
+    const md = '````md\n```\n![](i1.png)\n![](i2.png)\n```\n````\n![](outer.png)';
+    expect(countImagesMissingAlt(md)).toBe(1);
+  });
 });
 
 describe('findUnclosedTags', () => {
