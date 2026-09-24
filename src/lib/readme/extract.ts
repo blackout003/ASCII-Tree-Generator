@@ -88,7 +88,8 @@ export function parsePackageJson(text: string): ExtractResult {
       license: clean(license),
       repoUrl: normalizeRepoUrl(clean(repository)),
       author: authorName(clean(author)),
-      installCommand: installCommandFor('npm install', name),
+      // A private package is not on the registry: `npm install <name>` would fetch a stranger's.
+      installCommand: pkg.private === true ? '' : installCommandFor('npm install', name),
     }),
   };
 }
@@ -167,7 +168,7 @@ export function parseCargoToml(text: string): ExtractResult {
       license: tomlString(section.get('license')),
       repoUrl: normalizeRepoUrl(tomlString(section.get('repository'))),
       author: firstAuthor(section.get('authors')),
-      installCommand: installCommandFor('cargo add', name),
+      installCommand: section.get('publish') === 'false' ? '' : installCommandFor('cargo add', name),
     }),
   };
 }

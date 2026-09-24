@@ -61,6 +61,16 @@ describe('badges block', () => {
     expect((createBlock('badges', EMPTY_META).data as { items: unknown[] }).items).toEqual([]);
   });
 
+  it('links the seeded license badge to the LICENSE file of a GitHub repository', () => {
+    const link = (repoUrl: string) =>
+      (createBlock('badges', { ...EMPTY_META, license: 'MIT', repoUrl }).data as { items: { link: string }[] }).items[0]
+        .link;
+    expect(link('https://github.com/o/r')).toBe('https://github.com/o/r/blob/HEAD/LICENSE');
+    expect(link('https://gitlab.com/o/r')).toBe('');
+    expect(link('https://github.com/o/r/tree/main')).toBe('');
+    expect(link(`https://github.com/o/${'r'.repeat(1990)}`)).toBe('');
+  });
+
   it('warns above five badges', () => {
     const five = { items: Array.from({ length: 5 }, () => item()) };
     const six = { items: Array.from({ length: 6 }, () => item()) };

@@ -64,6 +64,18 @@ describe('parsePackageJson', () => {
     expect(result).toEqual({ ok: true, meta: { name: 'a b; rm -rf', description: 'x y' } });
   });
 
+  it('does not suggest an install command for a private package', () => {
+    // `npm install dashboard` would install an unrelated public package.
+    expect(parsePackageJson(JSON.stringify({ name: 'dashboard', private: true }))).toEqual({
+      ok: true,
+      meta: { name: 'dashboard' },
+    });
+    expect(parsePackageJson(JSON.stringify({ name: 'dashboard', private: false }))).toEqual({
+      ok: true,
+      meta: { name: 'dashboard', installCommand: 'npm install dashboard' },
+    });
+  });
+
   it.each(['not json', 'null', '[]', '42', '"text"', ''])('rejects %j as an invalid file', (text) => {
     expect(parsePackageJson(text)).toEqual({ ok: false, error: 'invalidFile' });
   });
@@ -112,6 +124,11 @@ describe('parseCargoToml', () => {
     });
     const multiline = toml('[package]', 'name = "demo"', 'description = """', 'long', '"""');
     expect(parseCargoToml(multiline)).toEqual({ ok: true, meta: { name: 'demo', installCommand: 'cargo add demo' } });
+  });
+
+  it('does not suggest `cargo add` for a crate that is not published', () => {
+    const text = toml('[package]', 'name = "internal"', 'publish = false');
+    expect(parseCargoToml(text)).toEqual({ ok: true, meta: { name: 'internal' } });
   });
 
   it('rejects a file without a [package] section', () => {

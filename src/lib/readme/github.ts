@@ -35,9 +35,9 @@ export async function fetchGithubMeta(
   }
 
   if (response.status === 404) return { ok: false, error: 'notFound' };
-  if (response.status === 429 || (response.status === 403 && response.headers.get('x-ratelimit-remaining') === '0')) {
-    return { ok: false, error: 'rateLimit' };
-  }
+  // 403 and 429 both mean "slow down" for unauthenticated calls: GitHub's secondary
+  // limits answer 403 without any rate-limit header.
+  if (response.status === 429 || response.status === 403) return { ok: false, error: 'rateLimit' };
   if (!response.ok) return { ok: false, error: 'invalidResponse' };
 
   let body: unknown;

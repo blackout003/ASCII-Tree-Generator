@@ -18,7 +18,7 @@ import {
 import { getCatalog } from '@/lib/readme/registry';
 import {
   addBlock,
-  applySelection,
+  applyWizard,
   canAddBlock,
   createInitialState,
   moveBlock,
@@ -197,11 +197,6 @@ export function ReadmeGenerator() {
     setView('wizard');
   };
 
-  const handleWizardMode = (mode: ReadmeMode) => {
-    if (wizardIsNew) update((current) => ({ ...current, mode, blocks: [] }));
-    else handleModeChange(mode);
-  };
-
   // Reads the latest committed state so a slow request never overwrites what was typed meanwhile.
   const handleExtracted = (extracted: ExtractedMeta): ExtractedKey[] => {
     const current = latestState.current;
@@ -211,8 +206,8 @@ export function ReadmeGenerator() {
     return filled;
   };
 
-  const handleWizardFinish = (selectedTypes: BlockType[]) => {
-    const next = applySelection(state, selectedTypes);
+  const handleWizardFinish = (choice: { mode: ReadmeMode; selected: BlockType[] }) => {
+    const next = applyWizard(state, { ...choice, isNew: wizardIsNew });
     const removed = state.blocks.filter((block) => !next.blocks.some((kept) => kept.id === block.id)).length;
     setState(next);
     setSelectedId(null);
@@ -230,7 +225,6 @@ export function ReadmeGenerator() {
         key={wizardIsNew ? 'new' : 'edit'}
         state={state}
         isNew={wizardIsNew}
-        onModeChange={handleWizardMode}
         onMetaChange={(patch) => update((current) => updateMeta(current, patch))}
         onAccentChange={(color) => update((current) => setAccentColor(current, color))}
         onExtracted={handleExtracted}

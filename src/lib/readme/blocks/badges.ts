@@ -22,6 +22,13 @@ export type BadgesData = z.infer<typeof schema>;
 /** More than this many badges hurts readability. */
 const RECOMMENDED_MAX = 5;
 
+/** The LICENSE file of a GitHub repository, or '' when the repository URL is anything else. */
+function licenseLink(repoUrl: string): string {
+  if (!/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repoUrl)) return '';
+  const link = `${repoUrl}/blob/HEAD/LICENSE`;
+  return link.length <= BADGE_LIMITS.link ? link : '';
+}
+
 export const badgesBlock = defineBlock<BadgesData>({
   type: 'badges',
   modes: ['project'],
@@ -30,7 +37,7 @@ export const badgesBlock = defineBlock<BadgesData>({
   recommended: true,
   schema,
   createData: (meta) => ({
-    items: meta.license ? [{ label: 'license', message: meta.license, color: '', link: '' }] : [],
+    items: meta.license ? [{ label: 'license', message: meta.license, color: '', link: licenseLink(meta.repoUrl) }] : [],
   }),
   toMarkdown: (data, ctx) =>
     data.items

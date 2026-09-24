@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { locales } from '@/i18n/locales';
-import { DEFAULT_TEXTS, getDefaultText, type TextKey } from '@/lib/readme/default-texts';
+import { DEFAULT_TEXTS, getDefaultText, isDefaultText, type TextKey } from '@/lib/readme/default-texts';
 
 const KEYS: TextKey[] = [
   'toc', 'installation', 'prerequisites', 'usage', 'architecture', 'roadmap',
@@ -25,5 +25,14 @@ describe('default README texts', () => {
 
   it('falls back to English for an unknown language', () => {
     expect(getDefaultText('xx' as never, 'usage')).toBe('Usage');
+  });
+
+  it('recognizes an untouched default heading in any language, but not the license sentence or custom text', () => {
+    expect(isDefaultText('Installation')).toBe(true);
+    expect(isDefaultText('Utilisation')).toBe(true);
+    expect(isDefaultText('使い方')).toBe(true);
+    expect(isDefaultText('Getting started')).toBe(false);
+    expect(isDefaultText(DEFAULT_TEXTS.en.licenseSentence)).toBe(false);
+    expect(isDefaultText('')).toBe(false);
   });
 });

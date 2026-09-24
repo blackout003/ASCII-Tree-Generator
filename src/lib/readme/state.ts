@@ -1,4 +1,5 @@
 import { DEFAULT_THEME, EMPTY_META } from './defaults';
+import { isDefaultText } from './default-texts';
 import { getBlockDefinition, getCatalog } from './registry';
 import type { Block, BlockType, ReadmeMeta, ReadmeMode, ReadmeState } from './types';
 
@@ -108,4 +109,61 @@ export function setAccentColor(state: ReadmeState, color: string): ReadmeState {
   const hex = color.trim().replace(/^#/, '');
   if (!/^[0-9a-fA-F]{6}$/.test(hex)) return state;
   return { ...state, theme: { ...state.theme, accentColor: hex.toLowerCase() } };
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+/**
+ * Brings a block's data in line with the meta the wizard collected, without
+ * touching anything the user wrote: empty fields are filled from `fresh`, and a
+ * heading that is still an untouched default text follows the README language.
+ */
+function refreshData(current: unknown, fresh: unknown): unknown {
+  if (typeof current === 'string' && typeof fresh === 'string') {
+    if (current.trim() === '' && fresh !== '') return fresh;
+    if (current !== fresh && isDefaultText(current) && isDefaultText(fresh)) return fresh;
+    return current;
+  }
+  if (Array.isArray(current) && Array.isArray(fresh)) return current.length === 0 ? fresh : current;
+  if (isRecord(current) && isRecord(fresh)) {
+    return Object.fromEntries(
+      Object.entries(current).map(([key, value]) => [key, key in fresh ? refreshData(value, fresh[key]) : value])
+    );
+  }
+  return current;
+}
+
+function refreshBlock(block: Block, meta: ReadmeMeta): Block {
+  const def = getBlockDefinition(block.type);
+  const refreshed = refreshData(block.data, def.createData(meta));
+  return def.parseData(refreshed).success ? { ...block, data: refreshed } : block;
+}
+
+export interface WizardChoice {
+  mode: ReadmeMode;
+  selected: readonly BlockType[];
+  /** True for a first README, whose blocks do not exist yet. */
+  isNew: boolean;
+}
+
+/**
+ * Applies everything the wizard collected, at once, when it ends. The mode is
+ * only switched here, never while the wizard is open: clicking through the mode
+ * cards changes nothing, so it cannot drop or recreate the user's blocks.
+ */
+export function applyWizard(state: ReadmeState, choice: WizardChoice): ReadmeState {
+  const base =
+    choice.mode === state.mode
+      ? state
+      : choice.isNew
+        ? { ...state, mode: choice.mode, blocks: [] }
+        : switchMode(state, choice.mode).state;
+  const selected = applySelection(base, choice.selected);
+  const existing = new Set(base.blocks.map((block) => block.id));
+  return {
+    ...selected,
+    blocks: selected.blocks.map((block) => (existing.has(block.id) ? refreshBlock(block, selected.meta) : block)),
+  };
 }

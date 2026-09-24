@@ -30,17 +30,16 @@ interface ReadmeWizardProps {
   state: ReadmeState;
   /** True for a first README: its blocks are created when the wizard ends. */
   isNew: boolean;
-  onModeChange: (mode: ReadmeMode) => void;
   onMetaChange: (patch: Partial<ReadmeState['meta']>) => void;
   onAccentChange: (color: string) => void;
   onExtracted: (extracted: ExtractedMeta) => ExtractedKey[];
-  onFinish: (selected: BlockType[]) => void;
+  /** The chosen mode and sections are only applied here, when the wizard ends. */
+  onFinish: (choice: { mode: ReadmeMode; selected: BlockType[] }) => void;
 }
 
 export function ReadmeWizard({
   state,
   isNew,
-  onModeChange,
   onMetaChange,
   onAccentChange,
   onExtracted,
@@ -54,15 +53,20 @@ export function ReadmeWizard({
     () => new Set(isNew ? getRecommendedTypes(state.mode) : state.blocks.map((block) => block.type))
   );
   const [accentDraft, setAccentDraft] = useState(state.theme.accentColor);
-  const catalog = getCatalog(state.mode);
-  const fields = state.mode === 'project' ? PROJECT_FIELDS : PROFILE_FIELDS;
+  // The mode stays local until the end: switching it in the README right away would
+  // drop the user's blocks, and clicking back would only recreate empty ones.
+  const [mode, setMode] = useState<ReadmeMode>(state.mode);
+  const catalog = getCatalog(mode);
+  const fields = mode === 'project' ? PROJECT_FIELDS : PROFILE_FIELDS;
   const accentValid = /^#?[0-9a-fA-F]{6}$/.test(accentDraft.trim());
 
-  const chooseMode = (mode: ReadmeMode) => {
-    onModeChange(mode);
-    const allowed = new Set(getCatalog(mode).map((def) => def.type));
-    setSelected((previous) =>
-      isNew ? new Set(getRecommendedTypes(mode)) : new Set([...previous].filter((type) => allowed.has(type)))
+  const chooseMode = (next: ReadmeMode) => {
+    setMode(next);
+    const allowed = new Set(getCatalog(next).map((def) => def.type));
+    setSelected(
+      isNew
+        ? new Set(getRecommendedTypes(next))
+        : new Set(state.blocks.map((block) => block.type).filter((type) => allowed.has(type)))
     );
   };
 
@@ -80,7 +84,7 @@ export function ReadmeWizard({
     return keys;
   };
 
-  const finish = () => onFinish([...selected]);
+  const finish = () => onFinish({ mode, selected: [...selected] });
 
   return (
     <div className="mx-auto max-w-2xl space-y-6 p-6">
@@ -96,19 +100,19 @@ export function ReadmeWizard({
             <div className="space-y-3">
               <p className="text-sm text-muted-foreground">{t('wizard.modeHint')}</p>
               <div className="grid gap-3 sm:grid-cols-2">
-                {MODES.map((mode) => (
+                {MODES.map((option) => (
                   <button
-                    key={mode}
+                    key={option}
                     type="button"
-                    aria-pressed={state.mode === mode}
-                    onClick={() => chooseMode(mode)}
+                    aria-pressed={mode === option}
+                    onClick={() => chooseMode(option)}
                     className={cn(
                       'rounded-md border p-4 text-left transition-colors',
-                      state.mode === mode ? 'border-primary bg-primary/5' : 'hover:bg-muted'
+                      mode === option ? 'border-primary bg-primary/5' : 'hover:bg-muted'
                     )}
                   >
-                    <span className="block font-medium">{t(`modes.${mode}`)}</span>
-                    <span className="mt-1 block text-sm text-muted-foreground">{t(`modes.${mode}Desc`)}</span>
+                    <span className="block font-medium">{t(`modes.${option}`)}</span>
+                    <span className="mt-1 block text-sm text-muted-foreground">{t(`modes.${option}Desc`)}</span>
                   </button>
                 ))}
               </div>

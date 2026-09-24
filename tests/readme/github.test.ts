@@ -69,7 +69,8 @@ describe('fetchGithubMeta', () => {
       () => new Response('{}', { status: 403, headers: { 'x-ratelimit-remaining': '0' } }),
       'rateLimit',
     ],
-    ['HTTP 403 for another reason', () => new Response('{}', { status: 403 }), 'invalidResponse'],
+    // The spec maps every 403 to the rate-limit message: GitHub's secondary limits send no header.
+    ['HTTP 403 without a rate-limit header', () => new Response('{}', { status: 403 }), 'rateLimit'],
     ['a server error', () => new Response('oops', { status: 500 }), 'invalidResponse'],
     ['a body that is not JSON', () => new Response('<html>', { status: 200 }), 'invalidResponse'],
     ['a body without a name', () => json({ description: 'x' }), 'invalidResponse'],

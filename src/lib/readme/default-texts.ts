@@ -125,6 +125,19 @@ export const DEFAULT_TEXTS: Record<ReadmeLanguage, Record<TextKey, string>> = {
   },
 };
 
+const DEFAULT_HEADINGS = new Set(
+  Object.values(DEFAULT_TEXTS).flatMap((texts) =>
+    Object.entries(texts)
+      .filter(([key]) => key !== 'licenseSentence')
+      .map(([, value]) => value)
+  )
+);
+
+/** True when `value` is an untouched default heading, in any language. */
+export function isDefaultText(value: string): boolean {
+  return DEFAULT_HEADINGS.has(value);
+}
+
 export function getDefaultText(language: ReadmeLanguage, key: TextKey): string {
   return (DEFAULT_TEXTS[language] ?? DEFAULT_TEXTS.en)[key];
 }
