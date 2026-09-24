@@ -9,9 +9,10 @@ npm run dev      # Start dev server at http://localhost:3000
 npm run build    # Production build
 npm start        # Start production server
 npm run lint     # Run ESLint
+npm test         # Run vitest once
 ```
 
-No test framework is configured.
+Tests use vitest (`tests/**/*.test.ts`, Node environment): pure logic under `src/lib/` is tested; React components are not.
 
 ## Stack
 
@@ -36,6 +37,8 @@ No global state manager. State lives in `tree-generator.tsx` via React hooks onl
 | [src/lib/tree-generator.ts](src/lib/tree-generator.ts) | Core recursive ASCII generation algorithm |
 | [src/lib/types.ts](src/lib/types.ts) | `TreeNode`, `TreeOptions`, `ConnectorStyle` types |
 | [src/lib/validation.ts](src/lib/validation.ts) | Zod schemas for JSON save/load |
+| [src/lib/readme/](src/lib/readme/) | README generator core: block registry, pure Markdown generation, validation, persistence |
+| [src/components/readme-generator/](src/components/readme-generator/) | README generator UI (state container, block list, preview) |
 | [src/lib/default-options.ts](src/lib/default-options.ts) | Default `TreeOptions` config |
 | [src/components/generator/tree-generator.tsx](src/components/generator/tree-generator.tsx) | Main state container |
 | [src/components/generator/tree-view.tsx](src/components/generator/tree-view.tsx) | Editable tree with drag-drop |
