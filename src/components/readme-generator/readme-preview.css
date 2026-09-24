@@ -1,0 +1,41 @@
+/* GitHub-style alerts rendered by remark-github-blockquote-alert. */
+.readme-preview .markdown-alert {
+  --alert-color: #0969da;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 0.25em solid var(--alert-color);
+}
+
+.readme-preview .markdown-alert > :last-child {
+  margin-bottom: 0;
+}
+
+.readme-preview .markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+  color: var(--alert-color);
+}
+
+.readme-preview .markdown-alert-title svg {
+  fill: currentColor;
+}
+
+.readme-preview .markdown-alert-note { --alert-color: #0969da; }
+.readme-preview .markdown-alert-tip { --alert-color: #1a7f37; }
+.readme-preview .markdown-alert-important { --alert-color: #8250df; }
+.readme-preview .markdown-alert-warning { --alert-color: #9a6700; }
+.readme-preview .markdown-alert-caution { --alert-color: #d1242f; }
+
+.readme-preview[data-theme='dark'] .markdown-alert-note { --alert-color: #4493f8; }
+.readme-preview[data-theme='dark'] .markdown-alert-tip { --alert-color: #3fb950; }
+.readme-preview[data-theme='dark'] .markdown-alert-important { --alert-color: #ab7df8; }
+.readme-preview[data-theme='dark'] .markdown-alert-warning { --alert-color: #d29922; }
+.readme-preview[data-theme='dark'] .markdown-alert-caution { --alert-color: #f85149; }
+
+.readme-preview img {
+  display: inline-block;
+  max-width: 100%;
+}

@@ -64,6 +64,7 @@ import {
   TextFontIcon,
   Tick02Icon,
   Upload01Icon,
+  DocumentCodeIcon,
 } from "@hugeicons/core-free-icons";
 
 /**
@@ -151,6 +152,7 @@ export const Sparkles = createIcon(SparklesIcon, "Sparkles");
 export const Sun = createIcon(Sun01Icon, "Sun");
 export const Table = createIcon(HugeTableIcon, "Table");
 export const TableIcon = createIcon(HugeTableIcon, "TableIcon");
+export const FileCode = createIcon(DocumentCodeIcon, "FileCode");
 export const Terminal = createIcon(TerminalIcon, "Terminal");
 export const Trash2 = createIcon(Delete02Icon, "Trash2");
 export const Type = createIcon(TextFontIcon, "Type");
