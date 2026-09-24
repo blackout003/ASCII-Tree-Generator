@@ -7,6 +7,7 @@ import { freeMarkdownBlock } from './blocks/free-markdown';
 import { headerBlock } from './blocks/header';
 import { installationBlock } from './blocks/installation';
 import { licenseBlock } from './blocks/license';
+import { tableOfContentsBlock } from './blocks/table-of-contents';
 import { usageBlock } from './blocks/usage';
 import { visualProofBlock } from './blocks/visual-proof';
 import type { BlockType, ReadmeMode } from './types';
@@ -16,6 +17,7 @@ const DEFINITIONS: Record<BlockType, AnyBlockDefinition> = {
   header: headerBlock,
   badges: badgesBlock,
   visualProof: visualProofBlock,
+  tableOfContents: tableOfContentsBlock,
   installation: installationBlock,
   usage: usageBlock,
   architecture: architectureBlock,

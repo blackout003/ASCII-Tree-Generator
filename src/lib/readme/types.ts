@@ -10,6 +10,7 @@ export type BlockType =
   | 'header'
   | 'badges'
   | 'visualProof'
+  | 'tableOfContents'
   | 'installation'
   | 'usage'
   | 'architecture'
