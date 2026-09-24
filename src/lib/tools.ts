@@ -1,4 +1,4 @@
-import { FolderTree, Table, BarChart2, Type, BookMarked, Smile, FileText, Edit3, QrCode, Minus, Terminal } from '@/components/icons';
+import { FolderTree, Table, BarChart2, Type, BookMarked, Smile, FileText, Edit3, QrCode, Minus, Terminal, FileCode } from '@/components/icons';
 import type { LucideIcon } from '@/components/icons';
 
 export interface Tool {
@@ -57,6 +57,13 @@ export const TOOLS: Tool[] = [
     href: '/tools/tree-to-commands',
     icon: Terminal,
     nameKey: 'treeToCommands',
+  },
+  {
+    id: 'readme-generator',
+    href: '/tools/readme-generator',
+    icon: FileCode,
+    nameKey: 'readmeGenerator',
+    comingSoon: true,
   },
 ];
 

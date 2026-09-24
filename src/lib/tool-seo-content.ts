@@ -844,6 +844,88 @@ const CONTENT: Record<ToolSlug, LocalizedToolContent> = {
       ],
     },
   },
+  'readme-generator': {
+    en: {
+      heading: 'About the README Generator',
+      intro:
+        'This free README generator helps you write a project README or a GitHub profile README from reusable blocks. Add, reorder and edit sections in the editor, check the result in a GitHub-accurate preview, then copy or download the Markdown. Everything runs in your browser and your work is saved locally.',
+      faq: [
+        { q: 'Is my README sent to a server?', a: 'No. The editor runs entirely in your browser and saves your work in local storage on your device. You can also export it as a JSON file to continue on another computer.' },
+        { q: 'Can I start without importing anything?', a: 'Yes. You can start from a blank editor and fill in each block by hand; nothing has to be imported.' },
+        { q: 'Does the preview match what GitHub displays?', a: 'It is very close: GitHub Flavored Markdown, alerts such as [!NOTE], tables, code highlighting and common HTML like <picture> or align are supported. Unsafe HTML such as scripts is always removed, as on GitHub.' },
+      ],
+    },
+    fr: {
+      heading: 'À propos du générateur de README',
+      intro:
+        "Ce générateur de README gratuit vous aide à écrire le README d'un projet ou d'un profil GitHub à partir de blocs réutilisables. Ajoutez, réordonnez et modifiez les sections dans l'éditeur, vérifiez le résultat dans un aperçu fidèle à GitHub, puis copiez ou téléchargez le Markdown. Tout fonctionne dans votre navigateur et votre travail est enregistré localement.",
+      faq: [
+        { q: 'Mon README est-il envoyé à un serveur ?', a: "Non. L'éditeur fonctionne entièrement dans votre navigateur et enregistre votre travail dans le stockage local de votre appareil. Vous pouvez aussi l'exporter en fichier JSON pour le reprendre sur un autre ordinateur." },
+        { q: 'Puis-je commencer sans rien importer ?', a: "Oui. Vous pouvez partir d'un éditeur vide et remplir chaque bloc à la main ; rien n'est à importer." },
+        { q: "L'aperçu correspond-il à ce que GitHub affiche ?", a: "Il en est très proche : Markdown GitHub (GFM), alertes comme [!NOTE], tableaux, coloration du code et HTML courant comme <picture> ou align sont pris en charge. Le HTML dangereux, comme les scripts, est toujours retiré, comme sur GitHub." },
+      ],
+    },
+    es: {
+      heading: 'Acerca del generador de README',
+      intro:
+        'Este generador de README gratuito te ayuda a escribir el README de un proyecto o de un perfil de GitHub a partir de bloques reutilizables. Añade, reordena y edita secciones en el editor, comprueba el resultado en una vista previa fiel a GitHub y copia o descarga el Markdown. Todo funciona en tu navegador y tu trabajo se guarda localmente.',
+      faq: [
+        { q: '¿Se envía mi README a un servidor?', a: 'No. El editor funciona por completo en tu navegador y guarda tu trabajo en el almacenamiento local de tu dispositivo. También puedes exportarlo como archivo JSON para continuar en otro ordenador.' },
+        { q: '¿Puedo empezar sin importar nada?', a: 'Sí. Puedes empezar con un editor vacío y rellenar cada bloque a mano; no hace falta importar nada.' },
+        { q: '¿La vista previa coincide con lo que muestra GitHub?', a: 'Se parece mucho: se admiten Markdown de GitHub (GFM), alertas como [!NOTE], tablas, resaltado de código y HTML habitual como <picture> o align. El HTML peligroso, como los scripts, siempre se elimina, igual que en GitHub.' },
+      ],
+    },
+    de: {
+      heading: 'Über den README-Generator',
+      intro:
+        'Dieser kostenlose README-Generator hilft Ihnen, das README eines Projekts oder eines GitHub-Profils aus wiederverwendbaren Blöcken zu schreiben. Fügen Sie Abschnitte im Editor hinzu, ordnen Sie sie um und bearbeiten Sie sie, prüfen Sie das Ergebnis in einer GitHub-getreuen Vorschau und kopieren oder laden Sie das Markdown herunter. Alles läuft in Ihrem Browser, Ihre Arbeit wird lokal gespeichert.',
+      faq: [
+        { q: 'Wird mein README an einen Server gesendet?', a: 'Nein. Der Editor läuft vollständig in Ihrem Browser und speichert Ihre Arbeit im lokalen Speicher Ihres Geräts. Sie können sie auch als JSON-Datei exportieren, um auf einem anderen Computer weiterzuarbeiten.' },
+        { q: 'Kann ich beginnen, ohne etwas zu importieren?', a: 'Ja. Sie können mit einem leeren Editor starten und jeden Block von Hand ausfüllen; es muss nichts importiert werden.' },
+        { q: 'Entspricht die Vorschau dem, was GitHub anzeigt?', a: 'Sie kommt sehr nah heran: GitHub Flavored Markdown (GFM), Hinweise wie [!NOTE], Tabellen, Code-Hervorhebung und gängiges HTML wie <picture> oder align werden unterstützt. Gefährliches HTML wie Skripte wird immer entfernt, genau wie bei GitHub.' },
+      ],
+    },
+    it: {
+      heading: 'Informazioni sul generatore di README',
+      intro:
+        "Questo generatore di README gratuito ti aiuta a scrivere il README di un progetto o di un profilo GitHub a partire da blocchi riutilizzabili. Aggiungi, riordina e modifica le sezioni nell'editor, controlla il risultato in un'anteprima fedele a GitHub, poi copia o scarica il Markdown. Tutto funziona nel tuo browser e il tuo lavoro viene salvato localmente.",
+      faq: [
+        { q: 'Il mio README viene inviato a un server?', a: "No. L'editor funziona interamente nel tuo browser e salva il tuo lavoro nella memoria locale del dispositivo. Puoi anche esportarlo come file JSON per riprenderlo su un altro computer." },
+        { q: 'Posso iniziare senza importare nulla?', a: "Sì. Puoi partire da un editor vuoto e compilare ogni blocco a mano; non c'è nulla da importare." },
+        { q: "L'anteprima corrisponde a ciò che mostra GitHub?", a: "Ci si avvicina molto: sono supportati il Markdown di GitHub (GFM), gli avvisi come [!NOTE], le tabelle, l'evidenziazione del codice e l'HTML comune come <picture> o align. L'HTML pericoloso, come gli script, viene sempre rimosso, come su GitHub." },
+      ],
+    },
+    pt: {
+      heading: 'Sobre o gerador de README',
+      intro:
+        'Este gerador de README gratuito ajuda-o a escrever o README de um projeto ou de um perfil do GitHub a partir de blocos reutilizáveis. Adicione, reordene e edite secções no editor, confira o resultado numa pré-visualização fiel ao GitHub e copie ou transfira o Markdown. Tudo funciona no seu navegador e o seu trabalho fica guardado localmente.',
+      faq: [
+        { q: 'O meu README é enviado para um servidor?', a: 'Não. O editor funciona inteiramente no seu navegador e guarda o seu trabalho no armazenamento local do dispositivo. Também pode exportá-lo como ficheiro JSON para o retomar noutro computador.' },
+        { q: 'Posso começar sem importar nada?', a: 'Sim. Pode começar com um editor vazio e preencher cada bloco à mão; não é preciso importar nada.' },
+        { q: 'A pré-visualização corresponde ao que o GitHub mostra?', a: 'É muito próxima: são suportados o Markdown do GitHub (GFM), alertas como [!NOTE], tabelas, realce de código e HTML comum como <picture> ou align. O HTML perigoso, como scripts, é sempre removido, tal como no GitHub.' },
+      ],
+    },
+    ru: {
+      heading: 'О генераторе README',
+      intro:
+        'Этот бесплатный генератор README помогает написать README проекта или профиля GitHub из повторно используемых блоков. Добавляйте, переставляйте и редактируйте разделы в редакторе, проверяйте результат в предпросмотре, точном как на GitHub, а затем копируйте или скачивайте Markdown. Всё работает в вашем браузере, а ваша работа сохраняется локально.',
+      faq: [
+        { q: 'Отправляется ли мой README на сервер?', a: 'Нет. Редактор полностью работает в вашем браузере и сохраняет вашу работу в локальном хранилище устройства. Вы также можете экспортировать её в файл JSON, чтобы продолжить на другом компьютере.' },
+        { q: 'Можно ли начать, ничего не импортируя?', a: 'Да. Можно начать с пустого редактора и заполнить каждый блок вручную; импортировать ничего не нужно.' },
+        { q: 'Совпадает ли предпросмотр с тем, что показывает GitHub?', a: 'Очень близко: поддерживаются Markdown GitHub (GFM), уведомления вроде [!NOTE], таблицы, подсветка кода и распространённый HTML, например <picture> или align. Опасный HTML, такой как скрипты, всегда удаляется — так же, как на GitHub.' },
+      ],
+    },
+    ja: {
+      heading: 'README生成ツールについて',
+      intro:
+        'この無料ツールは、再利用できるブロックを組み合わせて、プロジェクトやGitHubプロフィールのREADMEを作成できます。エディタでセクションを追加・並べ替え・編集し、GitHubそっくりのプレビューで確認してから、Markdownをコピーまたはダウンロードできます。すべてブラウザ内で動作し、作業内容は端末に保存されます。',
+      faq: [
+        { q: 'READMEはサーバーに送信されますか？', a: 'いいえ。エディタはすべてブラウザ内で動作し、作業内容は端末のローカルストレージに保存されます。JSONファイルとして書き出せば、別のパソコンで続きから作業できます。' },
+        { q: '何もインポートせずに始められますか？', a: 'はい。空のエディタから始めて、各ブロックを手で入力できます。インポートは必要ありません。' },
+        { q: 'プレビューはGitHubの表示と同じですか？', a: 'とても近い表示になります。GitHub Flavored Markdown（GFM）、[!NOTE]などのアラート、表、コードのハイライト、<picture>やalignなどの一般的なHTMLに対応しています。スクリプトなど危険なHTMLは、GitHubと同様に常に取り除かれます。' },
+      ],
+    },
+  },
 };
 
 export function getToolContent(tool: ToolSlug, locale: string): ToolContent {

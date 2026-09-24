@@ -289,6 +289,28 @@ export const TOOLS_SEO = {
       ja: "貼り付けたASCIIツリーを実行可能なmkdir -p / touchコマンドに変換、または逆にシェルコマンドから見やすいツリーを再構築します。無料、ブラウザだけで動作します。",
     },
   },
+  'readme-generator': {
+    titles: {
+      fr: "Générateur de README GitHub (projet & profil) | Gratuit",
+      en: "GitHub README Generator (Project & Profile) | Free",
+      es: "Generador de README para GitHub (proyecto y perfil) | Gratis",
+      de: "GitHub-README-Generator (Projekt & Profil) | Kostenlos",
+      it: "Generatore di README GitHub (progetto e profilo) | Gratis",
+      pt: "Gerador de README do GitHub (projeto e perfil) | Grátis",
+      ru: "Генератор README для GitHub (проект и профиль) | Бесплатно",
+      ja: "GitHub README生成ツール（プロジェクト＆プロフィール）｜無料",
+    },
+    descriptions: {
+      fr: "Créez un README de projet ou de profil GitHub avec un éditeur de blocs et un aperçu fidèle à GitHub. Gratuit, sans inscription, tout reste dans votre navigateur.",
+      en: "Build a project or GitHub profile README with a block editor and a GitHub-accurate preview. Free, no sign-up, everything stays in your browser.",
+      es: "Crea un README de proyecto o de perfil de GitHub con un editor de bloques y una vista previa fiel a GitHub. Gratis, sin registro, todo se queda en tu navegador.",
+      de: "Erstellen Sie ein Projekt- oder GitHub-Profil-README mit Block-Editor und GitHub-getreuer Vorschau. Kostenlos, ohne Anmeldung, alles bleibt in Ihrem Browser.",
+      it: "Crea un README di progetto o di profilo GitHub con un editor a blocchi e un'anteprima fedele a GitHub. Gratis, senza registrazione, tutto resta nel tuo browser.",
+      pt: "Crie um README de projeto ou de perfil do GitHub com um editor de blocos e uma pré-visualização fiel ao GitHub. Grátis, sem registo, tudo fica no seu navegador.",
+      ru: "Создайте README проекта или профиля GitHub в блочном редакторе с точным предпросмотром как на GitHub. Бесплатно, без регистрации, всё остаётся в браузере.",
+      ja: "ブロックエディタとGitHubそっくりのプレビューで、プロジェクトやGitHubプロフィールのREADMEを作成。無料・登録不要、すべてブラウザ内で完結します。",
+    },
+  },
 } satisfies Record<string, ToolMeta>;
 
 export type ToolSlug = keyof typeof TOOLS_SEO;
