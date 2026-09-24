@@ -144,7 +144,8 @@
     "readmeGuide": "README-Leitfaden",
     "resources": "Ressourcen",
     "asciiEmoji": "ASCII-Emojis",
-    "markdownEditor": "Markdown-Editor"
+    "markdownEditor": "Markdown-Editor",
+    "readmeGenerator": "README-Generator"
   },
   "tableGenerator": {
     "editor": {
@@ -450,6 +451,9 @@
       },
       "treeToCommands": {
         "desc": "Wandelt einen ASCII-Baum in ausführbare mkdir/touch-Befehle um und erstellt umgekehrt einen Baum aus Shell-Befehlen."
+      },
+      "readmeGenerator": {
+        "desc": "Erstellen Sie ein Projekt- oder GitHub-Profil-README mit Block-Editor und GitHub-getreuer Vorschau."
       }
     }
   },
@@ -664,5 +668,69 @@
     "refuse": "Ablehnen",
     "learnMore": "Mehr erfahren",
     "learnMoreAria": "Mehr über den Schutz Ihrer personenbezogenen Daten erfahren"
+  },
+  "readmeGenerator": {
+    "modes": {
+      "project": "Projekt",
+      "profile": "GitHub-Profil"
+    },
+    "toolbar": {
+      "mode": "README-Typ",
+      "copy": "Kopieren",
+      "download": "Herunterladen",
+      "exportJson": "Exportieren (JSON)",
+      "importJson": "Importieren (JSON)",
+      "reset": "Zurücksetzen"
+    },
+    "blocks": {
+      "title": "Blöcke",
+      "add": "Block hinzufügen",
+      "empty": "Noch keine Blöcke. Fügen Sie einen hinzu, um zu beginnen.",
+      "enabled": "Block aktiviert",
+      "moveUp": "Nach oben",
+      "moveDown": "Nach unten",
+      "remove": "Entfernen",
+      "drag": "Zum Umsortieren ziehen",
+      "header": "Kopfbereich",
+      "freeMarkdown": "Freies Markdown"
+    },
+    "fields": {
+      "title": "Titel",
+      "tagline": "Slogan",
+      "logoUrl": "Logo-URL",
+      "logoAlt": "Alternativtext des Logos",
+      "content": "Markdown-Inhalt"
+    },
+    "placeholders": {
+      "title": "Mein tolles Projekt",
+      "tagline": "Ein Satz, der erklärt, was das Projekt macht.",
+      "logoUrl": "https://beispiel.de/logo.png",
+      "logoAlt": "Logo von Mein tolles Projekt",
+      "content": "## Ein Abschnitt\n\nSchreiben Sie hier Ihr Markdown…"
+    },
+    "preview": {
+      "title": "Vorschau",
+      "light": "Hell",
+      "dark": "Dunkel",
+      "empty": "Die README-Vorschau erscheint hier."
+    },
+    "warnings": {
+      "title": "Warnungen",
+      "none": "Keine Warnungen.",
+      "imageMissingAlt": "Bilder ohne Alternativtext (alt): {count}.",
+      "htmlTagMismatch": "Nicht zusammenpassende HTML-Tags: {tags}.",
+      "layoutTable": "Tabelle für das Layout verwendet: Tabellen sind für Daten gedacht."
+    },
+    "messages": {
+      "copySuccess": "README in die Zwischenablage kopiert.",
+      "copyError": "README konnte nicht kopiert werden.",
+      "downloadError": "README konnte nicht heruntergeladen werden.",
+      "importSuccess": "Datei importiert.",
+      "importError": "Ungültige Datei: Import nicht möglich.",
+      "importDropped": "Ignorierte Blöcke: {count}.",
+      "modeSwitchDropped": "Entfernte Blöcke (in diesem Modus nicht verfügbar): {count}.",
+      "resetDone": "Editor zurückgesetzt.",
+      "storageUnavailable": "Automatisches Speichern ist in diesem Browser nicht verfügbar."
+    }
   }
 }

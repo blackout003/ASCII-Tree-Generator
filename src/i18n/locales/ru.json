@@ -144,7 +144,8 @@
     "readmeGuide": "Гайд по README",
     "resources": "Ресурсы",
     "asciiEmoji": "ASCII-эмодзи",
-    "markdownEditor": "Редактор Markdown"
+    "markdownEditor": "Редактор Markdown",
+    "readmeGenerator": "Генератор README"
   },
   "tableGenerator": {
     "editor": {
@@ -450,6 +451,9 @@
       },
       "treeToCommands": {
         "desc": "Преобразует ASCII-дерево в готовые команды mkdir/touch и восстанавливает дерево из команд shell."
+      },
+      "readmeGenerator": {
+        "desc": "Создайте README проекта или профиля GitHub в блочном редакторе с предпросмотром, точным как на GitHub."
       }
     }
   },
@@ -664,5 +668,69 @@
     "refuse": "Отклонить",
     "learnMore": "Подробнее",
     "learnMoreAria": "Подробнее о защите ваших персональных данных"
+  },
+  "readmeGenerator": {
+    "modes": {
+      "project": "Проект",
+      "profile": "Профиль GitHub"
+    },
+    "toolbar": {
+      "mode": "Тип README",
+      "copy": "Копировать",
+      "download": "Скачать",
+      "exportJson": "Экспорт (JSON)",
+      "importJson": "Импорт (JSON)",
+      "reset": "Сбросить"
+    },
+    "blocks": {
+      "title": "Блоки",
+      "add": "Добавить блок",
+      "empty": "Блоков пока нет. Добавьте первый, чтобы начать.",
+      "enabled": "Блок включён",
+      "moveUp": "Вверх",
+      "moveDown": "Вниз",
+      "remove": "Удалить",
+      "drag": "Перетащите для изменения порядка",
+      "header": "Заголовок",
+      "freeMarkdown": "Свободный Markdown"
+    },
+    "fields": {
+      "title": "Название",
+      "tagline": "Слоган",
+      "logoUrl": "URL логотипа",
+      "logoAlt": "Альтернативный текст логотипа",
+      "content": "Содержимое Markdown"
+    },
+    "placeholders": {
+      "title": "Мой замечательный проект",
+      "tagline": "Одно предложение о том, что делает проект.",
+      "logoUrl": "https://example.com/logo.png",
+      "logoAlt": "Логотип проекта «Мой замечательный проект»",
+      "content": "## Раздел\n\nНапишите здесь свой Markdown…"
+    },
+    "preview": {
+      "title": "Предпросмотр",
+      "light": "Светлая",
+      "dark": "Тёмная",
+      "empty": "Здесь появится предпросмотр README."
+    },
+    "warnings": {
+      "title": "Предупреждения",
+      "none": "Предупреждений нет.",
+      "imageMissingAlt": "Изображения без альтернативного текста (alt): {count}.",
+      "htmlTagMismatch": "Непарные HTML-теги: {tags}.",
+      "layoutTable": "Таблица используется для вёрстки: таблицы предназначены для данных."
+    },
+    "messages": {
+      "copySuccess": "README скопирован в буфер обмена.",
+      "copyError": "Не удалось скопировать README.",
+      "downloadError": "Не удалось скачать README.",
+      "importSuccess": "Файл импортирован.",
+      "importError": "Недопустимый файл: импорт невозможен.",
+      "importDropped": "Пропущено блоков: {count}.",
+      "modeSwitchDropped": "Удалено блоков (недоступны в этом режиме): {count}.",
+      "resetDone": "Редактор сброшен.",
+      "storageUnavailable": "Автосохранение недоступно в этом браузере."
+    }
   }
 }

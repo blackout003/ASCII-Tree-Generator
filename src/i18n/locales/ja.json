@@ -144,7 +144,8 @@
     "readmeGuide": "READMEガイド",
     "resources": "リソース",
     "asciiEmoji": "ASCII絵文字",
-    "markdownEditor": "Markdownエディタ"
+    "markdownEditor": "Markdownエディタ",
+    "readmeGenerator": "README生成"
   },
   "tableGenerator": {
     "editor": {
@@ -450,6 +451,9 @@
       },
       "treeToCommands": {
         "desc": "ASCIIツリーを実行可能なmkdir/touchコマンドに変換し、逆にシェルコマンドからツリーを再構築します。"
+      },
+      "readmeGenerator": {
+        "desc": "ブロックエディタとGitHubそっくりのプレビューで、プロジェクトやGitHubプロフィールのREADMEを作成できます。"
       }
     }
   },
@@ -664,5 +668,69 @@
     "refuse": "拒否する",
     "learnMore": "詳細を見る",
     "learnMoreAria": "個人データの保護について詳しく見る"
+  },
+  "readmeGenerator": {
+    "modes": {
+      "project": "プロジェクト",
+      "profile": "GitHubプロフィール"
+    },
+    "toolbar": {
+      "mode": "READMEの種類",
+      "copy": "コピー",
+      "download": "ダウンロード",
+      "exportJson": "エクスポート（JSON）",
+      "importJson": "インポート（JSON）",
+      "reset": "リセット"
+    },
+    "blocks": {
+      "title": "ブロック",
+      "add": "ブロックを追加",
+      "empty": "ブロックはまだありません。追加して始めましょう。",
+      "enabled": "ブロックを有効化",
+      "moveUp": "上へ移動",
+      "moveDown": "下へ移動",
+      "remove": "削除",
+      "drag": "ドラッグして並べ替え",
+      "header": "ヘッダー",
+      "freeMarkdown": "自由なMarkdown"
+    },
+    "fields": {
+      "title": "タイトル",
+      "tagline": "キャッチコピー",
+      "logoUrl": "ロゴのURL",
+      "logoAlt": "ロゴの代替テキスト",
+      "content": "Markdownの内容"
+    },
+    "placeholders": {
+      "title": "私のすてきなプロジェクト",
+      "tagline": "プロジェクトが何をするのかを一文で説明します。",
+      "logoUrl": "https://example.com/logo.png",
+      "logoAlt": "私のすてきなプロジェクトのロゴ",
+      "content": "## セクション\n\nここにMarkdownを書きます…"
+    },
+    "preview": {
+      "title": "プレビュー",
+      "light": "ライト",
+      "dark": "ダーク",
+      "empty": "READMEのプレビューがここに表示されます。"
+    },
+    "warnings": {
+      "title": "警告",
+      "none": "警告はありません。",
+      "imageMissingAlt": "代替テキスト（alt）のない画像：{count}件。",
+      "htmlTagMismatch": "対応していないHTMLタグ：{tags}。",
+      "layoutTable": "レイアウトのために表が使われています。表はデータ用にしましょう。"
+    },
+    "messages": {
+      "copySuccess": "READMEをクリップボードにコピーしました。",
+      "copyError": "READMEをコピーできませんでした。",
+      "downloadError": "READMEをダウンロードできませんでした。",
+      "importSuccess": "ファイルをインポートしました。",
+      "importError": "無効なファイルのためインポートできません。",
+      "importDropped": "無視したブロック：{count}件。",
+      "modeSwitchDropped": "このモードで使えないため削除したブロック：{count}件。",
+      "resetDone": "エディタをリセットしました。",
+      "storageUnavailable": "このブラウザでは自動保存を利用できません。"
+    }
   }
 }

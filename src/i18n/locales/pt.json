@@ -144,7 +144,8 @@
     "readmeGuide": "Guia README",
     "resources": "Recursos",
     "asciiEmoji": "Emojis ASCII",
-    "markdownEditor": "Editor Markdown"
+    "markdownEditor": "Editor Markdown",
+    "readmeGenerator": "Gerador de README"
   },
   "tableGenerator": {
     "editor": {
@@ -450,6 +451,9 @@
       },
       "treeToCommands": {
         "desc": "Converte uma árvore ASCII em comandos mkdir/touch prontos a executar, e reconstrói uma árvore a partir de comandos de shell."
+      },
+      "readmeGenerator": {
+        "desc": "Crie um README de projeto ou de perfil do GitHub com um editor de blocos e uma pré-visualização fiel ao GitHub."
       }
     }
   },
@@ -664,5 +668,69 @@
     "refuse": "Recusar",
     "learnMore": "Saber mais",
     "learnMoreAria": "Saiba mais sobre a proteção dos seus dados pessoais"
+  },
+  "readmeGenerator": {
+    "modes": {
+      "project": "Projeto",
+      "profile": "Perfil do GitHub"
+    },
+    "toolbar": {
+      "mode": "Tipo de README",
+      "copy": "Copiar",
+      "download": "Transferir",
+      "exportJson": "Exportar (JSON)",
+      "importJson": "Importar (JSON)",
+      "reset": "Repor"
+    },
+    "blocks": {
+      "title": "Blocos",
+      "add": "Adicionar um bloco",
+      "empty": "Ainda não há blocos. Adicione um para começar.",
+      "enabled": "Bloco ativado",
+      "moveUp": "Mover para cima",
+      "moveDown": "Mover para baixo",
+      "remove": "Remover",
+      "drag": "Arraste para reordenar",
+      "header": "Cabeçalho",
+      "freeMarkdown": "Markdown livre"
+    },
+    "fields": {
+      "title": "Título",
+      "tagline": "Slogan",
+      "logoUrl": "URL do logótipo",
+      "logoAlt": "Texto alternativo do logótipo",
+      "content": "Conteúdo Markdown"
+    },
+    "placeholders": {
+      "title": "O meu projeto incrível",
+      "tagline": "Uma frase que explica o que o projeto faz.",
+      "logoUrl": "https://exemplo.pt/logo.png",
+      "logoAlt": "Logótipo de O meu projeto incrível",
+      "content": "## Uma secção\n\nEscreva aqui o seu Markdown…"
+    },
+    "preview": {
+      "title": "Pré-visualização",
+      "light": "Claro",
+      "dark": "Escuro",
+      "empty": "A pré-visualização do README aparecerá aqui."
+    },
+    "warnings": {
+      "title": "Avisos",
+      "none": "Sem avisos.",
+      "imageMissingAlt": "Imagens sem texto alternativo (alt): {count}.",
+      "htmlTagMismatch": "Etiquetas HTML não emparelhadas: {tags}.",
+      "layoutTable": "Tabela usada para paginação: reserve as tabelas para dados."
+    },
+    "messages": {
+      "copySuccess": "README copiado para a área de transferência.",
+      "copyError": "Não foi possível copiar o README.",
+      "downloadError": "Não foi possível transferir o README.",
+      "importSuccess": "Ficheiro importado.",
+      "importError": "Ficheiro inválido: importação impossível.",
+      "importDropped": "Blocos ignorados: {count}.",
+      "modeSwitchDropped": "Blocos removidos (indisponíveis neste modo): {count}.",
+      "resetDone": "Editor reposto.",
+      "storageUnavailable": "A gravação automática não está disponível neste navegador."
+    }
   }
 }
