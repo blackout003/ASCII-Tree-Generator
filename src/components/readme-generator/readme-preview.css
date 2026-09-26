@@ -39,3 +39,9 @@
   display: inline-block;
   max-width: 100%;
 }
+
+/* Images made for the other theme (#gh-light-mode-only / #gh-dark-mode-only) are hidden, as on GitHub. */
+.readme-preview[data-theme='light'] [data-variant='dark'],
+.readme-preview[data-theme='dark'] [data-variant='light'] {
+  display: none;
+}

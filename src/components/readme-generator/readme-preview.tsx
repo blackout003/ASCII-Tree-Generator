@@ -14,15 +14,27 @@ import './readme-preview.css';
 
 type PreviewImageProps = React.ComponentPropsWithoutRef<'img'> & { node?: unknown };
 
-/** Shows the alt text when an external image (badge, stats card…) fails to load. */
+// GitHub shows only the image whose fragment matches the reader's theme.
+const THEME_FRAGMENT = /#gh-(light|dark)-mode-only$/;
+
+/**
+ * Shows the alt text when an external image (badge, stats card…) fails to load.
+ * The theme variant is kept on either rendering so a failed variant of the other
+ * theme stays hidden too.
+ */
 function PreviewImage({ node, src, alt, ...rest }: PreviewImageProps) {
   void node;
   const [failed, setFailed] = useState(false);
+  const variant = typeof src === 'string' ? THEME_FRAGMENT.exec(src)?.[1] : undefined;
   if (typeof src !== 'string' || failed) {
-    return <span className="italic opacity-70">{alt}</span>;
+    return (
+      <span className="italic opacity-70" data-variant={variant}>
+        {alt}
+      </span>
+    );
   }
   // eslint-disable-next-line @next/next/no-img-element
-  return <img {...rest} src={src} alt={alt ?? ''} onError={() => setFailed(true)} />;
+  return <img {...rest} src={src} alt={alt ?? ''} data-variant={variant} onError={() => setFailed(true)} />;
 }
 
 const COMPONENTS: Components = {
