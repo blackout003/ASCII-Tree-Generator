@@ -74,6 +74,7 @@ describe('applyWizard on an existing README', () => {
       license: 'x'.repeat(META_LIMITS.license),
       repoUrl: 'x'.repeat(META_LIMITS.repoUrl),
       installCommand: 'x'.repeat(META_LIMITS.installCommand),
+      username: 'x'.repeat(META_LIMITS.username),
       language: 'ja' as const,
     };
     const base = {

@@ -48,13 +48,20 @@ describe('parseReadmeState', () => {
   it('accepts a file saved before meta.language and meta.installCommand existed', () => {
     const legacyMeta = { name: '', description: '', author: '', license: '', repoUrl: '' };
     const result = parseReadmeState(fileWith({ meta: legacyMeta }));
-    expect(result.ok && result.state.meta).toEqual({ ...legacyMeta, installCommand: '', language: 'en' });
+    expect(result.ok && result.state.meta).toEqual({ ...legacyMeta, installCommand: '', language: 'en', username: '' });
   });
 
   it('rejects an unknown README language and an install command that is too long', () => {
     const meta = { ...EMPTY_META };
     expect(parseReadmeState(fileWith({ meta: { ...meta, language: 'xx' } })).ok).toBe(false);
     expect(parseReadmeState(fileWith({ meta: { ...meta, installCommand: 'x'.repeat(301) } })).ok).toBe(false);
+  });
+
+  it('keeps the GitHub username and rejects one longer than GitHub allows', () => {
+    const meta = { ...EMPTY_META };
+    const ok = parseReadmeState(fileWith({ meta: { ...meta, username: 'octocat' } }));
+    expect(ok.ok && ok.state.meta.username).toBe('octocat');
+    expect(parseReadmeState(fileWith({ meta: { ...meta, username: 'x'.repeat(40) } })).ok).toBe(false);
   });
 
   it('rejects a wrong version, an unknown mode and a bad accent color', () => {

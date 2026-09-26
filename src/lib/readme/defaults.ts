@@ -8,6 +8,8 @@ export const META_LIMITS = {
   license: 100,
   repoUrl: 2000,
   installCommand: 300,
+  /** GitHub caps usernames at 39 characters. */
+  username: 39,
 } as const;
 
 export const DEFAULT_THEME: ThemeOptions = { accentColor: '0969da' };
@@ -20,4 +22,5 @@ export const EMPTY_META: ReadmeMeta = {
   repoUrl: '',
   installCommand: '',
   language: 'en',
+  username: '',
 };

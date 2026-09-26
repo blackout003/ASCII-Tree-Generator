@@ -40,6 +40,8 @@ export interface ReadmeMeta {
   repoUrl: string;
   installCommand: string;
   language: ReadmeLanguage;
+  /** GitHub username, used by the profile blocks (stats, trophies). */
+  username: string;
 }
 
 export interface ReadmeState {
