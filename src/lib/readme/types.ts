@@ -21,6 +21,8 @@ export type BlockType =
   | 'bio'
   | 'skills'
   | 'contact'
+  | 'stats'
+  | 'trophies'
   | 'freeMarkdown';
 
 export interface Block {
@@ -64,7 +66,14 @@ export interface GenerateContext {
   headings?: string[];
 }
 
-export type WarningCode = 'imageMissingAlt' | 'htmlTagMismatch' | 'layoutTable' | 'tooManyBadges';
+export type WarningCode =
+  | 'imageMissingAlt'
+  | 'htmlTagMismatch'
+  | 'layoutTable'
+  | 'tooManyBadges'
+  | 'missingUsername'
+  | 'missingBaseUrl'
+  | 'invalidBaseUrl';
 
 export interface BlockWarning {
   code: WarningCode;

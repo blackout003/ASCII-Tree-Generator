@@ -4,6 +4,8 @@ import { bannerBlock } from './blocks/banner';
 import { bioBlock } from './blocks/bio';
 import { contactBlock } from './blocks/contact';
 import { skillsBlock } from './blocks/skills';
+import { statsBlock } from './blocks/stats';
+import { trophiesBlock } from './blocks/trophies';
 import { architectureBlock } from './blocks/architecture';
 import { badgesBlock } from './blocks/badges';
 import { contributingBlock } from './blocks/contributing';
@@ -31,6 +33,8 @@ const DEFINITIONS: Record<BlockType, AnyBlockDefinition> = {
   banner: bannerBlock,
   bio: bioBlock,
   skills: skillsBlock,
+  stats: statsBlock,
+  trophies: trophiesBlock,
   contact: contactBlock,
   freeMarkdown: freeMarkdownBlock,
 };
