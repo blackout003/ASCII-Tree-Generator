@@ -5,6 +5,8 @@ import { DEFAULT_TEXTS, getDefaultText, isDefaultText, type TextKey } from '@/li
 const KEYS: TextKey[] = [
   'toc', 'installation', 'prerequisites', 'usage', 'architecture', 'roadmap',
   'contributing', 'license', 'acknowledgements', 'screenshot', 'licenseSentence',
+  'greeting', 'bio', 'bioAnonymous', 'skills', 'stats', 'trophies', 'blog', 'contact',
+  'statsAlt', 'languagesAlt', 'trophiesAlt',
 ];
 
 describe('default README texts', () => {
@@ -34,5 +36,20 @@ describe('default README texts', () => {
     expect(isDefaultText('Getting started')).toBe(false);
     expect(isDefaultText(DEFAULT_TEXTS.en.licenseSentence)).toBe(false);
     expect(isDefaultText('')).toBe(false);
+  });
+  it.each(locales)('%s templates carry their placeholders', (language) => {
+    const texts = DEFAULT_TEXTS[language];
+    expect(texts.greeting).toContain('{name}');
+    expect(texts.bio).toContain('{name}');
+    for (const key of ['statsAlt', 'languagesAlt', 'trophiesAlt'] as const) {
+      expect(texts[key], `${language}:${key}`).toContain('{username}');
+    }
+  });
+
+  it('treats templates as custom text, not as an untouched default heading', () => {
+    expect(isDefaultText('Skills')).toBe(true);
+    expect(isDefaultText('Compétences')).toBe(true);
+    expect(isDefaultText(DEFAULT_TEXTS.en.bio)).toBe(false);
+    expect(isDefaultText(DEFAULT_TEXTS.fr.statsAlt)).toBe(false);
   });
 });

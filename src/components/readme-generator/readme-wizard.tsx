@@ -22,9 +22,9 @@ const SELECT_CLASS =
   'flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm ' +
   'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring';
 
-type MetaField = 'name' | 'description' | 'author' | 'license' | 'repoUrl' | 'installCommand';
+type MetaField = 'name' | 'description' | 'author' | 'license' | 'repoUrl' | 'installCommand' | 'username';
 const PROJECT_FIELDS: MetaField[] = ['name', 'description', 'author', 'license', 'repoUrl', 'installCommand'];
-const PROFILE_FIELDS: MetaField[] = ['name', 'description'];
+const PROFILE_FIELDS: MetaField[] = ['name', 'description', 'username'];
 
 interface ReadmeWizardProps {
   state: ReadmeState;
@@ -132,16 +132,18 @@ export function ReadmeWizard({
                 <span className="block font-medium">{t('wizard.scratch')}</span>
                 <span className="mt-1 block text-sm text-muted-foreground">{t('wizard.scratchDesc')}</span>
               </button>
-              <button
-                type="button"
-                aria-expanded={showPrefill}
-                onClick={() => setShowPrefill((open) => !open)}
-                className="w-full rounded-md border p-4 text-left hover:bg-muted"
-              >
-                <span className="block font-medium">{t('wizard.prefill')}</span>
-                <span className="mt-1 block text-sm text-muted-foreground">{t('wizard.prefillDesc')}</span>
-              </button>
-              {showPrefill && <ExtractionPanel onExtracted={handleExtracted} />}
+              {mode === 'project' && (
+                <button
+                  type="button"
+                  aria-expanded={showPrefill}
+                  onClick={() => setShowPrefill((open) => !open)}
+                  className="w-full rounded-md border p-4 text-left hover:bg-muted"
+                >
+                  <span className="block font-medium">{t('wizard.prefill')}</span>
+                  <span className="mt-1 block text-sm text-muted-foreground">{t('wizard.prefillDesc')}</span>
+                </button>
+              )}
+              {mode === 'project' && showPrefill && <ExtractionPanel onExtracted={handleExtracted} />}
             </div>
           )}
 
@@ -152,7 +154,7 @@ export function ReadmeWizard({
                 <div key={field} className="space-y-1">
                   <Label htmlFor={`wizard-${field}`}>
                     {t(`meta.${field}`)}
-                    {filled.includes(field) && (
+                    {filled.some((key) => key === field) && (
                       <span className="ml-2 text-xs font-normal text-muted-foreground">({t('meta.autoFilled')})</span>
                     )}
                   </Label>
@@ -160,7 +162,15 @@ export function ReadmeWizard({
                     id={`wizard-${field}`}
                     value={state.meta[field]}
                     maxLength={META_LIMITS[field]}
-                    placeholder={field === 'name' ? t('placeholders.title') : field === 'repoUrl' ? t('placeholders.repoUrl') : undefined}
+                    placeholder={
+                      field === 'name'
+                        ? t('placeholders.title')
+                        : field === 'repoUrl'
+                          ? t('placeholders.repoUrl')
+                          : field === 'username'
+                            ? t('placeholders.username')
+                            : undefined
+                    }
                     onChange={(e) => onMetaChange({ [field]: e.target.value })}
                   />
                 </div>

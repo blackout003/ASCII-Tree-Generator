@@ -10,6 +10,22 @@ import { Plus, Trash2 } from '@/components/icons';
 import { ALERT_KINDS, ALERT_TEXT_MAX, type AlertData } from '@/lib/readme/blocks/alert';
 import { ARCHITECTURE_LIMITS, type ArchitectureData } from '@/lib/readme/blocks/architecture';
 import { BADGE_LIMITS, type BadgeItem, type BadgesData } from '@/lib/readme/blocks/badges';
+import {
+  BANNER_FONTS,
+  BANNER_LIMITS,
+  BANNER_SIZES,
+  BANNER_WIDTHS,
+  type BannerData,
+} from '@/lib/readme/blocks/banner';
+import { BIO_LIMITS, type BioData } from '@/lib/readme/blocks/bio';
+import { BLOG_LIMITS, BLOG_MAX_POSTS, type BlogData } from '@/lib/readme/blocks/blog';
+import {
+  CONTACT_LIMITS,
+  CONTACT_NETWORKS,
+  CONTACT_NETWORK_KEYS,
+  type ContactData,
+  type ContactItem,
+} from '@/lib/readme/blocks/contact';
 import { CONTRIBUTING_LIMITS, type ContributingData } from '@/lib/readme/blocks/contributing';
 import { FREE_MARKDOWN_MAX_LENGTH, type FreeMarkdownData } from '@/lib/readme/blocks/free-markdown';
 import { HEADER_LIMITS, type HeaderData } from '@/lib/readme/blocks/header';
@@ -20,10 +36,14 @@ import {
   type InstallationData,
 } from '@/lib/readme/blocks/installation';
 import { LICENSE_LIMITS, type LicenseData } from '@/lib/readme/blocks/license';
+import { SKILL_PER_LINE, SKILLS_LIMITS, type SkillsData } from '@/lib/readme/blocks/skills';
+import { STATS_LAYOUTS, STATS_LIMITS, type StatsData } from '@/lib/readme/blocks/stats';
 import { TOC_HEADING_MAX, type TocData } from '@/lib/readme/blocks/table-of-contents';
+import { TROPHIES_LIMITS, TROPHY_COLUMNS, TROPHY_ROWS, type TrophiesData } from '@/lib/readme/blocks/trophies';
 import { USAGE_LIMITS, type UsageData } from '@/lib/readme/blocks/usage';
 import { VISUAL_PROOF_LIMITS, type VisualProofData } from '@/lib/readme/blocks/visual-proof';
 import type { Block } from '@/lib/readme/types';
+import { SKILL_GROUPS } from '@/lib/readme/skill-catalog';
 import { cn } from '@/lib/utils';
 
 const SELECT_CLASS =
@@ -127,6 +147,39 @@ function SelectField<T extends string>({
         ))}
       </select>
     </Field>
+  );
+}
+
+function NumberSelectField({
+  id,
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  id: string;
+  label: string;
+  value: number;
+  options: readonly number[];
+  onChange: (value: number) => void;
+}) {
+  return (
+    <SelectField
+      id={id}
+      label={label}
+      value={String(value)}
+      options={options.map((option) => ({ value: String(option), label: String(option) }))}
+      onChange={(next) => onChange(Number(next))}
+    />
+  );
+}
+
+function CheckField({ id, label, checked, onChange }: { id: string; label: string; checked: boolean; onChange: (checked: boolean) => void }) {
+  return (
+    <label htmlFor={id} className="flex cursor-pointer items-center gap-2 text-sm">
+      <input id={id} type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} />
+      {label}
+    </label>
   );
 }
 
@@ -322,6 +375,165 @@ function FreeMarkdownForm({ idPrefix, data, onChange }: FormProps<FreeMarkdownDa
   );
 }
 
+function BannerForm({ idPrefix, data, onChange }: FormProps<BannerData>) {
+  const t = useTranslations('readmeGenerator');
+  const set = (patch: Partial<BannerData>) => onChange({ ...data, ...patch });
+  const fonts = BANNER_FONTS.map((font) => ({ value: font, label: font }));
+  const aligns = [
+    { value: 'left' as const, label: t('options.left') },
+    { value: 'center' as const, label: t('options.center') },
+  ];
+  return (
+    <div className="space-y-3">
+      <AreaField id={`${idPrefix}-lines`} label={t('fields.lines')} hint={t('hints.lines')} value={data.lines} max={BANNER_LIMITS.lines} rows={3} onChange={(lines) => set({ lines })} />
+      <div className="grid gap-3 sm:grid-cols-2">
+        <SelectField id={`${idPrefix}-font`} label={t('fields.font')} value={data.font} options={fonts} onChange={(font) => set({ font })} />
+        <NumberSelectField id={`${idPrefix}-size`} label={t('fields.size')} value={data.size} options={BANNER_SIZES} onChange={(size) => set({ size })} />
+        <NumberSelectField id={`${idPrefix}-width`} label={t('fields.width')} value={data.width} options={BANNER_WIDTHS} onChange={(width) => set({ width })} />
+        <SelectField id={`${idPrefix}-align`} label={t('fields.align')} value={data.align} options={aligns} onChange={(align) => set({ align })} />
+      </div>
+      <ColorField id={`${idPrefix}-color`} label={t('fields.color')} hint={t('hints.badgeColor')} value={data.color} onChange={(color) => set({ color })} />
+    </div>
+  );
+}
+
+function BioForm({ idPrefix, data, onChange }: FormProps<BioData>) {
+  const t = useTranslations('readmeGenerator');
+  const set = (patch: Partial<BioData>) => onChange({ ...data, ...patch });
+  return (
+    <div className="space-y-3">
+      <TextField id={`${idPrefix}-heading`} label={t('fields.heading')} value={data.heading} max={BIO_LIMITS.heading} onChange={(heading) => set({ heading })} />
+      <AreaField id={`${idPrefix}-intro`} label={t('fields.intro')} value={data.intro} max={BIO_LIMITS.intro} rows={3} onChange={(intro) => set({ intro })} />
+      <AreaField id={`${idPrefix}-points`} label={t('fields.points')} hint={t('hints.points')} value={data.points} max={BIO_LIMITS.points} rows={4} onChange={(points) => set({ points })} />
+    </div>
+  );
+}
+
+function SkillsForm({ idPrefix, data, onChange }: FormProps<SkillsData>) {
+  const t = useTranslations('readmeGenerator');
+  const set = (patch: Partial<SkillsData>) => onChange({ ...data, ...patch });
+  const themes = [
+    { value: 'auto' as const, label: t('options.auto') },
+    { value: 'light' as const, label: t('options.light') },
+    { value: 'dark' as const, label: t('options.dark') },
+  ];
+  const full = data.icons.length >= SKILLS_LIMITS.maxIcons;
+  const toggle = (id: string) =>
+    set({ icons: data.icons.includes(id) ? data.icons.filter((icon) => icon !== id) : [...data.icons, id] });
+  return (
+    <div className="space-y-4">
+      <TextField id={`${idPrefix}-heading`} label={t('fields.heading')} value={data.heading} max={SKILLS_LIMITS.heading} onChange={(heading) => set({ heading })} />
+      <div className="grid gap-3 sm:grid-cols-2">
+        <SelectField id={`${idPrefix}-theme`} label={t('fields.iconTheme')} value={data.theme} options={themes} onChange={(theme) => set({ theme })} />
+        <NumberSelectField id={`${idPrefix}-perLine`} label={t('fields.perLine')} value={data.perLine} options={SKILL_PER_LINE} onChange={(perLine) => set({ perLine })} />
+      </div>
+      <p className="text-sm font-medium">{t('fields.skills')}</p>
+      {SKILL_GROUPS.map((group) => (
+        <fieldset key={group.key} className="space-y-2">
+          <legend className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{t(`skillGroups.${group.key}`)}</legend>
+          <div className="grid grid-cols-2 gap-x-3 gap-y-1 sm:grid-cols-3">
+            {group.skills.map((skill) => {
+              const checked = data.icons.includes(skill.id);
+              return (
+                <label key={skill.id} className={cn('flex items-center gap-2 text-sm', !checked && full ? 'opacity-50' : 'cursor-pointer')}>
+                  <input type="checkbox" checked={checked} disabled={!checked && full} onChange={() => toggle(skill.id)} />
+                  {skill.label}
+                </label>
+              );
+            })}
+          </div>
+        </fieldset>
+      ))}
+    </div>
+  );
+}
+
+function StatsForm({ idPrefix, data, onChange }: FormProps<StatsData>) {
+  const t = useTranslations('readmeGenerator');
+  const set = (patch: Partial<StatsData>) => onChange({ ...data, ...patch });
+  const layouts = STATS_LAYOUTS.map((layout) => ({ value: layout, label: layout }));
+  return (
+    <div className="space-y-3">
+      <TextField id={`${idPrefix}-heading`} label={t('fields.heading')} value={data.heading} max={STATS_LIMITS.heading} onChange={(heading) => set({ heading })} />
+      <TextField id={`${idPrefix}-username`} label={t('fields.username')} value={data.username} max={STATS_LIMITS.username} placeholder={t('placeholders.username')} onChange={(username) => set({ username })} />
+      <TextField id={`${idPrefix}-baseUrl`} label={t('fields.baseUrl')} hint={t('hints.baseUrl')} value={data.baseUrl} max={STATS_LIMITS.baseUrl} placeholder={t('placeholders.baseUrl')} onChange={(baseUrl) => set({ baseUrl })} />
+      <CheckField id={`${idPrefix}-showStats`} label={t('fields.showStats')} checked={data.showStats} onChange={(showStats) => set({ showStats })} />
+      <CheckField id={`${idPrefix}-showLanguages`} label={t('fields.showLanguages')} checked={data.showLanguages} onChange={(showLanguages) => set({ showLanguages })} />
+      <SelectField id={`${idPrefix}-layout`} label={t('fields.layout')} value={data.layout} options={layouts} onChange={(layout) => set({ layout })} />
+      <CheckField id={`${idPrefix}-hideBorder`} label={t('fields.hideBorder')} checked={data.hideBorder} onChange={(hideBorder) => set({ hideBorder })} />
+    </div>
+  );
+}
+
+function TrophiesForm({ idPrefix, data, onChange }: FormProps<TrophiesData>) {
+  const t = useTranslations('readmeGenerator');
+  const set = (patch: Partial<TrophiesData>) => onChange({ ...data, ...patch });
+  return (
+    <div className="space-y-3">
+      <TextField id={`${idPrefix}-heading`} label={t('fields.heading')} value={data.heading} max={TROPHIES_LIMITS.heading} onChange={(heading) => set({ heading })} />
+      <TextField id={`${idPrefix}-username`} label={t('fields.username')} value={data.username} max={TROPHIES_LIMITS.username} placeholder={t('placeholders.username')} onChange={(username) => set({ username })} />
+      <TextField id={`${idPrefix}-baseUrl`} label={t('fields.baseUrl')} hint={t('hints.baseUrl')} value={data.baseUrl} max={TROPHIES_LIMITS.baseUrl} placeholder={t('placeholders.baseUrl')} onChange={(baseUrl) => set({ baseUrl })} />
+      <div className="grid gap-3 sm:grid-cols-2">
+        <NumberSelectField id={`${idPrefix}-columns`} label={t('fields.columns')} value={data.columns} options={TROPHY_COLUMNS} onChange={(columns) => set({ columns })} />
+        <NumberSelectField id={`${idPrefix}-rows`} label={t('fields.rows')} value={data.rows} options={TROPHY_ROWS} onChange={(rows) => set({ rows })} />
+      </div>
+    </div>
+  );
+}
+
+function BlogForm({ idPrefix, data, onChange }: FormProps<BlogData>) {
+  const t = useTranslations('readmeGenerator');
+  const set = (patch: Partial<BlogData>) => onChange({ ...data, ...patch });
+  const schedules = [
+    { value: 'daily' as const, label: t('options.daily') },
+    { value: 'weekly' as const, label: t('options.weekly') },
+  ];
+  return (
+    <div className="space-y-3">
+      <TextField id={`${idPrefix}-heading`} label={t('fields.heading')} value={data.heading} max={BLOG_LIMITS.heading} onChange={(heading) => set({ heading })} />
+      <TextField id={`${idPrefix}-feedUrl`} label={t('fields.feedUrl')} hint={t('hints.feedUrl')} value={data.feedUrl} max={BLOG_LIMITS.feedUrl} placeholder={t('placeholders.feedUrl')} onChange={(feedUrl) => set({ feedUrl })} />
+      <div className="grid gap-3 sm:grid-cols-2">
+        <NumberSelectField id={`${idPrefix}-maxPosts`} label={t('fields.maxPosts')} value={data.maxPosts} options={BLOG_MAX_POSTS} onChange={(maxPosts) => set({ maxPosts })} />
+        <SelectField id={`${idPrefix}-schedule`} label={t('fields.schedule')} value={data.schedule} options={schedules} onChange={(schedule) => set({ schedule })} />
+      </div>
+    </div>
+  );
+}
+
+function ContactForm({ idPrefix, data, onChange }: FormProps<ContactData>) {
+  const t = useTranslations('readmeGenerator');
+  const networks = CONTACT_NETWORK_KEYS.map((key) => ({ value: key, label: CONTACT_NETWORKS[key].label }));
+  const setItem = (index: number, patch: Partial<ContactItem>) =>
+    onChange({ ...data, items: data.items.map((item, i) => (i === index ? { ...item, ...patch } : item)) });
+  return (
+    <div className="space-y-4">
+      <TextField id={`${idPrefix}-heading`} label={t('fields.heading')} value={data.heading} max={CONTACT_LIMITS.heading} onChange={(heading) => onChange({ ...data, heading })} />
+      {data.items.map((item, index) => (
+        <div key={index} className="space-y-3 rounded-md border p-3">
+          <div className="grid gap-3 sm:grid-cols-2">
+            <SelectField id={`${idPrefix}-${index}-network`} label={t('fields.network')} value={item.network} options={networks} onChange={(network) => setItem(index, { network })} />
+            <TextField id={`${idPrefix}-${index}-value`} label={t('fields.value')} hint={index === 0 ? t('hints.contactValue') : undefined} value={item.value} max={CONTACT_LIMITS.value} onChange={(value) => setItem(index, { value })} />
+          </div>
+          <Button type="button" size="sm" variant="ghost" onClick={() => onChange({ ...data, items: data.items.filter((_, i) => i !== index) })}>
+            <Trash2 className="w-4 h-4 mr-1" />
+            {t('fields.removeContact')}
+          </Button>
+        </div>
+      ))}
+      <Button
+        type="button"
+        size="sm"
+        variant="outline"
+        disabled={data.items.length >= CONTACT_LIMITS.maxItems}
+        onClick={() => onChange({ ...data, items: [...data.items, { network: 'linkedin', value: '' }] })}
+      >
+        <Plus className="w-4 h-4 mr-1" />
+        {t('fields.addContact')}
+      </Button>
+    </div>
+  );
+}
+
 interface BlockFormProps {
   block: Block;
   onChange: (data: unknown) => void;
@@ -351,6 +563,20 @@ export function BlockForm({ block, onChange }: BlockFormProps) {
       return <LicenseForm {...common} data={block.data as LicenseData} />;
     case 'alert':
       return <AlertForm {...common} data={block.data as AlertData} />;
+    case 'banner':
+      return <BannerForm {...common} data={block.data as BannerData} />;
+    case 'bio':
+      return <BioForm {...common} data={block.data as BioData} />;
+    case 'skills':
+      return <SkillsForm {...common} data={block.data as SkillsData} />;
+    case 'stats':
+      return <StatsForm {...common} data={block.data as StatsData} />;
+    case 'trophies':
+      return <TrophiesForm {...common} data={block.data as TrophiesData} />;
+    case 'blog':
+      return <BlogForm {...common} data={block.data as BlogData} />;
+    case 'contact':
+      return <ContactForm {...common} data={block.data as ContactData} />;
     case 'freeMarkdown':
       return <FreeMarkdownForm {...common} data={block.data as FreeMarkdownData} />;
     default:

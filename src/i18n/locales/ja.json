@@ -704,7 +704,14 @@
       "architecture": "アーキテクチャとロードマップ",
       "contributing": "コントリビューション",
       "license": "ライセンスと謝辞",
-      "alert": "アラート"
+      "alert": "アラート",
+      "banner": "アニメーションバナー",
+      "bio": "自己紹介",
+      "skills": "スキル",
+      "stats": "GitHubの統計",
+      "trophies": "トロフィー",
+      "blog": "ブログ記事",
+      "contact": "連絡先"
     },
     "fields": {
       "title": "タイトル",
@@ -739,7 +746,33 @@
       "removeBadge": "バッジを削除",
       "architecture": "アーキテクチャの説明",
       "roadmap": "ロードマップ",
-      "roadmapHeading": "ロードマップの見出し"
+      "roadmapHeading": "ロードマップの見出し",
+      "lines": "テキスト行",
+      "font": "フォント",
+      "size": "文字サイズ",
+      "width": "幅",
+      "align": "配置",
+      "color": "色",
+      "intro": "導入文",
+      "points": "ポイント",
+      "iconTheme": "アイコンの背景",
+      "perLine": "1行あたりのアイコン数",
+      "skills": "表示するスキル",
+      "username": "GitHubのユーザー名",
+      "baseUrl": "インスタンスのベースURL",
+      "showStats": "統計カード",
+      "showLanguages": "言語カード",
+      "layout": "言語カードのレイアウト",
+      "hideBorder": "枠線を隠す",
+      "columns": "列",
+      "rows": "行",
+      "feedUrl": "RSS/AtomフィードのURL",
+      "maxPosts": "記事数",
+      "schedule": "更新頻度",
+      "network": "ネットワーク",
+      "value": "アドレス",
+      "addContact": "連絡先を追加",
+      "removeContact": "この連絡先を削除"
     },
     "placeholders": {
       "title": "私のすてきなプロジェクト",
@@ -748,7 +781,10 @@
       "logoAlt": "私のすてきなプロジェクトのロゴ",
       "content": "## セクション\n\nここにMarkdownを書きます…",
       "repoUrl": "https://github.com/owner/repo",
-      "packageName": "my-package"
+      "packageName": "my-package",
+      "baseUrl": "https://my-instance.vercel.app",
+      "feedUrl": "https://example.com/feed.xml",
+      "username": "octocat"
     },
     "preview": {
       "title": "プレビュー",
@@ -762,7 +798,11 @@
       "imageMissingAlt": "代替テキスト（alt）のない画像：{count}件。",
       "htmlTagMismatch": "対応していないHTMLタグ：{tags}。",
       "layoutTable": "レイアウトのために表が使われています。表はデータ用にしましょう。",
-      "tooManyBadges": "バッジが多すぎます（{count}個）。役立つ5個までに絞りましょう。"
+      "tooManyBadges": "バッジが多すぎます（{count}個）。役立つ5個までに絞りましょう。",
+      "missingUsername": "GitHubのユーザー名が未入力か無効なため、何も生成されません。",
+      "missingBaseUrl": "{service}のベースURLが未入力のため、何も生成されません。公開サービスはよく停止するので、ご自身のインスタンスをデプロイしてください。",
+      "invalidBaseUrl": "ベースURLが無効です。パラメーターなしのhttpsアドレス（例：https://my-instance.vercel.app）を使ってください。",
+      "invalidFeed": "フィードのアドレスが未入力か無効なため、ワークフローを生成できません。"
     },
     "messages": {
       "copySuccess": "READMEをクリップボードにコピーしました。",
@@ -782,7 +822,12 @@
       "commands": "1行に1つのコマンド。パッケージマネージャーのコマンドの後に追加されます。",
       "credits": "1行に1つ入力します。",
       "roadmap": "1行に1ステップ。チェックボックスとして表示されます。",
-      "badgeColor": "#なしの16進コード。空欄の場合はスタイルのアクセント色。"
+      "badgeColor": "#なしの16進コード。空欄の場合はスタイルのアクセント色。",
+      "lines": "1行に1つ、最大5行。順番にタイプされます。",
+      "points": "1行に1項目、箇条書きで表示されます。絵文字も使えます。",
+      "baseUrl": "この公開サービスはよく利用できなくなります。ご自身のインスタンス（例：プロジェクトのドキュメントに従ってVercelに）をデプロイし、そのアドレスをここに貼り付けてください。空欄の間は何も生成されません。",
+      "feedUrl": "ブログのフィードの公開アドレス（https）。ワークフローに書き込まれます。",
+      "contactValue": "完全なアドレス（https://…）。メールの場合はメールアドレス。"
     },
     "wizard": {
       "title": "作成ウィザード",
@@ -816,7 +861,8 @@
       "repoUrl": "リポジトリのURL",
       "installCommand": "インストールコマンド",
       "language": "READMEの言語",
-      "autoFilled": "自動入力"
+      "autoFilled": "自動入力",
+      "username": "GitHubのユーザー名"
     },
     "extraction": {
       "file": "マニフェストファイル（package.json、Cargo.toml、pyproject.toml）",
@@ -833,6 +879,33 @@
       "notFound": "リポジトリが見つからないか、非公開です。手入力もできます。",
       "network": "接続できませんでした。ネットワークを確認するか、手入力してください。",
       "invalidResponse": "GitHubから予期しない応答がありました。手入力もできます。"
+    },
+    "options": {
+      "auto": "自動（ライト・ダーク）",
+      "light": "ライト",
+      "dark": "ダーク",
+      "left": "左",
+      "center": "中央",
+      "daily": "毎日",
+      "weekly": "毎週"
+    },
+    "skillGroups": {
+      "languages": "言語",
+      "frontend": "フロントエンド",
+      "backend": "バックエンド",
+      "data": "データ",
+      "cloud": "クラウドとシステム",
+      "tools": "ツールその他"
+    },
+    "workflow": {
+      "title": "記事の自動更新",
+      "intro": "このREADMEには記事用の領域があります。自動で埋めるには、このワークフローをプロフィール用リポジトリ（GitHubアカウントと同名のリポジトリ）に追加してください。",
+      "step1": "そのリポジトリに .github/workflows/blog-post-workflow.yml を作成し、ダウンロードしたファイルの内容を貼り付けます。",
+      "step2": "Settings > Actions > General で「Workflow permissions」を「Read and write permissions」に設定して保存します。ワークフローがREADMEに書き込めるようにするためです。",
+      "step3": "Actions タブでこのワークフローを選び、「Run workflow」をクリックして初回実行します。以降は自動で実行されます。",
+      "note": "GitHubはリポジトリに60日間アクティビティがないと定期実行のワークフローを無効にします。記事が更新されなくなったら手動で実行してください。",
+      "download": "ワークフローをダウンロード",
+      "noFeed": "ワークフローを生成するには、有効なフィードのアドレスを入力してください。"
     }
   }
 }

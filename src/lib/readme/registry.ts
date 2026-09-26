@@ -1,5 +1,12 @@
 import type { AnyBlockDefinition } from './block-definition';
 import { alertBlock } from './blocks/alert';
+import { bannerBlock } from './blocks/banner';
+import { bioBlock } from './blocks/bio';
+import { blogBlock } from './blocks/blog';
+import { contactBlock } from './blocks/contact';
+import { skillsBlock } from './blocks/skills';
+import { statsBlock } from './blocks/stats';
+import { trophiesBlock } from './blocks/trophies';
 import { architectureBlock } from './blocks/architecture';
 import { badgesBlock } from './blocks/badges';
 import { contributingBlock } from './blocks/contributing';
@@ -24,6 +31,13 @@ const DEFINITIONS: Record<BlockType, AnyBlockDefinition> = {
   contributing: contributingBlock,
   license: licenseBlock,
   alert: alertBlock,
+  banner: bannerBlock,
+  bio: bioBlock,
+  skills: skillsBlock,
+  stats: statsBlock,
+  trophies: trophiesBlock,
+  blog: blogBlock,
+  contact: contactBlock,
   freeMarkdown: freeMarkdownBlock,
 };
 

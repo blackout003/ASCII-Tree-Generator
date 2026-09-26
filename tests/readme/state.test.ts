@@ -152,8 +152,8 @@ describe('getRecommendedTypes', () => {
     expect(getRecommendedTypes('project')).toEqual(['header', 'badges', 'visualProof', 'installation', 'usage', 'license']);
   });
 
-  it('is empty for the profile catalog, which has no recommended block yet', () => {
-    expect(getRecommendedTypes('profile')).toEqual([]);
+  it('lists the recommended blocks of the profile catalog, in catalog order', () => {
+    expect(getRecommendedTypes('profile')).toEqual(['banner', 'bio', 'skills', 'stats', 'contact']);
   });
 });
 

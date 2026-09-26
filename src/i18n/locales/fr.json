@@ -704,7 +704,14 @@
       "architecture": "Architecture et feuille de route",
       "contributing": "Contribution",
       "license": "Licence et remerciements",
-      "alert": "Alerte"
+      "alert": "Alerte",
+      "banner": "Bannière animée",
+      "bio": "Présentation",
+      "skills": "Compétences",
+      "stats": "Statistiques GitHub",
+      "trophies": "Trophées",
+      "blog": "Articles de blog",
+      "contact": "Contact"
     },
     "fields": {
       "title": "Titre",
@@ -739,7 +746,33 @@
       "removeBadge": "Retirer le badge",
       "architecture": "Description de l'architecture",
       "roadmap": "Feuille de route",
-      "roadmapHeading": "Titre de la feuille de route"
+      "roadmapHeading": "Titre de la feuille de route",
+      "lines": "Lignes de texte",
+      "font": "Police",
+      "size": "Taille du texte",
+      "width": "Largeur",
+      "align": "Alignement",
+      "color": "Couleur",
+      "intro": "Introduction",
+      "points": "Points clés",
+      "iconTheme": "Fond des icônes",
+      "perLine": "Icônes par ligne",
+      "skills": "Compétences à afficher",
+      "username": "Nom d'utilisateur GitHub",
+      "baseUrl": "URL de base de votre instance",
+      "showStats": "Carte de statistiques",
+      "showLanguages": "Carte des langages",
+      "layout": "Disposition des langages",
+      "hideBorder": "Masquer la bordure",
+      "columns": "Colonnes",
+      "rows": "Lignes",
+      "feedUrl": "Adresse du flux RSS ou Atom",
+      "maxPosts": "Nombre d'articles",
+      "schedule": "Fréquence de mise à jour",
+      "network": "Réseau",
+      "value": "Adresse",
+      "addContact": "Ajouter un contact",
+      "removeContact": "Retirer ce contact"
     },
     "placeholders": {
       "title": "Mon super projet",
@@ -748,7 +781,10 @@
       "logoAlt": "Logo de Mon super projet",
       "content": "## Une section\n\nÉcrivez votre Markdown ici…",
       "repoUrl": "https://github.com/utilisateur/depot",
-      "packageName": "mon-paquet"
+      "packageName": "mon-paquet",
+      "baseUrl": "https://mon-instance.vercel.app",
+      "feedUrl": "https://exemple.com/feed.xml",
+      "username": "octocat"
     },
     "preview": {
       "title": "Aperçu",
@@ -762,7 +798,11 @@
       "imageMissingAlt": "Images sans texte alternatif (alt) : {count}.",
       "htmlTagMismatch": "Balises HTML non appariées : {tags}.",
       "layoutTable": "Tableau utilisé pour la mise en page : réservez les tableaux aux données.",
-      "tooManyBadges": "Trop de badges ({count}) : gardez les 5 plus utiles."
+      "tooManyBadges": "Trop de badges ({count}) : gardez les 5 plus utiles.",
+      "missingUsername": "Nom d'utilisateur GitHub manquant ou invalide : rien n'est généré.",
+      "missingBaseUrl": "URL de base manquante pour {service} : rien n'est généré. Le service public est souvent indisponible, déployez votre propre instance.",
+      "invalidBaseUrl": "URL de base invalide : utilisez une adresse https sans paramètres, par exemple https://mon-instance.vercel.app.",
+      "invalidFeed": "Adresse de flux manquante ou invalide : le workflow ne peut pas être généré."
     },
     "messages": {
       "copySuccess": "README copié dans le presse-papiers.",
@@ -782,7 +822,12 @@
       "commands": "Une commande par ligne, ajoutée après la commande du gestionnaire.",
       "credits": "Un remerciement par ligne.",
       "roadmap": "Une étape par ligne, affichée comme case à cocher.",
-      "badgeColor": "Code hexadécimal sans #. Vide : couleur d'accent du style."
+      "badgeColor": "Code hexadécimal sans #. Vide : couleur d'accent du style.",
+      "lines": "Une ligne de texte par ligne, cinq au maximum. Elles défilent l'une après l'autre.",
+      "points": "Un point par ligne, affiché comme une liste à puces. Vous pouvez y mettre des emojis.",
+      "baseUrl": "Ce service public est régulièrement indisponible. Déployez votre propre instance (par exemple sur Vercel, en suivant la documentation du projet) et collez son adresse ici. Tant que ce champ est vide, rien n'est généré.",
+      "feedUrl": "L'adresse publique du flux de votre blog, en https. Elle est écrite dans le workflow.",
+      "contactValue": "L'adresse complète (https://…) ou, pour l'e-mail, l'adresse électronique."
     },
     "wizard": {
       "title": "Assistant de création",
@@ -816,7 +861,8 @@
       "repoUrl": "URL du dépôt",
       "installCommand": "Commande d'installation",
       "language": "Langue du README",
-      "autoFilled": "Rempli automatiquement"
+      "autoFilled": "Rempli automatiquement",
+      "username": "Nom d'utilisateur GitHub"
     },
     "extraction": {
       "file": "Fichier manifest (package.json, Cargo.toml, pyproject.toml)",
@@ -833,6 +879,33 @@
       "notFound": "Dépôt introuvable ou privé. Vous pouvez saisir les informations à la main.",
       "network": "Connexion impossible. Vérifiez votre réseau ou saisissez les informations à la main.",
       "invalidResponse": "Réponse inattendue de GitHub. Vous pouvez saisir les informations à la main."
+    },
+    "options": {
+      "auto": "Automatique (clair et sombre)",
+      "light": "Clair",
+      "dark": "Sombre",
+      "left": "À gauche",
+      "center": "Centré",
+      "daily": "Chaque jour",
+      "weekly": "Chaque semaine"
+    },
+    "skillGroups": {
+      "languages": "Langages",
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "data": "Données",
+      "cloud": "Cloud et systèmes",
+      "tools": "Outils et autres"
+    },
+    "workflow": {
+      "title": "Mise à jour automatique des articles",
+      "intro": "Ce README contient une zone réservée aux articles. Pour qu'elle se remplisse toute seule, ajoutez ce workflow au dépôt de votre profil (celui qui porte le même nom que votre compte GitHub).",
+      "step1": "Créez le fichier .github/workflows/blog-post-workflow.yml dans ce dépôt et collez-y le contenu du fichier téléchargé.",
+      "step2": "Dans Settings > Actions > General, réglez « Workflow permissions » sur « Read and write permissions » puis enregistrez : le workflow doit pouvoir écrire dans le README.",
+      "step3": "Ouvrez l'onglet Actions, choisissez ce workflow et cliquez sur « Run workflow » pour le lancer une première fois. Ensuite il s'exécute tout seul.",
+      "note": "GitHub désactive les workflows planifiés après 60 jours sans activité dans le dépôt : relancez-le à la main si les articles ne se mettent plus à jour.",
+      "download": "Télécharger le workflow",
+      "noFeed": "Renseignez une adresse de flux valide pour pouvoir générer le workflow."
     }
   }
 }

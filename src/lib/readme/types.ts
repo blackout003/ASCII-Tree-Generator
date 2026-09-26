@@ -17,6 +17,13 @@ export type BlockType =
   | 'contributing'
   | 'license'
   | 'alert'
+  | 'banner'
+  | 'bio'
+  | 'skills'
+  | 'contact'
+  | 'stats'
+  | 'trophies'
+  | 'blog'
   | 'freeMarkdown';
 
 export interface Block {
@@ -40,6 +47,8 @@ export interface ReadmeMeta {
   repoUrl: string;
   installCommand: string;
   language: ReadmeLanguage;
+  /** GitHub username, used by the profile blocks (stats, trophies). */
+  username: string;
 }
 
 export interface ReadmeState {
@@ -58,7 +67,15 @@ export interface GenerateContext {
   headings?: string[];
 }
 
-export type WarningCode = 'imageMissingAlt' | 'htmlTagMismatch' | 'layoutTable' | 'tooManyBadges';
+export type WarningCode =
+  | 'imageMissingAlt'
+  | 'htmlTagMismatch'
+  | 'layoutTable'
+  | 'tooManyBadges'
+  | 'missingUsername'
+  | 'missingBaseUrl'
+  | 'invalidBaseUrl'
+  | 'invalidFeed';
 
 export interface BlockWarning {
   code: WarningCode;

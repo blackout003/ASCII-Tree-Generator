@@ -32,6 +32,7 @@ import {
 } from '@/lib/readme/state';
 import type { BlockType, ReadmeMode, ReadmeState } from '@/lib/readme/types';
 import { validateReadme } from '@/lib/readme/validate';
+import { WORKFLOW_FILE_NAME, generateWorkflow } from '@/lib/readme/workflow';
 import { cn } from '@/lib/utils';
 import { BlockForm } from './block-forms';
 import { BlockList } from './block-list';
@@ -39,6 +40,7 @@ import { ReadmePreview } from './readme-preview';
 import { ReadmeToolbar } from './readme-toolbar';
 import { ReadmeWizard } from './readme-wizard';
 import { WarningsPanel } from './warnings-panel';
+import { WorkflowPanel } from './workflow-panel';
 
 const MAX_IMPORT_BYTES = 1_000_000;
 
@@ -91,6 +93,7 @@ export function ReadmeGenerator() {
 
   const markdown = useMemo(() => (state ? generateReadme(state) : ''), [state]);
   const warnings = useMemo(() => (state ? validateReadme(state) : []), [state]);
+  const workflow = useMemo(() => (state ? generateWorkflow(state) : null), [state]);
 
   const update = useCallback((change: (current: ReadmeState) => ReadmeState) => {
     setState((current) => (current ? change(current) : current));
@@ -156,6 +159,16 @@ export function ReadmeGenerator() {
     try {
       downloadFile(markdown, 'README.md', 'text/markdown');
       trackEvent('Download', { tool: 'readme-generator', mode: state.mode });
+    } catch {
+      toast({ description: t('messages.downloadError'), variant: 'destructive' });
+    }
+  };
+
+  const handleDownloadWorkflow = () => {
+    if (!workflow) return;
+    try {
+      downloadFile(workflow, WORKFLOW_FILE_NAME, 'text/yaml');
+      trackEvent('Download', { tool: 'readme-generator', mode: state.mode, file: 'workflow' });
     } catch {
       toast({ description: t('messages.downloadError'), variant: 'destructive' });
     }
@@ -283,6 +296,9 @@ export function ReadmeGenerator() {
             </Card>
           )}
           <WarningsPanel warnings={warnings} blockLabels={blockLabels} />
+          {state.blocks.some((block) => block.enabled && block.type === 'blog') && (
+            <WorkflowPanel workflow={workflow} onDownload={handleDownloadWorkflow} />
+          )}
         </div>
         <div className={cn(tab === 'edit' && 'hidden lg:block')}>
           <ReadmePreview markdown={markdown} />

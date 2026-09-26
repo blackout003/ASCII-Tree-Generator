@@ -20,6 +20,7 @@ const envelopeSchema = z.object({
     repoUrl: z.string().max(META_LIMITS.repoUrl),
     installCommand: z.string().max(META_LIMITS.installCommand).default(''),
     language: z.enum(locales).default('en'),
+    username: z.string().max(META_LIMITS.username).default(''),
   }),
   blocks: z
     .array(

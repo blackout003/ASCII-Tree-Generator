@@ -10,6 +10,7 @@ const maximalMeta: ReadmeMeta = {
   license: 'x'.repeat(META_LIMITS.license),
   repoUrl: 'x'.repeat(META_LIMITS.repoUrl),
   installCommand: 'x'.repeat(META_LIMITS.installCommand),
+  username: 'x'.repeat(META_LIMITS.username),
   language: 'fr',
 };
 
