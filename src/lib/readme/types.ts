@@ -23,6 +23,7 @@ export type BlockType =
   | 'contact'
   | 'stats'
   | 'trophies'
+  | 'blog'
   | 'freeMarkdown';
 
 export interface Block {
@@ -73,7 +74,8 @@ export type WarningCode =
   | 'tooManyBadges'
   | 'missingUsername'
   | 'missingBaseUrl'
-  | 'invalidBaseUrl';
+  | 'invalidBaseUrl'
+  | 'invalidFeed';
 
 export interface BlockWarning {
   code: WarningCode;
