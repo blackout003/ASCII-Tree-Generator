@@ -704,7 +704,14 @@
       "architecture": "Arquitetura e roteiro",
       "contributing": "Contribuição",
       "license": "Licença e agradecimentos",
-      "alert": "Alerta"
+      "alert": "Alerta",
+      "banner": "Faixa animada",
+      "bio": "Sobre mim",
+      "skills": "Competências",
+      "stats": "Estatísticas do GitHub",
+      "trophies": "Troféus",
+      "blog": "Artigos do blog",
+      "contact": "Contacto"
     },
     "fields": {
       "title": "Título",
@@ -739,7 +746,33 @@
       "removeBadge": "Remover o emblema",
       "architecture": "Descrição da arquitetura",
       "roadmap": "Roteiro",
-      "roadmapHeading": "Título do roteiro"
+      "roadmapHeading": "Título do roteiro",
+      "lines": "Linhas de texto",
+      "font": "Tipo de letra",
+      "size": "Tamanho do texto",
+      "width": "Largura",
+      "align": "Alinhamento",
+      "color": "Cor",
+      "intro": "Introdução",
+      "points": "Pontos-chave",
+      "iconTheme": "Fundo dos ícones",
+      "perLine": "Ícones por linha",
+      "skills": "Competências a mostrar",
+      "username": "Utilizador do GitHub",
+      "baseUrl": "URL base da sua instância",
+      "showStats": "Cartão de estatísticas",
+      "showLanguages": "Cartão de linguagens",
+      "layout": "Disposição das linguagens",
+      "hideBorder": "Ocultar a borda",
+      "columns": "Colunas",
+      "rows": "Linhas",
+      "feedUrl": "URL do feed RSS ou Atom",
+      "maxPosts": "Número de artigos",
+      "schedule": "Frequência de atualização",
+      "network": "Rede",
+      "value": "Endereço",
+      "addContact": "Adicionar um contacto",
+      "removeContact": "Remover este contacto"
     },
     "placeholders": {
       "title": "O meu projeto incrível",
@@ -748,7 +781,10 @@
       "logoAlt": "Logótipo de O meu projeto incrível",
       "content": "## Uma secção\n\nEscreva aqui o seu Markdown…",
       "repoUrl": "https://github.com/utilizador/repositorio",
-      "packageName": "meu-pacote"
+      "packageName": "meu-pacote",
+      "baseUrl": "https://minha-instancia.vercel.app",
+      "feedUrl": "https://exemplo.pt/feed.xml",
+      "username": "octocat"
     },
     "preview": {
       "title": "Pré-visualização",
@@ -762,7 +798,11 @@
       "imageMissingAlt": "Imagens sem texto alternativo (alt): {count}.",
       "htmlTagMismatch": "Etiquetas HTML não emparelhadas: {tags}.",
       "layoutTable": "Tabela usada para paginação: reserve as tabelas para dados.",
-      "tooManyBadges": "Demasiados emblemas ({count}): mantenha os 5 mais úteis."
+      "tooManyBadges": "Demasiados emblemas ({count}): mantenha os 5 mais úteis.",
+      "missingUsername": "Utilizador do GitHub em falta ou inválido: nada é gerado.",
+      "missingBaseUrl": "URL base em falta para {service}: nada é gerado. O serviço público falha muitas vezes, implemente a sua própria instância.",
+      "invalidBaseUrl": "URL base inválido: use um endereço https sem parâmetros, por exemplo https://minha-instancia.vercel.app.",
+      "invalidFeed": "Endereço do feed em falta ou inválido: não é possível gerar o workflow."
     },
     "messages": {
       "copySuccess": "README copiado para a área de transferência.",
@@ -782,7 +822,12 @@
       "commands": "Um comando por linha, adicionado após o comando do gestor.",
       "credits": "Um agradecimento por linha.",
       "roadmap": "Um passo por linha, mostrado como caixa de seleção.",
-      "badgeColor": "Código hexadecimal sem #. Vazio: a cor de destaque do estilo."
+      "badgeColor": "Código hexadecimal sem #. Vazio: a cor de destaque do estilo.",
+      "lines": "Uma linha de texto por linha, no máximo cinco. São escritas uma a seguir à outra.",
+      "points": "Um ponto por linha, mostrado como lista com marcadores. Pode incluir emojis.",
+      "baseUrl": "Este serviço público está frequentemente indisponível. Implemente a sua própria instância (por exemplo na Vercel, seguindo a documentação do projeto) e cole aqui o respetivo endereço. Enquanto este campo estiver vazio, nada é gerado.",
+      "feedUrl": "O endereço público do feed do seu blogue, em https. É escrito no workflow.",
+      "contactValue": "O endereço completo (https://…) ou, no caso do e-mail, o endereço de correio eletrónico."
     },
     "wizard": {
       "title": "Assistente de criação",
@@ -816,7 +861,8 @@
       "repoUrl": "URL do repositório",
       "installCommand": "Comando de instalação",
       "language": "Idioma do README",
-      "autoFilled": "Preenchido automaticamente"
+      "autoFilled": "Preenchido automaticamente",
+      "username": "Utilizador do GitHub"
     },
     "extraction": {
       "file": "Ficheiro de manifesto (package.json, Cargo.toml, pyproject.toml)",
@@ -833,6 +879,33 @@
       "notFound": "Repositório não encontrado ou privado. Pode introduzir os dados à mão.",
       "network": "Não foi possível ligar. Verifique a rede ou introduza os dados à mão.",
       "invalidResponse": "Resposta inesperada do GitHub. Pode introduzir os dados à mão."
+    },
+    "options": {
+      "auto": "Automático (claro e escuro)",
+      "light": "Claro",
+      "dark": "Escuro",
+      "left": "Esquerda",
+      "center": "Centrado",
+      "daily": "Todos os dias",
+      "weekly": "Todas as semanas"
+    },
+    "skillGroups": {
+      "languages": "Linguagens",
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "data": "Dados",
+      "cloud": "Nuvem e sistemas",
+      "tools": "Ferramentas e outros"
+    },
+    "workflow": {
+      "title": "Atualização automática dos artigos",
+      "intro": "Este README tem uma zona reservada aos artigos. Para que se preencha sozinha, adicione este workflow ao repositório do seu perfil (o que tem o mesmo nome da sua conta do GitHub).",
+      "step1": "Crie o ficheiro .github/workflows/blog-post-workflow.yml nesse repositório e cole o conteúdo do ficheiro transferido.",
+      "step2": "Em Settings > Actions > General, defina «Workflow permissions» como «Read and write permissions» e guarde: o workflow tem de poder escrever no README.",
+      "step3": "Abra o separador Actions, escolha este workflow e clique em «Run workflow» para o executar uma primeira vez. Depois corre sozinho.",
+      "note": "O GitHub desativa os workflows agendados após 60 dias sem atividade no repositório: execute-o à mão se os artigos deixarem de se atualizar.",
+      "download": "Transferir o workflow",
+      "noFeed": "Introduza um endereço de feed válido para poder gerar o workflow."
     }
   }
 }

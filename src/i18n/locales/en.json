@@ -704,7 +704,14 @@
       "architecture": "Architecture and roadmap",
       "contributing": "Contributing",
       "license": "License and credits",
-      "alert": "Alert"
+      "alert": "Alert",
+      "banner": "Animated banner",
+      "bio": "About me",
+      "skills": "Skills",
+      "stats": "GitHub stats",
+      "trophies": "Trophies",
+      "blog": "Blog posts",
+      "contact": "Contact"
     },
     "fields": {
       "title": "Title",
@@ -739,7 +746,33 @@
       "removeBadge": "Remove the badge",
       "architecture": "Architecture description",
       "roadmap": "Roadmap",
-      "roadmapHeading": "Roadmap heading"
+      "roadmapHeading": "Roadmap heading",
+      "lines": "Text lines",
+      "font": "Font",
+      "size": "Text size",
+      "width": "Width",
+      "align": "Alignment",
+      "color": "Color",
+      "intro": "Introduction",
+      "points": "Key points",
+      "iconTheme": "Icon background",
+      "perLine": "Icons per line",
+      "skills": "Skills to show",
+      "username": "GitHub username",
+      "baseUrl": "Base URL of your instance",
+      "showStats": "Stats card",
+      "showLanguages": "Languages card",
+      "layout": "Languages layout",
+      "hideBorder": "Hide the border",
+      "columns": "Columns",
+      "rows": "Rows",
+      "feedUrl": "RSS or Atom feed URL",
+      "maxPosts": "Number of posts",
+      "schedule": "Update frequency",
+      "network": "Network",
+      "value": "Address",
+      "addContact": "Add a contact",
+      "removeContact": "Remove this contact"
     },
     "placeholders": {
       "title": "My awesome project",
@@ -748,7 +781,10 @@
       "logoAlt": "My awesome project logo",
       "content": "## A section\n\nWrite your Markdown here…",
       "repoUrl": "https://github.com/owner/repo",
-      "packageName": "my-package"
+      "packageName": "my-package",
+      "baseUrl": "https://my-instance.vercel.app",
+      "feedUrl": "https://example.com/feed.xml",
+      "username": "octocat"
     },
     "preview": {
       "title": "Preview",
@@ -762,7 +798,11 @@
       "imageMissingAlt": "Images without alt text: {count}.",
       "htmlTagMismatch": "Mismatched HTML tags: {tags}.",
       "layoutTable": "Table used for layout: keep tables for data.",
-      "tooManyBadges": "Too many badges ({count}): keep the 5 most useful."
+      "tooManyBadges": "Too many badges ({count}): keep the 5 most useful.",
+      "missingUsername": "Missing or invalid GitHub username: nothing is generated.",
+      "missingBaseUrl": "Missing base URL for {service}: nothing is generated. The public service is often down, deploy your own instance.",
+      "invalidBaseUrl": "Invalid base URL: use an https address without parameters, for example https://my-instance.vercel.app.",
+      "invalidFeed": "Missing or invalid feed address: the workflow cannot be generated."
     },
     "messages": {
       "copySuccess": "README copied to the clipboard.",
@@ -782,7 +822,12 @@
       "commands": "One command per line, added after the package manager command.",
       "credits": "One acknowledgement per line.",
       "roadmap": "One step per line, shown as a checkbox.",
-      "badgeColor": "Hex code without #. Empty: the style accent color."
+      "badgeColor": "Hex code without #. Empty: the style accent color.",
+      "lines": "One line of text per line, five at most. They type out one after the other.",
+      "points": "One point per line, shown as a bulleted list. You can include emojis.",
+      "baseUrl": "This public service is often unavailable. Deploy your own instance (for example on Vercel, following the project's documentation) and paste its address here. Nothing is generated while this field is empty.",
+      "feedUrl": "The public address of your blog's feed, over https. It is written into the workflow.",
+      "contactValue": "The full address (https://…) or, for email, the email address."
     },
     "wizard": {
       "title": "Setup wizard",
@@ -816,7 +861,8 @@
       "repoUrl": "Repository URL",
       "installCommand": "Install command",
       "language": "README language",
-      "autoFilled": "Filled automatically"
+      "autoFilled": "Filled automatically",
+      "username": "GitHub username"
     },
     "extraction": {
       "file": "Manifest file (package.json, Cargo.toml, pyproject.toml)",
@@ -833,6 +879,33 @@
       "notFound": "Repository not found or private. You can enter the details by hand.",
       "network": "Could not connect. Check your network or enter the details by hand.",
       "invalidResponse": "Unexpected response from GitHub. You can enter the details by hand."
+    },
+    "options": {
+      "auto": "Automatic (light and dark)",
+      "light": "Light",
+      "dark": "Dark",
+      "left": "Left",
+      "center": "Centered",
+      "daily": "Every day",
+      "weekly": "Every week"
+    },
+    "skillGroups": {
+      "languages": "Languages",
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "data": "Data",
+      "cloud": "Cloud and systems",
+      "tools": "Tools and more"
+    },
+    "workflow": {
+      "title": "Automatic blog post updates",
+      "intro": "This README has a reserved area for blog posts. To have it fill itself in, add this workflow to your profile repository (the one named after your GitHub account).",
+      "step1": "Create the file .github/workflows/blog-post-workflow.yml in that repository and paste the content of the downloaded file.",
+      "step2": "In Settings > Actions > General, set \"Workflow permissions\" to \"Read and write permissions\" and save: the workflow must be able to write to the README.",
+      "step3": "Open the Actions tab, pick this workflow and click \"Run workflow\" to run it once. After that it runs by itself.",
+      "note": "GitHub disables scheduled workflows after 60 days without activity in the repository: run it by hand if the posts stop updating.",
+      "download": "Download the workflow",
+      "noFeed": "Enter a valid feed address to be able to generate the workflow."
     }
   }
 }

@@ -704,7 +704,14 @@
       "architecture": "Architektur und Roadmap",
       "contributing": "Mitwirken",
       "license": "Lizenz und Danksagungen",
-      "alert": "Hinweis"
+      "alert": "Hinweis",
+      "banner": "Animiertes Banner",
+      "bio": "Über mich",
+      "skills": "Fähigkeiten",
+      "stats": "GitHub-Statistiken",
+      "trophies": "Trophäen",
+      "blog": "Blogbeiträge",
+      "contact": "Kontakt"
     },
     "fields": {
       "title": "Titel",
@@ -739,7 +746,33 @@
       "removeBadge": "Badge entfernen",
       "architecture": "Architekturbeschreibung",
       "roadmap": "Roadmap",
-      "roadmapHeading": "Roadmap-Überschrift"
+      "roadmapHeading": "Roadmap-Überschrift",
+      "lines": "Textzeilen",
+      "font": "Schriftart",
+      "size": "Textgröße",
+      "width": "Breite",
+      "align": "Ausrichtung",
+      "color": "Farbe",
+      "intro": "Einleitung",
+      "points": "Kernpunkte",
+      "iconTheme": "Icon-Hintergrund",
+      "perLine": "Icons pro Zeile",
+      "skills": "Anzuzeigende Fähigkeiten",
+      "username": "GitHub-Benutzername",
+      "baseUrl": "Basis-URL Ihrer Instanz",
+      "showStats": "Statistikkarte",
+      "showLanguages": "Sprachenkarte",
+      "layout": "Sprachen-Layout",
+      "hideBorder": "Rahmen ausblenden",
+      "columns": "Spalten",
+      "rows": "Zeilen",
+      "feedUrl": "Adresse des RSS- oder Atom-Feeds",
+      "maxPosts": "Anzahl der Beiträge",
+      "schedule": "Aktualisierungsintervall",
+      "network": "Netzwerk",
+      "value": "Adresse",
+      "addContact": "Kontakt hinzufügen",
+      "removeContact": "Diesen Kontakt entfernen"
     },
     "placeholders": {
       "title": "Mein tolles Projekt",
@@ -748,7 +781,10 @@
       "logoAlt": "Logo von Mein tolles Projekt",
       "content": "## Ein Abschnitt\n\nSchreiben Sie hier Ihr Markdown…",
       "repoUrl": "https://github.com/nutzer/repository",
-      "packageName": "mein-paket"
+      "packageName": "mein-paket",
+      "baseUrl": "https://meine-instanz.vercel.app",
+      "feedUrl": "https://beispiel.de/feed.xml",
+      "username": "octocat"
     },
     "preview": {
       "title": "Vorschau",
@@ -762,7 +798,11 @@
       "imageMissingAlt": "Bilder ohne Alternativtext (alt): {count}.",
       "htmlTagMismatch": "Nicht zusammenpassende HTML-Tags: {tags}.",
       "layoutTable": "Tabelle für das Layout verwendet: Tabellen sind für Daten gedacht.",
-      "tooManyBadges": "Zu viele Badges ({count}): behalten Sie die 5 nützlichsten."
+      "tooManyBadges": "Zu viele Badges ({count}): behalten Sie die 5 nützlichsten.",
+      "missingUsername": "GitHub-Benutzername fehlt oder ist ungültig: Es wird nichts erzeugt.",
+      "missingBaseUrl": "Basis-URL für {service} fehlt: Es wird nichts erzeugt. Der öffentliche Dienst fällt oft aus, betreiben Sie eine eigene Instanz.",
+      "invalidBaseUrl": "Ungültige Basis-URL: Verwenden Sie eine https-Adresse ohne Parameter, z. B. https://meine-instanz.vercel.app.",
+      "invalidFeed": "Feed-Adresse fehlt oder ist ungültig: Der Workflow kann nicht erzeugt werden."
     },
     "messages": {
       "copySuccess": "README in die Zwischenablage kopiert.",
@@ -782,7 +822,12 @@
       "commands": "Ein Befehl pro Zeile, nach dem Paketmanager-Befehl angefügt.",
       "credits": "Eine Danksagung pro Zeile.",
       "roadmap": "Ein Schritt pro Zeile, als Kontrollkästchen dargestellt.",
-      "badgeColor": "Hex-Code ohne #. Leer: die Akzentfarbe des Stils."
+      "badgeColor": "Hex-Code ohne #. Leer: die Akzentfarbe des Stils.",
+      "lines": "Eine Textzeile pro Zeile, höchstens fünf. Sie werden nacheinander getippt.",
+      "points": "Ein Punkt pro Zeile, als Aufzählung dargestellt. Emojis sind möglich.",
+      "baseUrl": "Dieser öffentliche Dienst ist häufig nicht erreichbar. Betreiben Sie eine eigene Instanz (z. B. auf Vercel, gemäß der Projektdokumentation) und tragen Sie deren Adresse hier ein. Solange das Feld leer ist, wird nichts erzeugt.",
+      "feedUrl": "Die öffentliche Adresse des Feeds Ihres Blogs, per https. Sie wird in den Workflow geschrieben.",
+      "contactValue": "Die vollständige Adresse (https://…) bzw. bei E-Mail die E-Mail-Adresse."
     },
     "wizard": {
       "title": "Einrichtungsassistent",
@@ -816,7 +861,8 @@
       "repoUrl": "Repository-URL",
       "installCommand": "Installationsbefehl",
       "language": "README-Sprache",
-      "autoFilled": "Automatisch ausgefüllt"
+      "autoFilled": "Automatisch ausgefüllt",
+      "username": "GitHub-Benutzername"
     },
     "extraction": {
       "file": "Manifest-Datei (package.json, Cargo.toml, pyproject.toml)",
@@ -833,6 +879,33 @@
       "notFound": "Repository nicht gefunden oder privat. Sie können die Angaben von Hand eingeben.",
       "network": "Verbindung nicht möglich. Prüfen Sie Ihr Netzwerk oder geben Sie die Angaben von Hand ein.",
       "invalidResponse": "Unerwartete Antwort von GitHub. Sie können die Angaben von Hand eingeben."
+    },
+    "options": {
+      "auto": "Automatisch (hell und dunkel)",
+      "light": "Hell",
+      "dark": "Dunkel",
+      "left": "Links",
+      "center": "Zentriert",
+      "daily": "Täglich",
+      "weekly": "Wöchentlich"
+    },
+    "skillGroups": {
+      "languages": "Sprachen",
+      "frontend": "Front-End",
+      "backend": "Back-End",
+      "data": "Daten",
+      "cloud": "Cloud und Systeme",
+      "tools": "Werkzeuge und mehr"
+    },
+    "workflow": {
+      "title": "Automatische Aktualisierung der Beiträge",
+      "intro": "Dieses README enthält einen reservierten Bereich für Beiträge. Damit er sich selbst füllt, fügen Sie diesen Workflow zum Profil-Repository hinzu (dem Repository mit dem Namen Ihres GitHub-Kontos).",
+      "step1": "Erstellen Sie die Datei .github/workflows/blog-post-workflow.yml in diesem Repository und fügen Sie den Inhalt der heruntergeladenen Datei ein.",
+      "step2": "Stellen Sie unter Settings > Actions > General „Workflow permissions“ auf „Read and write permissions“ und speichern Sie: Der Workflow muss in das README schreiben können.",
+      "step3": "Öffnen Sie den Tab Actions, wählen Sie diesen Workflow und klicken Sie auf „Run workflow“, um ihn einmal zu starten. Danach läuft er von selbst.",
+      "note": "GitHub deaktiviert geplante Workflows nach 60 Tagen ohne Aktivität im Repository: Starten Sie ihn von Hand, wenn die Beiträge nicht mehr aktualisiert werden.",
+      "download": "Workflow herunterladen",
+      "noFeed": "Geben Sie eine gültige Feed-Adresse ein, um den Workflow erzeugen zu können."
     }
   }
 }
