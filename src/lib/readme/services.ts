@@ -44,11 +44,16 @@ const MAX_FEED_URL_LENGTH = 500;
 
 /**
  * A feed address safe to put in a YAML double-quoted string and in a
- * comma-separated list: http(s), and none of `,` `"` `'` `\` `<` `>` `` ` `` or whitespace.
+ * comma-separated list: http(s), and none of `,` `"` `'` `\` `<` `>` `` ` ``, whitespace or
+ * control characters. `$`, `{` and `}` are refused too: GitHub evaluates `${{ … }}` inside
+ * the workflow's `with:` values, so an address carrying `${{ secrets.X }}` would send a
+ * secret of the repository to the feed host.
  */
 export function safeFeedUrl(value: string): string {
   const url = value.trim();
-  return url.length <= MAX_FEED_URL_LENGTH && /^https?:\/\/[^\s,"'\\<>`]+$/.test(url) ? url : '';
+  return url.length <= MAX_FEED_URL_LENGTH && /^https?:\/\/[^\s,"'\\<>`${}\u0000-\u001f\u007f-\u009f]+$/.test(url)
+    ? url
+    : '';
 }
 
 /** An email address made only of characters that need no escaping in a `mailto:` link. */

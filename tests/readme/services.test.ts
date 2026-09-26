@@ -95,6 +95,14 @@ describe('safeFeedUrl', () => {
     'https://x.example.com/<y>',
     'https://x.example.com/`y`',
     'javascript:alert(1)',
+    // GitHub evaluates ${{ … }} inside a workflow's `with:` values: it would leak a secret to the feed host.
+    'https://x.example.com/f?t=${{github.token}}',
+    'https://x.example.com/f?t=${{ secrets.X }}',
+    'https://x.example.com/$HOME',
+    'https://x.example.com/{a}',
+    'https://x.example.com/a\u0001b',
+    'https://x.example.com/a\u0085b',
+    'https://x.example.com/a\u007fb',
     `https://x.example.com/${'a'.repeat(500)}`,
   ])('rejects %j', (url) => {
     expect(safeFeedUrl(url)).toBe('');

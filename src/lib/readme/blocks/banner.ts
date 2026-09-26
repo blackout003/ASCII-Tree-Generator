@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { defineBlock } from '../block-definition';
 import { getDefaultText } from '../default-texts';
-import { escapeAlt, nonEmptyLines, safeUrl } from '../markdown-utils';
+import { escapeAlt, nonEmptyLines, safeUrl, toWellFormed } from '../markdown-utils';
 import { param, parseBaseUrl } from '../services';
 
 export const BANNER_FONTS = ['monospace', 'Fira Code', 'JetBrains Mono', 'Roboto', 'Poppins', 'Space Mono'] as const;
@@ -50,7 +50,7 @@ export const bannerBlock = defineBlock<BannerData>({
     // `;` separates the lines in the service's URL, so it cannot appear in a line.
     const lines = nonEmptyLines(data.lines)
       .slice(0, MAX_LINES)
-      .map((line) => line.slice(0, MAX_LINE_LENGTH).replace(/;/g, ','));
+      .map((line) => Array.from(toWellFormed(line)).slice(0, MAX_LINE_LENGTH).join('').replace(/;/g, ','));
     if (lines.length === 0) return '';
     const base = parseBaseUrl(data.baseUrl);
     if (base.status === 'invalid') return '';

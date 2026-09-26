@@ -38,6 +38,17 @@ export function safeUrl(url: string): string {
     .replace(/\\/g, '%5C');
 }
 
+/**
+ * Replaces each unpaired UTF-16 surrogate with U+FFFD. `encodeURIComponent` throws
+ * a `URIError` on one, and a text cut in the middle of an emoji or read from an
+ * imported file can hold one: without this the whole page would crash.
+ */
+export function toWellFormed(text: string): string {
+  return Array.from(text, (character) =>
+    character.length === 1 && character >= '\ud800' && character <= '\udfff' ? '\ufffd' : character
+  ).join('');
+}
+
 const WORD_CHARACTER = new RegExp('[\\p{L}\\p{N}]', 'u');
 
 /**
