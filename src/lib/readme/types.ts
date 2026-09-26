@@ -19,6 +19,8 @@ export type BlockType =
   | 'alert'
   | 'banner'
   | 'bio'
+  | 'skills'
+  | 'contact'
   | 'freeMarkdown';
 
 export interface Block {

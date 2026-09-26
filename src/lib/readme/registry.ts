@@ -2,6 +2,8 @@ import type { AnyBlockDefinition } from './block-definition';
 import { alertBlock } from './blocks/alert';
 import { bannerBlock } from './blocks/banner';
 import { bioBlock } from './blocks/bio';
+import { contactBlock } from './blocks/contact';
+import { skillsBlock } from './blocks/skills';
 import { architectureBlock } from './blocks/architecture';
 import { badgesBlock } from './blocks/badges';
 import { contributingBlock } from './blocks/contributing';
@@ -28,6 +30,8 @@ const DEFINITIONS: Record<BlockType, AnyBlockDefinition> = {
   alert: alertBlock,
   banner: bannerBlock,
   bio: bioBlock,
+  skills: skillsBlock,
+  contact: contactBlock,
   freeMarkdown: freeMarkdownBlock,
 };
 
