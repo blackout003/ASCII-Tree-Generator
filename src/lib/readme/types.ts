@@ -17,6 +17,8 @@ export type BlockType =
   | 'contributing'
   | 'license'
   | 'alert'
+  | 'banner'
+  | 'bio'
   | 'freeMarkdown';
 
 export interface Block {

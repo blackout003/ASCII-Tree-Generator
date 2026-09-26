@@ -1,5 +1,7 @@
 import type { AnyBlockDefinition } from './block-definition';
 import { alertBlock } from './blocks/alert';
+import { bannerBlock } from './blocks/banner';
+import { bioBlock } from './blocks/bio';
 import { architectureBlock } from './blocks/architecture';
 import { badgesBlock } from './blocks/badges';
 import { contributingBlock } from './blocks/contributing';
@@ -24,6 +26,8 @@ const DEFINITIONS: Record<BlockType, AnyBlockDefinition> = {
   contributing: contributingBlock,
   license: licenseBlock,
   alert: alertBlock,
+  banner: bannerBlock,
+  bio: bioBlock,
   freeMarkdown: freeMarkdownBlock,
 };
 
