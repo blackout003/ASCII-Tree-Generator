@@ -551,6 +551,46 @@
       "actions": {
         "title": "アクション",
         "desc": "動きのある顔文字：手を振る、踊る、戦う。"
+      },
+      "faces": {
+        "title": "横向き顔文字",
+        "desc": "アジアで定番の横向きスタイル。頭を傾けなくても読めます。"
+      },
+      "joy": {
+        "title": "よろこび",
+        "desc": "ご機嫌、わくわく、満面の笑み。"
+      },
+      "sadness": {
+        "title": "かなしみ",
+        "desc": "どんよりした日、がっかり、大泣きに。"
+      },
+      "anger": {
+        "title": "いかり",
+        "desc": "イライラ、激怒、にらみつけ。"
+      },
+      "surprise": {
+        "title": "おどろき・こわい",
+        "desc": "目がまんまる、びっくり、ぞくっ。"
+      },
+      "apology": {
+        "title": "おわび・てれ",
+        "desc": "おじぎ、赤面、照れ笑い。"
+      },
+      "food": {
+        "title": "たべもの",
+        "desc": "ごはん、のみもの、おやつ。"
+      },
+      "music": {
+        "title": "おんがく・パーティー",
+        "desc": "歌って、口笛ふいて、お祝い。"
+      },
+      "sleep": {
+        "title": "ねむい",
+        "desc": "あくび、おひるね、ぐっすり。"
+      },
+      "magic": {
+        "title": "まほう・バトル",
+        "desc": "魔法の杖、剣、ヒーローポーズ。"
       }
     },
     "labels": {
@@ -607,7 +647,103 @@
       "run": "ダッシュ",
       "dance": "ダンス",
       "tableBack": "ちゃぶ台戻し",
-      "fight": "やる気"
+      "fight": "やる気",
+      "joyful": "にこにこ",
+      "sweatDrop": "汗",
+      "whatFace": "えっ？",
+      "annoyed": "むっ",
+      "squint": "ぎゅっ",
+      "tired": "ぐったり",
+      "starEyes": "キラキラ",
+      "dizzy": "ぐるぐる",
+      "knockedOut": "ばたんきゅー",
+      "pensive": "しょんぼり",
+      "teary": "うるうる",
+      "blank": "ぽかん",
+      "grumpy": "ぷんぷん",
+      "cheerful": "ルンルン",
+      "beaming": "ニコニコ",
+      "gentleSmile": "ほほえみ",
+      "yay": "わーい",
+      "flowerSmile": "お花スマイル",
+      "victory": "やったー",
+      "giggle": "えへへ",
+      "starburst": "大喜び",
+      "glee": "るんるん",
+      "content": "ふふん",
+      "peace": "ウインク",
+      "pout": "しゅん",
+      "tearsStream": "号泣",
+      "disappointed": "がっかり",
+      "downcast": "しょぼん",
+      "weeping": "ぐすん",
+      "lonely": "なぐさめて",
+      "heartache": "せつない",
+      "gloomy": "ずーん",
+      "furious": "激おこ",
+      "seethe": "ぐぬぬ",
+      "yell": "どなる",
+      "tantrum": "じたばた",
+      "glare": "じろり",
+      "sulk": "ぶー",
+      "whyGesture": "なんでやねん",
+      "stunned": "ぽかーん",
+      "gasp": "はっ！",
+      "horrified": "がーん",
+      "panic": "あせあせ",
+      "scream": "ぎゃー",
+      "nervous": "ドキドキ",
+      "freakOut": "うわああ",
+      "awkward": "気まずい",
+      "bow": "ぺこり",
+      "sorry": "ごめんなさい",
+      "blushing": "てれてれ",
+      "shy": "はずかしい",
+      "nervousLaugh": "苦笑い",
+      "salute": "てへっ",
+      "hideFace": "かくれる",
+      "scratchHead": "ぽりぽり",
+      "yummy": "おいしい",
+      "hotMeal": "ほかほか",
+      "cake": "ケーキ",
+      "tea": "お茶",
+      "coffee": "コーヒー",
+      "cheers": "かんぱい",
+      "burger": "バーガー",
+      "sing": "うたう",
+      "whistle": "口笛",
+      "party": "パーティー",
+      "discoDance": "ディスコ",
+      "notes": "音符",
+      "coolDance": "ノリノリ",
+      "excited": "わくわく",
+      "asleep": "すやすや",
+      "peaceful": "ぐっすり",
+      "drowsy": "うとうと",
+      "snore": "いびき",
+      "nap": "おひるね",
+      "inBed": "おふとん",
+      "magicSpell": "魔法",
+      "fairyDust": "キラキラ魔法",
+      "sword": "剣",
+      "determined": "がんばる",
+      "strong": "つよい",
+      "throwBall": "えいっ",
+      "angel": "天使",
+      "devil": "小悪魔",
+      "worried": "心配",
+      "bigGrin": "にっこり",
+      "catPaws": "ねこの手",
+      "kitty": "こねこ",
+      "puppy": "こいぬ",
+      "bird": "ことり",
+      "koala": "コアラ",
+      "snake": "へび",
+      "crab": "かに",
+      "octopus": "たこ",
+      "loveYou": "すき",
+      "blushLove": "ぽっ",
+      "couple": "ラブラブ"
     }
   },
   "markdownEditor": {

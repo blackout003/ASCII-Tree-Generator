@@ -65,6 +65,16 @@ import {
   Tick02Icon,
   Upload01Icon,
   DocumentCodeIcon,
+  AngryIcon,
+  LaughingIcon,
+  MagicWand01Icon,
+  MusicNote01Icon,
+  Pizza01Icon,
+  Sad01Icon,
+  ShockedIcon,
+  UnhappyIcon,
+  ZzzIcon,
+  StarFaceIcon,
 } from "@hugeicons/core-free-icons";
 
 /**
@@ -158,3 +168,13 @@ export const Trash2 = createIcon(Delete02Icon, "Trash2");
 export const Type = createIcon(TextFontIcon, "Type");
 export const Upload = createIcon(Upload01Icon, "Upload");
 export const X = createIcon(Cancel01Icon, "X");
+export const Angry = createIcon(AngryIcon, "Angry");
+export const Laugh = createIcon(LaughingIcon, "Laugh");
+export const Wand = createIcon(MagicWand01Icon, "Wand");
+export const Music = createIcon(MusicNote01Icon, "Music");
+export const Pizza = createIcon(Pizza01Icon, "Pizza");
+export const Frown = createIcon(Sad01Icon, "Frown");
+export const Shocked = createIcon(ShockedIcon, "Shocked");
+export const Blush = createIcon(UnhappyIcon, "Blush");
+export const Zzz = createIcon(ZzzIcon, "Zzz");
+export const StarFace = createIcon(StarFaceIcon, "StarFace");

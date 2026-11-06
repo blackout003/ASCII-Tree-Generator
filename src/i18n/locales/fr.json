@@ -551,6 +551,46 @@
       "actions": {
         "title": "Actions",
         "desc": "Des kaomoji en pleine action : saluer, danser, se battre."
+      },
+      "faces": {
+        "title": "Visages à plat",
+        "desc": "Le style horizontal popularisé en Asie : pas besoin de pencher la tête, les yeux sont de chaque côté."
+      },
+      "joy": {
+        "title": "Joie",
+        "desc": "Bonne humeur, enthousiasme et grands sourires."
+      },
+      "sadness": {
+        "title": "Tristesse",
+        "desc": "Pour les jours gris, les déceptions et les gros chagrins."
+      },
+      "anger": {
+        "title": "Colère",
+        "desc": "Agacement, fureur et regards noirs."
+      },
+      "surprise": {
+        "title": "Surprise & peur",
+        "desc": "Yeux écarquillés, sursauts et frissons."
+      },
+      "apology": {
+        "title": "Excuses & gêne",
+        "desc": "Courbettes, joues rouges et petits rires embarrassés."
+      },
+      "food": {
+        "title": "Nourriture",
+        "desc": "Petits plats, boissons et gourmandises."
+      },
+      "music": {
+        "title": "Musique & fête",
+        "desc": "Chanter, siffler et faire la fête."
+      },
+      "sleep": {
+        "title": "Sommeil",
+        "desc": "Bâillements, siestes et longues nuits."
+      },
+      "magic": {
+        "title": "Magie & combat",
+        "desc": "Baguettes magiques, épées et poses de héros."
       }
     },
     "labels": {
@@ -607,7 +647,103 @@
       "run": "Courir",
       "dance": "Danser",
       "tableBack": "Range la table",
-      "fight": "Prêt à se battre"
+      "fight": "Prêt à se battre",
+      "joyful": "Joyeux",
+      "sweatDrop": "Goutte de sueur",
+      "whatFace": "Hein ?",
+      "annoyed": "Blasé",
+      "squint": "Crispé",
+      "tired": "Épuisé",
+      "starEyes": "Émerveillé",
+      "dizzy": "Étourdi",
+      "knockedOut": "K.-O.",
+      "pensive": "Pensif",
+      "teary": "Larmoyant",
+      "blank": "Sans voix",
+      "grumpy": "Ronchon",
+      "cheerful": "Enjoué",
+      "beaming": "Rayonnant",
+      "gentleSmile": "Sourire doux",
+      "yay": "Hourra",
+      "flowerSmile": "Sourire fleuri",
+      "victory": "Victoire",
+      "giggle": "Gloussement",
+      "starburst": "Explosion de joie",
+      "glee": "Allégresse",
+      "content": "Satisfait",
+      "peace": "Clin d'œil étoilé",
+      "pout": "Moue triste",
+      "tearsStream": "Torrent de larmes",
+      "disappointed": "Déçu",
+      "downcast": "Abattu",
+      "weeping": "Pleure en silence",
+      "lonely": "Besoin de réconfort",
+      "heartache": "Chagrin",
+      "gloomy": "Morose",
+      "furious": "Furieux",
+      "seethe": "Bouillonne",
+      "yell": "Hurle",
+      "tantrum": "Crise de nerfs",
+      "glare": "Regard noir",
+      "sulk": "Boude",
+      "whyGesture": "Mais pourquoi ?!",
+      "stunned": "Sidéré",
+      "gasp": "Souffle coupé",
+      "horrified": "Horrifié",
+      "panic": "Panique",
+      "scream": "Hurlement",
+      "nervous": "Nerveux",
+      "freakOut": "Affolé",
+      "awkward": "Mal à l’aise",
+      "bow": "Courbette",
+      "sorry": "Pardon",
+      "blushing": "Rougit",
+      "shy": "Timide",
+      "nervousLaugh": "Rire gêné",
+      "salute": "Salut gêné",
+      "hideFace": "Se cache",
+      "scratchHead": "Se gratte la tête",
+      "yummy": "Miam",
+      "hotMeal": "Plat chaud",
+      "cake": "Gâteau d'anniversaire",
+      "tea": "Tasse de thé",
+      "coffee": "Café",
+      "cheers": "Santé !",
+      "burger": "Burger",
+      "sing": "Chante",
+      "whistle": "Siffle",
+      "party": "Fête",
+      "discoDance": "Disco",
+      "notes": "Notes de musique",
+      "coolDance": "Danse cool",
+      "excited": "Surexcité",
+      "asleep": "Endormi",
+      "peaceful": "Paisible",
+      "drowsy": "Somnolent",
+      "snore": "Ronfle",
+      "nap": "Sieste",
+      "inBed": "Au lit",
+      "magicSpell": "Sortilège",
+      "fairyDust": "Poussière de fée",
+      "sword": "Épée",
+      "determined": "Déterminé",
+      "strong": "Costaud",
+      "throwBall": "Lance",
+      "angel": "Ange",
+      "devil": "Diablotin",
+      "worried": "Inquiet",
+      "bigGrin": "Grand sourire",
+      "catPaws": "Pattes de chat",
+      "kitty": "Chaton",
+      "puppy": "Chiot",
+      "bird": "Oiseau",
+      "koala": "Koala",
+      "snake": "Serpent",
+      "crab": "Crabe",
+      "octopus": "Pieuvre",
+      "loveYou": "Je t’aime",
+      "blushLove": "Amour timide",
+      "couple": "En couple"
     }
   },
   "markdownEditor": {

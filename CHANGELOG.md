@@ -5,6 +5,18 @@ Toutes les évolutions notables de ASCII Tools sont documentées dans ce fichier
 Le format s'inspire de [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/)
 et le projet suit le [versionnage sémantique](https://semver.org/lang/fr/).
 
+## [2.5.0] - 2026-11-06
+
+Enrichissement de la collection d'émojis ASCII.
+
+### Ajouté
+
+- **Émojis ASCII** (`/tools/ascii-emoji`) : une centaine de nouveaux émojis et
+  10 nouvelles catégories — visages à plat (`^_^`, `o_O`, `-_-`), joie,
+  tristesse, colère, surprise & peur, excuses & gêne, nourriture, musique &
+  fête, sommeil, magie & combat — ainsi que de nouveaux classiques, animaux et
+  émojis d'amour, traduits dans les 8 langues.
+
 ## [2.4.0] - 2026-09-23
 
 Ajout d'un nouvel outil : conversion Arbre ASCII ↔ Commandes mkdir/touch.
