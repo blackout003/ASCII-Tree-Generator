@@ -551,6 +551,46 @@
       "actions": {
         "title": "Aktionen",
         "desc": "Kaomoji mitten in Aktion: winken, tanzen, kämpfen."
+      },
+      "faces": {
+        "title": "Flache Gesichter",
+        "desc": "Der in Asien beliebte waagerechte Stil: kein Kopfneigen nötig, die Augen sitzen links und rechts."
+      },
+      "joy": {
+        "title": "Freude",
+        "desc": "Gute Laune, Begeisterung und breites Lächeln."
+      },
+      "sadness": {
+        "title": "Traurigkeit",
+        "desc": "Für trübe Tage, Enttäuschungen und großen Kummer."
+      },
+      "anger": {
+        "title": "Wut",
+        "desc": "Ärger, Zorn und finstere Blicke."
+      },
+      "surprise": {
+        "title": "Überraschung & Angst",
+        "desc": "Große Augen, Schreckmomente und Gänsehaut."
+      },
+      "apology": {
+        "title": "Entschuldigung & Scham",
+        "desc": "Verbeugungen, rote Wangen und verlegenes Lachen."
+      },
+      "food": {
+        "title": "Essen",
+        "desc": "Snacks, Getränke und Leckereien."
+      },
+      "music": {
+        "title": "Musik & Party",
+        "desc": "Singen, Pfeifen und Feiern."
+      },
+      "sleep": {
+        "title": "Schlaf",
+        "desc": "Gähnen, Nickerchen und lange Nächte."
+      },
+      "magic": {
+        "title": "Magie & Kampf",
+        "desc": "Zauberstäbe, Schwerter und Heldenposen."
       }
     },
     "labels": {
@@ -607,7 +647,103 @@
       "run": "Rennen",
       "dance": "Tanzen",
       "tableBack": "Tisch zurück",
-      "fight": "Kampfbereit"
+      "fight": "Kampfbereit",
+      "joyful": "Fröhlich",
+      "sweatDrop": "Schweißtropfen",
+      "whatFace": "Hä?",
+      "annoyed": "Genervt",
+      "squint": "Zusammengekniffen",
+      "tired": "Erschöpft",
+      "starEyes": "Begeistert",
+      "dizzy": "Schwindelig",
+      "knockedOut": "K.o.",
+      "pensive": "Nachdenklich",
+      "teary": "Weinerlich",
+      "blank": "Sprachlos",
+      "grumpy": "Grummelig",
+      "cheerful": "Munter",
+      "beaming": "Strahlend",
+      "gentleSmile": "Sanftes Lächeln",
+      "yay": "Juhu",
+      "flowerSmile": "Blumenlächeln",
+      "victory": "Sieg",
+      "giggle": "Kichern",
+      "starburst": "Freudenausbruch",
+      "glee": "Frohsinn",
+      "content": "Zufrieden",
+      "peace": "Sternenzwinkern",
+      "pout": "Schmollmund",
+      "tearsStream": "Tränenstrom",
+      "disappointed": "Enttäuscht",
+      "downcast": "Niedergeschlagen",
+      "weeping": "Weinend",
+      "lonely": "Braucht Trost",
+      "heartache": "Kummer",
+      "gloomy": "Bedrückt",
+      "furious": "Wütend",
+      "seethe": "Kochend",
+      "yell": "Brüllend",
+      "tantrum": "Wutanfall",
+      "glare": "Böser Blick",
+      "sulk": "Schmollend",
+      "whyGesture": "Aber warum?!",
+      "stunned": "Fassungslos",
+      "gasp": "Nach Luft schnappend",
+      "horrified": "Entsetzt",
+      "panic": "Panik",
+      "scream": "Schrei",
+      "nervous": "Nervös",
+      "freakOut": "Ausgeflippt",
+      "awkward": "Peinlich berührt",
+      "bow": "Tiefe Verbeugung",
+      "sorry": "Entschuldigung",
+      "blushing": "Errötend",
+      "shy": "Schüchtern",
+      "nervousLaugh": "Verlegenes Lachen",
+      "salute": "Verlegener Gruß",
+      "hideFace": "Versteckt sich",
+      "scratchHead": "Kopfkratzen",
+      "yummy": "Lecker",
+      "hotMeal": "Warmes Essen",
+      "cake": "Geburtstagskuchen",
+      "tea": "Tasse Tee",
+      "coffee": "Kaffee",
+      "cheers": "Prost!",
+      "burger": "Burger",
+      "sing": "Singen",
+      "whistle": "Pfeifen",
+      "party": "Party",
+      "discoDance": "Disco",
+      "notes": "Noten",
+      "coolDance": "Cooler Tanz",
+      "excited": "Aufgeregt",
+      "asleep": "Eingeschlafen",
+      "peaceful": "Friedlich",
+      "drowsy": "Schläfrig",
+      "snore": "Schnarchen",
+      "nap": "Nickerchen",
+      "inBed": "Im Bett",
+      "magicSpell": "Zauberspruch",
+      "fairyDust": "Feenstaub",
+      "sword": "Schwert",
+      "determined": "Entschlossen",
+      "strong": "Stark",
+      "throwBall": "Werfen",
+      "angel": "Engel",
+      "devil": "Teuflisch",
+      "worried": "Besorgt",
+      "bigGrin": "Breites Grinsen",
+      "catPaws": "Katzenpfoten",
+      "kitty": "Kätzchen",
+      "puppy": "Welpe",
+      "bird": "Vogel",
+      "koala": "Koala",
+      "snake": "Schlange",
+      "crab": "Krabbe",
+      "octopus": "Krake",
+      "loveYou": "Hab dich lieb",
+      "blushLove": "Verliebt errötet",
+      "couple": "Pärchen"
     }
   },
   "markdownEditor": {

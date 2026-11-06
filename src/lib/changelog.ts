@@ -2,7 +2,7 @@
  * Version actuelle de l'application, affichée dans la barre latérale.
  * Doit rester synchronisée avec le champ "version" de package.json et CHANGELOG.md.
  */
-export const APP_VERSION = '2.4.0';
+export const APP_VERSION = '2.5.0';
 
 export interface ChangelogSection {
   /** Titre de la section (ex: "Ajouté", "Modifié"). */
@@ -24,6 +24,19 @@ export interface ChangelogEntry {
  * Source lisible : CHANGELOG.md à la racine du projet.
  */
 export const CHANGELOG: ChangelogEntry[] = [
+  {
+    version: '2.5.0',
+    date: '2026-11-06',
+    summary: "Enrichissement de la collection d'émojis ASCII.",
+    sections: [
+      {
+        title: 'Ajouté',
+        items: [
+          "Émojis ASCII (/tools/ascii-emoji) : une centaine de nouveaux émojis et 10 nouvelles catégories — visages à plat (^_^, o_O, -_-), joie, tristesse, colère, surprise & peur, excuses & gêne, nourriture, musique & fête, sommeil, magie & combat — ainsi que de nouveaux classiques, animaux et émojis d'amour, traduits dans les 8 langues.",
+        ],
+      },
+    ],
+  },
   {
     version: '2.4.0',
     date: '2026-09-23',

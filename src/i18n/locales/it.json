@@ -551,6 +551,46 @@
       "actions": {
         "title": "Azioni",
         "desc": "Kaomoji in piena azione: salutare, ballare, combattere."
+      },
+      "faces": {
+        "title": "Faccine piatte",
+        "desc": "Lo stile orizzontale diffuso in Asia: niente testa inclinata, gli occhi stanno ai lati."
+      },
+      "joy": {
+        "title": "Gioia",
+        "desc": "Buonumore, entusiasmo e grandi sorrisi."
+      },
+      "sadness": {
+        "title": "Tristezza",
+        "desc": "Per le giornate grigie, le delusioni e i dispiaceri."
+      },
+      "anger": {
+        "title": "Rabbia",
+        "desc": "Fastidio, furia e sguardi torvi."
+      },
+      "surprise": {
+        "title": "Sorpresa e paura",
+        "desc": "Occhi sgranati, sussulti e brividi."
+      },
+      "apology": {
+        "title": "Scuse e timidezza",
+        "desc": "Inchini, guance rosse e risatine imbarazzate."
+      },
+      "food": {
+        "title": "Cibo",
+        "desc": "Piatti, bevande e golosità."
+      },
+      "music": {
+        "title": "Musica e festa",
+        "desc": "Cantare, fischiettare e fare festa."
+      },
+      "sleep": {
+        "title": "Sonno",
+        "desc": "Sbadigli, pisolini e lunghe notti."
+      },
+      "magic": {
+        "title": "Magia e combattimento",
+        "desc": "Bacchette magiche, spade e pose da eroe."
       }
     },
     "labels": {
@@ -607,7 +647,103 @@
       "run": "Correre",
       "dance": "Ballare",
       "tableBack": "Rimetti il tavolo",
-      "fight": "Pronto a combattere"
+      "fight": "Pronto a combattere",
+      "joyful": "Allegro",
+      "sweatDrop": "Goccia di sudore",
+      "whatFace": "Eh?",
+      "annoyed": "Annoiato",
+      "squint": "Occhi strizzati",
+      "tired": "Sfinito",
+      "starEyes": "Incantato",
+      "dizzy": "Stordito",
+      "knockedOut": "K.O.",
+      "pensive": "Pensieroso",
+      "teary": "In lacrime",
+      "blank": "Senza parole",
+      "grumpy": "Brontolone",
+      "cheerful": "Allegrone",
+      "beaming": "Raggiante",
+      "gentleSmile": "Sorriso dolce",
+      "yay": "Evviva",
+      "flowerSmile": "Sorriso fiorito",
+      "victory": "Vittoria",
+      "giggle": "Risatina",
+      "starburst": "Esplosione di gioia",
+      "glee": "Letizia",
+      "content": "Soddisfatto",
+      "peace": "Occhiolino stellato",
+      "pout": "Broncio",
+      "tearsStream": "Fiume di lacrime",
+      "disappointed": "Deluso",
+      "downcast": "Abbattuto",
+      "weeping": "Piangente",
+      "lonely": "Ha bisogno di conforto",
+      "heartache": "Dispiacere",
+      "gloomy": "Cupo",
+      "furious": "Furioso",
+      "seethe": "Ribollente",
+      "yell": "Urlante",
+      "tantrum": "Capriccio",
+      "glare": "Occhiataccia",
+      "sulk": "Imbronciato",
+      "whyGesture": "Ma perché?!",
+      "stunned": "Sbalordito",
+      "gasp": "Senza fiato",
+      "horrified": "Inorridito",
+      "panic": "Panico",
+      "scream": "Urlo",
+      "nervous": "Nervoso",
+      "freakOut": "In tilt",
+      "awkward": "Imbarazzato",
+      "bow": "Inchino",
+      "sorry": "Scusa",
+      "blushing": "Arrossito",
+      "shy": "Timido",
+      "nervousLaugh": "Risata nervosa",
+      "salute": "Saluto imbarazzato",
+      "hideFace": "Si nasconde",
+      "scratchHead": "Si gratta la testa",
+      "yummy": "Gnam",
+      "hotMeal": "Piatto caldo",
+      "cake": "Torta di compleanno",
+      "tea": "Tazza di tè",
+      "coffee": "Caffè",
+      "cheers": "Cin cin!",
+      "burger": "Hamburger",
+      "sing": "Canta",
+      "whistle": "Fischietta",
+      "party": "Festa",
+      "discoDance": "Disco",
+      "notes": "Note musicali",
+      "coolDance": "Ballo figo",
+      "excited": "Eccitato",
+      "asleep": "Addormentato",
+      "peaceful": "Sereno",
+      "drowsy": "Assonnato",
+      "snore": "Russa",
+      "nap": "Pisolino",
+      "inBed": "A letto",
+      "magicSpell": "Incantesimo",
+      "fairyDust": "Polvere di fata",
+      "sword": "Spada",
+      "determined": "Determinato",
+      "strong": "Forte",
+      "throwBall": "Lancia",
+      "angel": "Angelo",
+      "devil": "Diavoletto",
+      "worried": "Preoccupato",
+      "bigGrin": "Sorrisone",
+      "catPaws": "Zampette di gatto",
+      "kitty": "Gattino",
+      "puppy": "Cucciolo",
+      "bird": "Uccellino",
+      "koala": "Koala",
+      "snake": "Serpente",
+      "crab": "Granchio",
+      "octopus": "Polpo",
+      "loveYou": "Ti voglio bene",
+      "blushLove": "Amore timido",
+      "couple": "Coppia"
     }
   },
   "markdownEditor": {

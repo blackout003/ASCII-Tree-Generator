@@ -551,6 +551,46 @@
       "actions": {
         "title": "Actions",
         "desc": "Kaomoji caught mid-action: waving, dancing, fighting."
+      },
+      "faces": {
+        "title": "Flat faces",
+        "desc": "The horizontal style popular in Asia: no head tilt needed, the eyes sit on either side."
+      },
+      "joy": {
+        "title": "Joy",
+        "desc": "Good mood, excitement and big smiles."
+      },
+      "sadness": {
+        "title": "Sadness",
+        "desc": "For gloomy days, letdowns and heartbreaks."
+      },
+      "anger": {
+        "title": "Anger",
+        "desc": "Annoyance, fury and death stares."
+      },
+      "surprise": {
+        "title": "Surprise & fear",
+        "desc": "Wide eyes, jump scares and shivers."
+      },
+      "apology": {
+        "title": "Apologies & shyness",
+        "desc": "Bows, blushing cheeks and nervous laughs."
+      },
+      "food": {
+        "title": "Food",
+        "desc": "Snacks, drinks and treats."
+      },
+      "music": {
+        "title": "Music & party",
+        "desc": "Singing, whistling and partying."
+      },
+      "sleep": {
+        "title": "Sleep",
+        "desc": "Yawns, naps and long nights."
+      },
+      "magic": {
+        "title": "Magic & battle",
+        "desc": "Magic wands, swords and hero poses."
       }
     },
     "labels": {
@@ -607,7 +647,103 @@
       "run": "Running",
       "dance": "Dancing",
       "tableBack": "Table back",
-      "fight": "Ready to fight"
+      "fight": "Ready to fight",
+      "joyful": "Joyful",
+      "sweatDrop": "Sweat drop",
+      "whatFace": "Wait, what?",
+      "annoyed": "Unimpressed",
+      "squint": "Squeezed eyes",
+      "tired": "Exhausted",
+      "starEyes": "Starstruck",
+      "dizzy": "Dizzy",
+      "knockedOut": "Knocked out",
+      "pensive": "Pensive",
+      "teary": "Teary",
+      "blank": "Speechless",
+      "grumpy": "Grumpy",
+      "cheerful": "Cheerful",
+      "beaming": "Beaming",
+      "gentleSmile": "Gentle smile",
+      "yay": "Yay",
+      "flowerSmile": "Flower smile",
+      "victory": "Victory",
+      "giggle": "Giggle",
+      "starburst": "Burst of joy",
+      "glee": "Glee",
+      "content": "Content",
+      "peace": "Starry wink",
+      "pout": "Sad pout",
+      "tearsStream": "Streaming tears",
+      "disappointed": "Disappointed",
+      "downcast": "Downcast",
+      "weeping": "Weeping",
+      "lonely": "Needs comfort",
+      "heartache": "Heartache",
+      "gloomy": "Gloomy",
+      "furious": "Furious",
+      "seethe": "Seething",
+      "yell": "Yelling",
+      "tantrum": "Tantrum",
+      "glare": "Glare",
+      "sulk": "Sulking",
+      "whyGesture": "But why?!",
+      "stunned": "Stunned",
+      "gasp": "Gasp",
+      "horrified": "Horrified",
+      "panic": "Panic",
+      "scream": "Scream",
+      "nervous": "Nervous",
+      "freakOut": "Freaking out",
+      "awkward": "Awkward",
+      "bow": "Deep bow",
+      "sorry": "Sorry",
+      "blushing": "Blushing",
+      "shy": "Shy",
+      "nervousLaugh": "Nervous laugh",
+      "salute": "Sheepish salute",
+      "hideFace": "Hiding face",
+      "scratchHead": "Head scratch",
+      "yummy": "Yummy",
+      "hotMeal": "Hot meal",
+      "cake": "Birthday cake",
+      "tea": "Cup of tea",
+      "coffee": "Coffee",
+      "cheers": "Cheers!",
+      "burger": "Burger",
+      "sing": "Singing",
+      "whistle": "Whistling",
+      "party": "Party",
+      "discoDance": "Disco",
+      "notes": "Music notes",
+      "coolDance": "Cool dance",
+      "excited": "Excited",
+      "asleep": "Asleep",
+      "peaceful": "Peaceful",
+      "drowsy": "Drowsy",
+      "snore": "Snoring",
+      "nap": "Nap",
+      "inBed": "In bed",
+      "magicSpell": "Magic spell",
+      "fairyDust": "Fairy dust",
+      "sword": "Sword",
+      "determined": "Determined",
+      "strong": "Strong",
+      "throwBall": "Throwing",
+      "angel": "Angel",
+      "devil": "Devilish",
+      "worried": "Worried",
+      "bigGrin": "Big grin",
+      "catPaws": "Cat paws",
+      "kitty": "Kitty",
+      "puppy": "Puppy",
+      "bird": "Bird",
+      "koala": "Koala",
+      "snake": "Snake",
+      "crab": "Crab",
+      "octopus": "Octopus",
+      "loveYou": "Love you",
+      "blushLove": "Blushing love",
+      "couple": "Couple"
     }
   },
   "markdownEditor": {
